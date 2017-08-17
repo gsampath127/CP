@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RRD.RightProspectus" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RRD.RightProspectus" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="OnBoardingRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EdgarID" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstFundName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProsDocFundSiteUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProsIds" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OnBoardingRequest" nillable="true" type="tns:OnBoardingRequest" />
+  <xs:complexType name="OnBoardingDownloadCompleteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PDFValidatedStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RPProsDocUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RPUpdateStatus" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OnBoardingDownloadCompleteResponse" nillable="true" type="tns:OnBoardingDownloadCompleteResponse" />
+  <xs:complexType name="OnBoardingDownloadReviewResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyFolderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DownloadStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsBookMarked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRevised" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PDFValidatedStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PageCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PageHeight" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PageWidth" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ProsDocTypeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProsDocUrlPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempHostedFileURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempHostedFileWithPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OnBoardingDownloadReviewResponse" nillable="true" type="tns:OnBoardingDownloadReviewResponse" />
+  <xs:complexType name="ReviewCompleteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyFolderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EdgarID" type="xs:int" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsRevised" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OriginalBookMarkStatus" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PageCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PageHeight" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PageWidth" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ProsDocTypeID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProsIds" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RenamedFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TempHostedFileWithPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedBookMarkStatus" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReviewCompleteRequest" nillable="true" type="tns:ReviewCompleteRequest" />
+  <xs:complexType name="PDFWorkflowStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsPDFBookmarked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPDFValidated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PageCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PageHeight" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="PageWidth" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PDFWorkflowStatus" nillable="true" type="tns:PDFWorkflowStatus" />
+</xs:schema>

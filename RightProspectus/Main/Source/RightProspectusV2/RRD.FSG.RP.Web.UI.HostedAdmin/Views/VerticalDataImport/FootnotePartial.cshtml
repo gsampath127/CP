@@ -1,0 +1,128 @@
+﻿
+<div class="row">
+    <div class="col-sm-12">
+
+    </div>
+</div>
+<div id="importFootnote" style="display:none">
+
+    <div class="row">
+        <div style="padding:10px 10px 10px 10px">
+            <input type="file" name="file" id="footNoteUpload" />
+        </div>
+        <div class="col-sm-12">
+            <div id="FootNoteInvalidDataGridContainer" class="ScrollTable">
+                <div id="FootNoteInvalidDataGridHeader" class="tableFixedWidth" style="margin:20px 0; display:none">
+                    Invalid CUSIPs
+                </div>
+                <div id="FootNoteInvalidDataGrid" class="tableFixedWidth">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    @* TODO: Commenting Import Export action button - Phase - 2 changes *@
+    @*<div class="col-lg-6 dvSwitch">
+        <input class="k-textbox " type=text id="txtSearchFootNoteString" placeholder="enter search text..." />
+        <button id="btnFootNoteSearch">Search</button>
+
+    </div>*@
+    <div class="col-lg-12">
+        <div id="dvSwitchFootNote" class="btn-group pull-right dvSwitch">
+            <a href="#" class="btn btn-default dropdown-toggle, ImportActions" data-toggle="dropdown">Actions <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a id="lnkImportFootNote" href="#">Import</a></li>
+                <li><a id="exportFootNote" href="#">Export</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div id="GridContainer" class="ScrollTable">
+            <div id="footNoteGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dvFootnote" data-request-url="@Url.Action("GetFootnotes", "VerticalFootnote")"></div>
+<div id="dvGetTaxonomyByTemplateForFootnote" data-request-url="@Url.Action("GetTaxonomyByTemplateForFootnote", "VerticalFootnote")"></div>
+<div id="dvSaveFootnote" data-request-url="@Url.Action("SaveFootnote", "VerticalFootnote")"></div>
+<div id="dvFootnoteImport" data-request-url="@Url.Action("FootnoteImport", "VerticalFootnote")"></div>
+<script src="~/Scripts/HostedAdmin/VerticalDataImport/FootnoteSettings.js"></script>
+
+<script type="text/x-kendo-template" id="deleteFootNoteTemplate">
+    Delete
+    <strong>Text</strong> ?
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo"> No</button>
+</script>
+<style>
+    .file-icon {
+        display: inline-block;
+        float: left;
+        width: 48px;
+        height: 48px;
+        margin-left: 10px;
+        margin-top: 13.5px;
+    }
+
+
+    #footNoteUpload .file-heading {
+        font-family: Arial;
+        font-size: 1.1em;
+        display: inline-block;
+        float: left;
+        width: 60%;
+        margin: 0 0 0 20px;
+        height: 25px;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    #footNoteUpload .file-name-heading {
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    #footNoteUpload .file-size-heading {
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    li.k-file .file-wrapper .k-upload-action {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    li.k-file div.file-wrapper {
+        position: relative;
+        height: 75px;
+    }
+
+    div.k-window-content {
+        overflow: hidden !important;
+    }
+
+    .Footnotes-EditPopup .k-edit-form-container{
+        width: 600px !important
+    }
+    .Footnotes-EditPopup .editor-label, .Footnotes-EditPopup .k-edit-label{
+        width: 20% !important;        
+    }
+
+    .Footnotes-EditPopup .editor-field, .Footnotes-EditPopup .k-edit-field{
+        width: 70% !important;         
+    }
+    .Footnotes-EditPopup .k-textbox, .Footnotes-EditPopup .k-dropdown {
+        width: 100%;
+    }
+
+</style>

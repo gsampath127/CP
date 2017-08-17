@@ -1,0 +1,55 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=100">
+    <title class="navbar-brand">RightProspectus Admin</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.ActionLink("Hosted Sites Admin", "SelectCustomer", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button id="togglebutton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        @Html.ActionLink("Back to Site Selection", "List", "Site", new { area = "" }, new { @class = "dropdown-toggle" })
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="admin-menu">Site Configuration<span class="caret"></span></a>
+                        <ul class="dropdown-menu navbar-inverse" aria-labelledby="admin-menu">
+                            <li><a href="@Url.Action("List", "SiteText")">Site Text</a></li>
+                            <li><a href="@Url.Action("List", "PageText")">Page Text</a></li>
+                            <li><a href="@Url.Action("List", "SiteFeature")">Site Feature</a></li>
+                            <li><a href ="@Url.Action("List", "PageFeature")">Page Feature</a></li>
+                            <li><a href="@Url.Action("List", "SiteNavigation")">Site Navigation</a></li>
+                            <li><a href="@Url.Action("List", "PageNavigation")">Page Navigation</a></li>
+                            <li><a href="@Url.Action("List", "ApproveProofing")">Preview</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+            </div>
+            </div>
+            
+        </div>
+    <div id="main" class="container body-content">
+        @RenderBody()
+    </div>    
+</body>
+</html>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bundling>
+  <Js Name="~/AdminJS.js">
+    <Path>~/scripts/jquery-2.1.1.min.js</Path>
+    <Path>~/scripts/bootstrap.min.js</Path>
+    <Path>~/scripts/respond.js</Path>    
+  </Js>
+  <Css Name="~/AdminCss.css">
+    <Path>~/Content/site.css</Path>
+    <Path>~/Content/bootstrap.css</Path>
+  </Css>
+</Bundling>

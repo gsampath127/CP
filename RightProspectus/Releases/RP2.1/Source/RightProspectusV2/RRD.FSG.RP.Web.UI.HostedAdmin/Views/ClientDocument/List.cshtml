@@ -1,0 +1,138 @@
+﻿@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>
+                <li class="active">Client Document</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Client Document<span id="ClientDocumentPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+        <div class="col-sm-3 text-right">
+            <a class="btn btn-success btn-sm m-top-20 pull-right-xs-max" id="btnAddNewClientDocument">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Client Document
+            </a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="FileNameCombo" class="form-control" type="text" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="DocumentTypeCombo" type="text" class="form-control" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="NameCombo" type="text" class="form-control" />
+
+            </div>
+        </div>
+     </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input id="MimeTypeCombo" type="text" class="form-control" />
+
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input id="IsPrivateCombo" type="text" class="form-control" />
+
+                </div>
+            </div>
+        </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="btnSearchClientDocument" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="clientDocumentClearFilters"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="clientDocumentGridwithSortingButtons">
+
+        <div id="clientDocumentContainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="clientDocumentGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dvLoadAllClientDocument" data-request-url="@Url.Action("GetAllClientDocumentDetails", "ClientDocument")"></div>
+    <div id="dvFileNameComboLoad" data-request-url="@Url.Action("GetFileName", "ClientDocument")"></div>
+    <div id="dvNameComboLoad" data-request-url="@Url.Action("GetName", "ClientDocument")"></div>
+    <div id="dvClientDocumentTypeName" data-request-url="@Url.Action("GetClientDocumentTypeName", "ClientDocument")"></div>
+    <div id="dvMimeTypeComboLoad" data-request-url="@Url.Action("GetMimeType", "ClientDocument")"></div>
+    <div id="dvIsPrivateComboLoad" data-request-url="@Url.Action("GetIsPrivate", "ClientDocument")"></div>
+    <div id="dvEditClientDocument" data-request-url="@Url.Action("EditClientDocument", "ClientDocument")"></div>
+    <div id="dvDisable" data-request-url="@Url.Action("DeleteClientDocument", "ClientDocument")"></div>
+
+
+<script id="alertDisable" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Client Document?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+
+<script src="~/Scripts/HostedAdmin/ClientDocumentSettings.js"></script>
+<div id="dvClientDocumentPopOver" class="dispNone">
+   Client Document page displays the <b>Client Documents</b> in RightProspectus.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Client Document</li>
+        <li>EDIT Existing Client Document</li>
+        <li>SEARCH Client Document based on  File Name,Name, Document Type, Mime Type, Is Private.</li>
+        <li>DELETE Client Document</li>
+    </ul>
+    <br />
+</div>

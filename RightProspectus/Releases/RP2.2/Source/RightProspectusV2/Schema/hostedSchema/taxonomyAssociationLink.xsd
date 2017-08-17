@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="taxonomyAssociationLink.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:element name="taxonomyAssociationLink" type="taxonomyAssociationLink" />
+  <xs:element name="taxonomyAssociationLinks" type="taxonomyAssociationLinks" />
+  <xs:complexType name="taxonomyAssociationLink">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a nonlinear, nondirect hierarchical link to a specific taxonomyAssociation entity.
+        One and only one of the following must be present for this entity to be parsed:
+        1) a valid importId linking this entity to a taxonomyAssociation entity described in this document,
+        2) a valid systemId linking this entity to a taxonomyAssociation entity already existent in the database, or
+        3) a valid level and marketId combination linking this entity to a taxonomyAssociation entity either described in this document or already existent in the database.
+        If the level and marketId values are set, then parentMarketId and siteId might be present as well in order to help specify an exact match for the database.
+        If more than one match is found in scenario 3, the first match in the list will be used.
+        Because of this ambiguity, either an importId or systemId is preferred.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="linkEntity">
+        <xs:attribute name="level" type="level" use="optional" />
+        <xs:attribute name="marketId" type="marketId" use="optional" />
+        <xs:attribute name="parentMarketId" type="parentMarketId" use="optional" />
+        <xs:attribute name="siteId" type="siteId" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="taxonomyAssociationLinks">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of taxonomyAssociationLink entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="taxonomyAssociationLink" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

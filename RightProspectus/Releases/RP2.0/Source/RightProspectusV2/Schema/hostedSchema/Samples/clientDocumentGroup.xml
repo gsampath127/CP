@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<clientDocumentGroup importId="importId1" name="name1" description="description1" cssClass="cssClass1" systemId="0" delete="false" xmlns="http://rightprospectus.com/hostedSchema">
+  <clientDocumentGroups mirror="false">
+    <clientDocumentGroup importId="importId2" name="name2" description="description2" cssClass="cssClass2" systemId="4294967295" delete="true">
+      <clientDocumentLinks mirror="false">
+        <clientDocumentLink fileName="fileName1" order="1" delete="false" />
+        <clientDocumentLink fileName="fileName2" order="-79228162514264337593543950335" delete="true" />
+        <clientDocumentLink fileName="fileName3" order="79228162514264337593543950335" delete="false" />
+      </clientDocumentLinks>
+    </clientDocumentGroup>
+    <clientDocumentGroup importId="importId3" name="name3" description="description3" cssClass="cssClass3" systemId="1" delete="false">
+      <clientDocumentLinks mirror="true">
+        <clientDocumentLink fileName="fileName4" order="0" delete="true" />
+        <clientDocumentLink fileName="fileName5" order="2" delete="false" />
+        <clientDocumentLink fileName="fileName6" order="-79228162514264337593543950334" delete="true" />
+      </clientDocumentLinks>
+    </clientDocumentGroup>
+    <clientDocumentGroup importId="importId4" name="name4" description="description4" cssClass="cssClass4" systemId="4294967294" delete="true">
+      <clientDocumentLinks mirror="false">
+        <clientDocumentLink fileName="fileName7" order="79228162514264337593543950334" delete="false" />
+        <clientDocumentLink fileName="fileName8" order="-1" delete="true" />
+        <clientDocumentLink fileName="fileName9" order="3" delete="false" />
+      </clientDocumentLinks>
+    </clientDocumentGroup>
+  </clientDocumentGroups>
+  <clientDocumentLinks mirror="true">
+    <clientDocumentLink fileName="fileName10" order="-79228162514264337593543950333" delete="true" />
+    <clientDocumentLink fileName="fileName11" order="79228162514264337593543950333" delete="false" />
+    <clientDocumentLink fileName="fileName12" order="-2" delete="true" />
+  </clientDocumentLinks>
+</clientDocumentGroup>

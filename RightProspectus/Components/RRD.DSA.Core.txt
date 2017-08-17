@@ -1,0 +1,3 @@
+Please find RRD.DSA.Core for RP v2 checked in at below location
+
+$/RP-V2/Code/Dev/RRD.DSA.Core

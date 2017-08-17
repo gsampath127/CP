@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RRD.FSG.RP.Services.HostedXmlImportExport</name>
+    </assembly>
+    <members>
+        <member name="T:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportService">
+            <summary>
+            Class ImportExportService.
+            </summary>
+            <summary>
+            Class ImportExportService.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportService"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportService.OnStart(System.String[])">
+            <summary>
+            When implemented in a derived class, executes when a Start command is sent to the service by the Service Control Manager (SCM) or when the operating system starts (for a service that starts automatically). Specifies actions to take when the service starts.
+            </summary>
+            <param name="args">Data passed by the start command.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportService.OnStop">
+            <summary>
+            When implemented in a derived class, executes when a Stop command is sent to the service by the Service Control Manager (SCM). Specifies actions to take when a service stops running.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportService.LogErrorToDB(System.Int32,System.String,RRD.DSA.Core.DAL.DataAccess)">
+            <summary>
+            Logs the error to database.
+            </summary>
+            <param name="sourceOfError">The source of error.</param>
+            <param name="Message">The message.</param>
+            <param name="dataaccess">The dataaccess.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportService.PollExport">
+            <summary>
+            Polls the export.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportService.PollImport">
+            <summary>
+            Polls the import.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportService.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportService.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportService.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportServiceInstaller">
+            <summary>
+            Class ImportExportServiceInstaller.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportServiceInstaller.serviceInstaller">
+            <summary>
+            The service installer
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportServiceInstaller.processInstaller">
+            <summary>
+            The process installer
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportServiceInstaller.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Services.HostedXmlImportExport.ImportExportServiceInstaller"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.HostedXmlImportExport.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+    </members>
+</doc>

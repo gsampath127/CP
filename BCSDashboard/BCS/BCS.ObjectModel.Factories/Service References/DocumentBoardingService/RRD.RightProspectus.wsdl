@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://RRD.RightProspectus" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://RRD.RightProspectus" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://RRD.RightProspectus/Imports">
+      <xsd:import namespace="http://RRD.RightProspectus" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/RRD.RightProspectus" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDocumentOnboardContract_Download_InputMessage">
+    <wsdl:part name="parameters" element="tns:Download" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentOnboardContract_Download_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentOnboardContract_DownloadAndReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAndReview" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentOnboardContract_DownloadAndReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadAndReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentOnboardContract_CompleteDownloadAndReview_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteDownloadAndReview" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentOnboardContract_CompleteDownloadAndReview_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteDownloadAndReviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentOnboardContract_CheckPDFAndUpdateBookMarksView_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPDFAndUpdateBookMarksView" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentOnboardContract_CheckPDFAndUpdateBookMarksView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPDFAndUpdateBookMarksViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentOnboardContract_UpdateBookMarkActionFromUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBookMarkActionFromUser" />
+  </wsdl:message>
+  <wsdl:message name="IDocumentOnboardContract_UpdateBookMarkActionFromUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBookMarkActionFromUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDocumentOnboardContract">
+    <wsdl:operation name="Download">
+      <wsdl:input wsaw:Action="http://RRD.RightProspectus/IDocumentOnboardContract/Download" message="tns:IDocumentOnboardContract_Download_InputMessage" />
+      <wsdl:output wsaw:Action="http://RRD.RightProspectus/IDocumentOnboardContract/DownloadResponse" message="tns:IDocumentOnboardContract_Download_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadAndReview">
+      <wsdl:input wsaw:Action="http://RRD.RightProspectus/IDocumentOnboardContract/DownloadAndReview" message="tns:IDocumentOnboardContract_DownloadAndReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://RRD.RightProspectus/IDocumentOnboardContract/DownloadAndReviewResponse" message="tns:IDocumentOnboardContract_DownloadAndReview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteDownloadAndReview">
+      <wsdl:input wsaw:Action="http://RRD.RightProspectus/IDocumentOnboardContract/CompleteDownloadAndReview" message="tns:IDocumentOnboardContract_CompleteDownloadAndReview_InputMessage" />
+      <wsdl:output wsaw:Action="http://RRD.RightProspectus/IDocumentOnboardContract/CompleteDownloadAndReviewResponse" message="tns:IDocumentOnboardContract_CompleteDownloadAndReview_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPDFAndUpdateBookMarksView">
+      <wsdl:input wsaw:Action="http://RRD.RightProspectus/IDocumentOnboardContract/CheckPDFAndUpdateBookMarksView" message="tns:IDocumentOnboardContract_CheckPDFAndUpdateBookMarksView_InputMessage" />
+      <wsdl:output wsaw:Action="http://RRD.RightProspectus/IDocumentOnboardContract/CheckPDFAndUpdateBookMarksViewResponse" message="tns:IDocumentOnboardContract_CheckPDFAndUpdateBookMarksView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBookMarkActionFromUser">
+      <wsdl:input wsaw:Action="http://RRD.RightProspectus/IDocumentOnboardContract/UpdateBookMarkActionFromUser" message="tns:IDocumentOnboardContract_UpdateBookMarkActionFromUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://RRD.RightProspectus/IDocumentOnboardContract/UpdateBookMarkActionFromUserResponse" message="tns:IDocumentOnboardContract_UpdateBookMarkActionFromUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,810 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RRD.FSG.RP.Utilities</name>
+    </assembly>
+    <members>
+        <member name="T:RRD.FSG.RP.Utilities.ConfigValues">
+            <summary>
+            Class ConfigValues.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.systemDBCacheTimeOut">
+            <summary>
+            The system database cache time out
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.clientDBCacheTimeOut">
+            <summary>
+            The client database cache time out
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.verticalXMLImportExportInfopathFormName">
+            <summary>
+            The vertical XML import export infopath form name
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.printRequestLogFileDir">
+            <summary>
+            The print request log file dir
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.printRequestDropFileDir">
+            <summary>
+            The print request drop file dir
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.environment">
+            <summary>
+            The environment
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.smtp">
+            <summary>
+            The SMTP
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.emailFrom">
+            <summary>
+            The email from
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.errorEmailTo">
+            <summary>
+            The error email to
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.requestMaterialEmailFrom">
+            <summary>
+            The request material email from
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.reportContentEmailFrom">
+            <summary>
+            The report content email from
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.hostedEngineURL">
+            <summary>
+            hostedEngineURL
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.hTTPSHostedEngineURL">
+            <summary>
+            hTTPSHostedEngineURL
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.cusipMergerLiqudationEmailTo">
+            <summary>
+            The Liquidatin Merging content email to
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.sleepTimeBetweenRequestsForVerticalImportExport">
+            <summary>
+            The sleep time between requests for vertical import export
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.sleepTimeCUSIPMergerLiqudationReport">
+            <summary>
+            The sleep time between requests for vertical import export
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.sleepTimeBetweenServiceRequests">
+            <summary>
+            The sleep time between requests for service
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.validationServiceExceptionEmailTo">
+            <summary>
+            The email from
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.appEnvironment">
+            <summary>
+            appEnvironment
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.cusipMergerLiqudationEmailSub">
+            <summary>
+            CUSIPMergerLiqudationEmailSub
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.verticalDataImport_ExcelImport_CommandTimeout">
+            <summary>
+            verticalDataImport_ExcelImport_CommandTimeout
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.verticalDataImport_ApproveProofing_CommandTimeout">
+            <summary>
+            VerticalDataImport_ApproveProofing_CommandTimeout
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.ConfigValues.sleepTimeWhenError">
+            <summary>
+            The sleep time when error
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.ConfigValues.GetAllConnectionStringsFromConfig">
+            <summary>
+            GetAllConnectionStringsFromConfig
+            </summary>
+            <returns>List&lt;System.String&gt;.</returns>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.SleepTimeWhenError">
+            <summary>
+            SleepTimeWhenError
+            </summary>
+            <value>The sleep time when error.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.SleepTimeBetweenRequestsForVerticalImportExport">
+            <summary>
+            SleepTimeBetweenRequestsForVerticalImportExport
+            </summary>
+            <value>The sleep time between requests for vertical import export.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.SleepTimeCUSIPMergerLiqudationReport">
+            <summary>
+            SleepTimeBetweenRequestsForLiquidatingMergingReport
+            </summary>
+            <value>The sleep time between requests for vertical import export.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.SleepTimeBetweenServiceRequests">
+            <summary>
+            SleepTimeBetweenServiceRequests
+            </summary>
+            <value>The sleep time between service requests.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.VerticalXMLImportExportInfopathFormName">
+            <summary>
+            VerticalXMLImportExport Info path FormName
+            </summary>
+            <value>The name of the vertical XML import export infopath form.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.SystemDBCacheTimeOut">
+            <summary>
+            SystemDBCacheTimeOut
+            </summary>
+            <value>The system database cache time out.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.ClientDBCacheTimeOut">
+            <summary>
+            ClientDBCacheTimeOut
+            </summary>
+            <value>The client database cache time out.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.SMTP">
+            <summary>
+            SMTP
+            </summary>
+            <value>The SMTP.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.EmailFrom">
+            <summary>
+            EmailFrom
+            </summary>
+            <value>The email from.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.ErrorEmailTo">
+            <summary>
+            ErrorEmailTo
+            </summary>
+            <value>The error email to.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.RequestMaterialEmailFrom">
+            <summary>
+            RequestMaterialEmailFrom
+            </summary>
+            <value>The request material email from.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.PrintRequestLogFileDir">
+            <summary>
+            PrintRequestLogFileDir
+            </summary>
+            <value>The print request log file dir.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.PrintRequestDropFileDir">
+            <summary>
+            PrintRequestDropFileDir
+            </summary>
+            <value>The print request drop file dir.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.Environment">
+            <summary>
+            Environment
+            </summary>
+            <value>The environment.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.ReportContentEmailFrom">
+            <summary>
+            ReportContentEmailFrom
+            </summary>
+            <value>The report content email from.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.HostedEngineURL">
+            <summary>
+            HostedEngineURL
+            </summary>
+            <value>HostedEngineURL</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.HTTPSHostedEngineURL">
+            <summary>
+            HostedEngineURL
+            </summary>
+            <value>HostedEngineURL</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.CUSIPMergerLiqudationEmailTo">
+            <summary>
+            CUSIPMergerLiqudationEmailTo
+            </summary>
+            <value>The LiquidatedMergedReport email from.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.ValidationServiceExceptionEmailTo">
+            <summary>
+            ValidationServiceExceptionEmailTo
+            </summary>
+            <value>ValidationServiceExceptionEmailTo.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.AppEnvironment">
+            <summary>
+            AppEnvironment
+            </summary>
+            <value>AppEnvironment.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.CUSIPMergerLiqudationEmailSub">
+            <summary>
+            CUSIPMergerLiqudationEmailSub
+            </summary>
+            <value>CUSIPMergerLiqudationEmailSub.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.VerticalDataImport_ExcelImport_CommandTimeout">
+            <summary>
+            verticalDataImport_ExcelImport_CommandTimeout
+            </summary>
+            <value>verticalDataImport_ExcelImport_CommandTimeout</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.ConfigValues.VerticalDataImport_ApproveProofing_CommandTimeout">
+            <summary>
+            VerticalDataImport_ApproveProofing_CommandTimeout
+            </summary>
+            <value>VerticalDataImport_ApproveProofing_CommandTimeout</value>
+        </member>
+        <member name="T:RP.Utilities.CreateExcelFile">
+            <summary>
+            To Hold the Excel related export methods
+            </summary>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.ListToDataTable``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Lists to data table.
+            </summary>
+            <typeparam name="T">A generic type</typeparam>
+            <param name="list">The list.</param>
+            <returns>DataTable.</returns>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.GetNullableType(System.Type)">
+            <summary>
+            Gets the type of the nullable.
+            </summary>
+            <param name="t">The t.</param>
+            <returns>Type.</returns>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.IsNullableType(System.Type)">
+            <summary>
+            Determines whether [is nullable type] [the specified type].
+            </summary>
+            <param name="type">The type.</param>
+            <returns><c>true</c> if [is nullable type] [the specified type]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.CreateExcelDocument(System.Data.DataTable,System.String,System.Boolean)">
+            <summary>
+            Creates the excel document.
+            </summary>
+            <param name="dt">The dt.</param>
+            <param name="xlsxFilePath">The XLSX file path.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.GetColumnDisplayName(System.Reflection.PropertyInfo)">
+            <summary>
+            Gets the display name of the column.
+            </summary>
+            <param name="objPropertyInfo">The object property information.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.CreateExcelDocument(System.Data.DataTable,System.String,System.Web.HttpResponse,System.Boolean)">
+            <summary>
+            Create an Excel file, and write it out to a MemoryStream (rather than directly to a file)
+            </summary>
+            <param name="dt">DataTable containing the data to be written to the Excel.</param>
+            <param name="filename">The filename (without a path) to call the new Excel file.</param>
+            <param name="Response">HttpResponse of the current page.</param>
+            <returns>True if it was created succesfully, otherwise false.</returns>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.CreateExcelDocument(System.Data.DataTable,System.Boolean)">
+            <summary>
+            Create an Excel file, and write it out to a MemoryStream (rather than directly to a file)
+            </summary>
+            <param name="dt">DataTable containing the data to be written to the Excel.</param>
+            <returns>True if it was created successfully, otherwise false.</returns>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.CreateExcelDocument``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Creates the excel document.
+            </summary>
+            <typeparam name="T">A generic type</typeparam>
+            <param name="list">The list.</param>
+            <returns>System.Byte[].</returns>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.CreateExcelDocumentAsStream(System.Data.DataSet,System.Boolean)">
+            <summary>
+            Create an Excel file, and write it out to a MemoryStream (rather than directly to a file)
+            </summary>
+            <param name="ds">DataSet containing the data to be written to the Excel.</param>
+            <returns>Either a MemoryStream, or NULL if something goes wrong.</returns>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.CreateDataSet``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Creates the data set.
+            </summary>
+            <typeparam name="T">A generic Type</typeparam>
+            <param name="list">The list.</param>
+            <returns>DataSet.</returns>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.CreateExcelDocument(System.Data.DataSet,System.String,System.Boolean)">
+            <summary>
+            Create an Excel file, and write it to a file.
+            </summary>
+            <param name="ds">DataSet containing the data to be written to the Excel.</param>
+            <param name="excelFilename">Name of file to be written.</param>
+            <returns>True if successful, false if something went wrong.</returns>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.WriteExcelFile(System.Data.DataSet,DocumentFormat.OpenXml.Packaging.SpreadsheetDocument,System.Boolean,System.Boolean)">
+            <summary>
+            Writes the excel file.
+            </summary>
+            <param name="ds">The ds.</param>
+            <param name="spreadsheet">The spreadsheet.</param>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.WriteDataTableToExcelWorksheet(System.Data.DataTable,DocumentFormat.OpenXml.Packaging.WorksheetPart,System.Boolean,System.Boolean)">
+            <summary>
+            Writes the data table to excel worksheet.
+            </summary>
+            <param name="dt">The dt.</param>
+            <param name="worksheetPart">The worksheet part.</param>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.AppendTextCell(System.String,System.String,DocumentFormat.OpenXml.Spreadsheet.Row,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Appends the text cell.
+            </summary>
+            <param name="cellReference">The cell reference.</param>
+            <param name="cellStringValue">The cell string value.</param>
+            <param name="excelRow">The excel row.</param>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.AppendNumericCell(System.String,System.String,DocumentFormat.OpenXml.Spreadsheet.Row,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Appends the numeric cell.
+            </summary>
+            <param name="cellReference">The cell reference.</param>
+            <param name="cellStringValue">The cell string value.</param>
+            <param name="excelRow">The excel row.</param>
+        </member>
+        <member name="M:RP.Utilities.CreateExcelFile.GetExcelColumnName(System.Int32)">
+            <summary>
+            Gets the name of the excel column.
+            </summary>
+            <param name="columnIndex">Index of the column.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Utilities.CSSMinifyUnminifyHelper">
+            <summary>
+            Class CSSMinifyUnminifyHelper.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.CSSMinifyUnminifyHelper.MinifyCSSText(System.String)">
+            <summary>
+            Minifies the CSS text.
+            </summary>
+            <param name="cssText">The CSS text.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.CSSMinifyUnminifyHelper.UnMinifyCSSText(System.String)">
+            <summary>
+            Uns the minify CSS text.
+            </summary>
+            <param name="cssText">The CSS text.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Utilities.EmailHelper">
+            <summary>
+            Class EmailHelper.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.EmailHelper.SendEmail(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Sends the email.
+            </summary>
+            <param name="emailFrom">The email from.</param>
+            <param name="emailTo">The email to.</param>
+            <param name="subject">The subject.</param>
+            <param name="body">The body.</param>
+            <param name="emailCC">The email cc.</param>
+            <param name="emailBCC">The email BCC.</param>
+            <param name="attachedFile">The attached file.</param>
+            <param name="fromDisplayName">From display name.</param>
+            <param name="toDisplayName">To display name.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.EmailHelper.EncodePassword(System.String)">
+            <summary>
+            Encodes the to64.
+            </summary>
+            <param name="toEncode">To encode.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.EmailHelper.DecodePassword(System.String)">
+            <summary>
+            Decodes the from64.
+            </summary>
+            <param name="encodedData">The encoded data.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.EmailHelper.SendEmailwithByteArray(System.String,System.String,System.String,System.String,System.Byte[],System.String,System.String,System.String)">
+            <summary>
+            Sends the email with byte array.
+            </summary>
+            <param name="emailFrom">The email from.</param>
+            <param name="emailTo">The email to.</param>
+            <param name="subject">The subject.</param>
+            <param name="body">The body.</param>
+            <param name="result">The result.</param>
+            <param name="attachFileFormat">The attach file format.</param>
+            <param name="emailCC">The email cc.</param>
+            <param name="emailBCC">The email BCC.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.EnumHelper.GetEnumDescription(System.Enum)">
+            <summary>
+            GetEnumDescription
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.EnumHelper.GetEnumDescriptionList(System.Type)">
+            <summary>
+            GetEnumDescriptionList
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Utilities.FileStruct">
+            <summary>
+            FileStruct
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.FileStruct.Flags">
+            <summary>
+            Flags
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.FileStruct.Owner">
+            <summary>
+            Owner
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.FileStruct.Group">
+            <summary>
+            Group
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.FileStruct.IsDirectory">
+            <summary>
+            IsDirectory
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.FileStruct.CreateTime">
+            <summary>
+            CreateTime
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.FileStruct.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Utilities.FileListStyle">
+            <summary>
+            enum FileListStyle
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.FileListStyle.UnixStyle">
+            <summary>
+            UnixStyle
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.FileListStyle.WindowsStyle">
+            <summary>
+            WindowsStyle
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.FileListStyle.Unknown">
+            <summary>
+            Unknown
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Utilities.FTPHelper">
+            <summary>
+            Class FTPHelper.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.FTPHelper.GuessFileListStyle(System.String[])">
+            <summary>
+            GuessFileListStyle
+            </summary>
+            <param name="recordList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.FTPHelper.ParseFileStructFromUnixStyleRecord(System.String)">
+            <summary>
+            ParseFileStructFromUnixStyleRecord
+            </summary>
+            <param name="Record"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.FTPHelper.ParseFileStructFromWindowsStyleRecord(System.String)">
+            <summary>
+            ParseFileStructFromWindowsStyleRecord
+            </summary>
+            <param name="Record"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.FTPHelper._cutSubstringFromStringWithTrim(System.String@,System.Char,System.Int32)">
+            <summary>
+            _cutSubstringFromStringWithTrim
+            </summary>
+            <param name="s"></param>
+            <param name="c"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.FTPHelper.GetList(System.String)">
+            <summary>
+            GetList
+            </summary>
+            <param name="datastring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.FTPHelper.DownloadFileFromFTP(System.String,System.String,System.String,System.String)">
+            <summary>
+            DownloadFileFromFTP
+            </summary>
+            <param name="ftp"></param>
+            <param name="userid"></param>
+            <param name="password"></param>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.FTPHelper.RemoveWhiteSpaces(System.String)">
+            <summary>
+            RemoveWhiteSpaces
+            </summary>
+            <param name="processString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.FTPHelper.GetFileListFromFTP(System.String,System.String,System.String)">
+            <summary>
+            GetFileListFromFTP
+            </summary>
+            <param name="_ftp"></param>
+            <param name="_user"></param>
+            <param name="_password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.FTPHelper.DeleteFileFromFTP(System.String,System.String,System.String,System.String)">
+            <summary>
+            DeleteFileFromFTP
+            </summary>
+            <param name="ftpserverwithpath"></param>
+            <param name="userid"></param>
+            <param name="password"></param>
+            <param name="strFile"></param>
+        </member>
+        <member name="T:RRD.FSG.RP.Utilities.TimerEvent">
+            <summary>
+            Delegate TimerEvent
+            </summary>
+            <param name="elapsedMilliseconds">The elapsed milliseconds.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Utilities.HighPrecisionTimer">
+            <summary>
+            Class HighPrecisionTimer.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.HighPrecisionTimer.TIME_PERIODIC">
+            <summary>
+            The tim e_ periodic
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.HighPrecisionTimer.timeBeginPeriod(System.Int32)">
+            <summary>
+            Times the begin period.
+            </summary>
+            <param name="interval">The interval.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.HighPrecisionTimer.timeSetEvent(System.Int32,System.Int32,RRD.FSG.RP.Utilities.HighPrecisionTimer.TimerEventHandler,System.IntPtr,System.Int32)">
+            <summary>
+            Times the set event.
+            </summary>
+            <param name="delay">The delay.</param>
+            <param name="resolution">The resolution.</param>
+            <param name="handler">The handler.</param>
+            <param name="user">The user.</param>
+            <param name="eventType">Type of the event.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.HighPrecisionTimer.timeKillEvent(System.Int32)">
+            <summary>
+            Times the kill event.
+            </summary>
+            <param name="id">The identifier.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.HighPrecisionTimer._timerCallbackGCHandle">
+            <summary>
+            The _timer callback gc handle
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.HighPrecisionTimer._timerID">
+            <summary>
+            The _timer identifier
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.HighPrecisionTimer._running">
+            <summary>
+            The _running
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.HighPrecisionTimer._timeCallback">
+            <summary>
+            The _time callback
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.HighPrecisionTimer._timerStopWatch">
+            <summary>
+            The _timer stop watch
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.HighPrecisionTimer.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:RRD.FSG.RP.Utilities.HighPrecisionTimer"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.HighPrecisionTimer.Start(System.Int32)">
+            <summary>
+            Starts the specified interval.
+            </summary>
+            <param name="interval">The interval.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.HighPrecisionTimer.Stop">
+            <summary>
+            Stops this instance.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.HighPrecisionTimer.TimerCallback(System.Int32,System.Int32,System.IntPtr,System.Int32,System.Int32)">
+            <summary>
+            Timers the callback.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="message">The message.</param>
+            <param name="user">The user.</param>
+            <param name="unused1">The unused1.</param>
+            <param name="unused2">The unused2.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.HighPrecisionTimer.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Utilities.HighPrecisionTimer.Running">
+            <summary>
+            Gets a value indicating whether this <see cref="T:RRD.FSG.RP.Utilities.HighPrecisionTimer"/> is running.
+            </summary>
+            <value><c>true</c> if running; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="E:RRD.FSG.RP.Utilities.HighPrecisionTimer.TimerEvent">
+            <summary>
+            Occurs when [timer event].
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Utilities.HighPrecisionTimer.TimerEventHandler">
+            <summary>
+            Delegate TimerEventHandler
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="message">The message.</param>
+            <param name="user">The user.</param>
+            <param name="unused1">The unused1.</param>
+            <param name="unused2">The unused2.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Utilities.RPV2Resolver">
+            <summary>
+            The Resolver class will use a IoC container and resolve dependencies at run time
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Utilities.RPV2Resolver.container">
+            <summary>
+            The IoC Container property
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.RPV2Resolver.LoadConfiguration">
+            <summary>
+            Loads the IoC configuration from the config file with default section and container name
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.RPV2Resolver.LoadConfiguration(System.String)">
+            <summary>
+            Loads IoC configuration from config file with specified container name
+            </summary>
+            <param name="containerName">Specify the container name</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.RPV2Resolver.LoadConfiguration(System.String,System.String)">
+            <summary>
+            Loads IoC configuration from config file with specified section name and container name
+            </summary>
+            <param name="sectionName">Specify the section name</param>
+            <param name="containerName">Specify the container name</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.RPV2Resolver.Resolve``1">
+            <summary>
+            Resolves and returns the concrete implementation of the type
+            </summary>
+            <typeparam name="T">Specify the abstract implementation</typeparam>
+            <returns>T.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.RPV2Resolver.Resolve``1(System.String)">
+            <summary>
+            Resolves by registration name and returns the concrete implementation of the type
+            </summary>
+            <typeparam name="T">A generic type</typeparam>
+            <param name="registrationName">Name of the registration.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Utilities.SFTPHelper">
+            <summary>
+            Class SFTPHelper.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.SFTPHelper.SFTPFileUpload(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            SecureFTPFile
+            </summary>
+            <param name="dirPath">Directory for file to be uploaded to SFTP</param>
+            <param name="fileName">File Name for file to be uploaded to SFTP</param>
+            <param name="ftp">ftp address</param>
+            <param name="ftpUsername">The FTP username.</param>
+            <param name="ftpPassword">ftp Password</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.SFTPHelper.FTPFileUpload(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            FTPFileUpload
+            </summary>       
+            <param name="dirPath">Directory for file to be uploaded to SFTP</param>
+            <param name="fileName">File Name for file to be uploaded to SFTP</param>
+            <param name="ftpServerIP">ftp address</param>
+            <param name="ftpUsername">The FTP username.</param>
+            <param name="ftpPassword">ftp Password</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Utilities.ZipHelper">
+            <summary>
+            Class ZipHelper.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Utilities.ZipHelper.CreateZipFile(System.String,System.String)">
+            <summary>
+            Creates a zip file
+            </summary>
+            <param name="zipFileFullPath">zipFileFullPath with file name</param>
+            <param name="directoryFullPath">Full path of directory to be zipped.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+    </members>
+</doc>

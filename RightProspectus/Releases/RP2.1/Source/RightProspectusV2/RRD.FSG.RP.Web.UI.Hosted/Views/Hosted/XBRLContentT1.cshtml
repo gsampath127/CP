@@ -1,0 +1,109 @@
+﻿@using RRD.FSG.RP.Web.UI.Hosted
+@using RRD.FSG.RP.Model.Enumerations
+@using System.Configuration
+
+<link href="@(((BaseViewModel)Model).BaseURL)PageTextHandler.ashx?ClientName=@(((BaseViewModel)Model).ClientName)&SiteName=@(((BaseViewModel)Model).SiteName)&Key=@(((BaseViewModel)Model).PageCSSResourceKey)&IsProofing=@(((BaseViewModel)Model).IsProofing)&PageId=@(((BaseViewModel)Model).PageId)" rel="stylesheet" media="all" />
+
+<script type="text/javascript">
+    function trackSiteActivity(customer, site, externalID1, externalID2, isInternalTAID, requestBatchId, xBRLDocumentName, xBRLItemType, xBRLRequestURL) {
+        var siteActivityData = {
+            Customer: customer, Site: site, ExternalID1: externalID1, ExternalID2: externalID2, IsInternalTAID: isInternalTAID,
+            RequestBatchId: requestBatchId, XBRLDocumentName: xBRLDocumentName, XBRLItemType: xBRLItemType, XBRLRequestURL: xBRLRequestURL, IsInternalDTID: true
+        };
+        $.ajax({
+            type: 'POST',
+            ontentType: 'application/json; charset=utf-8',
+            dataType: 'JSON',
+            url: $("#dvTrackSiteActivityURL").data('request-url'),
+            data: siteActivityData,
+            success: function (result) {
+
+            },
+            error: function () {
+            }
+        });
+
+        return true;
+    }
+</script>
+
+<div class="cssXBRLContentMainTable">
+    <div class="cssXBRLContentTableRow">
+        <div class="cssHeaderTableCell cssXBRLPlaceHolder">
+            <div class="cssXBRLZipFilesHeaderText">@(Html.Raw(System.Web.HttpUtility.HtmlDecode(((XBRLViewModel)Model).XBRLZipFilesHeaderText)))</div>
+            <ul>
+                @foreach (var item in ((XBRLViewModel)Model).XBRLData)
+                {
+                    var XBRLDocumentBaseURL = Request.Url.Scheme.ToLower() == "https" ? ConfigurationManager.AppSettings["HTTPSXBRLDocumentBaseURL"].ToString() : ConfigurationManager.AppSettings["XBRLDocumentBaseURL"].ToString();
+                    
+                    var xbrlURL = XBRLDocumentBaseURL + item.Path + item.AccessionNumber + ".zip";
+                    var xbrlZipFileName = "";
+                    if (item.DocumentDate == null)
+                    {
+                        xbrlZipFileName = item.FormType + " " + ((XBRLViewModel)Model).XBRLViewerFiledText + " " + item.FilingDate.ToString(((XBRLViewModel)Model).XBRLDateFormat);
+                    }
+                    else
+                    {
+                        xbrlZipFileName = item.DocumentType + " " + ((XBRLViewModel)Model).XBRLViewerDatedText + " " + item.DocumentDate.Value.ToString(((XBRLViewModel)Model).XBRLDateFormat);
+                    }
+
+                    var trackURL = "trackSiteActivity('" + ((XBRLViewModel)Model).ClientName + "','" + ((XBRLViewModel)Model).SiteName
+                        + "','" + ((XBRLViewModel)Model).ExternalID + "','','" + ((XBRLViewModel)Model).IsInternalTAID + "','" + ((XBRLViewModel)Model).RequestBatchId
+                        + "','" + xbrlZipFileName + "','" + (int)XBRLItemType.Zip + "','" + xbrlURL + "')";
+
+                    <li>
+                        <a class="cssLinks" href="@(xbrlURL)"
+                           onclick="@(trackURL)">
+
+                            <span class="cssXBRLZipFileName">@Html.Raw(System.Web.HttpUtility.HtmlDecode(xbrlZipFileName))</span>
+
+                        </a>
+                    </li>
+                }
+            </ul>
+
+        </div>
+        @if (((XBRLViewModel)Model).XBRLData[0].IsViewerEnabled)
+        {
+            <div class="cssHeaderTableCell cssXBRLViewerPlaceHolder">
+                <div class="cssXBRLViewerHeaderText">@Html.Raw(System.Web.HttpUtility.HtmlDecode(((XBRLViewModel)Model).XBRLViewerHeaderText))</div>
+                <ul>
+                    @foreach (var item in ((XBRLViewModel)Model).XBRLData)
+                    {
+                        <li>
+                            @if (item.IsViewerReadyForXBRL)
+                            {
+                                var xbrlViewerURL = Request.Url.Scheme.ToLower() == "https" ? ConfigurationManager.AppSettings["HTTPSXBRLViewerURL"].ToString() : ConfigurationManager.AppSettings["XBRLViewerURL"].ToString() + item.AccessionNumber;
+                                var xBRLViewerName = "";
+                                if (item.DocumentDate == null)
+                                {
+                                    xBRLViewerName = item.FormType + " " + ((XBRLViewModel)Model).XBRLViewerFiledText + " " + item.FilingDate.ToString(((XBRLViewModel)Model).XBRLDateFormat);
+                                }
+                                else
+                                {
+                                    xBRLViewerName = item.DocumentType + " " + ((XBRLViewModel)Model).XBRLViewerDatedText + " " + item.DocumentDate.Value.ToString(((XBRLViewModel)Model).XBRLDateFormat);
+
+                                }
+                                var trackURL = "trackSiteActivity('" + ((XBRLViewModel)Model).ClientName + "','" + ((XBRLViewModel)Model).SiteName
+                                                + "','" + ((XBRLViewModel)Model).ExternalID + "','','" + ((XBRLViewModel)Model).IsInternalTAID + "','" + ((XBRLViewModel)Model).RequestBatchId
+                                                + "','" + xBRLViewerName + "','" + (int)XBRLItemType.Viewer + "','" + xbrlViewerURL + "')";
+
+                                <a class="cssLinks" href="@(xbrlViewerURL)" target="_blank"
+                                   onclick="@(trackURL)">
+
+                                    <span class="cssXBRLViewerName">@Html.Raw(System.Web.HttpUtility.HtmlDecode(xBRLViewerName))</span>
+
+                                </a>
+                            }
+                            else
+                            {
+                                <span>@Html.Raw(System.Web.HttpUtility.HtmlDecode(((XBRLViewModel)Model).XBRLViewerNotReadyMessage))</span>
+                            }
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+</div>
+<div id="dvTrackSiteActivityURL" data-request-url="@Url.Action("TrackSiteActivity", "Hosted")"></div>

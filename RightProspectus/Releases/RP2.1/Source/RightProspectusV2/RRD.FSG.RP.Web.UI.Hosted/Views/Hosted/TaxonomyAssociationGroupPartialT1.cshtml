@@ -1,0 +1,174 @@
+﻿@using RRD.FSG.RP.Web.UI.Hosted
+@using System.Web
+@model RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel
+
+    <div class="cssTAGDUnderlyingFundDetailsMainDiv">
+        <div class="cssTAGDUnderlyingFundDocumentGridDiv">
+            <div class="cssTAGDUnderlyingFundDocumentGridHeader">
+                <div class="td cssTAGDUnderlyingFundDocumentGridFundNameColumn">@(Html.Raw(HttpUtility.HtmlDecode(Model.UnderlayingFundGridFundNameColumnText))) </div>
+                @foreach (var taxonomy in Model.TaxonomyAssociationGroupModelData.DocumentTypeHeaders)
+                {
+                    if (taxonomy.VerticalMarketID != "XBRL" || Model.ShowXBRLInLandingPage)
+                    {
+                        <div class="td cssTAGDUnderlyingFundDocumentGridDocTypeColumn">@(Html.Raw(HttpUtility.HtmlDecode(taxonomy.HeaderName.Replace("newline", "&lt;br/&gt;"))))</div>
+                    }
+                }
+            </div>
+            @{
+                foreach (var group in Model.TaxonomyAssociationGroupModelData.TAGTAData)
+                {
+                    <div class="cssTAGDGroupNamePlaceHolder">
+                        <div class="td cssTAGDGroupNameText"><span>@(Html.Raw(HttpUtility.HtmlDecode((group.Name))))</span></div>
+                        @foreach (var taxonomy in Model.TaxonomyAssociationGroupModelData.DocumentTypeHeaders)
+                        {
+                            if (taxonomy.VerticalMarketID != "XBRL" || Model.ShowXBRLInLandingPage)
+                            {
+                                <div class="td"></div>
+                            }
+                        }
+                    </div>
+
+                        int rowNum = 0;
+                        string documentLinkURL = "";
+                        foreach (var taxonomy in group.TaxonomyAssociationData)
+                        {
+                            if (rowNum % 2 == 0)
+                            {
+                                <div class="cssTAGDUnderlyingFundDocumentGridItem">
+                                    <div title="@(taxonomy.TaxonomyDescriptionOverride)" class="td cssTAGDUnderlyingFundDocumentGridItemFundNameColumn @(taxonomy.TaxonomyCssClass)">@(taxonomy.TaxonomyName)</div>
+                                    @foreach (var documentType in Model.TaxonomyAssociationGroupModelData.DocumentTypeHeaders)
+                                    {
+                                        if (documentType.VerticalMarketID != "XBRL" || Model.ShowXBRLInLandingPage)
+                                        {
+                                            <div class="td cssTAGDUnderlyingFundDocumentGridItemDocTypeColumn">
+                                                @if (taxonomy.DocumentTypes.Exists(p => p.DocumentTypeId == documentType.DocumentTypeId))
+                                                {
+                                                    if (documentType.VerticalMarketID == "XBRL" && Model.DisplayXBRLInNewTAB)
+                                                    {
+                                                        documentLinkURL = Url.Action("XBRL",
+                                                                                    new
+                                                                                    {
+                                                                                        externalID = taxonomy.TaxonomyAssociationID,
+                                                                                        isInternalTAID = true,
+                                                                                        site = Model.SiteName,
+                                                                                        isProofing = Model.IsProofing == 1 ? "True" : ""
+                                                                                    });
+                                                    }
+                                                    else
+                                                    {
+                                                        documentLinkURL = Url.Action("TaxonomySpecificDocumentFrame",
+                                                                                    new
+                                                                                    {
+                                                                                        externalID1 = taxonomy.TaxonomyAssociationID,
+                                                                                        externalID2 = documentType.DocumentTypeId,
+                                                                                        isInternalTAID = true,
+                                                                                        site = Model.SiteName,
+                                                                                        isProofing = Model.IsProofing == 1 ? "True" : ""
+                                                                                    });
+                                                    }
+
+                                                    <a title="@(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeDescriptionOverride)" class="cssLinks" target="_blank" href="@(documentLinkURL)">
+                                                        @if (documentType.VerticalMarketID == "XBRL")
+                                                        {
+                                                            <div class="cssXBRLLinkImage">
+                                                                <div class="cssXBRLLinkText">
+                                                                    @(Html.Raw(HttpUtility.HtmlDecode(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeLinkText.Replace("newline", "&lt;br/&gt;"))))
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            <div class="cssDocumentTypeLinkImage">
+                                                                <div class="cssDocumentTypeLinkText">
+                                                                    @(Html.Raw(HttpUtility.HtmlDecode(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeLinkText.Replace("newline", "&lt;br/&gt;"))))
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <div class="cssDocumentTypeLinkNAImage">
+                                                        <div class="cssDocumentTypeLinkNAText">
+                                                            @(Html.Raw(HttpUtility.HtmlDecode(Model.DocumentNotAvailableText)))
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="cssTAGDUnderlyingFundDocumentGridAlternateItem">
+                                    <div title="@(taxonomy.TaxonomyDescriptionOverride)" class="td cssTAGDUnderlyingFundDocumentGridAlternateItemFundNameColumn @(taxonomy.TaxonomyCssClass)">@(taxonomy.TaxonomyName)</div>
+                                    @foreach (var documentType in Model.TaxonomyAssociationGroupModelData.DocumentTypeHeaders)
+                                    {
+                                        if (documentType.VerticalMarketID != "XBRL" || Model.ShowXBRLInLandingPage)
+                                        {
+                                            <div class="td cssTAGDUnderlyingFundDocumentGridAlternateItemDocTypeColumn">
+                                                @if (taxonomy.DocumentTypes.Exists(p => p.DocumentTypeId == documentType.DocumentTypeId))
+                                                {
+                                                    if (documentType.VerticalMarketID == "XBRL" && Model.DisplayXBRLInNewTAB)
+                                                    {
+                                                        documentLinkURL = Url.Action("XBRL",
+                                                                                    new
+                                                                                    {
+                                                                                        externalID = taxonomy.TaxonomyAssociationID,
+                                                                                        isInternalTAID = true,
+                                                                                        site = Model.SiteName,
+                                                                                        isProofing = Model.IsProofing == 1 ? "True" : ""
+                                                                                    });
+                                                    }
+                                                    else
+                                                    {
+                                                        documentLinkURL = Url.Action("TaxonomySpecificDocumentFrame",
+                                                                                    new
+                                                                                    {
+                                                                                        externalID1 = taxonomy.TaxonomyAssociationID,
+                                                                                        externalID2 = documentType.DocumentTypeId,
+                                                                                        isInternalTAID = true,
+                                                                                        site = Model.SiteName,
+                                                                                        isProofing = Model.IsProofing == 1 ? "True" : ""
+                                                                                    });
+                                                    }
+
+                                                    <a title="@(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeDescriptionOverride)" class="cssLinks" target="_blank" href="@(documentLinkURL)">
+                                                        @if (documentType.VerticalMarketID == "XBRL")
+                                                        {
+                                                            <div class="cssXBRLLinkImage">
+                                                                <div class="cssXBRLLinkText">
+                                                                    @(Html.Raw(HttpUtility.HtmlDecode(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeLinkText.Replace("newline", "&lt;br/&gt;"))))
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                        else
+                                                        {
+                                                            <div class="cssDocumentTypeLinkImage">
+                                                                <div class="cssDocumentTypeLinkText">
+                                                                    @(Html.Raw(HttpUtility.HtmlDecode(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeLinkText.Replace("newline", "&lt;br/&gt;"))))
+                                                                </div>
+                                                            </div>
+                                                        }
+                                                    </a>
+                                                }
+                                                else
+                                                {
+                                                    <div class="cssDocumentTypeLinkNAImage">
+                                                        <div class="cssDocumentTypeLinkNAText">
+                                                            @(Html.Raw(HttpUtility.HtmlDecode(Model.DocumentNotAvailableText)))
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            }
+                            rowNum++;
+                        }
+                }
+            }
+        </div>
+    </div>

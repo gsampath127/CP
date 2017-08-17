@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="urlRewrite.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:element name="urlRewrite" type="urlRewrite" />
+  <xs:element name="urlRewrites" type="urlRewrites" />
+  <xs:complexType name="urlRewrite">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a url rewrite rule consisting of a regular expression match (with named groups) as well as a format pattern with group named replacement tokens.
+        Tokens take on the format of {groupname}.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="systemEntity">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element name="matchPattern" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>
+                Defines the string regular expression pattern used to match urls for transformation.
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="rewriteFormat" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>
+              Defines the new url format the old url will be transformed into.
+              Should include grouped matches from the regular expression.
+            </xs:documentation>
+          </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="urlRewrites">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of urlRewrite entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="urlRewrite" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

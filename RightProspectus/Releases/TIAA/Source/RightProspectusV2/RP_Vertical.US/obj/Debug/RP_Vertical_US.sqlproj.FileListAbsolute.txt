@@ -1,0 +1,3 @@
+D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RP_Vertical.US\bin\Debug\RP_Vertical_US.dacpac
+D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RP_Vertical.US\obj\Debug\RP_Vertical.US.dll
+D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RP_Vertical.US\obj\Debug\RP_Vertical.US.pdb

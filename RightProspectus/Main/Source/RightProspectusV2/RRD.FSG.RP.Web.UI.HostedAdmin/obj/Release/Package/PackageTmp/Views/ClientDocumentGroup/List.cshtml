@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("List", "Site")">@ViewData["SelectedCustomer"]</a></li>
+                <li class="active">Client Document Group</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Client Document Group<span id="ClientDocumentGroupPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+        <div class="col-sm-3 text-right">
+            <a class="btn btn-success btn-sm m-top-20 pull-right-xs-max" id="btnAddNewClientDocumentGroup">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Client Document Group
+            </a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="NameCombo" type="text" class="form-control" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="ParentCombo" type="text" class="form-control" />
+
+            </div>
+        </div>
+    </div>
+
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="btnSearchClientDocumentGroup" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="clientDocumentGroupClearFilters"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="clientDocumentGroupGridwithSortingButtons">
+
+        <div id="clientDocumentGroupContainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="clientDocumentGroupGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dvLoadAllClientDocumentGroup" data-request-url="@Url.Action("GetAllClientDocumentGroupDetails", "ClientDocumentGroup")"></div>
+<div id="dvNameComboLoad" data-request-url="@Url.Action("GetName", "ClientDocumentGroup")"></div>
+<div id="dvParentComboLoad" data-request-url="@Url.Action("GetParent", "ClientDocumentGroup")"></div>
+<div id="dvEditClientDocumentGroup" data-request-url="@Url.Action("Edit", "ClientDocumentGroup")"></div>
+<div id="dvDisable" data-request-url="@Url.Action("DeleteClientDocumentGroup", "ClientDocumentGroup")"></div>
+
+
+<script id="alertDisable" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Client Document Group?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+
+<script src="~/Scripts/HostedAdmin/ClientDocumentGroupSettings.js"></script>
+<div id="dvClientDocumentGroupPopOver" class="dispNone">
+    Client Document Group page displays the <b>Client Document Groups</b> in RightProspectus.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Client Document Group</li>
+        <li>EDIT Existing Client Document Group</li>
+        <li>SEARCH Client Document Group based on Name and Parent Document Group</li>
+        <li>DELETE Client Document Group</li>
+    </ul>
+    <br />
+</div>
+

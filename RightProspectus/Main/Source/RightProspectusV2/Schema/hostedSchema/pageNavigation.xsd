@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="pageNavigation.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:element name="pageNavigation" type="pageNavigation" />
+  <xs:element name="pageNavigations" type="pageNavigations" />
+  <xs:complexType name="pageNavigation">
+    <xs:annotation>
+      <xs:documentation>
+        Defines navigation xml for a page entity, bound to a specific key identifier.
+      </xs:documentation>
+    </xs:annotation>    
+    <xs:complexContent>
+      <xs:extension base="navigationEntity" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="pageNavigations">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of pageNavigation entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="pageNavigation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

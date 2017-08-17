@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="c95b6883-0372-4a72-ae75-b152e53b2b73" ChangeDateTime="10/16/2015 21:39:33">
+    <Property Name="ElementName" Value="[dbo].[RequestMaterialPrintProsDetail].[TaxonomyName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RequestMaterialPrintProsDetail]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TaxonomyNameAtTimeOfDelivery" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8a8bbf6f-eb2e-4324-8aa7-45f3f86219b8" ChangeDateTime="10/16/2015 21:39:53">
+    <Property Name="ElementName" Value="[dbo].[RequestMaterialPrintProsDetail].[TaxonomyNameAtTimeOfDelivery]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[RequestMaterialPrintProsDetail]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TaxonomyNameAtDelivery" />
+  </Operation>
+</Operations>

@@ -1,0 +1,76 @@
+﻿
+<div class="navbar navbar-default navbar-fixed-top">
+
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="selectClient" style="margin-left:5em;">BCS<span style="margin-left:1em;">{{CurrentUser.SelectedClient}}</span></a>
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-main">
+
+        <ul class="nav navbar-nav" style="margin-right:3em;float:right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" style="cursor: pointer;" data-toggle="dropdown"  id="admin-menu">Profile & Settings<span class="caret"></span></a>
+                <ul class="dropdown-menu navbar-inverse" aria-labelledby="admin-menu">
+                    <li><a ui-sref="Users">Manage Users</a></li>
+                    <li><a ui-sref="profile">Profile</a></li>
+                    <li><a ui-sref="login({logout: true})"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav" style="float:right;" ng-show="CurrentUser.SelectedClient.length > 0">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;"id="admin-menu">Reports<span class="caret"></span></a>
+                <ul class="dropdown-menu navbar-inverse" aria-labelledby="admin-menu">
+                    <li ng-show="(CurrentUser.SelectedClient.length>0) && (CurrentUser.SelectedClient=='Transamerica' || CurrentUser.SelectedClient=='AllianceBernstein')"><a ui-sref="CUSIP">CUSIP - Report</a></li>
+                    <li ng-show="(CurrentUser.SelectedClient.length>0) && (CurrentUser.SelectedClient=='Transamerica' || CurrentUser.SelectedClient=='AllianceBernstein')"><a ui-sref="WATCHLIST">WatchList</a></li>
+                    <li ng-show="(CurrentUser.SelectedClient.length>0) && (CurrentUser.SelectedClient=='Transamerica' || CurrentUser.SelectedClient=='AllianceBernstein' || CurrentUser.SelectedClient=='GMS')"><a ui-sref="CUSTOMERDOCUPDATE">Customer - Doc Update</a></li>
+                    <li ng-show="CurrentUser.SelectedClient.length>0 && CurrentUser.SelectedClient!='TRP'"><a ui-sref="GATEWAYDOCUPDATE">Gateway - Doc Update</a></li>
+                    <li ng-show="(CurrentUser.SelectedClient.length>0) && (CurrentUser.SelectedClient=='Transamerica' || CurrentUser.SelectedClient=='AllianceBernstein')"><a ui-sref="CustomerDocUpdateDetail">Customer - Doc Update (Details)</a></li>
+                    <li ng-show="CurrentUser.SelectedClient.length>0 && CurrentUser.SelectedClient!='TRP'"><a ui-sref="SLINK">SLINK - Report</a></li>
+                    <li ng-show="CurrentUser.SelectedClient.length>0 && CurrentUser.SelectedClient!='TRP'"><a ui-sref="LiveUpdate">Live Update</a></li>
+                    <li ng-show="CurrentUser.SelectedClient.length>0 && CurrentUser.SelectedClient!='TRP'"><a ui-sref="FullfillmentReport">Fullfillment Info</a></li>
+
+                    <li ng-show="(CurrentUser.SelectedClient.length>0  && CurrentUser.SelectedClient=='TRP')"><a ui-sref="TRPDocumentStatus">Document(s) Status</a></li>
+                    <li ng-show="(CurrentUser.SelectedClient.length>0  && CurrentUser.SelectedClient=='TRP')"><a ui-sref="TRPMissingDocs">Missing - Doc Info</a></li>
+                    <li ng-show="(CurrentUser.SelectedClient.length>0  && CurrentUser.SelectedClient=='TRP')"><a ui-sref="TRPMissingRPCusip">Missing - CUSIP(s) in RP</a></li>
+                    <li ng-show="(CurrentUser.SelectedClient.length>0  && CurrentUser.SelectedClient=='TRP')"><a ui-sref="TRPCustomerFLT">Customer-FLT</a></li>
+                    <li ng-show="(CurrentUser.SelectedClient.length>0  && CurrentUser.SelectedClient=='TRP')"><a ui-sref="TRPCustomerDocs">Customer-Docs</a></li>
+                    <li ng-show="(CurrentUser.SelectedClient.length>0  && CurrentUser.SelectedClient=='TRP')"><a ui-sref="TRPBlankFLTCUSIP">Balnk FLT CUSIP Details</a></li>
+
+                    <li class="divider">Internal Ops Process</li>
+                    <li ng-show="CurrentUser.SelectedClient.length>0 && CurrentUser.SelectedClient!='TRP'"><a ui-sref="DailyUpdateReport">Daily Update Report</a></li>
+                    <li ng-show="CurrentUser.SelectedClient.length>0 && CurrentUser.SelectedClient!='TRP'"><a ui-sref="MissingReport">Missing Report</a></li>
+
+                    <li ng-show="CurrentUser.SelectedClient.length>0 && CurrentUser.SelectedClient!='TRP'"><a ui-sref="securityTypes">securityTypes</a></li>
+                    <li ng-show="CurrentUser.SelectedClient.length>0 && CurrentUser.SelectedClient!='TRP'"><a ui-sref="EonlineFeed">EonlineFeed</a></li>
+                    <li ng-show="CurrentUser.SelectedClient.length>0 && CurrentUser.SelectedClient!='TRP'"><a ui-sref="edgarOnlineData">edgarOnlineData</a></li>
+                    <li ng-show="CurrentUser.SelectedClient.length>0 && CurrentUser.SelectedClient!='TRP'"><a ui-sref="rpMissingCusip">rpMissingCusip</a></li>
+
+                </ul>
+            </li>
+        </ul>
+        
+    </div>
+
+
+</div>
+<style>
+    .navbar-header .navbar-brand {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .navbar-nav > li > a {
+        font-weight: 600;
+    }
+
+    .navbar .dropdown-menu > li > a, .navbar .dropdown-menu > li > a {
+        font-size: 13px;
+        font-weight: 500 !important;
+    }
+</style>

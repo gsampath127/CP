@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="taxonomyLevelExternalId.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:include schemaLocation="externalId.xsd" />
+  <xs:element name="taxonomyLevelExternalId" type="taxonomyLevelExternalId" />
+  <xs:element name="taxonomyLevelExternalIds" type="taxonomyLevelExternalIds" />
+  <xs:complexType name="taxonomyLevelExternalId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines an external identifier for a vertical market taxonomy level entity.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="entity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element ref="externalIds" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="level" type="level" use="required" />
+        <xs:attribute name="marketId" type="marketId" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="taxonomyLevelExternalIds">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of taxonomyLevelExternalId entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="taxonomyLevelExternalId" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

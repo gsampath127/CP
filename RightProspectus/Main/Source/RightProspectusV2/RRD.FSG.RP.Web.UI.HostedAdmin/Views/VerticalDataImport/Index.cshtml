@@ -1,0 +1,252 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+<link href="~/Content/Kendo/kendo-latest.common.min.css" rel="stylesheet" />
+<link href="~/Content/Kendo/kendo-latest.bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Kendo/kendo-latest.dataviz.bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Kendo/kendo-latest.dataviz.default.min.css" rel="stylesheet" />
+@Scripts.Render("~/bundles/VerticalDataImport")
+@Scripts.Render("~/bundles/bootstrap")
+
+<script src="~/Scripts/jquery.bootstrap.wizard.js"></script>
+<script src="~/Scripts/prettify.js"></script>
+<script src="~/Scripts/HostedAdmin/VerticalDataImport/MainSettings.js"></script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li ><a href="@Url.Action("List", "Site")">@ViewData["SelectedCustomer"]</a> </li>
+                <li class="active">Site - Data Import</li>
+
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Site - Data Import<span id="VerticalImportUIPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+        </div>
+    </div>
+    <section id="wizard">
+        <div id="rootwizard">
+            <div class="col-xs-3">
+                <ul class="nav nav-tabs tabs-left sideways">
+                    <li><a href="#tab1" data-toggle="tab" id="Site">Select Site</a></li>
+                    <li><a href="#tab2" data-toggle="tab" id="DocumentType">Add/Edit Document Types - Site</a></li>
+                    <li><a href="#tab3" data-toggle="tab" id="ImportMarketId">Add/Edit CUSIPs</a></li>
+                    <li><a href="#tab4" data-toggle="tab" id="ImportMarketIdCustomer">Add/Edit Underlying Funds</a></li>
+                    <li><a href="#tab5" data-toggle="tab" id="ImportProduct">Add/Edit Product to Fund Association</a></li>
+                    <li><a href="#tab6" data-toggle="tab" id="MarketIdLevel">Add/Edit Document Types - CUSIPs</a></li> 
+                    <li><a href="#tab7" data-toggle="tab" id="TaxonomyGroups">Add/Edit Groups</a></li> 
+                    <li><a href="#tab8" data-toggle="tab" id="TaxonomyGroupHierarchy">Group Mapping</a></li> 
+                    <li><a href="#tab9" data-toggle="tab" id="TaxonomyGroupFunds">Add/Edit Group Funds</a></li> 
+                    <li><a href="#tab10" data-toggle="tab" id="Footnotes">Add/Edit Footnotes - CUSIPs</a></li> 
+                    <li><a href="#tab11" data-toggle="tab" id="ApproveProffing">Review/Proof Site</a></li>
+
+                </ul>
+            
+            </div>
+            <div class="col-xs-9">
+                <div class="tab-content">
+                    <ul class="pager wizard" style="margin-top:0">
+                        <li class="previous first" style="display:none;"><a href="#">First</a></li>
+                        <li class="previous"><a href="#">Previous</a></li>
+                        <li class="next last" style="display:none;"><a href="#">Last</a></li>
+                        <li class="next"><a href="#">Next</a></li>
+                    </ul>
+
+                    <div class="tab-pane" id="tab1">
+                        @Html.Partial("SitePartial")
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                        @Html.Partial("DocumentTypePartial")
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                        @Html.Partial("ImportMarketIdPartial")
+                    </div>
+                    <div class="tab-pane" id="tab4">
+                        @Html.Partial("ImportMarketIdCustomerPartial")
+                    </div>
+                    <div class="tab-pane" id="tab5">
+                       @Html.Partial("ImportProduct")
+                    </div>
+                    <div class="tab-pane" id="tab6">
+                        @Html.Partial("MarketLevelDocumentTypePartial")
+                    </div>
+                    <div class="tab-pane" id="tab7">
+                        @Html.Partial("TaxonomyGroupPartial")
+                    </div>
+                    <div class="tab-pane" id="tab8">
+                        @Html.Partial("TaxonomyGroupMappingAndOrdering")
+                    </div>
+                    <div class="tab-pane" id="tab9">
+                        @Html.Partial("TaxonomyGroupFundsPartial")
+                    </div>
+                    <div class="tab-pane" id="tab10">
+                        @Html.Partial("FootnotePartial")
+                    </div>
+                    <div class="tab-pane" id="tab11">
+                        @Html.Partial("ApproveProofingPartial")
+                    </div>
+
+
+                    <ul class="pager wizard">
+                        <li class="previous first" style="display:none;"><a href="#">First</a></li>
+                        <li class="previous"><a href="#">Previous</a></li>
+                        <li class="next last" style="display:none;"><a href="#">Last</a></li>
+                        <li class="next"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+<div id="dvVerticalImportUIPopOver" class="dispNone">
+    Vertical Import displays all the available URLs for selected Client in RightProspectus system.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New URL</li>
+        <li>EDIT Existing URL</li>
+        <li>SEARCH URL based on Pattern Name</li>
+        <li>DELETE URL</li>
+    </ul>
+    <br />
+</div>
+<script id="confirmSave" type="text/x-kendo-template">
+    <p class="message">Do you want to Save these Changes ?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Save</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+<span id="popupNotification"></span>
+<style>
+    
+    .container, .container-fluid {
+        min-width: 1300px !important;
+    }
+
+    .tab-pane {
+        min-height: 300px !important;
+        border: solid 1px #ddd;
+        padding: 20px;
+        background-color: #fafafa;
+    }
+
+    .tabs-left {
+        border-bottom: none;
+        padding-top: 2px;
+        border: 1px solid #ddd;  
+        border-radius:10px      
+    }
+
+        .tabs-left > li {
+            float: none;
+            margin-bottom: 2px;
+            margin-right: 1px;
+        }
+
+            .tabs-left > li.active > a,
+            .tabs-left > li.active > a:hover,
+            .tabs-left > li.active > a:focus {
+                border-bottom-color: #ddd;
+                border-right-color: transparent;
+                color: white !important;
+                background-color: #08c !important;
+                border-radius:10px   
+            }
+
+            .tabs-left > li > a {
+                margin-right: 0;
+                display: block;
+                color: #008cba !important;
+                background-color: white !important;
+                border-radius:10px   
+            }
+
+                .tabs-left > li > a:hover {
+                    color: white !important;
+                    background-color: #286090 !important;
+                    border-radius:10px   
+                }                
+
+    .nav-tabs > li > a {
+        background-color: #ffffff;
+        color: #222;
+    }
+
+    .pager .next > a, .pager li > span {
+        display: inline-block;
+        padding: 5px 14px;
+        color: #fff;
+        background-color: #08c;
+        border: 1px solid #ddd;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+    }
+
+    .pager .previous > a, .pager li > span {
+        display: inline-block;
+        padding: 5px 14px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+    }
+
+    .pager .next > a:focus, .pager li > a:hover {
+        text-decoration: none;
+        background-color: #08c !important;
+    }
+
+    .pager .next > a, .pager .next > span {
+        text-decoration: none;
+        background-color: #08c !important;
+    }
+
+    .tableFixedWidth {
+        width: 100% !important;
+    }
+
+    .k-grid tbody tr {
+        cursor: move;
+    }
+
+    .col-xs-3 {
+        padding-left: 0;
+    }
+
+    .k-header {
+        text-align: left !important;
+    }
+
+    .k-grid-save-changes, .k-grid-add, .k-grid-save-changes.k-state-focused {
+        color: #fff !important;
+        background-color: #08c !important;
+    }
+
+        .k-grid-add:hover, .k-grid-save-changes:hover {
+            color: white !important;
+            background-color: #286090 !important;
+        }
+        
+</style>

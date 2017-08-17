@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_SiteConfigurationLayout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<script src="~/Scripts/HostedAdmin/PageNavigation.js"></script>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                @*<li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>*@
+                <li><a href="@Url.Action("List", "Site")">Sites</a></li>
+                <li><a href="@Url.Action("SiteConfiguration", "Site")">@ViewData["SelectedSite"]</a></li>
+                <li class="active">Page Navigation</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Page Navigation<span id="pageNavigationPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+        <div class="col-sm-3 text-right">
+            <a class="btn btn-success btn-sm m-top-20 pull-right-xs-max" id="btnAddNewPageNavigation">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Page Navigation
+            </a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="NavigationKeyCombo" class="form-control" type="text" />
+
+        </div>
+            </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="PageNameCombo" type="text" class="form-control" />
+
+        </div>
+           
+    </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="VersionCombo" type="text" class="form-control" />
+
+            </div>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="btnSearchPageNavigation" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="pageNavigationClearFilters"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="pageNavigationGridwithSortingButtons">
+
+        <div id="pageNavigationcontainerDiv" class="box containerDivInLine">
+        </div>
+            <div id="GridContainer" class="ScrollTable">
+            <div id="pageNavigationGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="dvLoadAllPageNavigation" data-request-url="@Url.Action("GetAllPageNavigationDetails", "PageNavigation")"></div>
+<div id="dvNavigationKeyComboLoad" data-request-url="@Url.Action("GetNavigationKey", "PageNavigation")"></div>
+<div id="dvPageNameComboLoad" data-request-url="@Url.Action("GetPageNames", "PageNavigation")"></div>
+<div id="dvVersionComboLoad" data-request-url="@Url.Action("GetVersions", "PageNavigation")"></div>
+<div id="dvEditPageNavigation" data-request-url="@Url.Action("EditPageNavigation", "PageNavigation")"></div>
+<div id="dvDisablePageNavigation" data-request-url="@Url.Action("DisablePageNavigation", "PageNavigation")"></div>
+<div id="dvPageNavigationPopOver" class="dispNone">
+    Page Navigation page displays all the larger text blocks specific to pages within the template, such as headers and footers..
+    <br />
+    <br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Page Navigation</li>
+        <li>EDIT Existing Page Navigation</li>
+        <li>SEARCH Page Navigation based on Navigation Key, Page Name, Version</li>
+        <li>DELETE Page Navigation</li>
+    </ul>
+    <br />
+</div>
+
+<script id="alertDisablePageNavigation" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Page Navigation?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+

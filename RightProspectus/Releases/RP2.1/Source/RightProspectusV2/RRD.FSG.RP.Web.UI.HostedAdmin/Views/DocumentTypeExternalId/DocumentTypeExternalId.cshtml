@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewBag.Title = "DocumentTypeExternalId";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>
+                <li class="active">Document Type ExternalId</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Document Type ExternalId<span id="DocTypeExternalPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+        <div class="col-sm-3 text-right">
+            <a class="btn btn-success btn-sm m-top-20 pull-right-xs-max" id="btnAddNewPageText">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Document Type ExternalId
+            </a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="DocumentTypeCombo" class="form-control" type="text" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="ExternalIdCombo" type="text" class="form-control" />
+
+            </div>
+        </div>      
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="btnSearchDocTypeExternalId" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="docTypeExternalIdClearFilters"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="docTypeExternalIdGridwithSortingButtons">
+
+        <div id="docTypeExternalIdcontainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="docTypeExternalIdGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="dvLoadAllDocumentTypeExtrenalId" data-request-url="@Url.Action("GetAllDocumentTypeExtrenalIdDetails", "DocumentTypeExternalId")"></div>
+<div id="dvDocumentTypeComboLoad" data-request-url="@Url.Action("GetDocumentTypes", "DocumentTypeExternalId")"></div>
+<div id="dvExternalIdComboLoad" data-request-url="@Url.Action("GetExternalIds", "DocumentTypeExternalId")"></div>
+<div id="dvDisableDocumentTypeExtrenalId" data-request-url="@Url.Action("DisableDocumentTypeExtrenalId", "DocumentTypeExternalId")"></div>
+<div id="dvEditDocumentTypeExternalId" data-request-url="@Url.Action("EditDocumentTypeExternalId", "DocumentTypeExternalId")"></div>
+
+
+<div id="dvDocumentTypeExtrenalIdPopOver" class="dispNone">
+    Document Type External Id page displays all the available Document Type External Ids for selected Client in RightProspectus system.
+    <br />
+    <br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Doc Type External ID</li> 
+        <li>EDIT Existing Doc Type External ID</li>
+        <li>SEARCH Doc Type External ID based on Document Type and External ID</li>
+        <li>DELETE Doc Type External ID</li>
+    </ul>
+    <br />
+</div>
+
+
+<script id="alertDisableDocTypeExternalId" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Document Type External?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+
+<script src="~/Scripts/HostedAdmin/DocumentTypeExternalIdSettings.js"></script>
+

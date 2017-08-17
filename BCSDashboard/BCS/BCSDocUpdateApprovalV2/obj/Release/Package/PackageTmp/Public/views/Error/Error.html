@@ -1,0 +1,29 @@
+﻿<div class="container">
+    <div style="margin-top:50px;" class="mainbox col-md-5 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info" style="border-color: black;">
+            <div class="panel-heading" style="background-color: black;border-color: black;">
+                <div class="panel-title">Error</div>
+            </div>
+            <div style="padding-top:30px" class="panel-body">
+                <div>
+                    <div class="col-sm-12 controls">
+                        {{errorDescription}}
+                    </div>
+                    <div class="col-sm-12 controls" ng-if="loginButton">
+                        Click here to
+                        <a ui-sref="login">
+                            Login
+                        </a>
+                    </div>
+                    <div class="col-sm-12 controls" ng-if="!loginButton">
+                        Click
+                        <a ng-click="GoBack()">
+                            here
+                        </a>
+                        to go back
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

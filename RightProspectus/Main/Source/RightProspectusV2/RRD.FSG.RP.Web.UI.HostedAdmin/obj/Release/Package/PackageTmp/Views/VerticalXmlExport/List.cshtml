@@ -1,0 +1,120 @@
+﻿@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("List", "Site")">@ViewData["SelectedCustomer"]</a></li>
+                <li class="active">Vertical Xml Export</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Vertical XML Export Jobs<span id="verticalXmlExportPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+
+        <div class="col-sm-3 newAddButton">
+            <a id="newVerticalXmlExport" class="btn btn-success btn-sm m-top-5 pull-right-xs-max">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Add New Job
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    @*-----------------------------------------------------SearchParameters--------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+                <div class="form-group">
+                    <input id="txtFromExportDate" type="text" class="form-control datepicker" placeholder="From Date" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <div class="form-group">
+                    <input id="txtToExportDate" type="text" class="form-control datepicker" placeholder="To Date" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <div class="form-group">
+                    <input id="comboExportedBy" type="text" class="form-control" placeholder="Imported By" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="searchVerticalXmlExport" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="clearVerticalXmlExportSearch"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    <div>
+        <script id="divVerticalXmlExportValidations" type="text/x-kendo-template">
+        </script>
+    </div>
+    <div id="footer" class="layoutFooter"></div>
+    @*----------------------------------------------------------GRID-------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="verticalExportGridwithSortingButtons">
+        <div id="verticalXmlExportContainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="verticalXmlExportGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div id="dvLoadAllVerticalXmlExport" data-request-url="@Url.Action("Search", "VerticalXmlExport")"></div>
+<div id="dvExportedByComboLoad" data-request-url="@Url.Action("GetUsers", "VerticalXmlExport")"></div>
+<div id="dvAddVerticalXmlExport" data-request-url="@Url.Action("Add", "VerticalXmlExport")"></div>
+<div id="dvGetExportedXml" data-request-url="@Url.Action("GetExportedXml", "VerticalXmlExport")"></div>
+
+<div id="dvVerticalXmlExportPopOver" class="dispNone">
+    Vertical Xml Export page displays all the Vertical Xml Export Jobs and its Status.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Vertical Data Export Job to the Queue</li>
+        <li>View The Status Of Existing Jobs</li>
+        <li>SEARCH based on Job Date and Imported By.</li>
+        <li>View The Details Of Completed Jobs and download the Xml</li>
+    </ul>
+</div>
+<div id="dvDownloadXmlPopOver" class="dispNone">
+    Download Xml
+</div>
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+<script src="~/Scripts/HostedAdmin/VerticalXmlExportSettings.js"></script>

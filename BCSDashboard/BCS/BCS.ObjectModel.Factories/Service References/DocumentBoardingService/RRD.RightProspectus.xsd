@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://RRD.RightProspectus" elementFormDefault="qualified" targetNamespace="http://RRD.RightProspectus" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/RRD.RightProspectus" />
+  <xs:element name="Download">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RRD.RightProspectus" minOccurs="0" name="request" nillable="true" type="q1:OnBoardingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RRD.RightProspectus" minOccurs="0" name="DownloadResult" nillable="true" type="q2:OnBoardingDownloadCompleteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadAndReview">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RRD.RightProspectus" minOccurs="0" name="request" nillable="true" type="q3:OnBoardingRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DownloadAndReviewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RRD.RightProspectus" minOccurs="0" name="DownloadAndReviewResult" nillable="true" type="q4:OnBoardingDownloadReviewResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteDownloadAndReview">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RRD.RightProspectus" minOccurs="0" name="request" nillable="true" type="q5:ReviewCompleteRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteDownloadAndReviewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RRD.RightProspectus" minOccurs="0" name="CompleteDownloadAndReviewResult" nillable="true" type="q6:OnBoardingDownloadCompleteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPDFAndUpdateBookMarksView">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FileNameWithPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DocumentTypeID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPDFAndUpdateBookMarksViewResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/RRD.RightProspectus" minOccurs="0" name="CheckPDFAndUpdateBookMarksViewResult" nillable="true" type="q7:PDFWorkflowStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBookMarkActionFromUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FileNameWithPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BookMarkPDF" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBookMarkActionFromUserResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

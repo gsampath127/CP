@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="siteNavigation.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:element name="siteNavigation" type="siteNavigation" />
+  <xs:element name="siteNavigations" type="siteNavigations" />
+  <xs:complexType name="siteNavigation">
+    <xs:annotation>
+      <xs:documentation>
+        Defines navigation xml for a site entity, bound to a specific key identifier.
+        If pageId is empty or not present, entity is global to the site.
+        If pageId is present, entity is a page specific override for the site.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="navigationEntity">
+        <xs:attribute name="pageId" type="pageId" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="siteNavigations">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of siteNavigation entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="siteNavigation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

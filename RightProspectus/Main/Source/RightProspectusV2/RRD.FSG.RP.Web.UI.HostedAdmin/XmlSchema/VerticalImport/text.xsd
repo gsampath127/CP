@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="text.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+    elementFormDefault="qualified"
+    xmlns="http://rightprospectus.com/hostedSchema"
+    xmlns:mstns="http://rightprospectus.com/hostedSchema"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:element name="text" type="text" />
+  <xs:element name="texts" type="texts" />
+  <xs:complexType name="text">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a text resource associated with an entity. The resource is identifies by a key, along with an optional language-culture identifier for globalization.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="globalizedStringEntity">
+        <xs:attribute name="resourceKey" type="key" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="texts">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of text entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="text" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

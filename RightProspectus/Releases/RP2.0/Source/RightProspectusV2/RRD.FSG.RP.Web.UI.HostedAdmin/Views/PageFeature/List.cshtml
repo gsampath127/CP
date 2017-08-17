@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "PageFeature";
+    Layout = "~/Views/Shared/_SiteConfigurationLayout.cshtml";
+}
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@*<h2>PageFeature</h2>*@
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+@*<script src="~/Scripts/jquery-2.1.4.js"></script>
+<script src="~/Scripts/jquery-2.1.4.min.js"></script>
+
+
+<link href="~/Content/Kendo/kendo.common.min.css" rel="stylesheet" />
+<link href="~/Content/Kendo/kendo.bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Kendo/kendo.dataviz.min.css" rel="stylesheet" />
+<link href="~/Content/Kendo/kendo.dataviz.bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/Kendo/jquery.min.js"></script>
+<script src="~/Scripts/Kendo/angular.min.js"></script>
+<script src="~/Scripts/Kendo/kendo.all.min.js"></script>*@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>
+                <li><a href="@Url.Action("List", "Site")">Sites</a></li>
+                <li><a href="@Url.Action("SiteConfiguration", "Site")">@ViewData["SelectedSite"]</a></li>
+                <li class="active">Page Feature</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Page Feature<span id="pageFeaturePopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+        <div class="col-sm-3 newAddButton">
+            <a id="newPageFeature" class="btn btn-success btn-sm m-top-5 pull-right-xs-max">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Page Feature
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+
+    @*-----------------------------------------------------SearchParameters--------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+                <div class="form-group">
+                    <input id="comboKey" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <div class="form-group">
+                    <input id="comboPageName" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="searchPageFeature" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="clearSearch"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    <div>
+        <br />
+    </div>
+    @*----------------------------------------------------------GRID-------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="GridContainer" class="ScrollTable">
+                <div id="pageFeatureGrid" class="tableFixedWidth">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dvGetPageFeatureKey" data-request-url="@Url.Action("GetPageFeatureKey", "PageFeature")"></div>
+<div id="dvGetPageNames" data-request-url="@Url.Action("GetPageNames", "PageFeature")"></div>
+<div id="dvEditPageFeature" data-request-url="@Url.Action("EditPageFeature", "PageFeature")"></div>
+<div id="dvLoadAllPageFeature" data-request-url="@Url.Action("LoadAllPageFeature", "PageFeature")"></div>
+<div id="dvDeletePageFeature" data-request-url="@Url.Action("DeletePageFeature", "PageFeature")"></div> 
+
+
+<script id="alertDeletePageFeature" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this PageFeature?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+<script src="~/Scripts/HostedAdmin/PageFeatureSettings.js"></script>
+
+
+@*<style>
+    .k-window-titlebar.k-header {
+        background: #275CAB; /*set background to the titlebar*/
+        color: white; /*set color to the titlebar*/
+        font-weight: bold; /*set font-weight to the titlebar*/
+    }
+</style>*@
+
+<div id="dvPageFeaturePopOver" class="dispNone">
+    Page Feature displays all the available page features for selected Client in RightProspectus system.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Page Feature</li>
+        <li>EDIT Existing Page Feature</li>
+        <li>SEARCH Page Features based on Feature Key, Page Name </li>
+        <li>DELETE Page Feature</li>
+    </ul>
+    <br />
+</div>

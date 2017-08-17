@@ -1,0 +1,1 @@
+D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RRD.FSG.RP.Web.UI.HostedAdmin.UnitTests\obj\Debug\RRD.FSG.RP.Web.UI.HostedAdmin.UnitTests.csprojResolveAssemblyReference.cache

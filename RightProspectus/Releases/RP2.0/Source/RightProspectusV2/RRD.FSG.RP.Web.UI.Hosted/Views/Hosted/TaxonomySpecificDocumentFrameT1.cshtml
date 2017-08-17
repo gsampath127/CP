@@ -1,0 +1,105 @@
+﻿@{
+    Layout = null;
+}
+@using RRD.FSG.RP.Web.UI.Hosted
+@model RRD.FSG.RP.Web.UI.Hosted.TaxonomySpecificDocumentFrameViewModel
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=1024, initial-scale=1, min-scale=1, max-scale=1" />
+   
+            @Scripts.Render("~/Scripts/MinJS")
+
+        
+            @Scripts.Render("~/Scripts/HostedEngine/RequestMaterialDialogBoxMinJS")
+           
+            <link href="~/Content/themes/base/dialog.css" rel="stylesheet" />
+            <link href="~/Content/themes/base/theme.css" rel="stylesheet" />
+            <link href="~/Content/themes/base/button.css" rel="stylesheet" />
+            <link href="~/Content/themes/base/core.css" rel="stylesheet" />
+            @Styles.Render("~/Content/RequestMaterialDialogBoxCSS")
+            
+       
+    
+    <link href='https://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css' />
+    <script src="~/Scripts/HostedEngine/TADFSettings.js"></script>
+    <link href="@(Model.BaseURL)SiteTextHandler.ashx?ClientName=@(Model.ClientName)&SiteName=@(Model.SiteName)&Key=cssFile&IsProofing=@(Model.IsProofing)" rel="stylesheet" media="all" />
+    <link href="@(Model.BaseURL)PageTextHandler.ashx?ClientName=@(Model.ClientName)&SiteName=@(Model.SiteName)&Key=@(Model.PageCSSResourceKey)&IsProofing=@(Model.IsProofing)&PageId=@(Model.PageId)" rel="stylesheet" media="all" />
+</head>
+
+
+
+@{
+    if (!Model.IsSinglePdfView || Model.SinglePdfViewShowClientFrame)
+    {
+        <text>
+            <body class="cssTADFBody">
+        </text>
+    }
+    else
+    {
+        <text>
+            <body class="cssTADFSinglePDFBody">
+        </text>
+    }
+}
+<div class="cssTADFMainDiv">
+    @if (!Model.IsSinglePdfView || Model.SinglePdfViewShowClientFrame)
+    {
+        <div class="cssHeaderTable">
+            <div class="cssHeaderTableRow">
+                <div class="cssHeaderTableCell cssClientLogoPlaceHolder">
+                    <div class="cssClientLogo">@(Html.Raw(System.Web.HttpUtility.HtmlDecode(((BaseViewModel)Model).LogoText)))</div>
+                </div>
+
+                <div class="cssHeaderTableCell cssTADFFundName">
+                    @if (Model.DisplayRequestMaterial)
+                    {
+                        <div>
+                            <a href="#" style="font-size:small" onclick="ShowRequestMaterialPopup('@(Model.FundName)')">Request Material</a>
+                        </div>
+                    }
+                    @(Model.FundName)
+                </div>
+            </div>
+        </div>
+    }
+    @if (!Model.IsSinglePdfView)
+    {
+        <div id="TADFDocumentTypeNavMainDiv">
+            <div class="TADFDocumentTypeNavPlaceHolderDiv">
+                @Html.RenderXml(Model.PageNavigationXML, Model.PageNavigationXSLT)
+            </div>
+        </div>
+    }
+    <div id="pnlFrameContainer" class="cssTADFPDFPlaceHolderDiv">
+        <iframe id="docFrame" class="cssTADFPDFFrame"></iframe>
+    </div>
+    <div id="idTADFDocumentNotAvailablePlaceHolderDiv" class="cssTADFDocumentNotAvailablePlaceHolderDiv">
+        <div class="cssTADFDocumentNotAvailableText">
+            @(Html.Raw(System.Web.HttpUtility.HtmlDecode(((BaseViewModel)Model).DocumentNotAvailableText)))
+        </div>
+    </div>
+    <div id="dvRequestMaterialPopUpContent">
+    </div>
+</div>
+
+<div id="dvTrackSiteActivityURL" data-request-url="@Url.Action("TrackSiteActivity", "Hosted")"></div>
+<div id="dvRequestMaterial" data-request-url="@Url.Action("RequestMaterial", "Hosted")"></div>
+<div id="dvRequestMaterialAddEmailDetails" data-request-url="@Url.Action("AddEmailDetails", "Hosted")"></div>
+<div id="dvRequestMaterialSavePrintDetails" data-request-url="@Url.Action("SavePrintDetails", "Hosted")"></div>
+<div id="dvRequestMaterialURL" data-requestmaterial-url="@Url.Action("RequestMaterial", "Hosted", new { customer = Model.ClientName, site = string.IsNullOrWhiteSpace(Model.SiteName) ? null : Model.SiteName, externalID = Model.ExternalID1, isInternalTAID = (Model.IsInternalTAID == 1) ? "True" : "False", isProofing = (Model.IsProofing == 1) ? "True" : "False", requestBatchId = Model.RequestBatchId })"></div>
+<div id="dvXbrlHrefURL" data-xbrlhref-url="@Url.Action("XBRL", new { externalID = Model.TaxonomyAssociationData.TaxonomyAssociationID, isInternalTAID = true, site = Model.SiteName, isProofing = Model.IsProofing == 1 ? "True" : "", requestBatchId = Model.RequestBatchId })"></div>
+<div id="dvToolsURL" data-tools-url="@System.Configuration.ConfigurationManager.AppSettings["toolsUrl"].ToString()"></div>
+<div id="dvHTTPSToolsURL" data-tools-url="@System.Configuration.ConfigurationManager.AppSettings["HTTPStoolsUrl"].ToString()"></div>
+<input type="hidden" value="@(Request.Url.Scheme)" id="hdnISHTTPS" />
+<input type="hidden" value="@(Model.PageLoadPDFURL)" id="hdnPageLoadPDFURL" />
+<input type="hidden" value="@(Model.PageLoadMenuID)" id="hdnPageLoadMenuID" />
+<input type="hidden" value="@(Model.RequestBatchId)" id="hdnRequestBatchId" />
+<div id="dialog" style="display:none;" title="Basic dialog">
+</div>
+</body>
+</html>

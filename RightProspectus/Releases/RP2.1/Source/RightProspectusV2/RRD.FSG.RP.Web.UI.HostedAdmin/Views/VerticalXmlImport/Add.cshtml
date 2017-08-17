@@ -1,0 +1,129 @@
+﻿@model RRD.FSG.RP.Web.UI.HostedAdmin.ViewModels.AddVerticalXmlImportViewModel
+@{
+    ViewBag.Title = "Add New Vertical Xml Import Job";
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=100">
+    <title>RightProspectus</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/Kendo/css")
+    @Scripts.Render("~/bundles/Kendo")
+    <script src="~/Scripts/HostedAdmin/AddVerticalXmlImportSettings.js"></script>
+    <link href="~/Content/RP/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Add", "VerticalXmlImport", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container navigationFullMenu nowrap">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Add Vertical Xml Import</a>
+
+                        <button id="togglebutton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar-popup" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="popup-close" id="closeWindow" href="javascript:window.close();">Close Window</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="main" class="container">
+                @if (Model.InProgressJobCount > 0)
+                {
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-sm-12">
+                                <b>There is already another Import Job running. Please wait for the job to complete..</b>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-12">
+                            <label class="pull-right"><b class="validationMessage">*</b> indicates required field</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                Description:
+                                @Html.TextBoxFor(model => model.ImportDescription, new { @class = "form-control", id = "txtDescription", placeholder = "Import Xml Description..." })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-12">
+                            Upload Import Xml File:
+                            <span class="mandatoryAsterisk">*</span>
+                            <input type="file" name="uploadFile" id="uploadFile" /><br />
+                            <br />
+                            <input type="hidden" value="@ViewData["Success"].ToString()" id="hdnSuccessOrFailedMessage" />
+                        </div>
+                    </div>
+                </div>
+                @if (Model.InProgressJobCount <= 0)
+                {
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-sm-12">
+                                <div class="form-inline">
+                                    <div class="form-group col-sm-2">
+                                        <input type="submit" name="Submit" id="Submit" class="btn btn-primary btnsubmit" value="Upload" />                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div>
+                    <script id="divAddVerticalXmlImportValidations" type="text/x-kendo-template">
+                    </script>
+                </div>
+                <div>
+                    <script id="divSuccessOrFailedMessage" type="text/x-kendo-template">
+                        <p class="message">Vertical Xml Import Job Added Successfully.</p>
+                        <button class="confirm k-button" style="margin:10px">OK</button>
+                    </script>
+                </div>
+                <div>
+                    <script id="divErrorMessage" type="text/x-kendo-template">
+                        <p class="message">Error adding Vertical Xml Import Job. Please upload Valid ImportXML file</p>
+                        @if (ViewBag.XmlValidationErrors != null)
+                        {
+                            <ul>
+                                @foreach (string sError in (List<string>)ViewBag.XmlValidationErrors)
+                                {
+                                    <li>@sError</li>
+                                }
+                            </ul>
+                        }
+                        <button class="confirm k-button" style="margin:10px">OK</button>
+                    </script>
+                </div>
+                <div id="footer" class="layoutFooter"></div>
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿<form novalidate ng-submit="GenerateLiveUpdateReport()">
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9">
+                <p class="pageCaption">
+                    Live Update Reports<span class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp BCSPopOver"
+                                             data-toggle="popover"></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <div class="demo-section k-content">
+
+                        <input type="text" class="k-textbox" ng-model="liveUpdate.Accnt" style="height:30px" placeholder="ACC#:" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input kendo-combo-box k-options='ReportStatusOptions' ng-model="liveUpdate.Status" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <textarea class="k-textbox" ng-model="liveUpdate.CUSIP" style="height:50px" placeholder="CUSIP:"> </textarea>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <textarea class="k-textbox" ng-model="liveUpdate.DocId" style="height:50px" placeholder="Doc Id:"> </textarea>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <input class="btn btn-primary btn-sm clear-after" type="submit" value="Generate">
+                <button class="btn btn-link btn-sm clear-form" type="reset" ng-click="ClearFilters()"><span><u>Clear Filters</u></span></button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+
+
+        <!-----------------------GRID-------------------------->
+        <div ng-show="Show_divCUSIP" id="divCUSIP" style="margin-bottom: 30px; display: table; width: 100%">
+            <div id="divCUSIPCount" style="width: 40%; display: inline-block">
+                <b> CUSIP Details</b>
+                <!--GridLiveUpdateCUSIPDetails-->
+                <div ng-show="ShowGrid_GridLiveUpdateCUSIPDetails" kendo-grid k-options="gridOptions_GridLiveUpdateCUSIPDetails" k-data-source="gridDataSource_GridLiveUpdateCUSIPDetails"></div>
+
+            </div>
+            <div id="divGridLiveUpdateInvalidCUSIPs" style="width: 40%; display: inline-block; float: right">
+                <!--lblGridLiveUpdateInvalidCUSIPs-->                
+                    <label id="lblGridLiveUpdateInvalidCUSIPs" ng-show="ShowGrid_GridLiveUpdateInvalidCUSIPs"><b>Below CUSIPs are not present in {{liveUpdate.clientName}}</b></label>
+               
+                <div ng-show="ShowGrid_GridLiveUpdateInvalidCUSIPs" kendo-grid k-options="gridOptions_GridLiveUpdateInvalidCUSIPs" k-data-source="gridDataSource_GridLiveUpdateInvalidCUSIPs"></div>
+            </div>
+        </div>
+
+        <div ng-show="Show_divDocId" id="divDocId" style="margin-bottom: 30px;display: table;width:100%">
+            <div ng-show="Show_divDocIdsCount" id="divDocIdsCount" style="width: 40%;display: inline-block">
+                <b>Doc Id Details</b>
+                <!--GridLiveUpdateDocIdDetails-->
+                <div ng-show="showGrid_GridLiveUpdateDocIdDetails" kendo-grid k-options="gridOptions_GridLiveUpdateDocIdDetails" k-data-source="gridDataSource_GridLiveUpdateDocIdDetails"></div>
+            </div>
+            <div ng-show="Show_divGridLiveUpdateInvalidDocIds" id="divGridLiveUpdateInvalidDocIds" style="width: 40%;display: inline-block;float:right">
+                <!--lblGridLiveUpdateInvalidDocIds-->
+                    <label id="lblGridLiveUpdateInvalidDocIds" ng-show="ShowGrid_GridLiveUpdateInvalidDocIds"><b>Below Doc Ids are not present in {{liveUpdate.clientName}}</b></label>
+                
+                <!--GridLiveUpdateInvalidDocIds-->
+                <div ng-show="ShowGrid_GridLiveUpdateInvalidDocIds" kendo-grid k-options="gridOptions_GridLiveUpdateInvalidDocIds" k-data-source="gridDataSource_GridLiveUpdateInvalidDocIds">
+                </div>
+
+            </div>
+        </div>
+
+        <!--GridLiveUpdate-->
+        <div ng-show="showGridLiveUpdate" id="GridLiveUpdate" kendo-grid k-options="gridOptions_GridLiveUpdate" k-data-source="gridDataSource_GridLiveUpdate"></div>
+
+        <!-----------------------GRID-------------------------->
+
+    </div>
+
+</form>
+<div id="dvLiveUpdateReportPopOver" class="dispNone">
+    TODO : Write Info on Live Update Reports
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>write info on Live Update reports</li>
+
+    </ul>
+    <br />
+</div>

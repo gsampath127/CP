@@ -1,0 +1,233 @@
+﻿@using RRD.FSG.RP.Web.UI.Hosted
+@using System.Web
+<link href="@(((BaseViewModel)Model).BaseURL)PageTextHandler.ashx?ClientName=@(((BaseViewModel)Model).ClientName)&SiteName=@(((BaseViewModel)Model).SiteName)&Key=@(((BaseViewModel)Model).PageCSSResourceKey)&IsProofing=@(((BaseViewModel)Model).IsProofing)&PageId=@(((BaseViewModel)Model).PageId)" rel="stylesheet" media="all" />
+
+<div id="mainDiv" class="cssTAHDMainDiv">
+    <div class="cssHeaderTable">
+        <div class="cssHeaderTableRow">
+            <div class="cssHeaderTableCell cssClientLogoPlaceHolder">
+                <div class="cssClientLogo">@(Html.Raw(HttpUtility.HtmlDecode(((BaseViewModel)Model).LogoText)))</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cssTAHDProductDetailsMainDiv">
+        <div class="cssTAHDProductHeaderTextDiv">@(Html.Raw(HttpUtility.HtmlDecode(((TaxonomyAssociationHierarchyViewModel)Model).ProductHeaderText)))</div>
+        <div class="cssTAHDProductDocumentGridDiv">
+            <div class="cssTAHDProductDocumentGridHeader">
+                <div class="td cssTAHDProductDocumentGridProductNameColumn">@(Html.Raw(HttpUtility.HtmlDecode(((TaxonomyAssociationHierarchyViewModel)Model).ProductGridProductNameColumnText)))</div>
+                @foreach (var taxonomy in ((TaxonomyAssociationHierarchyViewModel)Model).TaxonomyAssociationHierarchyModelData.ParentHeaders)
+                {
+                    <div class="td cssTAHDProductDocumentGridDocTypeColumn">@(Html.Raw(HttpUtility.HtmlDecode(taxonomy.HeaderName.Replace("newline", "&lt;br/&gt;"))))</div>
+                }
+            </div>
+
+            @foreach (var taxonomy in ((TaxonomyAssociationHierarchyViewModel)Model).TaxonomyAssociationHierarchyModelData.ParentTaxonomyAssociationData)
+            {
+                <div class="cssTAHDProductDocumentGridItem">
+                    <div title="@(taxonomy.TaxonomyDescriptionOverride)" class="td cssTAHDProductDocumentGridItemProductNameColumn @(taxonomy.TaxonomyCssClass)">@taxonomy.TaxonomyName</div>
+                    @foreach (var documentType in ((TaxonomyAssociationHierarchyViewModel)Model).TaxonomyAssociationHierarchyModelData.ParentHeaders)
+                    {
+                        <div class="td cssTAHDProductDocumentGridItemDocTypeColumn">
+                            @if (taxonomy.DocumentTypes.Exists(p => p.DocumentTypeId == documentType.DocumentTypeId))
+                            {
+                                <a class="cssLinks" title="@(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeDescriptionOverride)" target="_blank" href="@Url.Action("TaxonomySpecificDocumentFrame",
+                                                                    new { externalID1 = taxonomy.TaxonomyAssociationID,
+                                                                          externalID2 = documentType.DocumentTypeId,
+                                                                          isInternalTAID = true, site = ((TaxonomyAssociationHierarchyViewModel)Model).SiteName,
+                                                                          isProofing = ((TaxonomyAssociationHierarchyViewModel)Model).IsProofing == 1 ? "True" : ""
+                                                                    })">
+
+                                    <div class="cssDocumentTypeLinkImage">
+                                        <div class="cssDocumentTypeLinkText">
+                                            @(Html.Raw(HttpUtility.HtmlDecode(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeLinkText.Replace("newline", "&lt;br/&gt;"))))
+                                        </div>
+                                    </div>
+                                </a>
+                            }
+                            else
+                            {
+                                <div class="cssTAHDProductDocumentNAText">
+                                    @(Html.Raw(HttpUtility.HtmlDecode(((TaxonomyAssociationHierarchyViewModel)Model).ProductDocumentNotAvailableText)))
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+    <br />
+
+
+    <div class="cssTAHDUnderlyingFundDetailsMainDiv">
+        <div class="cssTAHDUnderlyingFundHeaderTextDiv">@(Html.Raw(HttpUtility.HtmlDecode(((TaxonomyAssociationHierarchyViewModel)Model).UnderlayingFundHeaderText)))</div>
+        <div class="cssTAHDUnderlyingFundDocumentGridDiv">
+            <div class="cssTAHDUnderlyingFundDocumentGridHeader">
+                <div class="td cssTAHDUnderlyingFundDocumentGridFundNameColumn">@(Html.Raw(HttpUtility.HtmlDecode(((TaxonomyAssociationHierarchyViewModel)Model).UnderlayingFundGridFundNameColumnText))) </div>
+                @foreach (var taxonomy in ((TaxonomyAssociationHierarchyViewModel)Model).TaxonomyAssociationHierarchyModelData.ChildHeaders)
+                {
+                    if (taxonomy.VerticalMarketID != "XBRL" || ((TaxonomyAssociationHierarchyViewModel)Model).ShowXBRLInLandingPage)
+                    {
+                        <div class="td cssTAHDUnderlyingFundDocumentGridDocTypeColumn">@(Html.Raw(HttpUtility.HtmlDecode(taxonomy.HeaderName.Replace("newline", "&lt;br/&gt;"))))</div>
+                    }
+                }
+            </div>
+            @{
+                int rowNum = 0;
+                string documentLinkURL = "";
+                foreach (var taxonomy in ((TaxonomyAssociationHierarchyViewModel)Model).TaxonomyAssociationHierarchyModelData.ChildTaxonomyAssociationData)
+                {
+                    if (rowNum % 2 == 0)
+                    {
+                        <div class="cssTAHDUnderlyingFundDocumentGridItem">
+                            <div title="@(taxonomy.TaxonomyDescriptionOverride)" class="td cssTAHDUnderlyingFundDocumentGridItemFundNameColumn @(taxonomy.TaxonomyCssClass)">@(taxonomy.TaxonomyName)</div>
+                            @foreach (var documentType in ((TaxonomyAssociationHierarchyViewModel)Model).TaxonomyAssociationHierarchyModelData.ChildHeaders)
+                            {
+                                if (documentType.VerticalMarketID != "XBRL" || ((TaxonomyAssociationHierarchyViewModel)Model).ShowXBRLInLandingPage)
+                                {
+                                    <div class="td cssTAHDUnderlyingFundDocumentGridItemDocTypeColumn">
+                                        @if (taxonomy.DocumentTypes.Exists(p => p.DocumentTypeId == documentType.DocumentTypeId))
+                                        {
+                                            if (documentType.VerticalMarketID == "XBRL" && ((TaxonomyAssociationHierarchyViewModel)Model).DisplayXBRLInNewTAB)
+                                            {
+                                                documentLinkURL = Url.Action("XBRL",
+                                                                            new
+                                                                            {
+                                                                                externalID = taxonomy.TaxonomyAssociationID,
+                                                                                isInternalTAID = true,
+                                                                                site = ((TaxonomyAssociationHierarchyViewModel)Model).SiteName,
+                                                                                isProofing = ((TaxonomyAssociationHierarchyViewModel)Model).IsProofing == 1 ? "True" : ""
+                                                                            });
+                                            }
+                                            else
+                                            {
+                                                documentLinkURL = Url.Action("TaxonomySpecificDocumentFrame",
+                                                                            new
+                                                                            {
+                                                                                externalID1 = taxonomy.TaxonomyAssociationID,
+                                                                                externalID2 = documentType.DocumentTypeId,
+                                                                                isInternalTAID = true,
+                                                                                site = ((TaxonomyAssociationHierarchyViewModel)Model).SiteName,
+                                                                                isProofing = ((TaxonomyAssociationHierarchyViewModel)Model).IsProofing == 1 ? "True" : ""
+                                                                            });
+                                            }
+
+                                            <a title="@(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeDescriptionOverride)" class="cssLinks" target="_blank" href="@(documentLinkURL)">
+                                                @if (documentType.VerticalMarketID == "XBRL")
+                                                {
+                                                    <div class="cssXBRLLinkImage">
+                                                        <div class="cssXBRLLinkText">
+                                                            @(Html.Raw(HttpUtility.HtmlDecode(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeLinkText.Replace("newline", "&lt;br/&gt;"))))
+                                                        </div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="cssDocumentTypeLinkImage">
+                                                        <div class="cssDocumentTypeLinkText">
+                                                            @(Html.Raw(HttpUtility.HtmlDecode(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeLinkText.Replace("newline", "&lt;br/&gt;"))))
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <div class="cssDocumentTypeLinkNAImage">
+                                                <div class="cssDocumentTypeLinkNAText">
+                                                    @(Html.Raw(HttpUtility.HtmlDecode(((TaxonomyAssociationHierarchyViewModel)Model).DocumentNotAvailableText)))
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="cssTAHDUnderlyingFundDocumentGridAlternateItem">
+                            <div title="@(taxonomy.TaxonomyDescriptionOverride)" class="td cssTAHDUnderlyingFundDocumentGridAlternateItemFundNameColumn @(taxonomy.TaxonomyCssClass)">@(taxonomy.TaxonomyName)</div>
+                            @foreach (var documentType in ((TaxonomyAssociationHierarchyViewModel)Model).TaxonomyAssociationHierarchyModelData.ChildHeaders)
+                            {
+                                if (documentType.VerticalMarketID != "XBRL" || ((TaxonomyAssociationHierarchyViewModel)Model).ShowXBRLInLandingPage)
+                                {
+                                    <div class="td cssTAHDUnderlyingFundDocumentGridAlternateItemDocTypeColumn">
+                                        @if (taxonomy.DocumentTypes.Exists(p => p.DocumentTypeId == documentType.DocumentTypeId))
+                                        {
+                                            if (documentType.VerticalMarketID == "XBRL" && ((TaxonomyAssociationHierarchyViewModel)Model).DisplayXBRLInNewTAB)
+                                            {
+                                                documentLinkURL = Url.Action("XBRL",
+                                                                            new
+                                                                            {
+                                                                                externalID = taxonomy.TaxonomyAssociationID,
+                                                                                isInternalTAID = true,
+                                                                                site = ((TaxonomyAssociationHierarchyViewModel)Model).SiteName,
+                                                                                isProofing = ((TaxonomyAssociationHierarchyViewModel)Model).IsProofing == 1 ? "True" : ""
+                                                                            });
+                                            }
+                                            else
+                                            {
+                                                documentLinkURL = Url.Action("TaxonomySpecificDocumentFrame",
+                                                                            new
+                                                                            {
+                                                                                externalID1 = taxonomy.TaxonomyAssociationID,
+                                                                                externalID2 = documentType.DocumentTypeId,
+                                                                                isInternalTAID = true,
+                                                                                site = ((TaxonomyAssociationHierarchyViewModel)Model).SiteName,
+                                                                                isProofing = ((TaxonomyAssociationHierarchyViewModel)Model).IsProofing == 1 ? "True" : ""
+                                                                            });
+                                            }
+
+                                            <a title="@(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeDescriptionOverride)" class="cssLinks" target="_blank" href="@(documentLinkURL)">
+                                                @if (documentType.VerticalMarketID == "XBRL")
+                                                {
+                                                    <div class="cssXBRLLinkImage">
+                                                        <div class="cssXBRLLinkText">
+                                                            @(Html.Raw(HttpUtility.HtmlDecode(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeLinkText.Replace("newline", "&lt;br/&gt;"))))
+                                                        </div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="cssDocumentTypeLinkImage">
+                                                        <div class="cssDocumentTypeLinkText">
+                                                            @(Html.Raw(HttpUtility.HtmlDecode(taxonomy.DocumentTypes.Find(p => p.DocumentTypeId == documentType.DocumentTypeId).DocumentTypeLinkText.Replace("newline", "&lt;br/&gt;"))))
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <div class="cssDocumentTypeLinkNAImage">
+                                                <div class="cssDocumentTypeLinkNAText">
+                                                    @(Html.Raw(HttpUtility.HtmlDecode(((TaxonomyAssociationHierarchyViewModel)Model).DocumentNotAvailableText)))
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                            }
+                        </div>
+                    }
+                    rowNum++;
+                }
+            }
+        </div>
+    </div>
+
+    <div id="divGlossary" class="cssTAHDGlossary">
+        @(Html.Raw(HttpUtility.HtmlDecode(((TaxonomyAssociationHierarchyViewModel)Model).Glossary)))
+    </div>
+    <div id="divFooter" class="cssTAHDFooter">
+        <div class="cssTAHDFootnotesHeaderText">@(Html.Raw(HttpUtility.HtmlDecode(((TaxonomyAssociationHierarchyViewModel)Model).FootnotesHeaderText)))</div>
+        <div class="cssTAHDFootnotesItems">
+            @foreach (var item in ((TaxonomyAssociationHierarchyViewModel)Model).TaxonomyAssociationHierarchyModelData.FootNotes.OrderBy(p => p.Order))
+            {
+                <div class="cssTAHDFootnotesItemText">@item.Text</div>
+            }
+        </div>
+    </div>
+</div>

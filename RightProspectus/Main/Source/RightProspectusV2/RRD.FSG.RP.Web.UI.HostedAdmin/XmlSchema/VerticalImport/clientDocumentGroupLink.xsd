@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="clientDocumentGroupLink.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:element name="clientDocumentGroupLink" type="clientDocumentGroupLink" />
+  <xs:element name="clientDocumentGroupLinks" type="clientDocumentGroupLinks" />
+  <xs:complexType name="clientDocumentGroupLink">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a nonlinear, nondirect hierarchical link to a clientDocumentGroup entity.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="linkEntity" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="clientDocumentGroupLinks">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of clientDocumentGroupLink entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="clientDocumentGroupLink" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

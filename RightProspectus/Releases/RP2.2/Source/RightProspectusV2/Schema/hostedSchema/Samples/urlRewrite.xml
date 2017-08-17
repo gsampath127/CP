@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlRewrite systemId="0" delete="false" xmlns="http://rightprospectus.com/hostedSchema">
+  <matchPattern>matchPattern1</matchPattern>
+  <rewriteFormat>rewriteFormat1</rewriteFormat>
+</urlRewrite>

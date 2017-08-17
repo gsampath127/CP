@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<documentTypeExternalId marketId="marketId1" delete="false" xmlns="http://rightprospectus.com/hostedSchema">
+  <externalIds mirror="false">
+    <externalId value="value1" delete="false" />
+    <externalId value="value2" delete="true" />
+    <externalId value="value3" delete="false" />
+  </externalIds>
+</documentTypeExternalId>

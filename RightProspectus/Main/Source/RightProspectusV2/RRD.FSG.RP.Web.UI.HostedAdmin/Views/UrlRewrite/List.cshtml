@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<script src="~/Scripts/HostedAdmin/UrlRewriteSettings.js"></script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("List", "Site")">@ViewData["SelectedCustomer"]</a></li>
+                <li class="active">URL Rewrite</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                URL Rewrite<span id="UrlRewritePopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+
+        <div class="col-sm-3 newAddButton">
+            <a id="newUrlRewrite" class="btn btn-success btn-sm m-top-5 pull-right-xs-max">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New URL Rewrite
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br/>
+        </div>
+    </div>
+
+    @*-----------------------------------------------------SearchParameters--------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+
+                <div class="form-group">
+                    <input id="comboPatternName" type="text" class="form-control"/>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="searchUrlRewrite" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="clearUrlRewriteSearch"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    @*----------------------------------------------------------GRID-------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="GridContainer" class="ScrollTable">
+                <div id="urlRewriteGrid" class="tableFixedWidth">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dvUrlRewriteLoad" data-request-url="@Url.Action("Search", "UrlRewrite")"></div>
+<div id="dvGetPatternName" data-request-url="@Url.Action("GetPatternName", "UrlRewrite")"></div>
+<div id="dvEditUrlRewrite" data-request-url="@Url.Action("Edit", "UrlRewrite")"></div>
+<div id="dvDisableUrlRewrite" data-request-url="@Url.Action("Disable", "UrlRewrite")"></div>
+
+<script id="alertDisableUrlRewrite" type="text/x-kendo-template">
+<p class="message">Are you sure you want to disable this URL Rewrite?</p>
+<button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+<button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+
+<div id="dvUrlRewritePopOver" class="dispNone">
+    URL Rewrite displays all the available URLs for selected Client in RightProspectus system.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New URL</li>
+        <li>EDIT Existing URL</li>
+        <li>SEARCH URL based on Pattern Name</li>
+        <li>DELETE URL</li>
+    </ul>
+    <br />
+</div>

@@ -1,0 +1,219 @@
+﻿.auto-style2 {
+    width: 80%;
+}
+
+.RedItem {
+    background-image: none !important;
+    background-color: red !important;
+    font-weight: bolder !important;
+}
+
+.rwTable td {
+    cursor: default !important;
+}
+
+.TelerikModalOverlay {
+    width: 99.9% !important;
+}
+
+a.rwIcon {
+    display: none !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e1ebe5;
+    font-size: 12px;
+    font-family: verdana, helvetica, arial, sans-serif;
+    color: #000000;
+}
+
+img {
+    border: none;
+}
+
+UL {
+    PADDING-LEFT: 40px;
+}
+
+LI {
+    PADDING-BOTTOM: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 5px;
+}
+
+form {
+    margin: 0;
+}
+
+#divBCSDocUpdateApproval {
+    width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #3395ce;
+    border-top: none;
+}
+
+#divClientLOGO {
+    width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FFFFFF;
+    height: 100px;
+    border: 1px solid #3395ce;
+    border-bottom: none;
+    border-spacing: 2px !important;
+}
+
+.RightPanelBody {
+    background-color: #eeeeee;
+    vertical-align: top;
+}
+
+.LeftPanelBody {
+    background-color: #eeeeee;
+    vertical-align: top;
+}
+
+.ClientContentDiv {
+    background-color: #eeeeee;
+}
+
+.RightPanelBand {
+    font-family: Verdana, Arial, Tahoma, Sans-Serif;
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 10px;
+    line-height: 2.1;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    background: #3395ce;
+    padding-bottom: 5px;
+}
+
+.TinyLabel {
+    font-family: Verdana, Arial, Tahoma, Sans-Serif;
+    font-size: 11px;
+    color: black;
+    line-height: +1.5;
+    float: none;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.InformationLabel {
+    padding: 0px 0px 3px 10px;
+    color: #555555;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.InformationLabelHeading {
+    padding: 0px 0px 3px 10px;
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.ErrorLabel {
+    padding: 0px 0px 3px 10px;
+    color: red;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.BodyLabel {
+    color: #3395ce;
+}
+
+.BodyInformationLabel {
+    padding: 0px 0px 3px 10px;
+    color: #3395ce;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.BodyTinyLabel {
+    font-family: Verdana, Arial, Tahoma, Sans-Serif;
+    font-size: 11px;
+    color: #3395ce;
+    line-height: +1.5;
+    float: none;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+
+.Button {
+    padding: 4px;
+    font-size: 12px;
+    font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+    color: #ffffff;
+    background-color: #3395ce;
+    border: none;
+    cursor: pointer;
+}
+
+    .Button:hover {
+        padding: 4px;
+        font-size: 12px;
+        font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+        color: #ffffff;
+        background-color: #2494f8;
+        border: none;
+        cursor: pointer;
+    }
+
+.dataCount {
+    font-family: Verdana, Arial, Tahoma, Sans-Serif;
+    text-align: left;
+    vertical-align: middle;
+    /*padding-left: 10px;*/
+    line-height: 2.1;
+    color: #000;
+    font-size: 12px;
+    font-weight: 60;
+    /*background: #3395ce;*/
+    padding-bottom: 5px;
+}
+
+.GridSlinkReportsCssClass {
+    margin-top: 30px;
+}
+
+.GridFullfillmentInfoCssClass {
+    margin-top: 30px;
+}
+
+.cssLiveUpdateStatusDate {
+    background-color: red !important;
+}
+
+.cssLiveUpdateRemoveDocumentTypeLink {
+    color: black;
+    text-decoration: none;
+    cursor: default;
+}
+
+.cssLiveUpdateDocumentTypeLink {
+    color: blue !important;
+}
+
+.summary_table {
+    height: 100px;
+    width: 500px;    
+}
+
+.summary_table td, .summary_table th {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.RadWindow .rwStatusBar {
+    display: none;
+}

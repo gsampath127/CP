@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+<style type="text/css">
+
+    .k-header {
+        text-align: left !important;
+    }
+</style>
+
+<script src="~/Scripts/HostedAdmin/StaticResourceSettings.js"></script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>                
+                <li class="active">Static Resources</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Static Resources<span id="StaticResourcesPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+
+        <div class="col-sm-3 newAddButton">
+            <a id="newStaticResource" class="btn btn-success btn-sm m-top-5 pull-right-xs-max">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Static Resource
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+
+    @*-----------------------------------------------------SearchParameters--------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+
+                <div class="form-group">
+                    <input id="comboFileName" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+
+                <div class="form-group">
+                    <input id="comboMimeType" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+        @*<div class="col-sm-3">
+            <div class="form-group">
+
+                <div class="form-group">
+                    <input id="comboModifiedDate" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>*@
+        @*<div class="col-sm-3">
+            <div class="form-group">
+
+                <div class="form-group">
+                    <input id="comboModifiedBy" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>*@
+
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="searchStaticResource" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="clearSearch"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    <div>
+        <br />
+    </div>
+    @*----------------------------------------------------------GRID-------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="GridContainer" class="ScrollTable">
+                <div id="staticResourceGrid" class="tableFixedWidth">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="dvStaticResourceLoad" data-request-url="@Url.Action("GetStaticResource", "StaticResource")"></div>
+<div id="dvDeleteStaticResource" data-request-url="@Url.Action("DeleteStaticResource", "StaticResource")"></div>
+<div id="dvGetFileName" data-request-url="@Url.Action("GetFileName", "StaticResource")"></div>
+<div id="dvGetMimeType" data-request-url="@Url.Action("GetMimeType", "StaticResource")"></div>
+<div id="dvGetModifiedDate" data-request-url="@Url.Action("GetModifiedDate", "StaticResource")"></div>
+<div id="dvEditStaticResources" data-request-url="@Url.Action("EditStaticResources", "StaticResource")"></div>
+
+
+
+
+
+
+<div id="window">
+    <div style="text-align: center;">
+       
+        <img id ="imgStaticResource"/>
+
+    </div>
+</div>
+<script id="alertDeleteStaticResource" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Static Resource?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+
+
+
+<div id="dvStaticResourcePopOver" class="dispNone">
+    Static Resources displays all the available Static Resources for selected Client in RightProspectus system.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Static Resource</li>
+        <li>EDIT Existing Static Resource</li>
+        <li>SEARCH Static Resource based on File Name, Mime Type</li>
+        <li>DELETE Static Resource</li>
+    </ul>
+    <br />
+</div>

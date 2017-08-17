@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "EditTaxonomyAssociationClientDocument";
+    Layout = null;
+}
+<html>
+<head>
+    @*@using RRD.FSG.RP.Web.UI.HostedAdmin.ViewModels;*@
+           @model RRD.FSG.RP.Web.UI.HostedAdmin.ViewModels.EditTaxonomyAssociationClientDocumentViewModel
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=100"/>
+    <title>RightProspectus</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/Kendo/css")
+    @Scripts.Render("~/bundles/Kendo")
+    <script src="~/Scripts/HostedAdmin/EditTaxonomyAssociationClientDocumentSettings.js"></script>
+    <link href="~/Content/RP/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("EditTaxonomyAssociationClientDocument", "TaxonomyAssociationClientDocument"))
+        {
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container navigationFullMenu nowrap">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">Add Taxonomy Association Client Document</a>
+                        <button id="togglebutton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar-popup" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="popup-close" id="closeWindow" href="javascript:window.close();">Close Window</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="main" class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="pull-right"><b class="validationMessage">*</b> indicates required field</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div id="dvTaxMsg" style="display: none;" class='validation-popup'>
+                                <div></div>
+                                <div class='validation-popup-message' id="dvShowTaxMsg"></div>
+                            </div>
+
+                            @Html.LabelFor(model => model.TaxonomyAssociation)
+                            <span class="mandatoryAsterisk">*</span>
+                            @Html.DropDownListFor(model => model.SelectedTaxonomyId, new SelectList(Model.TaxonomyAssociation, "Value", "Display"), new { @class = "form-control", id = "comboTaxonomyAssociation" })
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div id="dvTaxMsg" style="display: none;" class='validation-popup'>
+                                <div></div>
+                                <div class='validation-popup-message' id="dvShowTaxMsg"></div>
+                            </div>
+
+                            @Html.LabelFor(model => model.ClientDocumentType)
+                            <span class="mandatoryAsterisk">*</span>
+                            @Html.DropDownListFor(model => model.SelectedClientDocumentTypeId, new SelectList(Model.ClientDocumentType, "Value", "Display"), new { @class = "form-control", id = "comboClientDocumentType" })
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm-6">
+
+                            <div class="form-group">
+                                <div id="dvTaxMsg" style="display: none;" class='validation-popup'>
+                                    <div></div>
+                                    <div class='validation-popup-message' id="dvShowTaxMsg"></div>
+                                </div>
+
+                                @Html.LabelFor(model => model.ClientDocument)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.DropDownListFor(model => model.SelectedClientDocumentId, new SelectList(Model.ClientDocument, "Value", "Display"), new { @class = "form-control", id = "comboClientDocument" })
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div id="dvTaxMsg" style="display: none;" class='validation-popup'>
+                                    <div></div>
+                                    <div class='validation-popup-message' id="dvShowTaxMsg"></div>
+                                </div>
+
+                                @Html.LabelFor(model => model.FileName)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.TextBoxFor(model => model.FileName, new { @class = "form-control", placeholder = "File Name", type = "text", id = "txtFileName" })
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+
+                           
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                        </div>
+                                        <input type="hidden" value="@ViewData["Success"].ToString()" id="hdnSuccessOrFailedMessage" />
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <button id="submitTaxonomyAssocClientDoc" type="submit" class="AlignButton btn btn-default m-top-15">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+            <div>
+                <script id="divTaxonomyAssociationClientDocValidations" type="text/x-kendo-template">
+                </script>
+            </div>
+            <div>
+                <script id="divSuccessOrFailedMessage" type="text/x-kendo-template">
+                    <p class="message">Taxonomy Association Client Document Saved Successfully.</p>
+                    <button class="confirm k-button" style="margin:10px">OK</button>
+                </script>
+            </div>
+    <div id="dvGetFileName" data-request-url="@Url.Action("GetFileName", "TaxonomyAssociationClientDocument")"></div>
+    <div id="dvGetClientDocument" data-request-url="@Url.Action("GetClientDocument", "TaxonomyAssociationClientDocument")"></div>
+
+            <div id="footer" class="layoutFooter"></div>
+
+        }
+    </div>
+
+</body>
+</html>

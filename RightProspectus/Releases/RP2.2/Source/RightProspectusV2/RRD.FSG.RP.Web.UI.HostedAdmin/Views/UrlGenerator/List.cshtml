@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "UrlGenerator";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>
+                <li class="active">URL Generator</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                URL Generator<span id="sitePopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="SiteNameCombo" class="form-control" type="text" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="MarketIdCombo" class="form-control" type="text" />
+
+            </div>
+        </div>
+
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a class="btn btn-primary btn-sm clear-after" href="#" id="btnUrlGenerate"><span><u>Generate</u></span></a>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="siteClearFilters"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+
+
+</div>
+
+<div id="dvLoadAllUrl" data-request-url="@Url.Action("GetAllUrlDetails", "UrlGenerator")"></div>
+<div id="dvSiteNameComboLoad" data-request-url="@Url.Action("GetSiteNames", "UrlGenerator")"></div>
+<div id="dvMarketIdComboLoad" data-request-url="@Url.Action("GetMarketId", "UrlGenerator")"></div>
+<div id="dvSiteConfigurationURL" data-request-url="@Url.Action("SiteConfiguration", "UrlGenerator")"></div>
+
+
+
+<script src="~/Scripts/HostedAdmin/UrlGeneratorSettings.js"></script>
+
+
+

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="taxonomyAssociationGroup.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:include schemaLocation="taxonomyAssociationLink.xsd" />
+  <xs:include schemaLocation="footnote.xsd" />
+  <xs:element name="taxonomyAssociationGroup" type="taxonomyAssociationGroup" />
+  <xs:element name="taxonomyAssociationGroups" type="taxonomyAssociationGroups" />
+  <xs:complexType name="taxonomyAssociationGroup">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a grouping of taxonomyAssociation entities that is not defined in the vertical market and is specific to the client.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="entity">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element ref="taxonomyAssociationGroups" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="taxonomyAssociationLinks" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="footnotes" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="name" type="name" use="required" />
+        <xs:attribute name="description" type="description" use="optional" />
+        <xs:attribute name="cssClass" type="cssClass" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="taxonomyAssociationGroups">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of taxonomyAssociationGroup entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="taxonomyAssociationGroup" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>RRD.FSG.RP.Utilities</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>cd1e0f10-fd82-45ec-8165-300a4d8b084e</ProjectGuid>
+  <FullPath>D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RRD.FSG.RP.Utilities\RRD.FSG.RP.Utilities.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\.sonarqube\out\\RRD.FSG.RP.Utilities_AnyCPU_Debug_1228\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.stylecop.projectFilePath">D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RRD.FSG.RP.Utilities\RRD.FSG.RP.Utilities.csproj</Property>
+  </AnalysisSettings>
+</ProjectInfo>

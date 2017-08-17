@@ -1,0 +1,475 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-weight: inherit;
+            font-style: inherit;
+            font-size: 100%;
+            font-family: inherit;
+            vertical-align: baseline;
+        }
+
+        #header-container, #body-container, #footer-container {
+            clear: both;
+            position: relative;
+            background: #fff;
+        }
+
+        #footer-container {
+            border-bottom: 5px solid #77726D;
+        }
+
+        body {
+            line-height: 1.5;
+        }
+
+        body {
+            font-size: 75%;
+            color: #222;
+            background: #fff;
+            font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #fff;
+            font-family: arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .container {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .clearfix, .container {
+            display: block;
+        }
+
+            .clearfix::after, .container::after {
+                content: ".";
+                display: block;
+                height: 0px;
+                clear: both;
+                visibility: hidden;
+            }
+
+        #footer-accent {
+            clear: both;
+            display: block;
+            height: 40px;
+            background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(210,208,205,1) 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(210,208,205,1)));
+            background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(210,208,205,1) 100%);
+            background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(210,208,205,1) 100%);
+            background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(210,208,205,1) 100%);
+            background: linear-gradient(top, rgba(255,255,255,0) 0%,rgba(210,208,205,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#d2d0cd',GradientType=0 );
+        }
+
+        .span-96 {
+            width: 960px;
+        }
+
+        .prepend-7 {
+            padding-left: 70px;
+        }
+
+        .span-1 {
+            width: 10px;
+        }
+
+        .span-50 {
+            width: 500px;
+        }
+
+        .span-65 {
+            width: 650px;
+        }
+
+        .span-31 {
+            width: 310px;
+        }
+
+        .column, div.span-1, div.span-2, div.span-3, div.span-4, div.span-5, div.span-6, div.span-7, div.span-8, div.span-9, div.span-10, div.span-11, div.span-12, div.span-13, div.span-14, div.span-15, div.span-16, div.span-17, div.span-18, div.span-19, div.span-20, div.span-21, div.span-22, div.span-23, div.span-24, div.span-25, div.span-26, div.span-27, div.span-28, div.span-29, div.span-30, div.span-31, div.span-32, div.span-33, div.span-34, div.span-35, div.span-36, div.span-37, div.span-38, div.span-39, div.span-40, div.span-41, div.span-42, div.span-43, div.span-44, div.span-45, div.span-46, div.span-47, div.span-48, div.span-49, div.span-50, div.span-51, div.span-52, div.span-53, div.span-54, div.span-55, div.span-56, div.span-57, div.span-58, div.span-59, div.span-60, div.span-61, div.span-62, div.span-63, div.span-64, div.span-65, div.span-66, div.span-67, div.span-68, div.span-69, div.span-70, div.span-71, div.span-72, div.span-73, div.span-74, div.span-75, div.span-76, div.span-77, div.span-78, div.span-79, div.span-80, div.span-81, div.span-82, div.span-83, div.span-84, div.span-85, div.span-86, div.span-87, div.span-88, div.span-89, div.span-90, div.span-91, div.span-92, div.span-93, div.span-94, div.span-95, div.span-96, div.span-97, div.span-98, div.span-99, div.span-100, div.span-101, div.span-102, div.span-103, div.span-104, div.span-105, div.span-106, div.span-107, div.span-108, div.span-109, div.span-110, div.span-111, div.span-112, div.span-113, div.span-114, div.span-115, div.span-116, div.span-117, div.span-118, div.span-119, div.span-120, div.span-121, div.span-122, div.span-123, div.span-124, div.span-125, div.span-126, div.span-127, div.span-128, div.span-129, div.span-130, div.span-131, div.span-132, div.span-133, div.span-134, div.span-135, div.span-136, div.span-137, div.span-138, div.span-139, div.span-140, div.span-141, div.span-142, div.span-143, div.span-144, div.span-145, div.span-146, div.span-147, div.span-148, div.span-149, div.span-150 {
+            float: left;
+            margin-right: 0px;
+        }
+
+        .affiliate-nav-container {
+            display: block;
+            text-align: center;
+            padding: 10px 0 0;
+            margin: 10px 0 0 0;
+            position: relative;
+            border-top: #78838c solid 1px;
+        }
+
+        #footer-nav-global, #footer-standard {
+            clear: both;
+            border-top: 1px solid #D9D7D6;
+            color: #77726c;
+        }
+
+        #footer-standard {
+            padding: 0;
+            font-size: 12px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .prepend-37 {
+            padding-left: 370px;
+        }
+
+        .complaince_code {
+            color: #77726c;
+            font-size: 12px;
+            text-align: left;
+        }
+
+        p {
+            margin: 0 0 1.5em;
+        }
+
+            p.compliance-code {
+                position: relative;
+                top: -40px;
+            }
+
+        .span-27 {
+            width: 270px;
+        }
+
+        .last {
+            margin-right: 0px;
+            padding-right: 0px;
+        }
+
+        .last, div.last {
+            margin-right: 0px;
+        }
+
+        .box {
+            padding: 1.5em;
+            margin-bottom: 1.5em;
+            background: #E5ECF9;
+        }
+
+        .box {
+            background-color: transparent;
+            padding: 20px;
+        }
+
+        .box-0-right {
+            padding-right: 0px;
+        }
+
+        #footer-standard p {
+            margin-bottom: 10px;
+        }
+
+            #footer-standard p.smaller {
+                font-size: 12px;
+            }
+
+        a {
+            color: #009;
+            text-decoration: underline;
+        }
+
+        a {
+            text-decoration: none;
+            outline: 0;
+        }
+
+        #footer-standard a, #footer-standard a:active, #footer-standard a:visited {
+            color: #005284;
+        }
+
+        .v-divider {
+            position: relative;
+            border-left: 1px solid #D9D7D6;
+        }
+
+        .box-0-left {
+            padding-left: 0px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        ul, ol {
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: disc;
+        }
+
+        #footer-nav-global ul {
+            list-style: none;
+            display: block;
+        }
+
+        ul#footer-nav-global-right {
+            float: right;
+        }
+
+        #footer-nav-global ul li {
+            float: left;
+            padding: 10px 12px 10px 0;
+            font-weight: bold;
+            line-height: 28px;
+            vertical-align: middle;
+        }
+
+        ul#footer-nav-global-right li:last-child {
+            padding-right: 0px;
+        }
+
+        #footer-nav-global ul li a, #footer-nav-global ul li a:active, #footer-nav-global ul li a:visited {
+            font-size: 12px;
+            color: #005384;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        ul#footer-nav-global-right li a {
+            display: block;
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+        }
+
+        a img {
+            border: none;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+            color: #111;
+        }
+
+        h6 {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .affiliate-nav-title {
+            position: relative;
+            display: inline-block;
+            top: -16px;
+            line-height: 10px;
+            padding: 0 10px;
+            font-size: 15px;
+            color: #78838c;
+            background: #fff;
+            margin: 0 auto;
+            font-family: ScalaSansCapsRegular,Arial,sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .affiliate-nav {
+            max-width: 100%;
+            padding-left: 0px;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        :nth-child(3).affiliate-nav {
+            margin-bottom: 170px;
+        }
+
+        .affiliate-nav > li {
+            display: inline-block;
+            box-sizing: border-box;
+            float: left;
+        }
+
+        .logo-second-stack {
+            display: inline-block;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            text-indent: -100000px;
+            background: transparent url(staticresource/Affilate-2017-second-stack?client=TIAA) 0 0 no-repeat;
+        }
+
+        .logo--westchester {
+            background-position: -797px 0 !important;
+            width: 160px;
+        }
+
+        .logo--realestate {
+            background-position: -643px 0 !important;
+            width: 160px;
+        }
+
+        .logo--gresham {
+            background-position: -490px 0 !important;
+            width: 150px;
+        }
+
+        .logo--greenwood {
+            background-position: -310px 0 !important;
+            width: 170px;
+        }
+
+        .logo--church {
+            background-position: -137px 0 !important;
+            width: 180px;
+        }
+
+        .logo--agr {
+            background-position: 0 0 !important;
+            width: 140px;
+        }
+
+        .logo--winslow {
+            background-position: -797px 0 !important;
+            width: 160px;
+        }
+
+        .logo--sbam {
+            background-position: -643px 0 !important;
+            width: 160px;
+        }
+
+        .logo--nwq {
+            background-position: -490px 0 !important;
+            width: 150px;
+        }
+
+        .logo--symphony {
+            background-position: -310px 0 !important;
+            width: 170px;
+        }
+
+        .logo--tiaa {
+            background-position: -137px 0 !important;
+            width: 180px;
+        }
+
+        .logo--nam {
+            background-position: 0 0 !important;
+            width: 140px;
+        }
+
+        .affiliate-nav > li > a {
+            height: 70px;
+        }
+
+        .logo-first-stack {
+            display: inline-block;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            text-indent: -100000px;
+            background: transparent url(staticresource/Affilate-2017-first-stack?client=TIAA) 0 0 no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" action="./Prospectuses.aspx" method="post">
+        <div id="footer-container">
+            <div class="container">
+                <div class="span-96" id="footer">
+
+
+
+                    <div class="affiliate-nav-container">
+                        <h6 class="affiliate-nav-title">Investment Affiliates</h6>
+                        <ul class="affiliate-nav">
+                            <li><a class="logo-first-stack logo--nam" href="http://www.nuveen.com/NuveenAssetManagement/Default.aspx" target="_blank">Nuveen Asset Management</a></li>
+                            <li><a class="logo-first-stack logo--tiaa" href="https://www.tiaa.org/public/assetmanagement" target="_blank">TIAA Investments</a></li>
+                            <li><a class="logo-first-stack logo--symphony" onclick="javascript: pageTracker._trackPageView('/outgoing/symphonyasset.com');" href="http://www.symphonyasset.com" target="_blank">Symphony Asset Management</a></li>
+                            <li><a class="logo-first-stack logo--nwq" href="http://www.nuveen.com/NWQ/Default.aspx" target="_blank">NWQ</a></li>
+                            <li><a class="logo-first-stack logo--sbam" href="http://www.sbasset.com/" target="_blank">Santa Barbara Asset Management</a></li>
+                            <li><a class="logo-first-stack logo--winslow" href="http://www.winslowcapital.com/" target="_blank">Winslow Capital</a></li>
+                        </ul>
+                        <ul class="affiliate-nav">
+                            <li><a class="logo-second-stack logo--agr" href="http://agrpartners.com/" target="_blank">AGR Partners</a></li>
+                            <li><a class="logo-second-stack logo--church" href="http://www.churchillam.com/" target="_blank">Churchill Asset Management</a></li>
+                            <li><a class="logo-second-stack logo--greenwood" href="http://greenwoodresources.com/" target="_blank">GreenWood Resources</a></li>
+                            <li><a class="logo-second-stack logo--gresham" href="http://greshamllc.com/" target="_blank">Gresham Investment Management</a></li>
+                            <li><a class="logo-second-stack logo--realestate" href="https://www.threalestate.com/" target="_blank">TH Real Estate</a></li>
+                            <li><a class="logo-second-stack logo--westchester" href="http://www.wgimglobal.com/" target="_blank">Westchester Agriculture Asset Management</a></li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="row" id="footer-nav-global">
+                        <div class="span-65">
+                            <ul id="footer-nav-global-left">
+                                <li><a href="http://www.nuveen.com/Home/Corporate/Media/PressRoom.aspx" target="_blank">Media Center</a></li>
+                                <li><a href="http://www.nuveen.com/Home/Corporate/About/Values.aspx" target="_blank">About Nuveen</a></li>
+                                <li><a href="http://www.nuveen.com/Home/Corporate/About/Contact.aspx" target="_blank">Contact Us</a></li>
+                                <li><a href="http://www.nuveen.com/Home/Corporate/About/Careers.aspx" target="_blank">Careers</a></li>
+                                <li><a href="http://www.nuveenglobal.com/" target="_blank" data-title="non-U.S. Nuveen Investments" data-event="confirm:leaving:international">Non-U.S. Investors</a></li>
+                                <li><a href="http://brokercheck.finra.org/" target="_blank">FINRA BrokerCheck</a></li>
+                            </ul>
+                        </div>
+                        <div class="span-31 last">
+                            <ul id="footer-nav-global-right">
+                                <li>Follow Us:</li>
+                                <li><a href="http://www.twitter.com/NuveenInv" target="_blank"><img alt="Twitter" src="http://www.nuveen.com/GlobalStatic/Images/twitter_icon.jpg" /></a></li>
+                                <li><a href="http://www.nuveen.com/Commentary/iPad/Nuveen-iPad-App-Center.aspx" target="_blank"><img alt="iPad" src="http://www.nuveen.com/GlobalStatic/Images/iPad_icon.jpg" /></a></li>
+                                <li><a href="http://www.youtube.com/user/NuveenInvestments" target="_blank"><img alt="YouTube" src="http://www.nuveen.com/GlobalStatic/Images/youTube_icon.jpg" /></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row" id="footer-standard">
+                        <div class="prepend-7 span-27">
+                            <div class="box box-0-left ">
+
+                                <p><strong>Before investing, carefully consider fund investment objectives, risks, charges and expenses. For this and other information that should be read carefully, please view the <a href="http://www.nuveen.com/MutualFunds/FormsLiterature/Prospectuses.aspx" target="_blank">prospectus or summary prospectus</a>.</strong></p>
+                                <p><strong>NOT FDIC INSURED<br />MAY LOSE VALUE<br />NO BANK GUARANTEE</strong></p>
+                            </div>
+                        </div>
+                        <div class="span-1" style="position: relative;">
+                            <div class="v-divider" style="left: 5px; top: 20px; height: 200px;"><br /></div>
+                        </div>
+                        <div class="span-50 last">
+                            <div class="box box-0-right">
+
+                                <p class="smaller">See our <a href="http://www.nuveen.com/Home/Corporate/About/Privacy.aspx" target="_blank">privacy policy</a>, <a href="http://www.nuveen.com/Home/Corporate/Copyright.aspx" target="_blank">terms of use</a> and our <a href="http://www.nuveen.com/Home/Corporate/About/Continuity.aspx" target="_blank">business continuity plan summary</a>. The content of this site, including but not limited to the text and images herein and their arrangement are <a href="http://www.nuveen.com/Home/Corporate/Copyright.aspx#copyright" target="_blank">Copyright</a> by Nuveen Investments. Securities offered through Nuveen Securities, LLC, a subsidiary of Nuveen, 333 W. Wacker Drive, Chicago, IL  60606.  Nuveen provides innovative investment strategies and portfolio management services through its independent investment affiliates: Nuveen Asset Management, TIAA Investments, Symphony Asset Management, NWQ Investment Management Company, Santa Barbara Asset Management, Winslow Capital Management, AGR Partners, Churchill Asset Management, GreenWood Resources Capital Management, Gresham Investment Management, TH Real Estate, and Westchester Agriculture Asset Management. </p>
+                                <p class="smaller">Investor line: 1-800-257-8787. Advisor line: 1-800-752-8700.</p>
+                                <p class="smaller">The information on this web site is intended for U.S. residents only.  If you are a non-U.S. resident, please visit <a href="http://www.nuveenglobal.com/" target="_blank" data-title="non-U.S. Nuveen Investments" data-event="confirm:leaving:international">www.nuveenglobal.com</a>. The information provided does not constitute a solicitation of an offer to buy, or an offer to sell securities in any jurisdiction to any person to whom it is not lawful to make such an offer.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clear">
+                    </div>
+                    <div class="prepend-37 complaince_code">
+
+                        <p class="compliance-code">
+                            05/17
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div id="footer-accent">
+                <br />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

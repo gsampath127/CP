@@ -1,0 +1,216 @@
+﻿@{
+    ViewBag.Title = "EditPageText";
+    Layout = null;
+}
+
+<html>
+<head>
+    @model RRD.FSG.RP.Web.UI.HostedAdmin.ViewModels.EditPageTextViewModel
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=100">
+    <title>RightProspectus</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/Kendo/css")
+    @Scripts.Render("~/bundles/Kendo")
+    <script src="~/Scripts/HostedAdmin/EditPageTextSettings.js"></script>
+    <link href="~/Content/RP/Site.css" rel="stylesheet" />
+    <style type="text/css">
+        .k-combobox {
+            width: 250px !important;
+        }
+
+        .k-editor-toolbar-wrap {
+            text-align: left;
+        }
+
+        table.k-editor {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("EditPageText", "PageText", FormMethod.Post, new { id = "frmPageText" }))
+        {
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container navigationFullMenu nowrap">
+                    <div class="navbar-header">
+                        @if (Model.PageTextID == 0)
+                        {
+                            <a class="navbar-brand" href="#">Add Page Text</a>
+                        }
+                        else
+                        {
+                            <a class="navbar-brand" href="#">Edit Page Text</a>
+                        }
+
+                        <button id="togglebutton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar-popup" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="popup-close" id="closeWindow" href="javascript:window.close();">Close Window</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="main" class="container">
+
+                @if (!Model.IsProofing && Model.PageTextID != 0)
+                {
+                    if (!Model.IsProofingAvailableForPageTextId)
+                    {
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-sm-12">
+                                    <b>You are viewing the Production version. If you make changes to this version, a proofing version will be created.<br />Production can only be updated after proofing version is created and approved from the Preview Approval Screen..</b>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="col-sm-12">
+                                    <b>There is a Proofing version available. You can only make changes to that version. If you want to update Production with Proofing version, you will have to click on Approve from the Preview Screen..</b>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="pull-right"><b class="validationMessage">*</b> indicates required field</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                @if (Model.PageTextID == 0)
+                                {
+                                    @Html.LabelFor(model => model.PageDescriptions)
+                                    <span class="mandatoryAsterisk">*</span>
+                                    @Html.DropDownListFor(model => model.SelectedPageID, new System.Web.Mvc.SelectList(Model.PageDescriptions, "Value", "Display"), new { @class = "form-control", id = "comboPageNames" })
+                                }
+                                else
+                                {
+                                    @Html.LabelFor(model => model.PageDescriptions)
+                                    <span class="mandatoryAsterisk">*</span>
+                                    @Html.DropDownListFor(model => model.SelectedPageID, new System.Web.Mvc.SelectList(Model.PageDescriptions, "Value", "Display"), new { @class = "form-control", id = "comboPageNames", @disabled = "disabled" })
+                                    @Html.HiddenFor(x => x.SelectedPageID)
+                                }
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                @if (Model.PageTextID == 0)
+                                {
+                                    @Html.LabelFor(model => model.ResourceKeys)
+                                    <span class="mandatoryAsterisk">*</span>
+                                    @Html.DropDownListFor(model => model.SelectedResourceKey, new System.Web.Mvc.SelectList(Model.ResourceKeys, "Value", "Display"), new { @class = "form-control", id = "comboResourceKey" })
+                                }
+                                else
+                                {
+                                    @Html.LabelFor(model => model.ResourceKeys)
+                                    <span class="mandatoryAsterisk">*</span>
+                                    @Html.DropDownListFor(model => model.SelectedResourceKey, new System.Web.Mvc.SelectList(Model.ResourceKeys, "Value", "Display"), new { @class = "form-control", id = "comboResourceKey", @disabled = "disabled" })
+                                    @Html.HiddenFor(x => x.SelectedResourceKey)
+
+                                    @Html.HiddenFor(model => model.PageTextID, new { @id = "hdnPageTextID" })
+                                    @Html.HiddenFor(model => model.VersionID, new { @id = "hdnVersionID" })
+                                    @Html.HiddenFor(model => model.IsProofing, new { @id = "hdnIsProofing" })
+
+                                }
+                                <input type="hidden" value="@ViewData["Success"].ToString()" id="hdnSuccessOrFailedMessage" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="divHTMLText" style="display:none">
+                    <div class="col-lg-12">
+                        <div class="col-sm-12">
+                            <div class="form-group divCssText">
+                                @Html.LabelFor(model => model.HtmlText)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.TextAreaFor(model => model.HtmlText, new { @class = "form-control", placeholder = "Text", type = "text", id = "txtResourcekeyHtmlText", style = "height:400px" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="divPlainText" style="display:none">
+                    <div class="col-lg-12">
+                        <div class="col-sm-12">
+                            <div class="form-group divCssText">
+                                @Html.LabelFor(model => model.PlainText)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.TextAreaFor(model => model.PlainText, new { @class = "form-control", placeholder = "Text", type = "text", id = "txtResourcekeyPlainText", style = "height:400px" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                @if (Model.PageTextID > 0)
+                {
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.UTCLastModifiedDate)
+                                    @Html.TextBoxFor(model => model.UTCLastModifiedDate, new { @class = "form-control", placeholder = "ModifiedDate", type = "text", id = "txtModifiedDate", @disabled = "disabled" })
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ModifiedBy)
+                                    @Html.TextBoxFor(model => model.ModifiedByName, new { @class = "form-control", placeholder = "ModifiedBy", type = "text", id = "txtModifiedBy", @disabled = "disabled" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                @if (!(Model.IsProofingAvailableForPageTextId && !Model.IsProofing))
+                {
+                    <div class="form-inline">
+                        <div class="form-group col-sm-2">
+                            <button id="submitPageText" type="submit" class="AlignButton btn btn-default m-top-15">Submit</button>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div>
+                <script id="divPageTextValidations" type="text/x-kendo-template">
+                </script>
+            </div>
+            <div>
+                <script id="divSuccessOrFailedMessage" type="text/x-kendo-template">
+                    <p class="message">Page text Saved Successfully.</p>
+                    <button class="confirm k-button" style="margin:10px">OK</button>
+                </script>
+            </div>
+
+
+            <div id="footer" class="layoutFooter"></div>
+        }
+    </div>
+    <div id="dvLoadResourceKey" data-request-url="@Url.Action("LoadResourceKeys", "PageText")"></div>
+    <div id="dvLoadDefaultTextForResourceKey" data-request-url="@Url.Action("LoadDefaultTextForResourceKey","PageText")"></div>
+    <div id="dvCheckIsHtmlTextForResourceKey" data-request-url="@Url.Action("CheckIsHtmlTextForResourceKey", "PageText")"></div>
+</body>
+</html>

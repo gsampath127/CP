@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="navigation.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:include schemaLocation="menuItem.xsd" />
+  <xs:element type="menuRoot" name="menuRoot">
+    <xs:annotation>
+      <xs:documentation>
+        Root element for an xml navigation entity.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="menuRoot">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the root element for an xml navigation document.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="menuItem" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

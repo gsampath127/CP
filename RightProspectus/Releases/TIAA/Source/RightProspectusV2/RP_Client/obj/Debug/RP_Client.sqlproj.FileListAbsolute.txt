@@ -1,0 +1,4 @@
+D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RP_Client\bin\Debug\RP_Client.dacpac
+D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RP_Client\obj\Debug\RP_Client.dll
+D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RP_Client\obj\Debug\RP_Client.pdb
+D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RP_Client\obj\Debug\RP_Client.sqlprojResolveAssemblyReference.cache

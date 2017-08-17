@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Error Page";
+    Layout = "~/Views/Shared/_ErrorLayout.cshtml";
+}
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                @ViewBag.Heading
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                @ViewBag.Message
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <a href="#" onclick="goBack()">Return to previous page</a>
+            </div>
+        </div>
+    </div>
+</div>
+

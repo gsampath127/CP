@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>JustMock</id>
+    <version>2015.3.929.5</version>
+    <title>Telerik JustMock Lite</title>
+    <authors>Telerik AD</authors>
+    <owners>Telerik AD</owners>
+    <licenseUrl>http://www.telerik.com/purchase/license-agreement/justmock-free-edition</licenseUrl>
+    <projectUrl>https://github.com/telerik/JustMockLite</projectUrl>
+    <iconUrl>http://www.telerik.com/sfimages/default-source/logos/jm_32x32.png?sfvrsn=2</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>The most powerful free mocking library available for .NET developers.</description>
+    <summary>The most powerful free mocking library available for .NET developers.</summary>
+    <releaseNotes>What's new:
+
+Added: Ability to use 'dynamic' for the non-public API
+Added: RecursiveMockingBehavior should understand Task&lt;T&gt;
+Added: Dynamic interface for PrivateAccessor
+Added: PrivateAccessor should infer generic arguments when calling generic methods by name
+Added: PrivateAccessor should be able to call generic methods if given a name and type arguments
+Added: Add explanation message parameter to Mock.Assert methods
+Added: Get accumulated bug fixes from upstream Castle.Core repo
+Added: Make arrangements disposable
+
+
+What's fixed:
+
+Fixed: Improve memory usage - new DynamicProxyInterceptor per repo, instead of per mock
+Fixed: Transparent proxies don't work with abstract methods
+Fixed: Transparent proxies don't record calls when they're made from within the mock
+Fixed: RecursiveLoose doesn't always work inside the constructor of a mock
+Fixed: PrivateAccessor doesn't work with transparent proxies
+Fixed: Transparent proxies aren't considered self-equal</releaseNotes>
+    <copyright>Copyright (c) 2010-2015 Telerik AD</copyright>
+    <language>en-US</language>
+    <tags>tdd mocking mocks mock aaa unittest unittesting unit-testing testing fake faking stub stubbing isolation</tags>
+  </metadata>
+</package>

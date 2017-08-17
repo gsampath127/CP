@@ -1,0 +1,74 @@
+﻿<form name="edagarOnlineDataForm" novalidate ng-submit="GenerateReport()">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-9">
+                <p class="pageCaption">
+                    Edgar Online Data <span class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp BCSPopOver" data-toggle="popover"></span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <textarea class="k-textbox" ng-model="eoCUSIP" style="height:50px" placeholder="eoCUSIP"> </textarea>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <textarea class="k-textbox" ng-model="eoCIK" style="height:50px" placeholder="eoCIK"> </textarea>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <textarea class="k-textbox" ng-model="eoSeries" style="height:50px" placeholder="eoSeries#"> </textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <textarea class="k-textbox" ng-model="eoClass" style="height:50px" placeholder="eoClass#"> </textarea>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <textarea class="k-textbox" ng-model="eoTicker" style="height:50px" placeholder="eoTicker"> </textarea>
+                </div>
+            </div>
+         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <input class="btn btn-primary btn-sm clear-after" type="submit" value="Generate">
+                <button class="btn btn-link btn-sm clear-form" type="reset" ng-click="ClearFilters()"><span><u>Clear Filters</u></span></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+    </div>
+</form>
+<div id="EdgarOnlineDataGrid" kendo-grid k-options="gridOptions" k-data-source="gridDataSource" ng-show="DisplayGrid"></div>
+
+<div id="dvEdgarOnlineDataGridPopOver" class="dispNone">
+    TODO : Write Info on Edgar Online Data
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>write info on Edgar Online Data</li>
+    </ul>
+    <br />
+</div>

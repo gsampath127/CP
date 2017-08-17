@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page systemId="0" delete="false" xmlns="http://rightprospectus.com/hostedSchema">
+  <texts mirror="false">
+    <text resourceKey="resourceKey1" languageCulture="languageCulture1" delete="false">text1</text>
+    <text resourceKey="resourceKey2" languageCulture="languageCulture2" delete="true">text2</text>
+    <text resourceKey="resourceKey3" languageCulture="languageCulture3" delete="false">text3</text>
+  </texts>
+  <pageNavigations mirror="false">
+    <pageNavigation navigationKey="navigationKey1" languageCulture="languageCulture1" delete="false" />
+    <pageNavigation navigationKey="navigationKey2" languageCulture="languageCulture2" delete="true" />
+    <pageNavigation navigationKey="navigationKey3" languageCulture="languageCulture3" delete="false" />
+  </pageNavigations>
+  <features mirror="false">
+    <feature key="key1" featureMode="1" delete="false" />
+    <feature key="key2" featureMode="-79228162514264337593543950335" delete="true" />
+    <feature key="key3" featureMode="79228162514264337593543950335" delete="false" />
+  </features>
+</page>

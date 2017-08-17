@@ -1,0 +1,39 @@
+﻿<form name="customerFLTForm" novalidate ng-submit="GenerateReport()">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-9">
+                <p class="pageCaption">
+                    Blank Flt CUSIP Details<span class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp BCSPopOver"
+                                          data-toggle="popover"></span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+
+    </div>
+</form>
+<div id="blankFLTCUSIPGrid" kendo-grid k-options="gridOptions" k-data-source="gridDataSource" ng-show="DisplayGrid"></div>
+
+<div id="dvBlankFLTCUSIPPopOver" class="dispNone">
+    Note: This page gives you information on Blank FLT CUSIP details.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>write info on blank FLT CUSIP details</li>
+
+    </ul>
+    <br />
+</div>

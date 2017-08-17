@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>
+                <li class="active">Report Schedule</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Report Schedule<span id="ReportSchedulePopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+        <div class="col-sm-3 text-right">
+            <a class="btn btn-success btn-sm m-top-20 pull-right-xs-max" id="btnAddNewReportSchedule">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Report Schedule
+            </a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="ReportNameCombo" class="form-control" type="text" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="FrequencyTypeCombo" type="text" class="form-control" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="ScheduledEndDateCombo" class="form-control" onblur="FormatDate(this)" />
+
+            </div>
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="FirstRunScheduleDateCombo" class="form-control" onblur="FormatDate(this)" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="NextRunScheduleDateCombo" class="form-control" onblur="FormatDate(this)" />
+
+            </div>
+        </div>
+
+        
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="IsEnabledCombo" type="text" class="form-control" />
+
+            </div>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="btnSearchReportSchedule" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="reportScheduleClearFilters"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="reportScheduleGridwithSortingButtons">
+
+        <div id="reportScheduleContainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="reportScheduleGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dvLoadAllReportSchedules" data-request-url="@Url.Action("GetAllReportScheduleDetails", "ReportSchedule")"></div>
+<div id="dvReportNameComboLoad" data-request-url="@Url.Action("GetReportName", "ReportSchedule")"></div>
+<div id="dvFirstRunScheduleDateCombo" data-request-url="@Url.Action("GetFirstScheduleRunDate", "ReportSchedule")"></div>
+<div id="dvNextRunScheduleDateCombo" data-request-url="@Url.Action("GetNextScheduleRunDate", "ReportSchedule")"></div>
+<div id="dvFrequencyIntervalCombo" data-request-url="@Url.Action("GetFrequencyInterval", "ReportSchedule")"></div>
+<div id="dvFrequencyTypeCombo" data-request-url="@Url.Action("GetFrequencyType", "ReportSchedule")"></div>
+<div id="dvScheduledEndDateCombo" data-request-url="@Url.Action("GetScheduledEndDate", "ReportSchedule")"></div>
+<div id="dvIsEnabledCombo" data-request-url="@Url.Action("GetIsEnabled", "ReportSchedule")"></div>
+<div id="dvEditReportSchedule" data-request-url="@Url.Action("EditReportSchedule", "ReportSchedule")"></div>
+<div id="dvDisable" data-request-url="@Url.Action("DeleteReportSchedule", "ReportSchedule")"></div>
+<div id="dvReportSchedulePopOver" class="dispNone">
+    Report Schedule page displays the <b>Scheduled Reports</b> in RightProspectus.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Report Schedule</li>
+        <li>EDIT Existing Report Schedule</li>
+        <li>SEARCH Report Schedule based on  Report Name, Frequency Type, Frequency Interval, First Scheduled Run Date, Last Scheduled Run Date, Is Enabled.</li>
+        <li>DELETE Report Schedule</li>
+    </ul>
+    <br />
+</div>
+
+<script id="alertDisable" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Report Schedule?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+
+<script src="~/Scripts/HostedAdmin/ReportScheduleSettings.js"></script>

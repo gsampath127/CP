@@ -1,0 +1,186 @@
+﻿.menuContentDiv {
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    height: 400px;
+    background-color: white;
+}
+
+.dvButtons {
+    padding-top: 241px;
+    padding-left: 470px;
+}
+
+.dvRequestMaterialEmail {
+    display: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    height: 400px;
+    background-color: white;
+}
+
+#dvEmailConfirm {
+    display: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    height: 400px;
+    background-color: white;
+}
+
+#dvPrintConfirm {
+    display: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    height: 400px;
+    background-color: white;
+}
+
+#divRequestMaterialValidations {
+    display: none;
+}
+
+.requestMaterialPrint {
+    display: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    height: 400px;
+    background-color: white;
+}
+
+.printButtons {
+    padding-top: 50px;
+    padding-left: 470px;
+}
+
+#dvRequestMaterialPopUpContent {
+    background-color: #ECE9D8 !important;
+}
+
+.pnlButtons {
+    display: inline-block;
+    padding: 3px 5px 3px 5px;
+    margin: 3px;
+    text-decoration: none;
+    text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 8pt;
+    background: #CCCCCC;
+}
+
+.inputText {
+    border: solid 1px #000000;
+    font-size: 8pt;
+    width: 160px;
+}
+
+.emailConfirmButtons {
+    position: absolute;
+    bottom: 0px;
+    float: right;
+    padding-left: 470px;
+    margin-bottom: 50px;
+}
+
+.emailSentConfirm {
+    display: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    height: 400px;
+    background-color: white;
+}
+
+.requestMaterialPrintConfirmButtons {
+    position: absolute;
+    bottom: 0px;
+    float: right;
+    padding-left: 470px;
+    margin-bottom: 50px;
+}
+
+.printSentConfirm {
+    display: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    height: 400px;
+    background-color: white;
+}
+
+.printConfirmButtons {
+    position: absolute;
+    bottom: 0px;
+    float: right;
+    padding-left: 470px;
+    margin-bottom: 50px;
+}
+
+.printConfirm {
+    display: none;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    height: 400px;
+    background-color: white;
+}
+
+.tblDetails {
+    padding-left: 20px;
+}
+
+.emailText {
+    padding-left: 20px;
+}
+
+.printText {
+    display: none;
+    padding-left: 20px;
+}
+
+.menuButtons {
+    padding-top: 241px;
+    padding-left: 470px;
+}
+
+.contentDiv {
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    height: 400px;
+    background-color: white;
+}
+
+.menuHead {
+    nav-left: auto;
+    padding-left: 10px;
+}
+
+.requestMaterialPopUpOuter {
+    background-color: #ECE9D8;
+}
+
+.tdEmailDetails {
+    width: 243px;
+}
+
+.emailButtons {
+    padding-top: 208px;
+    padding-left: 470px;
+}
+
+.tblEmailConfirm {
+    padding-left: 20px;
+}
+
+.requestMaterialPrintButtons {
+    padding-top: 50px;
+    padding-left: 470px;
+}
+
+.contentDiv ul {
+    list-style: none;
+}

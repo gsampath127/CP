@@ -1,0 +1,178 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @model RRD.FSG.RP.Web.UI.HostedAdmin.ViewModels.EditUrlRewriteViewModel
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=100">
+    <title>RightProspectus</title>
+    <script src="~/Scripts/Kendo/jquery.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/Kendo/css")
+    @Scripts.Render("~/bundles/Kendo")
+
+    <script src="~/Scripts/HostedAdmin/EditUrlRewriteSetiings.js"></script>
+    <link href="~/Content/RP/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Edit", "UrlRewrite"))
+        {
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container navigationFullMenu nowrap">
+                    <div class="navbar-header">
+                        @if (Model.UrlRewriteId == 0)
+                        {
+                            <a class="navbar-brand" href="#">Add URL Rewrite</a>
+                        }
+                        else
+                        {
+                            <a class="navbar-brand" href="#">Edit URL Rewrite</a>
+                        }
+
+                        <button id="togglebutton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar-popup" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="popup-close" id="closeWindow" href="javascript:window.close();">Close Window</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="main" class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="pull-right"><b class="validationMessage">*</b> indicates required field</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                @if (Model.UrlRewriteId == 0)
+                                {
+                                    @Html.LabelFor(model => model.PatternNames)
+                                    <span class="mandatoryAsterisk">*</span>
+
+                                    @Html.TextBoxFor(model => model.PatternName, new { @class = "form-control", placeholder = "Pattern Name", type = "text", id = "txtPatternName" })
+                                }
+                                else
+                                {
+
+                                    @Html.LabelFor(model => model.PatternName)
+                                    <span class="mandatoryAsterisk">*</span>
+                                    @Html.TextBoxFor(model => model.PatternName, new { @class = "form-control", placeholder = "Pattern Name", type = "text", id = "txtPatternName", @readonly = "readonly" })
+                                   
+
+
+                                }
+                                @Html.HiddenFor(model => model.UrlRewriteId, new { @id = "hdnUrlRewriteID" })
+                                <input type="hidden" value="@ViewData["Success"].ToString()" id="hdnSuccessOrFailedMessage" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.MatchPattern)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.TextAreaFor(model => model.MatchPattern, new { @class = "form-control", placeholder = "Match Pattern", type = "text", id = "txtMatchPattern" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.RewriteFormat)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.TextAreaFor(model => model.RewriteFormat, new { @class = "form-control", placeholder = "Rewrite Format", type = "text", id = "txtRewriteFormat" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @if (Model.UrlRewriteId != 0)
+                {
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.UTCLastModifiedDate)
+                                    
+                                    @Html.TextBoxFor(model => model.UTCLastModifiedDate, new { @class = "form-control", placeholder = "ModifiedDate", type = "text", id = "txtModifiedDate", @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                   @Html.LabelFor(model => model.ModifiedBy)
+                                  
+                                    @Html.TextBoxFor(model => model.ModifiedByName, new { @class = "form-control", placeholder = "ModifiedBy", type = "text", id = "txtModifiedBy", @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    
+                   
+                }
+
+
+                <div class="form-inline">
+                    <div class="form-group col-sm-2">
+                        <button id="submitUrlRewrite" type="submit" class="AlignButton btn btn-default m-top-15">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+                <script id="divUrlRewriteValidations" type="text/x-kendo-template">
+                </script>
+            </div>
+            <div>
+                <script id="divSuccessOrFailedMessage" type="text/x-kendo-template">
+                    <p class="message">URL Rewrite Saved Successfully.</p>
+                    <button class="confirm k-button" style="margin:10px">OK</button>
+                </script>
+            </div>
+
+
+            <div id="footer" class="layoutFooter"></div>
+        }
+    </div>
+
+    <div id="dvCheckPatternNameAlreadyExists" data-request-url="@Url.Action("CheckPatternName", "UrlRewrite")"></div>
+</body>
+</html>

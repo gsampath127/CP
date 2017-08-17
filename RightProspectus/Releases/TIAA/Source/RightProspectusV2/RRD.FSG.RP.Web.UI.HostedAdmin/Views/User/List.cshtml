@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_AdminConfigurationLayout.cshtml";
+}
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li class="active">Users</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Users<span id="usersPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+                 </div>
+
+        <div class="col-sm-3 newAddButton">
+            <a id="btnAddNewUser" class="btn btn-success btn-sm m-top-5 pull-right-xs-max">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New User
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+                <input id="UserNameCombo" class="form-control" type="text" placeholder="User ID">
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <input id="FirstNameCombo" class="form-control" type="text" placeholder="First Name">
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <input id="LastNameCombo" type="text" class="form-control" placeholder="Last Name"/>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <input id="EmailCombo" type="text" class="form-control" placeholder="Email"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="searchUsers" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="clearUserSearch"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="GridContainer" class="ScrollTable">
+                <div id="userGrid" class="tableFixedWidth">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="alertDeleteUser" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to delete this User?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+<div id="dvLoadAllUsers" data-request-url="@Url.Action("GetAllUsers", "User")"></div>
+<div id="dvDeleteUser" data-request-url="@Url.Action("DeleteUser", "User")"></div>
+<div id="dvEditUser" data-request-url="@Url.Action("EditUser", "User")"></div>
+<div id="dvUserNameComboLoad" data-request-url="@Url.Action("GetUserName", "User")"></div>
+<div id="dvFirstNameComboLoad" data-request-url="@Url.Action("GetFirstName", "User")"></div>
+<div id="dvLastNameComboLoad" data-request-url="@Url.Action("GetLastName", "User")"></div>
+<div id="dvEmailComboLoad" data-request-url="@Url.Action("GetEmail", "User")"></div>
+<script src="~/Scripts/HostedAdmin/UserSettings.js"></script>
+
+<div id="dvUsersPopOver" class="dispNone">
+    Users page displays all the available <b>Users</b> in RightProspectus.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New User</li>
+        <li>EDIT Existing User</li>
+        <li>SEARCH User based on User Name, First Name, Last Name, Email.</li>
+        <li>DELETE User</li>
+    </ul>
+    <br />
+</div>

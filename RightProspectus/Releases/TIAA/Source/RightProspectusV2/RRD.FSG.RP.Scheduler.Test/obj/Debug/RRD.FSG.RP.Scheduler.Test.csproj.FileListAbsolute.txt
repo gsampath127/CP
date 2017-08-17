@@ -1,0 +1,1 @@
+D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RRD.FSG.RP.Scheduler.Test\obj\Debug\RRD.FSG.RP.Scheduler.Test.csprojResolveAssemblyReference.cache

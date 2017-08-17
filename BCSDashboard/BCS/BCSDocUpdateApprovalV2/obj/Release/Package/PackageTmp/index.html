@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html ng-app="app" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!--<base href="/" />-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BCS</title>
+
+</head>
+<body>
+    <!-- TOP NAV WITH LOGO -->
+    <header ui-view="header">
+
+
+    </header>
+    <main ui-view="body" id="main" class="container body-content">
+
+    </main>
+    <!-- FOOTER -->
+    <footer ui-view="footer">
+
+    </footer>
+
+   
+    <div id="dvAPIUUrl" data-request-url="/api"></div> 
+    <link href="Public/css/Site.css" rel="stylesheet" />
+    <link href="Public/css/bootstrap/bootstrap.css" rel="stylesheet" />
+    
+    <!--KENDO-->    
+
+    <link href="Public/css/kendo/kendo.common.min.css" rel="stylesheet" />
+   <!-- <link href="Public/css/kendo/kendo.custom.css" rel="stylesheet" />-->
+    <link href="Public/css/kendo/kendo.default.min.css" rel="stylesheet" />
+    <link href="Public/css/kendo/kendo.bootstrap.min.css" rel="stylesheet" />
+
+    <!--Loading Bar-->
+    <link href="Public/css/loadingbar/loading-bar.css" rel="stylesheet" />
+
+   
+    <link href="Content/bootstrap-duallistbox.css" rel="stylesheet" />
+
+
+    <script src="Public/scripts/jQuery/jquery.min.js"></script>
+    <script src="Public/scripts/bootstrap/bootstrap.min.js"></script>
+    <script src="Public/scripts/bootstrap/jquery.bootstrap-duallistbox.js"></script>
+
+    <!--Angular-->
+    <script src="Public/scripts/angular/angular.min.js"></script>
+    <script src="Public/scripts/angular/angular-ui-router.js"></script>
+    <script src="Public/scripts/angular/angular-animate.js"></script>
+    <script src="Public/scripts/angular/angular-jwt.min.js"></script>
+    <script src="Public/scripts/bootstrap/ui-bootstrap-tpls.min.js"></script>
+   
+    <!-- KENDO-->
+    <script src="Public/scripts/kendo/kendo.all.min.js"></script>
+    <!--Loading Bar-->
+    <script src="Public/scripts/loadingbar/loading-bar.js"></script>
+
+    <script src="Public/app.js"></script>
+    <script src="Public/appRoutes.js"></script>
+
+    <!--Controllers-->
+    <script src="Public/controllers/login.js"></script>
+    <script src="Public/controllers/application.js"></script>
+    <script src="Public/controllers/register.js"></script>
+    <script src="Public/controllers/forgotPassword.js"></script>
+    <script src="Public/controllers/home.js"></script>
+    <script src="Public/controllers/cusipReport.js"></script>
+    <script src="Public/controllers/fullfillmentInfo.js"></script>
+    <script src="Public/controllers/slink.js"></script>
+    <script src="Public/controllers/watchlist.js"></script>
+    <script src="Public/controllers/Error.js"></script>
+    <script src="Public/controllers/gatewayDocUpdate.js"></script>
+    <script src="Public/controllers/customerDocUpdate.js"></script>
+    <script src="Public/controllers/customerDocUpdateDetail.js"></script>
+    <script src="Public/controllers/liveUpdate.js"></script>
+    <script src="Public/controllers/profile.js"></script>
+    <script src="Public/controllers/users.js"></script>
+    <script src="Public/controllers/addEditUser.js"></script>
+    <script src="Public/controllers/script.js"></script>
+    <script src="Public/controllers/TRP/documentStatus.js"></script>
+    <script src="Public/controllers/TRP/customerFLT.js"></script>
+    <script src="Public/controllers/TRP/customerDocs.js"></script>
+    <script src="Public/controllers/TRP/blankFLTCusip.js"></script>
+
+    <script src="Public/controllers/TRP/missingRPCUSIP.js"></script>
+    <script src="Public/controllers/TRP/missingDocument.js"></script>  
+    <script src="Public/controllers/dailyUpdate.js"></script>
+
+
+    <!--Services-->
+    <script src="Public/services/login.js"></script>
+    <script src="Public/services/register.js"></script>
+    <script src="Public/services/forgotPassword.js"></script>
+    <script src="Public/services/home.js"></script>
+    <script src="Public/services/cusipReport.js"></script>
+    <script src="Public/services/fullfillmentInfo.js"></script>
+    <script src="Public/services/slink.js"></script>   
+    <script src="Public/services/liveUpdate.js"></script>
+    <script src="Public/services/reports.js"></script>
+    <script src="Public/services/profile.js"></script>
+    <script src="Public/services/users.js"></script>
+    <script src="Public/services/addEditUser.js"></script>
+    <script src="Public/services/trpReports.js"></script>
+    
+
+</body>
+</html>

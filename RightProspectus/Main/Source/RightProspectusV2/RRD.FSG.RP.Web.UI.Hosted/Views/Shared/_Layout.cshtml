@@ -1,0 +1,15 @@
+﻿@using RRD.FSG.RP.Web.UI.Hosted
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <title></title>  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    @Scripts.Render("~/bundles/jquery")
+    <link href="@(((BaseViewModel)Model).BaseURL)SiteTextHandler.ashx?ClientName=@(((BaseViewModel)Model).ClientName)&SiteName=@(((BaseViewModel)Model).SiteName)&Key=cssFile&IsProofing=@(((BaseViewModel)Model).IsProofing)" rel="stylesheet" media="all" />  
+</head>
+<body>
+        @RenderBody()
+</body>
+</html>

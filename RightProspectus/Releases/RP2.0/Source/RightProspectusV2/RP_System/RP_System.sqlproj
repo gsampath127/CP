@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>RP_System</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{14519b66-9695-4393-a108-9a65351ef328}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>RP_System</RootNamespace>
+    <AssemblyName>RP_System</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="dbo\User Defined Types" />
+    <Folder Include="dbo\Triggers" />
+    <Folder Include="dbo\Triggers\UserRoles" />
+    <Folder Include="dbo\Triggers\ClientUsers" />
+    <Folder Include="dbo\Triggers\Clients" />
+    <Folder Include="dbo\Triggers\ClientDns" />
+    <Folder Include="dbo\Triggers\Roles" />
+    <Folder Include="dbo\Triggers\VerticalMarkets" />
+    <Folder Include="dbo\Triggers\Users" />
+    <Folder Include="dbo\Functions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\UserRoles.sql" />
+    <Build Include="dbo\Tables\CUDHistory.sql" />
+    <Build Include="dbo\Tables\CUDHistoryData.sql" />
+    <Build Include="dbo\Tables\ErrorLog.sql" />
+    <Build Include="dbo\Tables\Template.sql" />
+    <Build Include="dbo\Tables\Page.sql" />
+    <Build Include="dbo\Tables\TemplatePage.sql" />
+    <Build Include="dbo\Tables\TemplatePageFeature.sql" />
+    <Build Include="dbo\Tables\TemplateText.sql" />
+    <Build Include="dbo\Tables\TemplatePageText.sql" />
+    <Build Include="dbo\Tables\TemplateNavigation.sql" />
+    <Build Include="dbo\Tables\TemplatePageNavigation.sql" />
+    <Build Include="dbo\Tables\VerticalMarkets.sql" />
+    <Build Include="dbo\Tables\Clients.sql" />
+    <Build Include="dbo\Tables\ClientDns.sql" />
+    <Build Include="dbo\Tables\ClientUsers.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetClientsData.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_StaticClientsData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteClient.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteUser.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetClientById.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetUserById.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveClient.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveUser.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetClients.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetUsers.sql" />
+    <Build Include="dbo\User Defined Types\TT_CUDHistory.sql" />
+    <Build Include="dbo\User Defined Types\TT_CUDHistoryData.sql" />
+    <Build Include="dbo\Stored Procedures\CUDHistory_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllClients.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_StaticTemplatePage_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllTemplatePage.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllTemplatePageText.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllTemplateText.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_StaticTemplatePageText_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_StaticTemplateText_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetDefaultPageNameById.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetTemplateNameById.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllUsers.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_StaticUsersData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\User Defined Types\TT_ClientUsers.sql" />
+    <Build Include="dbo\User Defined Types\TT_UserRoles.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllRoles.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveRoles.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteRoles.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_StaticRolesData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Triggers\UserRoles\T_UserRoles_I.sql" />
+    <Build Include="dbo\Triggers\UserRoles\T_UserRoles_U.sql" />
+    <Build Include="dbo\Triggers\UserRoles\T_UserRoles_D.sql" />
+    <Build Include="dbo\Triggers\ClientUsers\T_ClientUsers_I.sql" />
+    <Build Include="dbo\Triggers\ClientUsers\T_ClientUsers_U.sql" />
+    <Build Include="dbo\Triggers\ClientUsers\T_ClientUsers_D.sql" />
+    <Build Include="dbo\Triggers\Clients\T_Client_I.sql" />
+    <Build Include="dbo\Triggers\Clients\T_Client_D.sql" />
+    <Build Include="dbo\Triggers\Clients\T_Client_U.sql" />
+    <Build Include="dbo\Triggers\ClientDns\T_ClientDns_I.sql" />
+    <Build Include="dbo\Triggers\ClientDns\T_ClientDns_D.sql" />
+    <Build Include="dbo\Triggers\ClientDns\T_ClientDns_U.sql" />
+    <Build Include="dbo\Triggers\Roles\T_Roles_I.sql" />
+    <Build Include="dbo\Triggers\Roles\T_Roles_D.sql" />
+    <Build Include="dbo\Triggers\Roles\T_Roles_U.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllVerticalMarkets.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_StaticVerticalMarketsData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Triggers\VerticalMarkets\T_VerticalMarkets_I.sql" />
+    <Build Include="dbo\Triggers\VerticalMarkets\T_VerticalMarkets_U.sql" />
+    <Build Include="dbo\Triggers\VerticalMarkets\T_VerticalMarkets_D.sql" />
+    <Build Include="dbo\Triggers\Users\T_Users_I.sql" />
+    <Build Include="dbo\Triggers\Users\T_Users_U.sql" />
+    <Build Include="dbo\Triggers\Users\T_Users_D.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2Hosted_SaveErrorLog.sql" />
+    <Build Include="dbo\Tables\ReportScheduleRecipients.sql" />
+    <Build Include="dbo\Tables\ReportSchedule.sql" />
+    <Build Include="dbo\Tables\Reports.sql" />
+    <Build Include="dbo\Tables\ClientSettings.sql" />
+    <Build Include="dbo\Functions\fnReportScheduleTypeAndIntervalCheck.sql" />
+    <Build Include="dbo\Functions\fnNextReportDateUtc.sql" />
+    <Build Include="dbo\Functions\fnFrequencyDescription.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllReportSchedule.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_ReportScheduleData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Tables\TemplateFeature.sql" />
+    <Build Include="dbo\Tables\AspNet_SqlCacheTablesForChangeNotification.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_StaticTemplateSiteNavigation_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_StaticTemplatePageNavigation_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_StaticTemplatePageFeature_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_StaticTemplateFeature_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveUserRoles.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveReportSchedule.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllTemplateSiteNavigation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllTemplatePageNavigation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllTemplatePageFeature.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllTemplateFeature.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllRolesByUserId.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteReportSchedule.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCacheUpdateChangeIdStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCacheUnRegisterTableStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCacheRegisterTableStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCacheQueryRegisteredTablesStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCachePollingStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_ProcessReportSchedule.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_ProcessResetReportSchedule.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveReportScheduleEntry.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetReportScheduleByClientId.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetReportScheduleById.sql" />
+    <Build Include="dbo\Tables\FrequencyType.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllReports.sql" />
+    <Build Include="dbo\Functions\fnGetDateFromParts.sql" />
+    <Build Include="dbo\Tables\Category.sql" />
+    <Build Include="dbo\Tables\CategoryLog.sql" />
+    <Build Include="dbo\Tables\Log.sql" />
+    <Build Include="dbo\Stored Procedures\AddCategory.sql" />
+    <Build Include="dbo\Stored Procedures\ClearLogs.sql" />
+    <Build Include="dbo\Stored Procedures\InsertCategoryLog.sql" />
+    <Build Include="dbo\Stored Procedures\WriteLog.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="RP_System.refactorlog" />
+  </ItemGroup>
+</Project>

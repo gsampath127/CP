@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_SiteConfigurationLayout.cshtml";
+}
+
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+<script src="~/Scripts/HostedAdmin/SiteFeatureSettings.js"></script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>
+                <li><a href="@Url.Action("List", "Site")">Sites</a></li>
+                <li><a href="@Url.Action("SiteConfiguration", "Site")">@ViewData["SelectedSite"]</a></li>
+                <li class="active">Site Feature</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Site Feature<span id="siteFeaturePopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+
+        <div class="col-sm-3 newAddButton">
+            <a id="newSiteFeature" class="btn btn-success btn-sm m-top-5 pull-right-xs-max">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Site Feature
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+
+    @*-----------------------------------------------------SearchParameters--------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+
+                <div class="form-group">
+                    <input id="comboFeatureKey" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+       
+
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="searchSiteFeature" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="clearSiteFeatureSearch"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*----------------------------------------------------------GRID-------------------------------------------------------*@
+   
+
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="siteFeatureGridwithSortingButtons">
+        <div id="siteFeatureContainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="siteFeatureGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="dvSiteFeatureLoad" data-request-url="@Url.Action("Search", "SiteFeature")"></div>
+<div id="dvGetFeatureKeys" data-request-url="@Url.Action("GetTemplateFeatureKeys", "SiteFeature")"></div>
+<div id="dvGetFeatureMode" data-request-url="@Url.Action("GetTemplateFeatureMode", "SiteFeature")"></div>
+<div id="dvEditSiteFeature" data-request-url="@Url.Action("Edit", "SiteFeature")"></div>
+<div id="dvDisableSiteFeature" data-request-url="@Url.Action("DisableSiteFeature", "SiteFeature")"></div>
+
+<script id="alertDisableSiteFeature" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Site Feature?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+ </script>
+
+
+<div id="dvSiteFeaturePopOver" class="dispNone">
+    Site Feature displays all the available Site Features for selected Client in RightProspectus system.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Site Feature</li>
+        <li>EDIT Existing Site Feature</li>
+        <li>SEARCH Site Features based on Feature Key </li>
+        <li>DELETE Site Feature</li>
+    </ul>
+    <br />
+</div>

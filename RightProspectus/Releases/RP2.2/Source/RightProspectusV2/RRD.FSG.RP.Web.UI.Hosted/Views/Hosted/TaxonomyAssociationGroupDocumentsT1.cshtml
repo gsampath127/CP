@@ -1,0 +1,90 @@
+﻿@using RRD.FSG.RP.Web.UI.Hosted
+@using System.Web
+@model RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel
+<link href="@(((BaseViewModel)Model).BaseURL)PageTextHandler.ashx?ClientName=@(((BaseViewModel)Model).ClientName)&SiteName=@(((BaseViewModel)Model).SiteName)&Key=@(((BaseViewModel)Model).PageCSSResourceKey)&IsProofing=@(((BaseViewModel)Model).IsProofing)&PageId=@(((BaseViewModel)Model).PageId)" rel="stylesheet" media="all" />
+@Scripts.Render("~/Scripts/MinJS")
+
+<div class="content-outer">
+    <div class="content-outer-top"></div>
+    <div class="content-outer-mid">
+
+        @(Html.Raw(HttpUtility.HtmlDecode(Model.ClientCustomHeader)))
+
+        <div class="content-inner">
+            <div class="content-inner-top"></div>
+            <div class="content-inner-mid">
+                <div id="mainDiv" class="cssTAGDMainDiv">
+                    <div class="cssHeaderTable">
+                        <div class="cssHeaderTableRow">
+                            <div class="cssHeaderTableCell cssClientLogoPlaceHolder">
+                                <div class="cssClientLogo"> @Html.Raw(Model.TAGDLogoText)</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    @if (Model.DisplayBrowserAlert && !Model.BrowserDetails.IsLatest)
+                    {
+                        <div class="cssBrowserDetailDiv">
+                            @Model.BrowserAlertText<a href="@Model.BrowserDetails.DownloadUrl" target="_blank"><img src="@Model.BrowserDetails.LogoStaticResourceURL" alt="@Model.BrowserDetails.Name" class="cssBrowserLogo"/></a>
+                        </div>
+                    }
+
+                    @if (@Model.EnableGroupSearch)
+                    {
+                        <div class="cssTAGDGroupSelectDiv">
+                            @Html.DropDownListFor(model => model.SelectedTAGDId, new System.Web.Mvc.SelectList(Model.TAGDDetails, "Id", "Name"), new { @class = "cssTAGDGroupSelect", id = "ddlTAG" })
+                        </div>
+                    }
+
+                    <div id="divTAGDGrid">
+                        @Html.Partial("TaxonomyAssociationGroupPartialT1", Model)
+                    </div>
+
+
+
+                    <div id="divGlossary" class="cssTAGDGlossary">
+                        @(Html.Raw(HttpUtility.HtmlDecode(Model.Glossary)))
+                    </div>
+                    <div id="divFooter" class="cssTAGDFooter">
+                        <div class="cssTAGDFootnotesHeaderText">@(Html.Raw(HttpUtility.HtmlDecode(Model.FootnotesHeaderText)))</div>
+                        <div class="cssTAGDFootnotesItems">
+                            @foreach (var item in Model.TaxonomyAssociationGroupModelData.FootNotes.OrderBy(p => p.Order))
+                            {
+                                <div class="cssTAGDFootnotesItemText">@item.Text</div>
+                            }
+                        </div>
+                    </div>                   
+                </div>                
+            </div>           
+        </div>
+    </div>
+</div>
+@if(Model.DisplayTAGDFooterTemplate)
+{ 
+    <iframe class="cssTAGDFooterTemplate" scrolling="no" src="@("staticresource/TAGDFooterTemplate?client=" + (((BaseViewModel)Model).ClientName))"></iframe> 
+}
+<div id="dvTAGDURL" data-request-url="@Url.Action("TaxonomyAssoicationGroupTaxonomyAssoicationGrid", "Hosted")"></div>
+
+<script>
+
+    $(document).ready(function () {
+        $("#ddlTAG").change(function () {
+            var tagdData = { Customer: "nuveen", Site: null, Id: $("#ddlTAG").val() };
+            $.ajax({
+                type: 'GET',
+                ontentType: 'application/json; charset=utf-8',
+                dataType: 'HTML',
+                url: $("#dvTAGDURL").data('request-url'),
+                data: tagdData,
+                success: function (result) {
+                    $("#divTAGDGrid").html(result);
+                },
+                error: function () {
+                }
+            });
+        });
+      
+    });
+
+</script>

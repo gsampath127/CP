@@ -1,0 +1,35 @@
+﻿@using RRD.FSG.RP.Web.UI.Hosted
+
+<link href="@(((BaseViewModel)Model).BaseURL)PageTextHandler.ashx?ClientName=@(((BaseViewModel)Model).ClientName)&SiteName=@(((BaseViewModel)Model).SiteName)&Key=@(((BaseViewModel)Model).PageCSSResourceKey)&IsProofing=@(((BaseViewModel)Model).IsProofing)&PageId=@(((BaseViewModel)Model).PageId)" rel="stylesheet" media="all" />
+
+<div class="cssTALMainDiv">
+    <div class="cssHeaderTable">
+        <div class="cssHeaderTableRow">
+            <div class="cssHeaderTableCell cssClientLogoPlaceHolder">
+                <div class="cssClientLogo">@(Html.Raw(System.Web.HttpUtility.HtmlDecode(((BaseViewModel)Model).LogoText)))</div>
+            </div>
+        </div>
+    </div>
+    <div class="cssTALProductDetailsMainDiv">
+        <div class="cssTALProductHeaderTextDiv">
+            @(Html.Raw(System.Web.HttpUtility.HtmlDecode(((TaxonomyAssociationLinkViewModel)Model).ProductHeaderText)))
+        </div>
+        <div class="cssTALProductLinksPlaceHolderDiv">
+            <ul id="ulTALProducts">
+                @foreach (var item in ((TaxonomyAssociationLinkViewModel)Model).TaxonomyAssociationLinkModelData)
+                {
+                    <li id="liTALProducts">
+                        <a class="cssLinks" title="@(item.TaxonomyDescriptionOverride)" href="@Url.Action("TaxonomyAssociationHierarchyDocuments",
+                                            new { externalID = item.ParentTaxonomyAssociaitonID,
+                                                  isInternalTAID = true,
+                                                  site = ((TaxonomyAssociationLinkViewModel)Model).SiteName,
+                                                  isProofing = ((TaxonomyAssociationLinkViewModel)Model).IsProofing == 1 ? "True" : ""
+                                                })">
+                            @item.TaxonomyAssocationName
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

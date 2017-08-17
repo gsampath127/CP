@@ -1,0 +1,132 @@
+﻿<div class="row">
+    <div class="col-sm-12">
+
+    </div>
+</div>
+<div id="importMarketLevelDocumentTypeAssociation" style="display:none">
+
+    <div class="row">
+        <div style="padding:10px 10px 10px 10px">
+            <input type="file" name="file" id="marketLevelDocumentTypeAssociationUpload" />
+        </div>
+        <div class="col-sm-12">
+            <div id="MLDTInvalidDataGridContainer" class="ScrollTable">
+                <div id="MLDTInvalidDataGridHeader" class="tableFixedWidth" style="margin:20px 0; display:none">
+                    Invalid CUSIPs Or Document Types
+                </div>
+                <div id="MLDTInvalidDataGrid" class="tableFixedWidth">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    @* TODO: Commenting Import Export action button - Phase - 2 changes *@
+    @*<div class="col-lg-6 dvSwitch">
+        <input class="k-textbox " type=text id="txtSearchMLDString" placeholder="enter search text..." />
+        <button id="btnMLDSearch">Search</button>
+
+    </div>*@
+    <div class="col-lg-12">
+        <div id="dvSwitchMLD" class="btn-group pull-right dvSwitch">
+            <a href="#" class="btn btn-default dropdown-toggle, ImportActions" data-toggle="dropdown">Actions <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a id="lnkImportMarketLevel" href="#">Import</a></li>
+                <li><a id="exportMarketLevel" href="#">Export</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+<div class="row">
+    <div class="col-sm-12">
+        <div id="GridContainer" class="ScrollTable">
+            <div id="marketLevelDocumentTypeGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dvMarketLevelDocumentTypes" data-request-url="@Url.Action("GetDocumentTypes", "VerticalSDTA")"></div>
+<div id="dvGetTaxonomyByTemplateForMLDTA" data-request-url="@Url.Action("GetTaxonomyByTemplateForMLDTA", "VerticalSDTA")"></div>
+<div id="dvMarketLevelDocumentTypeAssociation" data-request-url="@Url.Action("GetMarketLevelDocumentTypeAssociation", "VerticalSDTA")"></div>
+<div id="dvSaveMarketLevelDocumentTypeAssociation" data-request-url="@Url.Action("SaveDocumentTypeAssociation", "VerticalSDTA")"></div>
+<div id="dvMarketLevelDocumentTypeImport" data-request-url="@Url.Action("MarketLevelDocumentTypeImport", "VerticalSDTA")"></div>
+
+
+<script type="text/x-kendo-template" id="deleteMarketLevelDocumentTypeAssociationTemplate">
+    Delete
+    <strong>MarketId</strong> ?
+    <button class="confirm k-button confirmButtonYesMultiple" id="confirmMDTADelete">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo" id="cancelMDTADelete"> No</button>
+</script>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/bootstrap-multiselect.js"></script>
+<link href="~/Content/bootstrap-multiselect.css" rel="stylesheet" />
+<script src="~/Scripts/HostedAdmin/VerticalDataImport/MarketLevelDocumentTypeSettings.js"></script>
+<style>
+    .file-icon {
+        display: inline-block;
+        float: left;
+        width: 48px;
+        height: 48px;
+        margin-left: 10px;
+        margin-top: 13.5px;
+    }
+
+
+    #marketLevelDocumentTypeAssociationUpload .file-heading {
+        font-family: Arial;
+        font-size: 1.1em;
+        display: inline-block;
+        float: left;
+        width: 60%;
+        margin: 0 0 0 20px;
+        height: 25px;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    #marketLevelDocumentTypeAssociationUpload .file-name-heading {
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    #marketLevelDocumentTypeAssociationUpload .file-size-heading {
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    li.k-file .file-wrapper .k-upload-action {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    li.k-file div.file-wrapper {
+        position: relative;
+        height: 75px;
+    }
+
+    div.k-window-content {
+        overflow: hidden !important;
+    }
+
+    .MarketIdLevelDocumentType-EditPopup .k-edit-form-container{
+        width: 600px !important
+    }
+    .MarketIdLevelDocumentType-EditPopup .editor-label, .MarketIdLevelDocumentType-EditPopup .k-edit-label{
+        width: 20% !important;        
+    }
+
+    .MarketIdLevelDocumentType-EditPopup .editor-field, .MarketIdLevelDocumentType-EditPopup .k-edit-field{
+        width: 70% !important;         
+    }
+    .MarketIdLevelDocumentType-EditPopup .k-textbox, .MarketIdLevelDocumentType-EditPopup .k-dropdown {
+        width: 100%;
+    }
+
+</style>

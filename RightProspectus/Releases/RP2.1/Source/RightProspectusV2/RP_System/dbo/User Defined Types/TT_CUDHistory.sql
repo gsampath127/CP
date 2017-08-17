@@ -1,0 +1,12 @@
+﻿-- User Defined Table Type for CUDHistory inserts.
+CREATE TYPE dbo.TT_CUDHistory
+AS TABLE
+(
+	Id INT IDENTITY NOT NULL PRIMARY KEY CLUSTERED,
+	TableName NVARCHAR(128) NOT NULL,
+	[Key] INT NOT NULL,
+	SecondKey NVARCHAR(200) NULL,
+	ThirdKey NVARCHAR(200) NULL,
+	CUDType CHAR(1) NOT NULL,
+	UserId INT NULL
+);

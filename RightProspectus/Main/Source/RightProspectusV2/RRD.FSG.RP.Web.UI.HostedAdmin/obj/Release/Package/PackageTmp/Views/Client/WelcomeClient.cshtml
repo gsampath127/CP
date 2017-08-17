@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "WelcomeClient";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<style type="text/css">
+    .autoheight {
+        height: auto !important;
+    }
+</style>
+
+<script language="javascript" type="text/javascript">
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>            
+            <li class="active">@ViewData["SelectedClient"]</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <h2>You are the client admin page for @ViewData["SelectedClient"] ! </h2>
+        <br/>
+        On the <b>TOP RIGHT</b>, you can navigate to the menu to administer various functionalities i.e. Sites, VerticalXmlImport, VerticalXmlExport, TaxonomyLevelExternalId, DocumentTypeExternalId, StaticResource and UrlRewrite ..
+    </div>
+</div>
+
+@Html.Partial("~/Views/CUDHistory/CUDHistoryView.cshtml")
+

@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "TaxonomyAssociationClientDocument";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("List", "Site")">@ViewData["SelectedCustomer"]</a></li>
+                <li class="active">Taxonomy Association Client Document</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Taxonomy Association Client Document<span id="TaxonomyAssociationClientDocumentPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+        <div class="col-sm-3 text-right">
+            <a class="btn btn-success btn-sm m-top-20 pull-right-xs-max" id="btnAddNewTaxonomyAssociationClientDocument">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Taxonomy Association Client Document
+            </a>
+        </div>
+
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="TaxonomyCombo" class="form-control" type="text" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="ClientDocumentTypeCombo" class="form-control" type="text" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="ClientDocumentNameCombo" class="form-control" type="text" />
+
+            </div>
+        </div>
+        
+
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="btnSearchTaxonomyAssociationClientDocument" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="taxonomyAssociationClientDocumentFilters"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="taxonomyAssociationClientDocumentGridwithSortingButtons">
+
+        <div id="taxonomyAssociationClientDocumentcontainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="taxonomyAssociationClientDocumentGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="dvTaxonomyComboLoad" data-request-url="@Url.Action("GetTaxonomy", "TaxonomyAssociationClientDocument")"></div>
+<div id="dvClientDocumentTypeCombo" data-request-url="@Url.Action("GetClientDocumentTypeName", "TaxonomyAssociationClientDocument")"></div>
+<div id="dvClientDocumentNameCombo" data-request-url="@Url.Action("GetClientDocumentName", "TaxonomyAssociationClientDocument")"></div>
+<div id="dvLoadAllTaxonomyAssociationClientDocument" data-request-url="@Url.Action("GetAllTaxonomyAssociationClientDocumentDetails", "TaxonomyAssociationClientDocument")"></div>
+<div id="dvDisableTaxonomyAssociationClientDocument" data-request-url="@Url.Action("DisableTaxonomyAssociationClientDocument", "TaxonomyAssociationClientDocument")"></div>
+
+<script id="alertDisable" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Taxonomy Association Client Document?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+<div id="dvEditTaxonomyAssociationClientDocument" data-request-url="@Url.Action("EditTaxonomyAssociationClientDocument", "TaxonomyAssociationClientDocument")"></div>
+
+<script src="~/Scripts/HostedAdmin/TaxonomyAssociationClientDocumentSettings.js"></script>
+<div id="dvTaxonomyAssociationClientDocument" class="dispNone">
+    Taxonomy Association Client Document page displays the <b>Taxonomy Name ,Client Document Type, Client Document Name and associated File Name</b> in RightProspectus.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Taxonomy Association Client Document</li>
+        <li>SEARCH Taxonomy Association Client Document based on Taxonomy,Client Document Type,Client Document Name.</li>
+        <li>DELETE Taxonomy Association Client Document</li>
+    </ul>
+    <br />
+</div>
+
+

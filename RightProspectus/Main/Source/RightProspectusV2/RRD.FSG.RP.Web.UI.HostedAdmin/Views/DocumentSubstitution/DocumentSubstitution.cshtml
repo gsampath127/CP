@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "DocumentSubstitution";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("List", "Site")">@ViewData["SelectedCustomer"]</a></li>
+                <li class="active">Document Substitution</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Document Substitution<span id="DocumentSubstitutionGridPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+        <div class="col-sm-3 text-right">
+            <a class="btn btn-success btn-sm m-top-20 pull-right-xs-max" id="btnAddNewDocumentSubstitution">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Document Substitution
+            </a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="comboDocumentType" class="form-control" type="text" />
+
+            </div>
+        </div>
+
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="btnSearchDocumentSubstitution" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="DocumentSubstitutionClearFilters"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="DocumentSubstitutionGridwithSortingButtons">
+
+        <div id="DocumentSubstitutioncontainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="DocumentSubstitutionGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="dvDocumentSubstitutionDocumentTypeComboLoad" data-request-url="@Url.Action("GetDocumenType", "DocumentSubstitution")"></div>
+<div id="dvLoadAllDocumentSubstitution" data-request-url="@Url.Action("GetAllDocumentSubstitutionDetails", "DocumentSubstitution")"></div>
+<div id="dvDisableDocumentSubstitution" data-request-url="@Url.Action("DisableDocumentSubstitution", "DocumentSubstitution")"></div>
+<div id="dvEditDocumentSubstitution" data-request-url="@Url.Action("EditDocumentSubstitution", "DocumentSubstitution")"></div>
+
+<div id="dvDocumentSubstitutionPopOver" class="dispNone">
+    Browser Version page displays all the available Versions for selected Browser.
+    <br />
+    <br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Document Substitution</li>
+        <li>EDIT Existing Document Substitution</li>
+        <li>SEARCH Document Substitution based on Document Type</li>
+        <li>DELETE Document Substitution</li>
+    </ul>
+    <br />
+</div>
+
+
+<script id="alertDisableDocumentSubstitution" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Document Substitution?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+
+<script src="~/Scripts/HostedAdmin/DocumentSubstitutionSettings.js"></script>
+
+

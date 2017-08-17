@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>RP_Client</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{5482eb46-b639-4b5e-a9a3-6fd492c7677e}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>RP_Client</RootNamespace>
+    <AssemblyName>RP_Client</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <ServiceBrokerOption>EnableBroker</ServiceBrokerOption>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\XMLSchemaCollections\" />
+    <Folder Include="dbo\User Defined Types" />
+    <Folder Include="dbo\Triggers" />
+    <Folder Include="dbo\Triggers\Site" />
+    <Folder Include="dbo\Triggers\ClientSettings" />
+    <Folder Include="dbo\Triggers\ClientDocumentType" />
+    <Folder Include="dbo\Triggers\ClientDocument" />
+    <Folder Include="dbo\Triggers\ClientDocumentData" />
+    <Folder Include="dbo\Triggers\ClientDocumentGroup" />
+    <Folder Include="dbo\Triggers\ClientDocumentGroupClientDocument" />
+    <Folder Include="dbo\Triggers\UrlRewrite" />
+    <Folder Include="dbo\Triggers\SiteText" />
+    <Folder Include="dbo\Triggers\PageText" />
+    <Folder Include="dbo\Triggers\SiteFeature" />
+    <Folder Include="dbo\Triggers\PageFeature" />
+    <Folder Include="dbo\Triggers\PageNavigation" />
+    <Folder Include="dbo\Triggers\SiteNavigation" />
+    <Folder Include="dbo\Triggers\StaticResource" />
+    <Folder Include="dbo\Triggers\TaxonomyAssociation" />
+    <Folder Include="dbo\Triggers\TaxonomyAssociationMetaData" />
+    <Folder Include="dbo\Triggers\TaxonomyAssociationGroup" />
+    <Folder Include="dbo\Triggers\TaxonomyAssociationGroupTaxonomyAssociation" />
+    <Folder Include="dbo\Triggers\TaxonomyAssociationHierachy" />
+    <Folder Include="dbo\Triggers\TaxonomyLevelExternalId" />
+    <Folder Include="dbo\Triggers\TaxonomyAssociationClientDocument" />
+    <Folder Include="dbo\Triggers\TaxonomyAssociationClientDocumentGroup" />
+    <Folder Include="dbo\Triggers\DocumentTypeAssociation" />
+    <Folder Include="dbo\Triggers\DocumentTypeExternalId" />
+    <Folder Include="dbo\Triggers\Footnote" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="Service Broker\" />
+    <Folder Include="dbo\Triggers\ReportContent" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\VerticalXmlExport.sql" />
+    <Build Include="dbo\Tables\SiteText.sql" />
+    <Build Include="dbo\Tables\SiteActivity.sql" />
+    <Build Include="dbo\Tables\SiteTextVersion.sql" />
+    <Build Include="dbo\Tables\ErrorLog.sql" />
+    <Build Include="dbo\Tables\Uri.sql" />
+    <Build Include="dbo\Tables\PageTextVersion.sql" />
+    <Build Include="dbo\Tables\UserAgent.sql" />
+    <Build Include="dbo\Tables\SiteFeature.sql" />
+    <Build Include="dbo\Tables\PageFeature.sql" />
+    <Build Include="dbo\Tables\Site.sql" />
+    <Build Include="dbo\Tables\ClientSettings.sql" />
+    <Build Include="dbo\Tables\ClientDocumentType.sql" />
+    <Build Include="dbo\Tables\SiteNavigationVersion.sql" />
+    <Build Include="dbo\Tables\ClientDocument.sql" />
+    <Build Include="dbo\Tables\ClientDocumentData.sql" />
+    <Build Include="dbo\Tables\ClientDocumentGroup.sql" />
+    <Build Include="dbo\Tables\PageNavigationVersion.sql" />
+    <Build Include="dbo\Tables\ClientDocumentGroupClientDocument.sql" />
+    <Build Include="dbo\Tables\SiteXmlImport.sql" />
+    <Build Include="dbo\Tables\SiteXmlExport.sql" />
+    <Build Include="dbo\Tables\UrlRewrite.sql" />
+    <Build Include="dbo\Tables\PageText.sql" />
+    <Build Include="dbo\Tables\TaxonomyAssociation.sql" />
+    <Build Include="dbo\Tables\SiteNavigation.sql" />
+    <Build Include="dbo\Tables\TaxonomyAssociationMetaData.sql" />
+    <Build Include="dbo\Tables\PageNavigation.sql" />
+    <Build Include="dbo\Tables\TaxonomyAssociationGroup.sql" />
+    <Build Include="dbo\Tables\TaxonomyAssociationGroupTaxonomyAssociation.sql" />
+    <Build Include="dbo\Tables\TaxonomyAssociationHierachy.sql" />
+    <Build Include="dbo\Tables\TaxonomyLevelExternalId.sql" />
+    <Build Include="dbo\Tables\TaxonomyAssociationClientDocument.sql" />
+    <Build Include="dbo\Tables\DocumentTypeAssociation.sql" />
+    <Build Include="dbo\Tables\DocumentTypeExternalId.sql" />
+    <Build Include="dbo\Tables\Footnote.sql" />
+    <Build Include="dbo\Tables\TaxonomyAssociationClientDocumentGroup.sql" />
+    <Build Include="dbo\Tables\VerticalXmlImport.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetTaxonomyAssociationHierarchy.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetTaxonomyAssociationLinks.sql" />
+    <Build Include="dbo\Tables\StaticResource.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetTaxonomyAssociationDocuments.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetTaxonomySpecificDocumentFrame.sql" />
+    <Build Include="dbo\Tables\CUDHistoryData.sql" />
+    <Build Include="dbo\Tables\CUDHistory.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetSites.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_ClientsSiteData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetClientsSiteData.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetSiteById.sql" />
+    <Build Include="dbo\User Defined Types\TT_CUDHistory.sql" />
+    <Build Include="dbo\User Defined Types\TT_CUDHistoryData.sql" />
+    <Build Include="dbo\Stored Procedures\CUDHistory_Insert.sql" />
+    <Build Include="dbo\Triggers\Site\T_Site_D.sql" />
+    <Build Include="dbo\Triggers\Site\T_Site_I.sql" />
+    <Build Include="dbo\Triggers\Site\T_Site_U.sql" />
+    <Build Include="dbo\Triggers\ClientSettings\T_ClientSettings_I.sql" />
+    <Build Include="dbo\Triggers\ClientSettings\T_ClientSettings_D.sql" />
+    <Build Include="dbo\Triggers\ClientSettings\T_ClientSettings_U.sql" />
+    <Build Include="dbo\Triggers\ClientDocumentType\T_ClientDocumentType_I.sql" />
+    <Build Include="dbo\Triggers\ClientDocumentType\T_ClientDocumentType_D.sql" />
+    <Build Include="dbo\Triggers\ClientDocumentType\T_ClientDocumentType_U.sql" />
+    <Build Include="dbo\Triggers\ClientDocument\T_ClientDocument_I.sql" />
+    <Build Include="dbo\Triggers\ClientDocument\T_ClientDocument_D.sql" />
+    <Build Include="dbo\Triggers\ClientDocument\T_ClientDocument_U.sql" />
+    <Build Include="dbo\Triggers\ClientDocumentData\T_ClientDocumentData_I.sql" />
+    <Build Include="dbo\Triggers\ClientDocumentData\T_ClientDocumentData_U.sql" />
+    <Build Include="dbo\Triggers\ClientDocumentData\T_ClientDocumentData_D.sql" />
+    <Build Include="dbo\Triggers\ClientDocumentGroup\T_ClientDocumentGroup_I.sql" />
+    <Build Include="dbo\Triggers\ClientDocumentGroup\T_ClientDocumentGroup_U.sql" />
+    <Build Include="dbo\Triggers\ClientDocumentGroup\T_ClientDocumentGroup_D.sql" />
+    <Build Include="dbo\Triggers\ClientDocumentGroupClientDocument\T_ClientDocumentGroupClientDocument_I.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllSiteText.sql" />
+    <Build Include="dbo\Triggers\ClientDocumentGroupClientDocument\T_ClientDocumentGroupClientDocument_U.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SiteTextData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllPageText.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_PageTextData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SavePageText.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeletePageText.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteSiteText.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveSiteText.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllSite.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SiteData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveSite.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteSite.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllDocumentTypeExternalId.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteDocumentTypeExternalId.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveDocumentTypeExternalId.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DocumentTypeExternalIdData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllUrlRewrite.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveUrlRewrite.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteUrlRewrite.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_UrlRewriteData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllTaxonomyLevelExternalId.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveTaxonomyLevelExternalId.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteTaxonomyLevelExternalId.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_TaxonomyLevelExternalIdData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllStaticResource.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveStaticResource.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteStaticResource.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_StaticResourceData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_SaveSiteActivity.sql" />
+    <Build Include="dbo\Triggers\ClientDocumentGroupClientDocument\T_ClientDocumentGroupClientDocument_D.sql" />
+    <Build Include="dbo\Triggers\UrlRewrite\T_UrlRewrite_I.sql" />
+    <Build Include="dbo\Triggers\UrlRewrite\T_UrlRewrite_D.sql" />
+    <Build Include="dbo\Triggers\UrlRewrite\T_UrlRewrite_U.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllDocumentType.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DocumentTypeData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Triggers\SiteText\T_SiteText_I.sql" />
+    <Build Include="dbo\Triggers\SiteText\T_SiteText_D.sql" />
+    <Build Include="dbo\Triggers\SiteText\T_SiteText_U.sql" />
+    <Build Include="dbo\Triggers\PageText\T_PageText_I.sql" />
+    <Build Include="dbo\Triggers\PageText\T_PageText_D.sql" />
+    <Build Include="dbo\Triggers\PageText\T_PageText_U.sql" />
+    <Build Include="dbo\Triggers\PageFeature\T_PageFeature_I.sql" />
+    <Build Include="dbo\Triggers\PageFeature\T_PageFeature_D.sql" />
+    <Build Include="dbo\Triggers\PageFeature\T_PageFeature_U.sql" />
+    <Build Include="dbo\Triggers\SiteFeature\T_SiteFeature_I.sql" />
+    <Build Include="dbo\Triggers\SiteFeature\T_SiteFeature_U.sql" />
+    <Build Include="dbo\Triggers\SiteFeature\T_SiteFeature_D.sql" />
+    <Build Include="dbo\Triggers\PageNavigation\T_PageNavigation_I.sql" />
+    <Build Include="dbo\Triggers\PageNavigation\T_PageNavigation_U.sql" />
+    <Build Include="dbo\Triggers\PageNavigation\T_PageNavigation_D.sql" />
+    <Build Include="dbo\Triggers\SiteNavigation\T_SiteNavigation_I.sql" />
+    <Build Include="dbo\Triggers\SiteNavigation\T_SiteNavigation_D.sql" />
+    <Build Include="dbo\Triggers\SiteNavigation\T_SiteNavigation_U.sql" />
+    <Build Include="dbo\Triggers\StaticResource\T_StaticResource_I.sql" />
+    <Build Include="dbo\Triggers\StaticResource\T_StaticResource_U.sql" />
+    <Build Include="dbo\Triggers\StaticResource\T_StaticResource_D.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociation\T_TaxonomyAssociation_I.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociation\T_TaxonomyAssociation_U.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociation\T_TaxonomyAssociation_D.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationMetaData\T_TaxonomyAssociationMetaData_I.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationMetaData\T_TaxonomyAssociationMetaData_U.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationMetaData\T_TaxonomyAssociationMetaData_D.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationGroup\T_TaxonomyAssociationGroup_I.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationGroup\T_TaxonomyAssociationGroup_U.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationGroup\T_TaxonomyAssociationGroup_D.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationGroupTaxonomyAssociation\T_TaxonomyAssociationGroupTaxonomyAssociation_I.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationGroupTaxonomyAssociation\T_TaxonomyAssociationGroupTaxonomyAssociation_U.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationGroupTaxonomyAssociation\T_TaxonomyAssociationGroupTaxonomyAssociation_D.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationHierachy\T_TaxonomyAssociationHierachy_I.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationHierachy\T_TaxonomyAssociationHierachy_U.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationHierachy\T_TaxonomyAssociationHierachy_D.sql" />
+    <Build Include="dbo\Triggers\TaxonomyLevelExternalId\T_TaxonomyLevelExternalId_I.sql" />
+    <Build Include="dbo\Triggers\TaxonomyLevelExternalId\T_TaxonomyLevelExternalId_U.sql" />
+    <Build Include="dbo\Triggers\TaxonomyLevelExternalId\T_TaxonomyLevelExternalId_D.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationClientDocument\T_TaxonomyAssociationClientDocument_I.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationClientDocument\T_TaxonomyAssociationClientDocument_U.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationClientDocument\T_TaxonomyAssociationClientDocument_D.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationClientDocumentGroup\T_TaxonomyAssociationClientDocumentGroup_I.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationClientDocumentGroup\T_TaxonomyAssociationClientDocumentGroup_U.sql" />
+    <Build Include="dbo\Triggers\TaxonomyAssociationClientDocumentGroup\T_TaxonomyAssociationClientDocumentGroup_D.sql" />
+    <Build Include="dbo\Triggers\DocumentTypeAssociation\T_DocumentTypeAssociation_I.sql" />
+    <Build Include="dbo\Triggers\DocumentTypeAssociation\T_DocumentTypeAssociation_U.sql" />
+    <Build Include="dbo\Triggers\DocumentTypeAssociation\T_DocumentTypeAssociation_D.sql" />
+    <Build Include="dbo\Triggers\DocumentTypeExternalId\T_DocumentTypeExternalId_I.sql" />
+    <Build Include="dbo\Triggers\DocumentTypeExternalId\T_DocumentTypeExternalId_U.sql" />
+    <Build Include="dbo\Triggers\DocumentTypeExternalId\T_DocumentTypeExternalId_D.sql" />
+    <Build Include="dbo\Triggers\Footnote\T_Footnote_I.sql" />
+    <Build Include="dbo\Triggers\Footnote\T_Footnote_U.sql" />
+    <Build Include="dbo\Triggers\Footnote\T_Footnote_D.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetTaxonomyIDByTaxonomyAssociationIDOrExternalID.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2Hosted_SaveErrorLog.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllTaxonomy.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_TaxonomyData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SiteNavigationData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_PageNavigationData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveVerticalXmlExport.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllVerticalXmlExport.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetVerticalXmlExportByID.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_VerticalXmlExportData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllVerticalXmlImport.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetVerticalXmlImportByID.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveVerticalXmlImport.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_VerticalXmlImportData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllDocumentTypeAssociation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveDocumentTypeAssociation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteDocumentTypeAssociation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllTaxonomyAssociation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveTaxonomyAssociation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteTaxonomyAssociation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllTaxonomyAssociationHierarchy.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveTaxonomyAssociationHierarchy.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteTaxonomyAssociationHierarchy.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteClientDocumentType.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllFootnote.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveFootnote.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteFootnote.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DequeueVerticalXmlExport.sql" />
+    <Build Include="dbo\Tables\ReportContentData.sql" />
+    <Build Include="dbo\Tables\ReportContent.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_ReportContent_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveReportContent.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllReportContent.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteReportContent.sql" />
+    <Build Include="dbo\Tables\RequestMaterialPrintHistory.sql" />
+    <Build Include="dbo\Tables\RequestMaterialPrintProsDetail.sql" />
+    <Build Include="dbo\Tables\RequestMaterialEmailHistory.sql" />
+    <Build Include="dbo\Tables\RequestMaterialEmailProsDetail.sql" />
+    <Build Include="dbo\User Defined Types\TT_TaxonomyAssociation.sql" />
+    <Build Include="dbo\User Defined Types\TT_TaxonomyAssociationFootnotes.sql" />
+    <Build Include="dbo\User Defined Types\TT_DocumentTypeAssociation.sql" />
+    <Build Include="dbo\User Defined Types\TT_TaxonomyAssociationHierarchy.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveVerticalDataFromImportXmlData.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetRequestMaterialPrintRequestData.sql" />
+    <Build Include="dbo\Tables\RequestMaterialSKUDetail.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetSiteActivityReport.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveVerticalXmlBackupToExportTableAndUpdateStatus.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DequeueVerticalXmlImport.sql" />
+    <Build Include="dbo\Tables\BadRequest.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_UpdateRequestMaterialEmailClickDate.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_SaveRequestMaterialEmailHistory.sql" />
+    <Build Include="dbo\User Defined Types\TT_RequestMaterialProsDetail.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_SaveRequestMaterialPrintHistory.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveProofingApproval.sql" />
+    <Build Include="dbo\Tables\ReportSchedule.sql" />
+    <Build Include="dbo\Tables\AspNet_SqlCacheTablesForChangeNotification.sql" />
+    <Build Include="dbo\Functions\fnReportScheduleTypeAndIntervalCheck.sql" />
+    <Build Include="dbo\Functions\fnNextReportDateUtc.sql" />
+    <Build Include="dbo\Functions\fnFrequencyDescription.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetStaticResources.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SiteFeature_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveUrlRewite.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveSiteNavigation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveSiteFeature.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SavePageFeature.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SavePageNavigation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveClientDocumentType.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveClientDocumentGroup.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveClientDocument.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_PageFeature_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetUrlRewriteText.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetStaticResourceById.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetSearchComboDocType.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllUrlRewriteText.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllSiteNavigation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllSiteFeature.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllPageNavigation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllPageFeature.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllCUDHistory.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllClientDocumentType.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllClientDocumentGroup.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllClientDocument.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteSiteNavigation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteSiteFeature.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeletePageNavigation.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeletePageFeature.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteClientDocumentGroupClientDocument.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteClientDocumentGroup.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteClientDocument.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_CUDHistory_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_ClientDocumentTypeData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_ClientDocumentGroupClientDocument_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_ClientDocumentGroup_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_ClientDocumentData_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCacheUpdateChangeIdStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCacheUnRegisterTableStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCacheRegisterTableStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCacheQueryRegisteredTablesStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCachePollingStoredProcedure.sql" />
+    <Build Include="dbo\User Defined Types\TT_ClientDocumentGroupClientDocument.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetSiteText.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetPageText.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetAllSiteTextAndPageText.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetErrorActivityReport.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetErrorLog.sql" />
+    <Build Include="dbo\User Defined Types\TT_TemplateText.sql" />
+    <Build Include="dbo\User Defined Types\TT_TemplatePageText.sql" />
+    <Build Include="dbo\User Defined Types\TT_TemplateNavigation.sql" />
+    <Build Include="dbo\User Defined Types\TT_TemplatePageNavigation.sql" />
+    <Build Include="dbo\Functions\fnHashBytesNVARCHARMAX.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetCUDHistory.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetCUDHistoryDatabyId.sql" />
+    <Build Include="dbo\Triggers\ReportContent\T_ReportContent_D.sql" />
+    <Build Include="dbo\Triggers\ReportContent\T_ReportContent_I.sql" />
+    <Build Include="dbo\Triggers\ReportContent\T_ReportContent_U.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_BillingReport.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_URLGeneration.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_TaxonomyAssociationClientDocument_CacheDependencyCheck.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_DeleteTaxonomyAssociationClientDocument.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllTaxonomyAssociationClientDocument.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_SaveTaxonomyAssociationClientDocument.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetClientDocumentByClientDocumentId.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetTaxonomyAssociationClientDocumentFrame.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetDocumentUpdateReportData.sql" />
+    <Build Include="dbo\Tables\BrowserVersion.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetBrowserVersion.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetTaxonomyAssociationGroups.sql" />
+    <Build Include="dbo\Tables\TaxonomyLevelDocUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetDocumentUpdateTaxonomyData.sql" />
+    <Build Include="dbo\User Defined Types\TT_DocumentUpdateVerticalData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="RP_Client.refactorlog" />
+  </ItemGroup>
+</Project>

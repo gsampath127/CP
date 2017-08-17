@@ -1,0 +1,46 @@
+﻿<form name="missingDocForm" novalidate ng-submit="GenerateReport()">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-9">
+                <p class="pageCaption">
+                    Missing - Doc Info<span class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp BCSPopOver"
+                                            data-toggle="popover"></span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+            </div>
+        </div>
+     
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+
+
+    </div>
+</form>
+<div id="missingDocumentGrid" kendo-grid k-options="gridOptions" k-data-source="gridDataSource" ng-show="DisplayGrid"></div>
+
+<div id="dvMissingDocumentPopOver" class="dispNone">
+    TODO : Write Info on Document Status
+    <br /><br />
+    This page gives you information on missing FLT entries for documents that are available on FTP
+    <ul>
+        <li>write info on cusip reports</li>
+
+    </ul>
+    <br />
+</div>

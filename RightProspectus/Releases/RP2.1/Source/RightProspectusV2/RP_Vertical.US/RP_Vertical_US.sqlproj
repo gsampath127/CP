@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>RP_Vertical_US</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{c54bc45d-3217-45b7-ae7c-940c5522b15b}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>RP_Vertical.US</RootNamespace>
+    <AssemblyName>RP_Vertical.US</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\User Defined Types\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\View" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\ProsTicker.sql" />
+    <Build Include="dbo\Tables\Prospectus.sql" />
+    <Build Include="dbo\Tables\ProsDocs.sql" />
+    <Build Include="dbo\Tables\DocType.sql" />
+    <Build Include="dbo\Tables\Company.sql" />
+    <Build Include="dbo\User Defined Types\RPV2HostedSitesTaxonomyAssociationLinkDataType.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetTaxonomyAssociationLinks.sql" />
+    <Build Include="dbo\User Defined Types\RPV2HostedSitesTaxonomyAssociationHierarchyDocs.sql" />
+    <Build Include="dbo\View\DocumentType.sql" />
+    <Build Include="dbo\View\Document.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetTaxonomyAssociationHierarchy.sql" />
+    <Build Include="dbo\Tables\DocumentMetaData.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetTaxonomySpecificDocumentFrame.sql" />
+    <Build Include="dbo\User Defined Types\TT_Taxonomy.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetTaxonomyNameForTaxonomyIDs.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetXBRLDetailsForTaxonomyID.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetAllDocumentType.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetTaxonomyIdsForMarketIDs.sql" />
+    <Build Include="dbo\User Defined Types\TT_TaxonomyMarketId.sql" />
+    <Build Include="dbo\User Defined Types\TT_DocumentTypeMarketId.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedAdmin_GetDocumentTypeIdsForMarketIDs.sql" />
+    <Build Include="dbo\Tables\XBRLViewerCompanyList.sql" />
+    <Build Include="dbo\Tables\XBRLCompanies.sql" />
+    <Build Include="dbo\Tables\SymetraHistory.sql" />
+    <Build Include="dbo\Tables\Symetra.sql" />
+    <Build Include="dbo\Tables\SecurityBenefitsHistory.sql" />
+    <Build Include="dbo\Tables\SecurityBenefits.sql" />
+    <Build Include="dbo\Tables\ProsTickerHistory.sql" />
+    <Build Include="dbo\Tables\ProspectusHistory.sql" />
+    <Build Include="dbo\Tables\ProsDocsHistory.sql" />
+    <Build Include="dbo\Tables\ProsDocsDeleted.sql" />
+    <Build Include="dbo\Tables\OhioNationalHistory.sql" />
+    <Build Include="dbo\Tables\OhioNational.sql" />
+    <Build Include="dbo\Tables\NYLSubAccounts.sql" />
+    <Build Include="dbo\Tables\NYLProducts.sql" />
+    <Build Include="dbo\Tables\HostedCompanies.sql" />
+    <Build Include="dbo\Tables\GenworthSubAccounts.sql" />
+    <Build Include="dbo\Tables\GenworthProducts.sql" />
+    <Build Include="dbo\Tables\ForethoughtProductsFunds.sql" />
+    <Build Include="dbo\Tables\ForethoughtProductsExtension.sql" />
+    <Build Include="dbo\Tables\ForethoughtProducts.sql" />
+    <Build Include="dbo\Tables\ForethoughtProductFootNotesGroup.sql" />
+    <Build Include="dbo\Tables\ForethoughtHistory.sql" />
+    <Build Include="dbo\Tables\ForethoughtFootNotes.sql" />
+    <Build Include="dbo\Tables\Forethought.sql" />
+    <Build Include="dbo\Tables\EdgarXBRLFunds.sql" />
+    <Build Include="dbo\Tables\EdgarXBRL.sql" />
+    <Build Include="dbo\Tables\EdgarFunds.sql" />
+    <Build Include="dbo\Tables\Edgar.sql" />
+    <Build Include="dbo\Tables\DocLevel.sql" />
+    <Build Include="dbo\Tables\DelawareLifeHistory.sql" />
+    <Build Include="dbo\Tables\DelawareLife.sql" />
+    <Build Include="dbo\Tables\CustomizedDocType.sql" />
+    <Build Include="dbo\Tables\CustomizedDocClients.sql" />
+    <Build Include="dbo\Tables\CUDHistory.sql" />
+    <Build Include="dbo\Tables\AspNet_SqlCacheTablesForChangeNotification.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCacheUpdateChangeIdStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCacheUnRegisterTableStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCacheRegisterTableStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCacheQueryRegisteredTablesStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\AspNet_SqlCachePollingStoredProcedure.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetBillingReport.sql" />
+    <Build Include="dbo\User Defined Types\RPV2HostedSites_BillingReport.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetUrlGeneration.sql" />
+    <Build Include="dbo\User Defined Types\RPV2HostedSitesVerifyTaxonomyByMarketIdDataType.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_VerifyTaxonomyByMarketId.sql" />
+    <Build Include="dbo\Stored Procedures\RPV2HostedSites_GetDocumentUpdateReportData.sql" />
+    <Build Include="dbo\User Defined Types\RPV2HostedSitesVerifyTaxonomyByTaxonomyIDAndLevelDataType.sql" />
+  </ItemGroup>
+</Project>

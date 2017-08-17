@@ -1,0 +1,56 @@
+﻿<form name="DailyUpdate" novalidate ng-submit="GenerateReport()">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-9">
+                <p class="pageCaption">
+                    Daily Update Report<span class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp BCSPopOver"
+                                       data-toggle="popover"></span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group required">
+
+                    <input kendo-date-picker
+                           ng-model="SelectDate" name="SelectDate"
+                           ng-required="true" placeholder="Select Date:" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <input class="btn btn-primary btn-sm clear-after" type="submit" value="Generate">
+                <button class="btn btn-link btn-sm clear-form" type="reset" ng-click="ClearFilters()"><span><u>Clear Filters</u></span></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+    </div>
+</form>
+<div id="DailyUpdateGrid" kendo-grid k-options="gridOptions" k-data-source="gridDataSource" ng-show="DisplayGrid"></div>
+
+<div id="dvDailyReportPopOver" class="dispNone">
+    TODO : Write Info on Daily Update Reports
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>write info on Daily updadate report</li>
+    </ul>
+    <br />
+</div>
+

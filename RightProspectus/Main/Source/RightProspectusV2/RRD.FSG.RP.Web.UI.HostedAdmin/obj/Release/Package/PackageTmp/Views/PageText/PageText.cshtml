@@ -1,0 +1,120 @@
+﻿@{
+    ViewBag.Title = "PageText";
+    Layout = "~/Views/Shared/_SiteConfigurationLayout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                @*<li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>*@
+                <li><a href="@Url.Action("List", "Site")">Sites</a></li>
+                <li><a href="@Url.Action("SiteConfiguration", "Site")">@ViewData["SelectedSite"]</a></li>
+                <li class="active">Page Texts</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Page Text<span id="pageTextPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+        <div class="col-sm-3 text-right">
+            <a class="btn btn-success btn-sm m-top-20 pull-right-xs-max" id="btnAddNewPageText">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Page Text
+            </a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="ResourceKeyCombo" class="form-control" type="text" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="PageNameCombo" type="text" class="form-control" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="VersionCombo" type="text" class="form-control" />
+
+            </div>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="btnSearchPageText" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="pageTextClearFilters"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="pageTextGridwithSortingButtons">
+
+        <div id="pageTextcontainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="pageTextGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="dvLoadAllPageText" data-request-url="@Url.Action("GetAllPageTextDetails", "PageText")"></div>
+<div id="dvResourceKeyComboLoad" data-request-url="@Url.Action("GetResourceKeys", "PageText")"></div>
+<div id="dvPageNameComboLoad" data-request-url="@Url.Action("GetPageNames", "PageText")"></div>
+<div id="dvVersionComboLoad" data-request-url="@Url.Action("GetVersions", "PageText")"></div>
+<div id="dvEditPageText" data-request-url="@Url.Action("EditPageText", "PageText")"></div>
+<div id="dvDisablePageText" data-request-url="@Url.Action("DisablePageText", "PageText")"></div>
+<div id="dvPageTextPopOver" class="dispNone">
+    Page Text page displays all the available Page Texts for selected Client in RightProspectus system.
+     <br />
+    <br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Page Text</li>
+        <li>EDIT Existing Page Text</li>
+        <li>SEARCH Page Text based on Resource Key, Page Name and Version</li>
+        <li>DELETE Page Text</li>
+    </ul>
+    <br />
+</div>
+
+<script id="alertDisablePageText" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Page Text?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+<script src="~/Scripts/HostedAdmin/PageTextSettings.js"></script>

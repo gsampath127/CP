@@ -1,0 +1,1302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RRD.FSG.RP.Web.UI.Hosted</name>
+    </assembly>
+    <members>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.BundleConfig">
+            <summary>
+            Class BundleConfig.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.BundleConfig.RegisterBundles(System.Web.Optimization.BundleCollection)">
+            <summary>
+            Registers the bundles.
+            </summary>
+            <param name="bundles">The bundles.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.RouteConfig">
+            <summary>
+            Class RouteConfig.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.RouteConfig.RegisterRoutes(System.Web.Routing.RouteCollection)">
+            <summary>
+            Registers the routes.
+            </summary>
+            <param name="routes">The routes.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.BaseController">
+            <summary>
+            Added to Provide common behavior across Controller
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.BaseController.GetBaseUrl">
+            <summary>
+            Gets the base URL.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.BaseController.SetContext(System.String)">
+            <summary>
+            Sets the context.
+            </summary>
+            <param name="customer">The customer.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.Controllers.ErrorController">
+            <summary>
+            Class ErrorController.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.Controllers.ErrorController.Index(System.String)">
+            <summary>
+            Indexes the specified error code.
+            </summary>
+            <param name="ErrorCode">The error code.</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.HostedController">
+            <summary>
+            Class HostedController.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Web.UI.Hosted.HostedController.hostedClientPageScenarios">
+            <summary>
+            The hosted client page scenarios
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Web.UI.Hosted.HostedController.hostedRequestMaterialDetails">
+            <summary>
+            The hosted request material details
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Web.UI.Hosted.HostedController.siteActivityFactory">
+            <summary>
+            The site activity factory
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Web.UI.Hosted.HostedController.clientCacheFactory">
+            <summary>
+            The client cache factory
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Web.UI.Hosted.HostedController.siteCacheFactory">
+            <summary>
+            The site cache factory
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Web.UI.Hosted.HostedController"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.Welcome">
+            <summary>
+            Welcomes this instance.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.Index(System.String,System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Indexes the specified customer.
+            </summary>
+            <param name="customer">The customer.</param>
+            <param name="site">The site.</param>
+            <param name="isProofing">if set to <c>true</c> [is proofing].</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.TaxonomyAssociationLinks(System.String,System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Taxonomies the association links.
+            </summary>
+            <param name="customer">The customer.</param>
+            <param name="site">The site.</param>
+            <param name="isProofing">if set to <c>true</c> [is proofing].</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.TaxonomyAssociationHierarchyDocuments(System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Taxonomies the association hierarchy documents.
+            </summary>
+            <param name="customer">The customer.</param>
+            <param name="site">The site.</param>
+            <param name="externalID">The external identifier.</param>
+            <param name="isInternalTAID">if set to <c>true</c> [is internal ta id].</param>
+            <param name="isProofing">if set to <c>true</c> [is proofing].</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.TaxonomySpecificDocumentFrame(System.String,System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Taxonomies the specific document frame.
+            </summary>
+            <param name="customer">The customer.</param>
+            <param name="site">The site.</param>
+            <param name="externalID1">The external i d1.</param>
+            <param name="externalID2">The external i d2.</param>
+            <param name="isInternalTAID">if set to <c>true</c> [is internal ta id].</param>
+            <param name="isProofing">if set to <c>true</c> [is proofing].</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.TaxonomyAssociationClientDocumentFrame(System.String,System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Boolean)">
+            <summary>
+            TaxonomyAssociation ClientDocument Frame.
+            </summary>
+            <param name="customer">The customer.</param>
+            <param name="site">The site.</param>
+            <param name="externalID1">The external id1.</param>    
+            <param name="externalID2">The external id2.</param>    
+            <param name="isITAID">if set to <c>true</c> [is internal ta id].</param>
+            <param name="isProofing">if set to <c>true</c> [is proofing].</param>
+            <param name="SPV">if set to <c>true</c> [Single PDF View].</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.TaxonomyAssociationDocuments(System.String,System.String,System.Nullable{System.Boolean})">
+            <summary>
+            Taxonomies the association documents.
+            </summary>
+            <param name="customer">The customer.</param>
+            <param name="site">The site.</param>
+            <param name="isProofing">if set to <c>true</c> [is proofing].</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.XBRL(System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Boolean,System.Nullable{System.Guid})">
+            <summary>
+            XBRLs the specified customer.
+            </summary>
+            <param name="customer">The customer.</param>
+            <param name="site">The site.</param>
+            <param name="externalID">The external identifier.</param>
+            <param name="isInternalTAID">if set to <c>true</c> [is internal ta id].</param>
+            <param name="isProofing">if set to <c>true</c> [is proofing].</param>
+            <param name="isPID">if set to <c>true</c> [is pid].</param>
+            <param name="requestBatchId">The request batch identifier.</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.TrackSiteActivity(RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel)">
+            <summary>
+            Tracks the site activity.
+            </summary>
+            <param name="siteActivityViewModel">The site activity view model.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.ValidateURL(System.String,System.String)">
+            <summary>
+            ValidateURL.
+            </summary>
+            <param name="clientName">clientName.</param>
+            <param name="siteName">siteName.</param>
+            <returns>isValidRequest</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.RequestMaterial(System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Guid})">
+            <summary>
+            Requests the material.
+            </summary>
+            <param name="customer">The customer.</param>
+            <param name="site">The site.</param>
+            <param name="externalID">The external identifier.</param>
+            <param name="isInternalTAID">if set to <c>true</c> [is internal ta id].</param>
+            <param name="isProofing">if set to <c>true</c> [is proofing].</param>
+            <param name="requestBatchId">The request batch identifier.</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.AddEmailDetails(RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel)">
+            <summary>
+            Adds the email details.
+            </summary>
+            <param name="siteEmailData">The site email data.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.SavePrintDetails(RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel)">
+            <summary>
+            Saves the print details.
+            </summary>
+            <param name="sitePrintData">The site print data.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.SendRequestMaterialMail(System.String,System.String,System.Collections.Generic.List{RRD.FSG.RP.Model.Entities.HostedPages.HostedDocumentType},System.Guid,System.String)">
+            <summary>
+            Sends the request material mail.
+            </summary>
+            <param name="clientName">Name of the client.</param>
+            <param name="site">The site.</param>
+            <param name="documentTypes">The document types.</param>
+            <param name="uniqueId">The unique identifier.</param>
+            <param name="receipEmail">The receip email.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.DisplayRequestMaterialDocs(System.String,System.String,System.String,System.String)">
+            <summary>
+            Displays the request material docs.
+            </summary>
+            <param name="customer">The customer.</param>
+            <param name="site">The site.</param>
+            <param name="externalID1">The external i d1.</param>
+            <param name="externalID2">The external i d2.</param>
+            <returns>ActionResult.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.TaxonomyAssociationGroupDocuments(System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32})">
+            <summary>
+            Taxonomy Association Group Documents
+            </summary>
+            <param name="customer"></param>
+            <param name="site"></param>
+            <param name="isProofing"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.HostedController.TaxonomyAssoicationGroupTaxonomyAssoicationGrid(System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32})">
+            <summary>
+            Partial View to display GRID for Taxonomy Association Group Documents
+            </summary>
+            <param name="customer"></param>
+            <param name="site"></param>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.ErrorLogHandler">
+            <summary>
+            Class ErrorLogHandler.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.ErrorLogHandler.#ctor(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Web.UI.Hosted.ErrorLogHandler"/> class.
+            </summary>
+            <param name="configValues">The configuration values.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.ErrorLogHandler.HandleException(System.Exception,System.Guid)">
+            <summary>
+            When implemented by a class, handles an <see cref="T:System.Exception" />.
+            </summary>
+            <param name="exception">The exception to handle.</param>
+            <param name="handlingInstanceId">The unique ID attached to the handling chain for this handling instance.</param>
+            <returns>Modified exception to pass to the next exceptionHandlerData in the chain.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper">
+            <summary>
+            Class FeatureHelper.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper.GetFeatureModesXBRL(System.Int32)">
+            <summary>
+            Gets the feature modes XBRL.
+            </summary>
+            <param name="mode">The mode.</param>
+            <returns>List&lt;FeatureEnums.XBRL&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper.GetFeatureModesRequestMaterial(System.Int32)">
+            <summary>
+            Gets the feature modes request material.
+            </summary>
+            <param name="mode">The mode.</param>
+            <returns>List&lt;FeatureEnums.RequestMaterial&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper.GetFeatureModesSinglePdfView(System.Int32)">
+            <summary>
+            GetFeatureModesSinglePdfView
+            </summary>
+            <param name="mode">The mode.</param>
+            <returns>List&lt;eatureEnums.SinglePdfView&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper.GetFeatureModesFormN_MFP(System.Int32)">
+            <summary>
+            Gets the feature modes FormN_MFP.
+            </summary>
+            <param name="mode">The mode.</param>
+            <returns>List&lt;MultiSelectDropDownViewModel&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper.GetFeatureModesDailyMoneyMarketDisclosure(System.Int32)">
+            <summary>
+            Gets the feature modes Daily Money Market Disclosure.
+            </summary>
+            <param name="mode">The mode.</param>
+            <returns>List&lt;DailyMoneyMarketDisclosure&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper.GetFeatureModesNCR(System.Int32)">
+            <summary>
+            Gets the feature modes N-CR.
+            </summary>
+            <param name="mode">The mode.</param>
+            <returns>List&lt;MultiSelectDropDownViewModel&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper.GetFeatureModesAllCategories(System.Int32)">
+            <summary>
+            Gets the feature modes All Categories
+            </summary>
+            <param name="mode">The mode.</param>
+            <returns>List&lt;MultiSelectDropDownViewModel&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper.GetFeatureModesBrowserAlert(System.Int32)">
+            <summary>
+            Gets the feature modes browser alert.
+            </summary>
+            <param name="mode">The mode.</param>
+            <returns>List&lt;FeatureEnums.BrowserAlert&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper.GetFeatureModesSARValidation(System.Int32)">
+            <summary>
+            Get All Feature Modes for SARValidation
+            </summary>
+            <param name="mode">The mode.</param>
+            <returns>List&lt;MultiSelectDropDownViewModel&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper.GetFeatureModesShowDocumentDate(System.Int32)">
+            <summary>
+            Get All Feature Modes for ShowDocumentDate
+            </summary>
+            <param name="mode">The mode.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper.GetFeatureModesFundOrder(System.Int32)">
+            <summary>
+            Get All Feature Modes for FundOrder
+            </summary>
+            <param name="mode">The mode.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.FeatureHelper.GetFeatureModesFundNameFormat(System.Int32)">
+            <summary>
+            Get All Feature Modes for FundNameFormat
+            </summary>
+            <param name="mode">The mode.</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:RRD.FSG.RP.Web.UI.Hosted.FeatureModeHelper`1.hostedClientPageScenarios" -->
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.NavigationXMLHtmlHelperExtension">
+            <summary>
+            Class NavigationXMLHtmlHelperExtension.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.NavigationXMLHtmlHelperExtension.RenderXml(System.Web.Mvc.HtmlHelper,System.String,System.String)">
+            <summary>
+            Renders the XML.
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="xml">The XML.</param>
+            <param name="xsltPath">The XSLT path.</param>
+            <returns>HtmlString.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.PageNavigationHelper">
+            <summary>
+            Class PageNavigationHelper.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.PageNavigationHelper.GetFinalNavigationXML(System.String)">
+            <summary>
+            Gets the final navigation XML.
+            </summary>
+            <param name="NavigationXML">The navigation XML.</param>
+            <returns>XDocument.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.PageNavigationHelper.GetFinalNavigationXML(System.String,System.String,System.String,System.String,System.Nullable{System.Boolean},RRD.FSG.RP.Model.Entities.HostedPages.TaxonomyAssociationData,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the final navigation XML.
+            </summary>
+            <param name="navigationXML">The navigation XML.</param>
+            <param name="customer">The customer.</param>
+            <param name="site">The site.</param>
+            <param name="externalID1">The external i d1.</param>
+            <param name="isInternalTAID">if set to <c>true</c> [is internal taid].</param>
+            <param name="taxonomyAssociationData">The taxonomy association data.</param>
+            <param name="showXBRL">if set to <c>true</c> [show XBRL].</param>
+            <returns>XDocument.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.TextHelper">
+            <summary>
+            Generic calss for setting the properties for Site Text and Page Text
+            </summary>
+            <typeparam name="T">View Model</typeparam>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.TextHelper.GetSiteText(RRD.FSG.RP.Web.UI.Hosted.BaseViewModel,System.Collections.Generic.List{RRD.FSG.RP.Model.Entities.HostedPages.HostedSiteText})">
+            <summary>
+            Sets the values for Site Text by Object Reference
+            </summary>
+            <param name="model"></param>
+            <param name="cachedSiteText"></param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.TextHelper.GetPageText(RRD.FSG.RP.Web.UI.Hosted.BaseViewModel,System.Collections.Generic.List{RRD.FSG.RP.Model.Entities.HostedPages.HostedPageText},System.String)">
+            <summary>
+            Gets all Page Text by Page
+            </summary>
+            <param name="model"></param>
+            <param name="cachedPageText"></param>
+            <param name="pageName"></param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.TextHelper.GetTAGDPageText(RRD.FSG.RP.Web.UI.Hosted.BaseViewModel,System.Collections.Generic.List{RRD.FSG.RP.Model.Entities.HostedPages.HostedPageText})">
+            <summary>
+            Gets Page Text for TAGD
+            </summary>
+            <param name="model"></param>
+            <param name="cachedPageText"></param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.TextHelper.GetTADFPageText(RRD.FSG.RP.Web.UI.Hosted.BaseViewModel,System.Collections.Generic.List{RRD.FSG.RP.Model.Entities.HostedPages.HostedPageText})">
+            <summary>
+            Gets Page Text for TADF
+            </summary>
+            <param name="model"></param>
+            <param name="cachedPageText"></param>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.MvcApplication">
+            <summary>
+            Class MvcApplication.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.MvcApplication.Application_Start">
+            <summary>
+            Application_s the start.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.MvcApplication.Application_Error(System.Object,System.EventArgs)">
+            <summary>
+            Handles the Error event of the Application control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.PageTextHandler">
+            <summary>
+            Summary description for PageTextHandler
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Web.UI.Hosted.PageTextHandler.hostedClientPageScenarios">
+            <summary>
+            The hosted client page scenarios
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.PageTextHandler.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Web.UI.Hosted.PageTextHandler"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.PageTextHandler.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            Enables processing of HTTP Web requests by a custom HttpHandler that implements the <see cref="T:System.Web.IHttpHandler" /> interface.
+            </summary>
+            <param name="context">An <see cref="T:System.Web.HttpContext" /> object that provides references to the intrinsic server objects (for example, Request, Response, Session, and Server) used to service HTTP requests.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.PageTextHandler.IsReusable">
+            <summary>
+            Gets a value indicating whether another request can use the <see cref="T:System.Web.IHttpHandler" /> instance.
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.SiteTextHandler">
+            <summary>
+            Summary description for SiteText
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Web.UI.Hosted.SiteTextHandler.hostedClientPageScenarios">
+            <summary>
+            The hosted client page scenarios
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.SiteTextHandler.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Web.UI.Hosted.SiteTextHandler"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.SiteTextHandler.ProcessRequest(System.Web.HttpContext)">
+            <summary>
+            Enables processing of HTTP Web requests by a custom HttpHandler that implements the <see cref="T:System.Web.IHttpHandler" /> interface.
+            </summary>
+            <param name="context">An <see cref="T:System.Web.HttpContext" /> object that provides references to the intrinsic server objects (for example, Request, Response, Session, and Server) used to service HTTP requests.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.SiteTextHandler.IsReusable">
+            <summary>
+            Gets a value indicating whether another request can use the <see cref="T:System.Web.IHttpHandler" /> instance.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Web.UI.Hosted.ClientDocumentModule.hostedClientPageScenarios">
+            <summary>
+            The hosted client page scenarios
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.ClientDocumentModule.#ctor">
+            <summary>
+            Constructor for ClientDocumentModule
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.ClientDocumentModule.Dispose">
+            <summary>
+            You will need to configure this module in the Web.config file of your
+            web and register it with IIS before being able to use it. For more information
+            see the following link: http://go.microsoft.com/?linkid=8101007
+            Example: http://localhost:54346/ClientDocument/1?client=forethought
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.ClientDocumentModule.Init(System.Web.HttpApplication)">
+            <summary>
+            Init Method
+            </summary>
+            <param name="context">An <see cref="T:System.Web.HttpApplication" /> that provides access to the methods, properties, and events common to all application objects within an ASP.NET application</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.ClientDocumentModule.context_BeginRequest(System.Object,System.EventArgs)">
+            <summary>
+            Handles the BeginRequest event of the context control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.ClientDocumentModule.IsClientCached(System.Web.HttpRequest,System.DateTime)">
+            <summary>
+            Determines whether [is client cached] [the specified request].
+            </summary>
+            <param name="request">The request.</param>
+            <param name="contentModified">The content modified.</param>
+            <returns><c>true</c> if [is client cached] [the specified request]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.StaticResourceModule">
+            <summary>
+            Class StaticResourceModule.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Web.UI.Hosted.StaticResourceModule.hostedClientPageScenarios">
+            <summary>
+            The hosted client page scenarios
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.StaticResourceModule.#ctor">
+            <summary>
+            Constructor for StaticResourceModule
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.StaticResourceModule.Dispose">
+            <summary>
+            You will need to configure this module in the Web.config file of your
+            web and register it with IIS before being able to use it. For more information
+            see the following link: http://go.microsoft.com/?linkid=8101007
+            Example: http://localhost:54346/staticresource/forethought_logo.jpg?client=forethought
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.StaticResourceModule.Init(System.Web.HttpApplication)">
+            <summary>
+            Init Method
+            </summary>
+            <param name="context">An <see cref="T:System.Web.HttpApplication" /> that provides access to the methods, properties, and events common to all application objects within an ASP.NET application</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.StaticResourceModule.context_BeginRequest(System.Object,System.EventArgs)">
+            <summary>
+            Handles the BeginRequest event of the context control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.StaticResourceModule.IsClientCached(System.Web.HttpRequest,System.DateTime)">
+            <summary>
+            Determines whether [is client cached] [the specified request].
+            </summary>
+            <param name="request">The request.</param>
+            <param name="contentModified">The content modified.</param>
+            <returns><c>true</c> if [is client cached] [the specified request]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.URLRewriteModule">
+            <summary>
+            httpModule to rewrite RP V1 urls to RP V2 url
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Web.UI.Hosted.URLRewriteModule.urlRewriteCacheFactory">
+            <summary>
+            The URL rewrite cache factory
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Web.UI.Hosted.URLRewriteModule.clientCacheFactory">
+            <summary>
+            The client cache factory
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.URLRewriteModule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Web.UI.Hosted.URLRewriteModule"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.URLRewriteModule.Dispose">
+            <summary>
+            Disposes of the resources (other than memory) used by the module that implements <see cref="T:System.Web.IHttpModule" />.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.URLRewriteModule.Init(System.Web.HttpApplication)">
+            <summary>
+            Initializes a module and prepares it to handle requests.
+            </summary>
+            <param name="context">An <see cref="T:System.Web.HttpApplication" /> that provides access to the methods, properties, and events common to all application objects within an ASP.NET application</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.URLRewriteModule.context_BeginRequest(System.Object,System.EventArgs)">
+            <summary>
+            Handles the BeginRequest event of the context control.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Web.UI.Hosted.URLRewriteModule.isValidclient(System.String)">
+            <summary>
+            Determines whether the specified string client name is valid client.
+            </summary>
+            <param name="strClientName">Name of the string client.</param>
+            <returns></returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel">
+            <summary>
+            Class BaseViewModel.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.ClientName">
+            <summary>
+            Gets or sets the name of the client.
+            </summary>
+            <value>The name of the client.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.SiteName">
+            <summary>
+            Gets or sets the name of the site.
+            </summary>
+            <value>The name of the site.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.IsProofing">
+            <summary>
+            Gets or sets the is proofing.
+            </summary>
+            <value>The is proofing.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.PageId">
+            <summary>
+            Gets or sets the page identifier.
+            </summary>
+            <value>The page identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.IsInternalTAID">
+            <summary>
+            Gets or sets the is internal taid.
+            </summary>
+            <value>The is internal taid.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.ExternalID1">
+            <summary>
+            Gets or sets the external id1.
+            </summary>
+            <value>The external id1.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.ExternalID2">
+            <summary>
+            Gets or sets the external id2.
+            </summary>
+            <value>The external id2.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.BaseURL">
+            <summary>
+            Gets or sets the base URL.
+            </summary>
+            <value>The base URL.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.LogoText">
+            <summary>
+            Gets or sets the logo text.
+            </summary>
+            <value>The logo text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.BrowserAlertText">
+            <summary>
+            Gets or sets the browser alert text.
+            </summary>
+            <value>The browser alert text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.ShowXBRLInLandingPage">
+            <summary>
+            Gets or sets a value indicating whether [show XBRL in landing page].
+            </summary>
+            <value><c>true</c> if [show XBRL in landing page]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.DisplayXBRLInNewTAB">
+            <summary>
+            Gets or sets a value indicating whether [display XBRL in new tab].
+            </summary>
+            <value><c>true</c> if [display XBRL in new tab]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.DisplayRequestMaterial">
+            <summary>
+            Gets or sets a value indicating whether [display request material].
+            </summary>
+            <value><c>true</c> if [display request material]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.PageCSSResourceKey">
+            <summary>
+            Gets or sets the page CSS resource key.
+            </summary>
+            <value>The page CSS resource key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.PageNavigationXML">
+            <summary>
+            Gets or sets the page navigation XML.
+            </summary>
+            <value>The page navigation XML.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.PageNavigationXSLT">
+            <summary>
+            Gets or sets the page navigation XSLT.
+            </summary>
+            <value>The page navigation XSLT.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.DocumentNotAvailableText">
+            <summary>
+            Gets or sets the document not available text.
+            </summary>
+            <value>The document not available text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.TaxonomyNotAvailableText">
+            <summary>
+            Gets or sets the taxonomy not available text.
+            </summary>
+            <value>The taxonomy not available text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.DisplayBrowserAlert">
+            <summary>
+            Gets or Sets the value to show Browser Alert Message
+            </summary>
+            <value>The DisplayBrowserAlert.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.IsSARValidationEnabled">
+            <summary>
+            Gets or sets value for SARValidation
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.BaseViewModel.ShowDocumentDate">
+            <summary>
+            Gets or sets value for ShowDocumentDate
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel">
+            <summary>
+            Class TaxonomyAssociationClientDocumentViewModel.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel.TaxonomyAssociationData">
+            <summary>
+            Gets or sets the taxonomy association data.
+            </summary>
+            <value>The taxonomy association data.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel.PageLoadPDFURL">
+            <summary>
+            Gets or sets the page load pdfurl.
+            </summary>
+            <value>The page load pdfurl.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel.PageLoadMenuID">
+            <summary>
+            Gets or sets the page load menu identifier.
+            </summary>
+            <value>The page load menu identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel.FundName">
+            <summary>
+            Gets or sets the name of the fund.
+            </summary>
+            <value>The name of the fund.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel.FormNMFPText">
+            <summary>
+            Gets or sets the name of the FormNMFPText.
+            </summary>
+            <value>The name of the FormNMFPText.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel.DMMDLinkText">
+            <summary>
+            Gets or sets the name of the FormNMFPText.
+            </summary>
+            <value>The name of the FormNMFPText.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel.NCRLinkText">
+            <summary>
+            Gets or sets the name of the FormNMFPText.
+            </summary>
+            <value>The name of the FormNMFPText.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel.RequestBatchId">
+            <summary>
+            Gets or sets the request batch identifier.
+            </summary>
+            <value>The request batch identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel.DisplayDailyMoneyMarketDisclosure">
+            <summary>
+            Gets or sets a value indicating whether [display DailyMoneyMarketDisclosure].
+            </summary>
+            <value><c>true</c> if [display DailyMoneyMarketDisclosure]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel.DisplayNCR">
+            <summary>
+            Gets or sets a value indicating whether [display NCR].
+            </summary>
+            <value><c>true</c> if [display NCR]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel.DisplayFormN_MFP">
+            <summary>
+            Gets or sets a value indicating whether [display FormN_MFP].
+            </summary>
+            <value><c>true</c> if [display FormN_MFP]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel">
+            <summary>
+            Class RequestMaterialViewModel.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.RequestBatchId">
+            <summary>
+            Gets or sets the request batch identifier.
+            </summary>
+            <value>The request batch identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.TaxonomyAssociationData">
+            <summary>
+            Gets or sets the taxonomy association data.
+            </summary>
+            <value>The taxonomy association data.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>The email.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.SelectedDocTypes">
+            <summary>
+            Gets or sets the selected document types.
+            </summary>
+            <value>The selected document types.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.TaxanomyAssociationId">
+            <summary>
+            Gets or sets the taxonomy association identifier.
+            </summary>
+            <value>The taxanomy association identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.CompanyName">
+            <summary>
+            Gets or sets the name of the company.
+            </summary>
+            <value>The name of the company.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>The first name.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>The last name.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.Address1">
+            <summary>
+            Gets or sets the address1.
+            </summary>
+            <value>The address1.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.Address2">
+            <summary>
+            Gets or sets the address2.
+            </summary>
+            <value>The address2.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+            <value>The city.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.StateOrProvince">
+            <summary>
+            Gets or sets the state or province.
+            </summary>
+            <value>The state or province.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+            <value>The postal code.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel">
+            <summary>
+            Class SiteActivityViewModel.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.Customer">
+            <summary>
+            Gets or sets the customer.
+            </summary>
+            <value>The customer.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.Site">
+            <summary>
+            Gets or sets the site.
+            </summary>
+            <value>The site.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.ExternalID1">
+            <summary>
+            Gets or sets the external id1.
+            </summary>
+            <value>The external id1.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.ExternalID2">
+            <summary>
+            Gets or sets the external id2.
+            </summary>
+            <value>The external id2.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.IsInternalTAID">
+            <summary>
+            Gets or sets a value indicating whether this instance is internal taid.
+            </summary>
+            <value><c>true</c> if this instance is internal taid; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.IsInternalDTID">
+            <summary>
+            Gets or sets a value indicating whether this instance is internal dtid.
+            </summary>
+            <value><c>true</c> if this instance is internal dtid; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.RequestBatchId">
+            <summary>
+            Gets or sets the request batch identifier.
+            </summary>
+            <value>The request batch identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.InitDoc">
+            <summary>
+            Gets or sets a value indicating whether [initialize document].
+            </summary>
+            <value><c>true</c> if [initialize document]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.BadRequestIssue">
+            <summary>
+            Gets or sets the bad request issue.
+            </summary>
+            <value>The bad request issue.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.BadRequestParameterName">
+            <summary>
+            Gets or sets the name of the bad request parameter.
+            </summary>
+            <value>The name of the bad request parameter.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.BadRequestParameterValue">
+            <summary>
+            Gets or sets the bad request parameter value.
+            </summary>
+            <value>The bad request parameter value.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.XBRLDocumentName">
+            <summary>
+            Gets or sets the name of the XBRL document.
+            </summary>
+            <value>The name of the XBRL document.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.XBRLItemType">
+            <summary>
+            Gets or sets the type of the XBRL item.
+            </summary>
+            <value>The type of the XBRL item.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.XBRLRequestURL">
+            <summary>
+            Gets or sets the XBRL request URL.
+            </summary>
+            <value>The XBRL request URL.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.ViewModels.SiteActivityViewModel.ClientDocumentId">
+            <summary>
+            Gets or sets the external id1.
+            </summary>
+            <value>The external id1.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationDocumentsViewModel">
+            <summary>
+            Class TaxonomyAssociationDocumentsViewModel.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationDocumentsViewModel.UnderlyingFundDocumentsHelpText">
+            <summary>
+            Gets or sets the underlying fund documents help text.
+            </summary>
+            <value>The underlying fund documents help text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationDocumentsViewModel.UnderlayingFundGridFundNameColumnText">
+            <summary>
+            Gets or sets the underlaying fund grid fund name column text.
+            </summary>
+            <value>The underlaying fund grid fund name column text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationDocumentsViewModel.UnderlayingFundGridNAText">
+            <summary>
+            Gets or sets the underlaying fund grid na text.
+            </summary>
+            <value>The underlaying fund grid na text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationDocumentsViewModel.FootnotesHeaderText">
+            <summary>
+            Gets or sets the footnotes header text.
+            </summary>
+            <value>The footnotes header text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationDocumentsViewModel.TaxonomyAssociationDocumentsModel">
+            <summary>
+            Gets or sets the taxonomy association documents model.
+            </summary>
+            <value>The taxonomy association documents model.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel">
+            <summary>
+            TaxonomyAssociationGroupViewModel
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.ClientCustomHeader" -->
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.XBRLNotAvailableText">
+            <summary>
+            Gets or sets the XBRL not available text.
+            </summary>
+            <value>The XBRL not available text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.FootnotesHeaderText">
+            <summary>
+            Gets or sets the footnotes header text.
+            </summary>
+            <value>The footnotes header text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.Glossary">
+            <summary>
+            Gets or sets the glossary.
+            </summary>
+            <value>The glossary.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.ShowDocumentTypeHeaderTopLevel">
+            <summary>
+            Gets or sets the value to show whether Document Type Header placed above top level category
+            </summary>
+            <value>The ShowDocumentTypeTopLevel.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.EnableGroupSearch">
+            <summary>
+            Gets or Sets the value to enable group search
+            </summary>
+            <value>The EnableGroupSearch.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.UnderlayingFundGridFundNameColumnText">
+            <summary>
+            Gets or Sets the UnderlayingFundGridFundNameColumnText
+            </summary>
+            <value>UnderlayingFundGridFundNameColumnText</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.TaxonomyAssociationGroupModelData">
+            <summary>
+            Gets or sets the taxonomy association group model data.
+            </summary>
+            <value>The taxonomy association group model data.</value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.TAGDDetails" -->
+        <!-- Badly formed XML comment ignored for member "P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.SelectedTAGDId" -->
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.GroupHeaderText">
+            <summary>
+            Gets or sets GroupHeaderText
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.DisplayTAGDFooterTemplate">
+            <summary>
+            Gets or sets DisplayTAGDFooterTemplate
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel.TAGDLogoText">
+            <summary>
+            Gets or sets TAGDLogoText
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationHierarchyViewModel">
+            <summary>
+            Class TaxonomyAssociationHierarchyViewModel.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationHierarchyViewModel.ProductHeaderText">
+            <summary>
+            Gets or sets the product header text.
+            </summary>
+            <value>The product header text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationHierarchyViewModel.ProductGridProductNameColumnText">
+            <summary>
+            Gets or sets the product grid product name column text.
+            </summary>
+            <value>The product grid product name column text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationHierarchyViewModel.UnderlayingFundHeaderText">
+            <summary>
+            Gets or sets the underlaying fund header text.
+            </summary>
+            <value>The underlaying fund header text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationHierarchyViewModel.UnderlayingFundGridFundNameColumnText">
+            <summary>
+            Gets or sets the underlaying fund grid fund name column text.
+            </summary>
+            <value>The underlaying fund grid fund name column text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationHierarchyViewModel.DocumentNotAvailableText">
+            <summary>
+            Gets or sets the document not available text.
+            </summary>
+            <value>The document not available text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationHierarchyViewModel.ProductDocumentNotAvailableText">
+            <summary>
+            Gets or sets the product document not available text.
+            </summary>
+            <value>The product document not available text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationHierarchyViewModel.XBRLNotAvailableText">
+            <summary>
+            Gets or sets the XBRL not available text.
+            </summary>
+            <value>The XBRL not available text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationHierarchyViewModel.FootnotesHeaderText">
+            <summary>
+            Gets or sets the footnotes header text.
+            </summary>
+            <value>The footnotes header text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationHierarchyViewModel.Glossary">
+            <summary>
+            Gets or sets the glossary.
+            </summary>
+            <value>The glossary.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationHierarchyViewModel.TaxonomyAssociationHierarchyModelData">
+            <summary>
+            Gets or sets the taxonomy association hierarchy model data.
+            </summary>
+            <value>The taxonomy association hierarchy model data.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationLinkViewModel">
+            <summary>
+            Class TaxonomyAssociationLinkViewModel.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationLinkViewModel.ProductHeaderText">
+            <summary>
+            Gets or sets the product header text.
+            </summary>
+            <value>The product header text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationLinkViewModel.TaxonomyAssociationLinkModelData">
+            <summary>
+            Gets or sets the taxonomy association link model data.
+            </summary>
+            <value>The taxonomy association link model data.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.TaxonomySpecificDocumentFrameViewModel">
+            <summary>
+            Class TaxonomySpecificDocumentFrameViewModel.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomySpecificDocumentFrameViewModel.TaxonomyAssociationData">
+            <summary>
+            Gets or sets the taxonomy association data.
+            </summary>
+            <value>The taxonomy association data.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomySpecificDocumentFrameViewModel.PageLoadPDFURL">
+            <summary>
+            Gets or sets the page load pdfurl.
+            </summary>
+            <value>The page load pdfurl.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomySpecificDocumentFrameViewModel.PageLoadMenuID">
+            <summary>
+            Gets or sets the page load menu identifier.
+            </summary>
+            <value>The page load menu identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomySpecificDocumentFrameViewModel.FundName">
+            <summary>
+            Gets or sets the name of the fund.
+            </summary>
+            <value>The name of the fund.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomySpecificDocumentFrameViewModel.RequestBatchId">
+            <summary>
+            Gets or sets the request batch identifier.
+            </summary>
+            <value>The request batch identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.TaxonomySpecificDocumentFrameViewModel.TADFLogoText">
+            <summary>
+            Gets or Sets TADFLogoText
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Web.UI.Hosted.XBRLViewModel">
+            <summary>
+            Class XBRLViewModel.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.XBRLViewModel.XBRLData">
+            <summary>
+            Gets or sets the XBRL data.
+            </summary>
+            <value>The XBRL data.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.XBRLViewModel.FundName">
+            <summary>
+            Gets or sets the name of the fund.
+            </summary>
+            <value>The name of the fund.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.XBRLViewModel.XBRLZipFilesHeaderText">
+            <summary>
+            Gets or sets the XBRL zip files header text.
+            </summary>
+            <value>The XBRL zip files header text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.XBRLViewModel.XBRLViewerHeaderText">
+            <summary>
+            Gets or sets the XBRL viewer header text.
+            </summary>
+            <value>The XBRL viewer header text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.XBRLViewModel.XBRLViewerDatedText">
+            <summary>
+            Gets or sets the XBRL viewer dated text.
+            </summary>
+            <value>The XBRL viewer dated text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.XBRLViewModel.XBRLViewerFiledText">
+            <summary>
+            Gets or sets the XBRL viewer filed text.
+            </summary>
+            <value>The XBRL viewer filed text.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.XBRLViewModel.XBRLDateFormat">
+            <summary>
+            Gets or sets the XBRL date format.
+            </summary>
+            <value>The XBRL date format.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.XBRLViewModel.XBRLViewerNotReadyMessage">
+            <summary>
+            Gets or sets the XBRL viewer not ready message.
+            </summary>
+            <value>The XBRL viewer not ready message.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.XBRLViewModel.ExternalID">
+            <summary>
+            Gets or sets the external identifier.
+            </summary>
+            <value>The external identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.XBRLViewModel.IsInternalTAID">
+            <summary>
+            Gets or sets the is internal taid.
+            </summary>
+            <value>The is internal taid.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Web.UI.Hosted.XBRLViewModel.RequestBatchId">
+            <summary>
+            Gets or sets the request batch identifier.
+            </summary>
+            <value>The request batch identifier.</value>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("List", "Site")">@ViewData["SelectedCustomer"]</a></li>
+                <li class="active">Vertical Xml Import</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Vertical XML Import Jobs<span id="verticalXmlImportPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+
+        <div class="col-sm-3 newAddButton">
+            <a id="newVerticalXmlImport" class="btn btn-success btn-sm m-top-5 pull-right-xs-max">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Add New Job
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+
+    @*-----------------------------------------------------SearchParameters--------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+                <div class="form-group">
+                    <input id="txtFromImportDate" type="text" class="form-control datepicker" placeholder="From Date" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <div class="form-group">
+                    <input id="txtToImportDate" type="text" class="form-control datepicker" placeholder="To Date" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <div class="form-group">
+                    <input id="comboImportedBy" type="text" class="form-control" placeholder="Imported By" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="searchVerticalXmlImport" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="clearVerticalXmlImportSearch"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    <div>
+        <script id="divVerticalXmlImportValidations" type="text/x-kendo-template">
+        </script>
+    </div>    
+    <div id="footer" class="layoutFooter"></div>
+    @*----------------------------------------------------------GRID-------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-2 col-md-offset-10">
+            <div class="btn btn-link btn-sm" id="dvRollbackVerticalXmlImport"><b><u>Rollback the last import...</u></b></div>
+        </div>
+    </div>
+    <div id="verticalImportGridwithSortingButtons">
+        <div id="verticalXmlImportContainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="verticalXmlImportGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dvLoadAllVerticalXmlImport" data-request-url="@Url.Action("Search", "VerticalXmlImport")"></div>
+<div id="dvImportedByComboLoad" data-request-url="@Url.Action("GetUsers", "VerticalXmlImport")"></div>
+<div id="dvAddVerticalXmlImport" data-request-url="@Url.Action("Add", "VerticalXmlImport")"></div>
+<div id="dvGetImportedXml" data-request-url="@Url.Action("GetImportedXml", "VerticalXmlImport")"></div>
+<div id="dvGetBackupXml" data-request-url="@Url.Action("GetBackupXml", "VerticalXmlImport")"></div>
+<div id="dvGetLatestJobStatus" data-request-url="@Url.Action("GetLatestJobStatus", "VerticalXmlImport")"></div>
+<div id="dvRollbackLastJob" data-request-url="@Url.Action("Rollback", "VerticalXmlImport")"></div>
+<div id="dvGetErrorLogs" data-request-url="@Url.Action("GetErrorLogs", "VerticalXmlImport")"></div>
+<div id="dvVerticalXmlImportPopOver" class="dispNone">
+    Vertical Xml Import page displays all the Vertical Xml Import Jobs and its Status.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>Upload Xml and ADD New Vertical Import Job to the Queue</li>
+        <li>View The Status Of Existing Jobs</li>
+        <li>SEARCH based on Job Date and Imported By.</li>
+    </ul>
+    <br />
+    The Add Vertical Xml Import Job performs below steps:
+    <ol>
+        <li>Backups existing data into an xml file</li>
+        <li>Import uploaded Xml file and updates the site with new data</li>
+    </ol>
+</div>
+<div id="dvRollbackPopOver" class="dispNone">
+    Click to rollback the latest import activity...
+</div>
+<div id="dvDownloadImportXmlPopOver" class="dispNone">
+    Download Imported Xml
+</div>
+<div id="dvDownloadBackupXmlPopOver" class="dispNone">
+    Download Backup Xml
+</div>
+<div id="dvErrorLogPopOver" class="dispNone">
+    Download Error Log
+</div>
+<script id="alertRollback" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to rollback the latest Import activity?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+<script src="~/Scripts/HostedAdmin/VerticalXmlImportSettings.js"></script>

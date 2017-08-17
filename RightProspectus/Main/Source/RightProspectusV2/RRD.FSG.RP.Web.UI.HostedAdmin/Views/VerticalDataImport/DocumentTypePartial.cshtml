@@ -1,0 +1,130 @@
+﻿<div class="row">
+    <div class="col-sm-12">
+        
+    </div>
+</div>
+<div id="importDocumentTypeAssociation" style="display:none">
+
+    <div class="row">
+        <div style="padding:10px 10px 10px 10px">
+            <input type="file" name="file" id="documentTypeAssociationUpload" />
+        </div>
+        <div class="col-sm-12">
+            <div id="DTInvalidDataGridContainer" class="ScrollTable">
+                <div id="DTInvalidDataGridHeader" class="tableFixedWidth" style="margin:20px 0; display:none">
+                    Invalid Document Types
+                </div>
+                <div id="DTInvalidDataGrid" class="tableFixedWidth">
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+<div class="row">
+    @* TODO: Commenting Import Export action button - Phase - 2 changes *@
+    @*<div class="col-lg-6 dvSwitch">
+
+
+        <input class="k-textbox " type=text id="txtSearchString" placeholder="enter search text..." />
+        <button id="btnDocumentTypeSearch">Search</button>
+
+    </div>*@
+    <div class="col-lg-12" >
+        <div id="dvSwitch"  class="btn-group pull-right dvSwitch" >
+            <a href="#" class="btn btn-default dropdown-toggle, ImportActions" data-toggle="dropdown">Actions <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a id="lnkImport" href="#">Import</a></li>
+                <li><a id="export" href="#">Export</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div id="GridContainer" class="ScrollTable">
+            <div id="documentTypeGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="dvDocumentTypes" data-request-url="@Url.Action("GetDocumentTypes", "VerticalSDTA")"></div>
+<div id="dvDocumentTypeAssociation" data-request-url="@Url.Action("GetDocumentTypeAssociation", "VerticalSDTA")"></div>
+<div id="dvSaveDocumentTypeAssociation" data-request-url="@Url.Action("SaveDocumentTypeAssociation", "VerticalSDTA")"></div>
+<div id="dvDocumentTypeImport" data-request-url="@Url.Action("DocumentTypeImport", "VerticalSDTA")"></div>
+<script src="~/Scripts/HostedAdmin/VerticalDataImport/DocumentTypeSettings.js"></script>
+
+<script type="text/x-kendo-template" id="deleteDocumentTypeAssociationTemplate">
+    Delete
+    <strong>MarketId</strong> ? 
+    <button class="confirm k-button confirmButtonYesMultiple" id="confirmDelete">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo" id="cancelDelete"> No</button>
+</script>
+<style>
+    .file-icon {
+        display: inline-block;
+        float: left;
+        width: 48px;
+        height: 48px;
+        margin-left: 10px;
+        margin-top: 13.5px;
+    }
+
+   
+    #documentTypeAssociationUpload .file-heading {
+        font-family: Arial;
+        font-size: 1.1em;
+        display: inline-block;
+        float: left;
+        width: 60%;
+        margin: 0 0 0 20px;
+        height: 25px;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    #documentTypeAssociationUpload .file-name-heading {
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    #documentTypeAssociationUpload .file-size-heading {
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    li.k-file .file-wrapper .k-upload-action {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    li.k-file div.file-wrapper {
+        position: relative;
+        height: 75px;
+    }
+    div.k-window-content {
+    overflow:hidden !important;
+    }
+
+    .DocumentType-EditPopup .k-edit-form-container{
+        width: 600px !important
+    }
+    .DocumentType-EditPopup .editor-label, .DocumentType-EditPopup .k-edit-label{
+        width: 20% !important;        
+    }
+
+    .DocumentType-EditPopup .editor-field, .DocumentType-EditPopup .k-edit-field{
+        width: 70% !important;         
+    }
+    .DocumentType-EditPopup .k-textbox, .DocumentType-EditPopup .k-dropdown {
+        width: 100%;
+    }
+
+</style>

@@ -1,0 +1,577 @@
+body {
+    font-family: arial, tahoma, sans-serif;
+    background-color: #0085cf;
+    font-size: 13px;    
+    color: #464646;
+    margin: 0px;
+}
+
+.cssClientLogoPlaceHolder {
+    padding-left: 41px;
+}
+
+.cssClientLogo {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 50px;
+    background-image: url(staticresource/TAL_logo.jpg?client=TAL);
+    background-repeat: no-repeat;
+    background-position: 10px 20px;
+}
+
+/*DocumentNotAvailable Start*/
+.cssDocumentNotAvailableItemDiv {
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 300px;
+    margin-top: 10px;
+}
+.cssDocumentNotAvailableGoBackButtonDiv {
+    margin-top: 20px;
+}
+/*DocumentNotAvailable End*/
+
+
+/*TaxonomyDataNotAvailable Start*/
+
+.cssTaxonomyDataNotAvailableMainDiv {
+    background-color: #fff;
+    width: 1000px;
+    display: table;
+    
+    margin: auto;
+    height: 100%;
+    border-radius: 20px;
+    margin-top: 21px;
+}
+
+.cssTaxonomyDataNotAvailableItemDiv {
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 300px;
+    margin-top: 10px;
+}
+.cssTaxonomyDataNotAvailableGoBackButtonDiv {
+    margin-top: 20px;
+}
+
+/*TaxonomyDataNotAvailable End*/
+
+
+.td {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: table-cell;
+    table-layout: fixed;
+    vertical-align: middle;
+}
+
+.cssLinks {
+    color: #464646;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .cssLinks:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+.cssHeaderTable {
+    display: table;
+    width: 100%;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.cssHeaderTableRow {
+    display: table-row;
+    width: 100%;
+}
+
+.cssHeaderTableCell {
+    display: table-cell;
+}
+
+
+
+/****************************************************Page Specific Navigations ***********************************************************/
+
+
+
+
+
+
+/*********************************************************************************Start : TAL CSS********************************************************/
+.cssTALMainDiv {
+    background-color: #fff;
+    width: 1000px;
+    display: table;
+    table-layout: fixed;
+    margin: auto;
+    height: 550px;
+    border-radius: 20px;
+    margin-top: 21px;
+}
+
+.cssTALProductDetailsMainDiv {
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 300px;
+    margin-top: 10px;
+    border-color: #d3d3d3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.cssTALProductHeaderTextDiv {
+    background-color: #0085cf;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    padding-left: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    height: 25px;
+    padding-top: 5px;
+}
+
+.cssTALProductLinksPlaceHolderDiv {
+    line-height: 2.0;
+    list-style-image: url(staticresource/ProductListBackgroundImage.gif?client=TAL);
+}
+/*********************************************************************************End : TAL CSS********************************************************/
+
+
+/*********************************************************************************Start : TAHD CSS********************************************************/
+.cssTAHDMainDiv {
+    margin: 21px auto;
+    height: 100%;
+    border-radius: 20px;
+    width: 1000px;    
+    background-color: #fff;
+    color: #464646;
+}
+
+.cssTAHDProductDetailsMainDiv {
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    border-color: #d3d3d3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.cssTAHDUnderlyingFundDetailsMainDiv {
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    border-color: #d3d3d3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.cssTAHDProductHeaderTextDiv {
+    background-color: #0085cf;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    padding-left: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    height: 25px;
+    padding-top: 5px;
+}
+
+.cssTAHDUnderlyingFundHeaderTextDiv {
+    background-color: #0085cf;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    padding-left: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    height: 25px;
+    padding-top: 5px;
+}
+
+.cssTAHDProductDocumentGridDiv {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridDiv {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cssTAHDProductDocumentGridHeader {
+    padding-top: 5px;
+    height: 30px;
+    display: table-row;
+    width: 100%;
+    table-layout: fixed;
+    padding-left: 10px;
+    padding-bottom: 8px;
+    font-weight: 700;
+    color: #036;
+}
+
+.cssTAHDUnderlyingFundDocumentGridHeader {
+    padding-top: 5px;
+    height: 30px;
+    display: table-row;
+    width: 100%;
+    table-layout: fixed;
+    padding-left: 10px;
+    padding-bottom: 8px;
+    font-weight: 700;
+    color: #036;
+}
+
+.cssTAHDProductDocumentGridProductNameColumn {
+    width: 60%;
+}
+
+.cssTAHDProductDocumentGridDocTypeColumn {
+    width: 20%;
+}
+
+.cssTAHDProductDocumentGridItem {
+    padding-top: 5px;
+    height: 25px;
+    display: table-row;
+    table-layout: fixed;
+    width: 100%;
+    background-color: #ECEDEE;
+}
+
+.cssTAHDProductDocumentGridItemProductNameColumn {
+    width: 60%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cssTAHDProductDocumentGridItemDocTypeColumn {
+    width: 20%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridFundNameColumn {
+    width: 40%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridDocTypeColumn {
+    width: 12%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridItem {
+    background-color: #ECEDEE;
+    padding-top: 5px;
+    height: 30px;
+    display: table-row;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.cssTAHDUnderlyingFundDocumentGridItemFundNameColumn {
+    width: 40%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridItemDocTypeColumn {
+    width: 12%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridAlternateItem {
+    background-color: #fff;
+    padding-top: 5px;
+    height: 30px;
+    display: table-row;
+    width: 100%;
+}
+
+.cssTAHDUnderlyingFundDocumentGridAlternateItemFundNameColumn {
+    width: 40%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridAlternateItemDocTypeColumn {
+    width: 12%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cssTAHDDocumentNAText {
+}
+
+.cssTAHDGlossary{
+    margin-left: 40px;
+}
+
+.cssTAHDFooter {
+    margin: 40px;    
+}
+.cssTAHDFootnotesHeaderText{
+    font-size: 20px;
+    font-weight: bold;
+}
+.cssTAHDFootnotesItems{
+    margin-top: 20px;
+}
+.cssTADHFootnotesItemText {
+}
+
+/*Document Type Link CSS*/
+
+.cssDocumentTypeLinkImage {
+    /*background-image: url(staticresource/DocumentLinkImage.gif?client=TAL);
+    background-repeat: no-repeat;
+    height: 16px !important;
+    width: 16px !important;
+    text-align: left;*/
+}
+
+.cssDocumentTypeLinkText {
+    /*display: none;*/   
+}
+
+.cssXBRLLinkImage {
+    background-image: url(staticresource/XBRLLinkImage.gif?client=TAL);
+    background-repeat: no-repeat;
+    height: 20px !important;
+    width: 16px !important;
+    text-align: left;
+}
+
+.cssXBRLLinkText {
+    display: none;   
+}
+
+.cssDocumentTypeLinkNAImage{
+    /*background-image: url(staticresource/DocumentLinkImage.gif?client=TAL);
+    background-repeat: no-repeat;
+    height: 16px !important;
+    width: 16px !important;
+    text-align: left;*/
+}
+.cssDocumentTypeLinkNAText {
+    /*display:none;*/
+}
+
+/*Document Type Link CSS*/
+
+/*********************************************************************************END : TAHD CSS********************************************************/
+
+
+/*********************************************************************************Start : TADF CSS********************************************************/
+.cssTADFBody {
+    overflow-y: hidden;
+    padding-top: 21px;
+}
+
+.cssTADFMainDiv {
+    background-color: #fff;
+    width: 1000px;
+    display: table;
+    
+    margin: auto;
+    height: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.cssTADFFundName {
+    display: table-cell;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #1C4877;
+    width: 50%;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.TADFDocumentTypeNavPlaceHolderDiv {
+    color: #fff;
+}
+
+.cssTADFPDFPlaceHolderDiv {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    margin-top: 0px;
+}
+
+.cssTADFPDFFrame {
+    border-style: none;
+    width: 100%;
+}
+
+.cssTADFXBRLPlaceHolderDiv{    
+}
+
+.cssTADFDocumentNotAvailableText{
+    margin-top: 20px;
+}
+
+.cssTADFDocumentNotAvailablePlaceHolderDiv {
+    position: absolute;
+    background: #FFF;
+    height: 100%;
+    width: 100%;
+    left: 0
+}
+
+/*****************************************Start : Menu CSS*****************************************/
+#NavMenu {
+    color: #FFF !important;    
+    background-color: #002942;    
+    margin: 0; 
+    padding: 0;
+    padding-left: 41px;
+}
+
+#NavMenu ul {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+#NavMenu li.top {
+    display: inline-block;    
+    line-height: 25px;
+    height: 25px;
+    border-right-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+#NavMenu li:hover li {
+    display: block;    
+    float: left;    
+    line-height: 25px;
+    height: 25px;    
+    border-width: 1px;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle;
+    text-decoration: none;
+    background-color: #002942;
+    min-width:50px 
+}
+
+#NavMenu li:hover {
+    position: relative;   
+}
+
+    #NavMenu li:hover ul {
+        left: 0px;
+        top: 25px;
+        padding-top: 2px;        
+        padding-left:0px !important;
+        z-index:100;
+    }
+
+.cssMenuTdActive a{
+    color:#F3D311;
+    text-decoration:none;
+}
+
+.cssMenuTdInActive a{
+    color:#FFF;
+    text-decoration:none;
+}
+
+#NavMenu li.top:last-child {
+    border-right-style: none !important;
+}
+/*****************************************End : Menu CSS*****************************************/
+/*********************************************************************************End : TADF CSS********************************************************/
+
+/*XBRL - Start*/
+
+.cssXBRLMainDiv {
+    background-color: #fff;
+    width: 1000px;
+    display: table;
+    table-layout: fixed;
+    margin: auto;
+    height: 550px;
+    border-radius: 20px;
+    margin-top: 21px;
+}
+
+.cssXBRLFundName {
+    display: table-cell;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #1C4877;
+    width: 50%;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.cssXBRLContentDiv {
+    
+}
+.cssXBRLContentMainTable {
+    display: table;    
+    width: 100%;
+    background-color: #fff;
+    height: 300px;
+    border-bottom-left-radius:17px;
+    border-bottom-right-radius: 17px;
+}
+.cssXBRLContentTableRow {
+    display: table-row;
+}
+.cssXBRLPlaceHolder {
+    list-style-image: url(staticresource/XBRLZipFile.jpg?client=TAL);
+    padding-left: 41px;
+    padding-top: 41px;
+    width: 35%;
+}
+
+.cssXBRLViewerPlaceHolder {
+    list-style-image: none;
+    list-style-type:disc;
+}
+
+.cssXBRLZipFilesHeaderText {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.cssXBRLViewerHeaderText {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/*XBRL - END*/

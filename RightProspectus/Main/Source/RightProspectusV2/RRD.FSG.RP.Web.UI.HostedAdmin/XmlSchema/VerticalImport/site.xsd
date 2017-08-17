@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="site.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:include schemaLocation="documentTypeAssociation.xsd" />
+  <xs:include schemaLocation="taxonomyAssociation.xsd" />
+  <xs:include schemaLocation="taxonomyAssociationGroup.xsd" />
+  <xs:include schemaLocation="text.xsd" />
+  <xs:include schemaLocation="siteNavigation.xsd" />
+  <xs:include schemaLocation="page.xsd" />
+  <xs:include schemaLocation="feature.xsd" />
+  <xs:element name="site" type="site" />
+  <xs:element name="sites" type="sites" />
+  <xs:complexType name="site">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a site entity. A site is the root level entity that ties both webSite and market level entities together.
+        A site entity defined with this schema for import or export can contain either webSite, market, or both types of associations.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="systemEntity">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element name="market" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                Defines top level market entities rooted to this site entity including documentTypeAssociations, taxonomyAssociations, and taxonomyAssociationGroups.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence minOccurs="0" maxOccurs="1">
+                <xs:element ref="documentTypeAssociations" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="taxonomyAssociations" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="taxonomyAssociationGroups" minOccurs="0" maxOccurs="1" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="webSite" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>
+                Defines all webSite entities bound to this site entity including texts, siteNavigations, pages, and features.
+              </xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence minOccurs="0" maxOccurs="1">
+                <xs:element ref="texts" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="siteNavigations" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="pages" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="features" minOccurs="0" maxOccurs="1" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element ref="sites" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="name" type="name" />
+        <xs:attribute name="description" type="description" />
+        <xs:attribute name="templateId" type="templateId" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="sites">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of site entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="site" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

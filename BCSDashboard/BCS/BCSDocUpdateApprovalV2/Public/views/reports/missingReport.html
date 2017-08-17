@@ -1,0 +1,57 @@
+﻿<form name="missingReportForm" novalidate ng-submit="GenerateReport()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9">
+                <p class="pageCaption">
+                    Missing Reports<span class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp BCSPopOver"
+                                         data-toggle="popover"></span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group required">
+
+                    <input kendo-combo-box k-options='comboMissingReportOptions' ng-model="SelectedMissingReport" ng-required="true" />
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <input class="btn btn-primary btn-sm clear-after" type="submit" value="Generate">
+                <button class="btn btn-link btn-sm clear-form" type="reset" ng-click="btnClearMissingReport()"><span><u>Clear Filters</u></span></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+    </div>
+</form>
+<div kendo-grid k-options="gridOptions" k-data-source="gridDataSource" ng-show="showGrid" id="missingReportGrid"></div>
+<div id="dvMissingReportPopOver" class="dispNone">
+    TODO : Write Info on Missing Reports
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>write info on Missing reports</li>
+
+    </ul>
+    <br />
+</div>

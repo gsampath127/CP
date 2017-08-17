@@ -1,0 +1,80 @@
+﻿<form name="slinkForm" novalidate ng-submit="GenerateSLINKReport()">
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-9">
+                <p class="pageCaption">
+                    SLINK Reports<span class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp BCSPopOver"
+                                       data-toggle="popover"></span>
+                </p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+            </div>
+        </div>
+
+        <div class="row">           
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <input kendo-date-picker ng-required="true"
+                               ng-model="slinkData.reportDate"
+                               placeholder="Select Date:" />
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <input kendo-combo-box k-options='ReportStatusOptions' ng-model="slinkData.Status" />
+                    </div>
+                </div>
+        </div>
+
+        <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group">
+                            <textarea class="k-textbox" ng-model="slinkData.DocId" style="height:50px" placeholder="Doc Id:"> </textarea>
+                    </div>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <input type="hidden" id="hdnDateOffSet" />
+                <input class="btn btn-primary btn-sm clear-after" type="submit" value="Generate">
+                <button class="btn btn-link btn-sm clear-form" type="reset" ng-click="ClearFilters()"><span><u>Clear Filters</u></span></button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+        <div ng-show="showGrid" kendo-grid k-options="gridOptionsHeader" k-data-source="gridDataSourceHeader"></div>
+        <br /><br />
+        <div ng-show="showGrid" kendo-grid k-options="gridOptionsDetails" k-data-source="gridDataSourceDetails" id="gridSLINKDetail"></div>
+        <br /><br />
+    </div>
+</form>
+    <div id="dvSlinkReportPopOver" class="dispNone">
+        TODO : Write Info on Slink Reports
+        <br /><br />
+        Below are the functionalities provided in this page,
+        <ul>
+            <li>write info on Slink reports</li>
+
+        </ul>
+        <br />
+    </div>
+
+

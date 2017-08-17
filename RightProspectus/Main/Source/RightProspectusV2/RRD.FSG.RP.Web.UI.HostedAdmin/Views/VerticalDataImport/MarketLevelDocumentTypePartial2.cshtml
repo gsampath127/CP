@@ -1,0 +1,64 @@
+﻿<div class="row">
+    <div class="col-sm-12">
+
+    </div>
+</div>
+<div id="importMarketLevelDocumentTypeAssociation" style="display:none">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <input type="file" name="file" id="marketLevelDocumentTypeAssociationUpload" />
+        </div>
+    </div>
+    <div class="row">
+        <table id="invalidMarketLevelDocumentTypeAssociation">
+            <thead>
+                <tr>
+                    <th data-field="MarketIdTA">Taxonomy MarketId</th>
+                    <th data-field="MarketIdDT">Document Type MarketId</th>
+                    <th data-field="HeaderText">Header Text</th>
+                    <th data-field="LinkText">Link Text</th>
+                    <th data-field="DescriptionOverride">Description Override</th>
+                    <th data-field="CssClass">Css Class</th>
+                    <th data-field="Order">Order</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+@*<div class="row">
+
+    <div class="col-sm-12">
+        <div id="dvSwitch" class="btn-group pull-right">
+            <a href="#" class="btn btn-default dropdown-toggle, ImportActions" data-toggle="dropdown">Actions <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a id="lnkImport" href="#">Import</a></li>
+                <li><a id="export" href="#">Export</a></li>
+            </ul>
+        </div>
+    </div>
+</div>*@
+<div class="row">
+    <div class="col-sm-12">
+        <div id="GridContainer1" class="ScrollTable">
+            <div id="marketLevelDocumentTypeGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*<div id="dvMarketLevelDocumentTypes" data-request-url="@Url.Action("GetMarketLevelDocumentTypes", "VerticalSDTA")"></div>*@
+<div id="dvMarketLevelDocumentTypeAssociation" data-request-url="@Url.Action("GetMarketLevelDocumentTypeAssociation", "VerticalSDTA")"></div>
+@*<div id="dvSaveDocumentTypeAssociation" data-request-url="@Url.Action("SaveDocumentTypeAssociation", "VerticalSDTA")"></div>
+<div id="dvDocumentTypeImport" data-request-url="@Url.Action("DocumentTypeImport", "VerticalSDTA")"></div>*@
+<script src="~/Scripts/HostedAdmin/VerticalDataImport/MarketLevelDocumentTypeSettings.js"></script>
+
+<script type="text/x-kendo-template" id="deleteMarketLevelDocumentTypeAssociationTemplate">
+    Delete
+    <strong>#= MarketId #</strong> ?
+    <button class="confirm k-button confirmButtonYesMultiple" id="confirmDelete">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo" id="cancelDelete"> No</button>
+</script>
+

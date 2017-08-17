@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("List", "Site")">@ViewData["SelectedCustomer"]</a></li>
+                <li class="active">Client Document Type</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Client Document Type<span id="ClientDocumentTypePopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+        <div class="col-sm-3 text-right">
+            <a class="btn btn-success btn-sm m-top-20 pull-right-xs-max" id="btnAddNewClientDocumentType">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Client Document Type
+            </a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="NameCombo" class="form-control" type="text" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="DescriptionCombo" type="text" class="form-control" />
+
+            </div>
+        </div>
+        @*<div class="col-sm-4">
+            <div class="form-group">
+                <input id="ModifiedDateCombo" type="text" class="form-control" />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="ModifiedByCombo" type="text" class="form-control" />
+
+            </div>
+        </div>*@
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="btnSearchClientDocumentType" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="ClientDocumentTypeClearFilters"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="clientDocumentTypeGridwithSortingButtons">
+
+        <div id="clientDocumentTypecontainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="clientDocumentTypeGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="dvLoadAllDocumentType" data-request-url="@Url.Action("GetAllClientDocumentTypeDetails", "ClientDocumentType")"></div>
+<div id="dvNameComboLoad" data-request-url="@Url.Action("GetName", "ClientDocumentType")"></div>
+<div id="dvDescriptionComboLoad" data-request-url="@Url.Action("GetDescription", "ClientDocumentType")"></div>
+ <div id="dvValidateDelete" data-request-url="@Url.Action("ValidateDelete", "ClientDocumentType")"></div>
+ <div id="dvEditClientDocumentType" data-request-url="@Url.Action("EditClientDocumentType", "ClientDocumentType")"></div>
+ <div id="dvDisable" data-request-url="@Url.Action("DeleteClientDocumentType", "ClientDocumentType")"></div>
+
+<div>
+    <script id="divDeleteValidations" type="text/x-kendo-template">
+    </script>
+</div>
+
+<script id="alertDisable" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Client Document Type?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+<script src="~/Scripts/HostedAdmin/ClientDocumentTypeSettings.js"></script>
+
+<div id="dvClientDocumentTypePopOver" class="dispNone">
+    Client Document Type page displays the <b>Client Document Types</b> in RightProspectus.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New  Client Document Type</li>
+        <li>EDIT Existing  Client Document Type</li>
+        <li>SEARCH Client Document Type based on Name, Description.</li>
+        <li>DELETE Client Document Type</li>
+    </ul>
+    <br />
+</div>

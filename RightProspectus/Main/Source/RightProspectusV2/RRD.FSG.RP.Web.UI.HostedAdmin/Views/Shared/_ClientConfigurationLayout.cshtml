@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=100">
+    <title class="navbar-brand">RightProspectus Admin</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.ActionLink("Hosted Sites Admin", "SelectCustomer", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-main">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="admin-menu">Admin<span class="caret"></span></a>
+                        <ul class="dropdown-menu navbar-inverse" aria-labelledby="admin-menu">
+                            <li><a href="@Url.Action("List", "Site")">Sites</a></li>
+                            <li><a href="@Url.Action("Index", "VerticalDataImport")">Site - Data Import</a></li>
+                            @*@if (Convert.ToBoolean(System.Web.HttpContext.Current.Session["SITE_EXIST"]))
+                            {
+                                <li><a href="@Url.Action("List", "VerticalXmlImport")">Vertical XML Import Jobs</a></li>
+                                <li><a href="@Url.Action("List", "VerticalXmlExport")">Vertical XML Export Jobs</a></li>
+                            }*@
+                            
+                            <li><a href="@Url.Action("List", "ClientDocument")">Client Document</a></li>
+                            <li><a href="@Url.Action("List", "ClientDocumentType")">Client Document Type</a></li>
+                            @*<li><a href="@Url.Action("List", "ClientDocumentGroup")">Client Document Group</a></li>*@
+                            <li><a href="@Url.Action("List", "TaxonomyAssociationClientDocument")">Taxonomy Association Client Document</a></li>
+                            <li><a href="@Url.Action("List", "TaxonomyLevelExternalId")">Taxonomy Level ExternalID</a></li>
+                            <li><a href="@Url.Action("Index", "DocumentTypeExternalId")">Document Type ExternalID</a></li>
+                            <li><a href="@Url.Action("List", "StaticResource")">Static Resource</a></li>
+                            <li><a href="@Url.Action("List", "UrlRewrite")">URL Rewrite</a></li>
+                            <li><a href="@Url.Action("List", "ReportSchedule")">Report Schedule</a></li>
+                            <li><a href="@Url.Action("List", "UrlGenerator")">URL Generator</a></li>
+                            <li><a href="@Url.Action("BrowserVersion", "BrowserVersion")">Browser Version</a></li>
+                            <li><a href="@Url.Action("DocumentSubstitution", "DocumentSubstitution")">Document Substitution Rules</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="main" class="container body-content">
+        @RenderBody()
+    </div>
+</body>
+</html>

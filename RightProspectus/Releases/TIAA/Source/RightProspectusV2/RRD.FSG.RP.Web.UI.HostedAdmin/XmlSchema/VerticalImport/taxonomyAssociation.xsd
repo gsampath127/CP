@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="taxonomyAssociation.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:include schemaLocation="documentTypeAssociation.xsd" />
+  <xs:include schemaLocation="taxonomyAssociationGroup.xsd" />
+  <xs:include schemaLocation="taxonomyAssociationHierarchy.xsd" />
+  <xs:include schemaLocation="clientDocumentGroupLink.xsd" />
+  <xs:include schemaLocation="clientDocumentLink.xsd" />
+  <xs:include schemaLocation="footnote.xsd" />
+  <xs:include schemaLocation="metaData.xsd" />
+  <xs:element name="taxonomyAssociation" type="taxonomyAssociation" />
+  <xs:element name="taxonomyAssociations" type="taxonomyAssociations" />
+  <xs:complexType name="taxonomyAssociation">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a vertical market taxonomy level entity association.
+        This entity can be rooted to a site entity, another taxonomyAssociation entity (must be the direct parent in the vertical market), or unrooted (neither site nor taxonomyAssociation entity set as parent). 
+        Unrooted entities will only be visible from the site if associated to another rooted entity via taxonomyAssociationHierachy or taxonomyAssociationGroup.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="marketEntity">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element ref="documentTypeAssociations" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="taxonomyAssociationGroups" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="taxonomyAssociations" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="taxonomyAssociationHierarchies" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="clientDocumentGroupLinks" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="clientDocumentLinks" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="footnotes" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="metaDataCollection" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="level" type="level" use="required" />
+        <xs:attribute name="importId" type="importId" use="optional" />
+        <xs:attribute name="systemId" type="systemId" use="optional" />
+        <xs:attribute name="nameOverride" type="name" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="taxonomyAssociations">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of taxonomyAssociation entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="taxonomyAssociation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

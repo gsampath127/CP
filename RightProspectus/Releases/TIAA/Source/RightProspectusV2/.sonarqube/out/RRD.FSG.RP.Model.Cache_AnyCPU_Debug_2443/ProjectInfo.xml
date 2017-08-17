@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>RRD.FSG.RP.Model.Cache</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>45464429-708b-4797-8b08-8c79113179e4</ProjectGuid>
+  <FullPath>D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RRD.FSG.RP.Model.Cache\RRD.FSG.RP.Model.Cache.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\.sonarqube\out\\RRD.FSG.RP.Model.Cache_AnyCPU_Debug_2443\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.stylecop.projectFilePath">D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RRD.FSG.RP.Model.Cache\RRD.FSG.RP.Model.Cache.csproj</Property>
+  </AnalysisSettings>
+</ProjectInfo>

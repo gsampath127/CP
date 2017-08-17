@@ -1,0 +1,394 @@
+﻿@{
+    ViewBag.Title = "EditReportSchedule";
+    Layout = null;
+}
+
+<html>
+<head>
+    @model RRD.FSG.RP.Web.UI.HostedAdmin.ViewModels.EditReportScheduleViewModel
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=100">
+    <title>RightProspectus</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/Kendo/css")
+    @Scripts.Render("~/bundles/Kendo")
+    @Scripts.Render("~/bundles/bootstrap")
+    <link href="~/Content/RP/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+
+
+    <script src="~/Scripts/HostedAdmin/EditReportScheduleSettings.js"></script>
+    <style type="text/css">
+        .k-i-calendar, .k-i-clock {
+            margin-top: 10px !important;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("EditReportSchedule", "ReportSchedule", FormMethod.Post, new { id = "frmReportSchedule" }))
+        {
+            <input type="hidden" id="offsetTime" name="offsetTime" />
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container navigationFullMenu nowrap">
+                    <div class="navbar-header">
+                        @if (Model.ReportScheduleId.Equals(0))
+                        {
+                            <a class="navbar-brand" href="#">Add Report Schedule</a>
+                        }
+                        else
+                        {
+                            <a class="navbar-brand" href="#">Edit Report Schedule</a>
+                        }
+
+                        <button id="togglebutton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar-popup" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="popup-close" id="closeWindow" href="javascript:window.close();">Close Window</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="main" class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div id="dvValMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowMsg"></div></div>
+                                @Html.LabelFor(model => model.ReportName)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.DropDownListFor(model => model.SelectedReportId, new SelectList(Model.ReportName, "Value", "Display"), new { @class = "form-control", id = "ComboReportName" })
+                                @Html.HiddenFor(model => model.ReportScheduleId, new { id = "hdnReportScheduleId" })
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div id="dvTaxMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowTaxMsg"></div></div>
+                                @Html.LabelFor(model => model.FrequencyType)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.DropDownListFor(model => model.SelectedFrequencyType, new SelectList(Model.FrequencyType, "Value", "Display"), new { @class = "form-control", id = "ComboFrequencyType" })
+                                <input type="hidden" value="@ViewData["Success"].ToString()" id="hdnSuccessOrFailedMessage" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div id="dvTaxMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowTaxMsg"></div></div>
+                                @Html.LabelFor(model => model.UtcFirstScheduledRunDate)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.TextBoxFor(model => model.UtcFirstScheduledRunDate, new { @class = "form-control", placeholder = "First Schedule Run Date", type = "text", id = "txtFirstScheduledRunDate", style = "width:100%; height:30px" })
+                          </div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group" id="divFrequencyInterval" style="display:none">
+                                <div id="dvValMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowMsg"></div></div>
+                                @Html.LabelFor(model => model.FrequencyInterval)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.TextBoxFor(model => model.FrequencyInterval, new { @class = "form-control", placeholder = "Frequency Interval", type = "number", id = "txtFrequencyInterval", MaxLength = "200", min = "0", pattern = "^[0-9]" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div id="dvValMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowMsg"></div></div>
+                                @Html.LabelFor(model => model.TransferType)
+                                <span class="mandatoryAsterisk">*</span>
+                                @if (Model.ReportScheduleId > 0)
+                                {
+                                    @Html.DropDownListFor(model => model.SelectedTransferType, new SelectList(Model.TransferType, "Value", "Display"), new { @class = "form-control", id = "ComboTransferType", @disabled = "disabled" })
+                                }
+                                else
+                                {
+                                    @Html.DropDownListFor(model => model.SelectedTransferType, new SelectList(Model.TransferType, "Value", "Display"), new { @class = "form-control", id = "ComboTransferType" })
+                                    @Html.HiddenFor(model => model.SelectedTransferType, new { id = "hdnSelectedTransferType" })
+                                }
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+
+                            <div class="form-group">
+                                <div id="dvTaxMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowTaxMsg"></div></div>
+                                @Html.LabelFor(model => model.IsEnabled)
+
+                                @Html.CheckBoxFor(model => model.IsEnabled, new { @class = "form-control", id = "chkIsEnabled", @style = "width: 15px; height: 15px;" })
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="col-sm-6" id="dvEmail">
+                            <div class="form-group">
+                                <div id="dvTaxMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowTaxMsg"></div></div>
+                                @Html.LabelFor(model => model.Email)
+                                <span class="mandatoryAsterisk">*</span>
+                                @if (string.IsNullOrEmpty(Model.Email))
+                                {
+                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Email", type = "text", id = "txtEmail" })
+                                }
+                                else
+                                {
+                                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Email", type = "text", id = "txtEmail", @readonly = "readonly" })
+                                }
+
+
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6 dvFTP">
+                            <div class="form-group">
+                                <div id="dvValMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowMsg"></div></div>
+                               
+                               @* @Html.LabelFor(model => model.FTPServerIP)*@
+                                <label for="TransServerIp" id="lblTransServerIp"></label>
+                                <span class="mandatoryAsterisk">*</span>
+                                @if (string.IsNullOrEmpty(Model.Email) && Model.ReportScheduleId == 0)
+                                {
+                                    @Html.TextBoxFor(model => model.FTPServerIP, new { @class = "form-control",  type = "text", id = "txtFTPServerIP" })
+                                }
+                                else
+                                {
+                                    @Html.TextBoxFor(model => model.FTPServerIP, new { @class = "form-control",  type = "text", id = "txtFTPServerIP", @readonly = "readonly" })
+                                }
+
+                            </div>
+
+                        </div>
+                        @*<div class="col-sm-6 dvFTP">
+                                <div class="form-group">
+                                    <div id="dvTaxMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowTaxMsg"></div></div>
+                                    @Html.LabelFor(model => model.FTPFilePath)
+                                    <span class="mandatoryAsterisk">*</span>
+                                    @if (string.IsNullOrEmpty(Model.Email) && Model.ReportScheduleId == 0)
+                                    {
+                                        @Html.TextBoxFor(model => model.FTPFilePath, new { @class = "form-control", placeholder = "FTPFilePath", type = "text", id = "txtFTPFilePath" })
+                                    }
+                                    else
+                                    {
+                                        @Html.TextBoxFor(model => model.FTPFilePath, new { @class = "form-control", placeholder = "FTPFilePath", type = "text", id = "txtFTPFilePath", @readonly = "readonly" })
+                                    }
+
+
+                                </div>
+
+                            </div>*@
+
+
+
+                    </div>
+                </div>
+
+                <div class="row dvFTP">
+                    <div class="col-lg-12">
+
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div id="dvValMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowMsg"></div></div>
+                                @*@Html.LabelFor(model => model.FTPUsername)*@
+                                <label for="TransuserName" id="lblTransUserName"></label>
+                                <span class="mandatoryAsterisk">*</span>
+                                @if (string.IsNullOrEmpty(Model.Email) && Model.ReportScheduleId == 0)
+                                {
+                                    @Html.TextBoxFor(model => model.FTPUsername, new { @class = "form-control", placeholder = "FTPUserName", type = "text", id = "txtFTPUsername" })
+                                }
+                                else
+                                {
+                                    @Html.TextBoxFor(model => model.FTPUsername, new { @class = "form-control", placeholder = "FTPUserName", type = "text", id = "txtFTPUsername", @readonly = "readonly" })
+                                }
+
+
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div id="dvTaxMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowTaxMsg"></div></div>
+
+
+                                @if (string.IsNullOrEmpty(Model.Email) && Model.ReportScheduleId == 0)
+                                {
+                                    @*@Html.LabelFor(model => model.FTPPassword)*@
+                                    <label for="TransPassword" id="lblTransPassword"></label>
+                                    <span class="mandatoryAsterisk">*</span>
+                                    @Html.PasswordFor(model => model.FTPPassword, new { @class = "form-control", placeholder = "FTPPassword", id = "txtFTPPassword" })
+                                }
+                                else
+                                {
+                                    @Html.PasswordFor(model => model.FTPPassword, new { @class = "form-control hidden", placeholder = "FTPPassword", id = "txtFTPPassword", @readonly = "readonly" })
+                                }
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                @if (Model.ReportScheduleId > 0)
+                {
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.UTCLastModifiedDate)
+                                    @Html.TextBoxFor(model => model.UTCLastModifiedDate, new { @class = "form-control", placeholder = "ModifiedDate", type = "text", id = "txtModifiedDate", @disabled = "disabled" })
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ModifiedBy)
+                                    @Html.TextBoxFor(model => model.ModifiedByName, new { @class = "form-control", placeholder = "ModifiedBy", type = "text", id = "txtModifiedBy", @disabled = "disabled" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+
+                <div class="form-inline">
+                    <div class="form-group col-sm-2">
+                        <button id="submitReportSchedule" type="submit" class="AlignButton btn btn-default m-top-15">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+    <div>
+        <script id="divSuccessOrFailedMessage" type="text/x-kendo-template">
+            <p class="message"> Report Schedule Details Saved Successfully.</p>
+            <button class="confirm k-button" style="margin:10px">OK</button>
+        </script>
+    </div>
+    <div>
+        <script id="divEditValidations" type="text/x-kendo-template">
+        </script>
+    </div>
+    <div id="dvCheckDataAlreadyExists" data-request-url="@Url.Action("CheckDataAlreadyExists", "ReportSchedule")"></div>
+    <div id="dvGetLocaltime" data-request-url="@Url.Action("GetLocaltime", "ReportSchedule")"></div>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+﻿@{
+    Layout = null;
+}
+@using RRD.FSG.RP.Web.UI.Hosted
+@model RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationClientDocumentViewModel
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=1024, initial-scale=1, min-scale=1, max-scale=1" />
+
+    @Scripts.Render("~/Scripts/MinJS")
+
+    <link href="~/Content/themes/base/dialog.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/theme.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/button.css" rel="stylesheet" />
+    <link href="~/Content/themes/base/core.css" rel="stylesheet" />
+
+    <link href='https://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css' />
+    <script src="~/Scripts/HostedEngine/TACDFSettings.js"></script>
+    <link href="@(Model.BaseURL)SiteTextHandler.ashx?ClientName=@(Model.ClientName)&SiteName=@(Model.SiteName)&Key=cssFile&IsProofing=@(Model.IsProofing)" rel="stylesheet" media="all" />
+    <link href="@(Model.BaseURL)PageTextHandler.ashx?ClientName=@(Model.ClientName)&SiteName=@(Model.SiteName)&Key=@(Model.PageCSSResourceKey)&IsProofing=@(Model.IsProofing)&PageId=@(Model.PageId)" rel="stylesheet" media="all" />
+</head>
+
+<body class="@(Model.IsSinglePdfView ? "cssTADFSinglePDFBody" : "cssTACDFBody")">
+
+    <div class="cssTACDFMainDiv">
+        @if (!Model.IsSinglePdfView)
+        {
+            <div class="cssHeaderTable">
+                <div class="cssHeaderTableRow">
+                    <div class="cssHeaderTableCell cssClientLogoPlaceHolder">
+                        <div class="cssClientLogo">@(Html.Raw(System.Web.HttpUtility.HtmlDecode(((BaseViewModel)Model).LogoText)))</div>
+                    </div>
+
+                    <div class="cssHeaderTableCell cssTACDFFundNamePlaceHolderDiv">
+                        <div class="cssTACDFFundName">@(Model.FundName)</div>
+                        @if (Model.DisplayDailyMoneyMarketDisclosure)
+                        {
+                            <div class="cssTACDFDMMDPlaceHolderDiv">
+                                <a target="_blank" href="@Url.Action("TaxonomyAssociationClientDocumentFrame",
+                                    new
+                                    {
+                                        externalID1 = Model.ExternalID1,
+                                        externalID2 = "DMMD",
+                                        site = ((TaxonomyAssociationClientDocumentViewModel)Model).SiteName,
+                                        SPV = "true",
+                                        isProofing = ((TaxonomyAssociationClientDocumentViewModel)Model).IsProofing == 1 ? "True" : ""
+                                    })" >
+                                    <div class="cssTACDFDMMDLinkText">@Model.DMMDLinkText</div>
+                                </a>
+                            </div>
+                        }
+                        @if (Model.DisplayNCR)
+                        {
+                            <div class="cssTACDFNCRPlaceHolderDiv">
+                                <a target="_blank" href="@Url.Action("TaxonomyAssociationClientDocumentFrame",
+                                    new
+                                    {
+                                        externalID1 = Model.ExternalID1,
+                                        externalID2 = "NCR",
+                                        site = ((TaxonomyAssociationClientDocumentViewModel)Model).SiteName,
+                                        SPV = "true",
+                                        isProofing = ((TaxonomyAssociationClientDocumentViewModel)Model).IsProofing == 1 ? "True" : ""
+                                    })">
+                                    <div class="cssTACDFNCRLinkText">@Model.NCRLinkText</div>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div id="TACDFDocumentTypeNavMainDiv">
+                <div class="TACDFDocumentTypeNavPlaceHolderDiv">
+                    @Html.RenderXml(Model.PageNavigationXML, Model.PageNavigationXSLT)
+                </div>
+            </div>
+        }
+        <div id="pnlFrameContainer" class="cssTACDFPDFPlaceHolderDiv">
+            <iframe id="docFrame" class="cssTACDFPDFFrame"></iframe>
+        </div>
+        <div id="idTACDFFormNMFPPlaceHolderDiv" class="cssTACDFFormNMFPPlaceHolderDiv">
+            <div class="cssTACDFormNMFPText">
+                @(Html.Raw(System.Web.HttpUtility.HtmlDecode(Model.FormNMFPText)))
+            </div>
+        </div>
+    </div>
+
+    <div id="dvTrackSiteActivityURL" data-request-url="@Url.Action("TrackSiteActivity", "Hosted")"></div>
+    <div id="dvToolsURL" data-tools-url="@System.Configuration.ConfigurationManager.AppSettings["toolsUrl"].ToString()"></div>
+    <div id="dvHTTPSToolsURL" data-tools-url="@System.Configuration.ConfigurationManager.AppSettings["HTTPStoolsUrl"].ToString()"></div>
+    <input type="hidden" value="@(Request.Url.Scheme)" id="hdnISHTTPS" />
+    <input type="hidden" value="@(Model.PageLoadPDFURL)" id="hdnPageLoadPDFURL" />
+    <input type="hidden" value="@(Model.PageLoadMenuID)" id="hdnPageLoadMenuID" />
+    <input type="hidden" value="@(Model.RequestBatchId)" id="hdnRequestBatchId" />
+</body>
+</html>

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{776E2243-51BE-4920-9D6F-F284E131754B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCS.ObjectModel.Factories</RootNamespace>
+    <AssemblyName>BCS.ObjectModel.Factories</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChilkatDotNet4, Version=9.4.1.0, Culture=neutral, PublicKeyToken=eb5fc1fc52ef09bd, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\x86\ChilkatDotNet4.dll</HintPath>
+    </Reference>
+    <Reference Include="HiQPdf, Version=6.0.0.0, Culture=neutral, PublicKeyToken=acd8b62594985b24, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\HiQPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\FirstDollarReportServices\FirstDollarReportServices\FirstDollarReportServices\Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.4.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Lib\x86\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BCSDocUpdateApprovalFactory.cs" />
+    <Compile Include="BCSFLTandFTPLogicFactory.cs" />
+    <Compile Include="BCSV2AuthenticationFactory.cs" />
+    <Compile Include="BCSV2ForgotPasswordFactory.cs" />
+    <Compile Include="BCSV2ProfileFactory.cs" />
+    <Compile Include="ConfigValues.cs" />
+    <Compile Include="EmailHelper.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="Logging.cs" />
+    <Compile Include="BCSV2LoginFactory.cs" />
+    <Compile Include="PasswordHash.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPSecurityTypeDashboardFactory.cs" />
+    <Compile Include="RPSecurityTypeFeedFactory.cs" />
+    <Compile Include="Service References\DocumentBoardingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PreflightLinkWCF\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceFactory.cs" />
+    <Compile Include="UtilityFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BCS.DataAccess\BCS.DataAccess.csproj">
+      <Project>{60e0e231-c7d3-4884-8bb0-81c190854aec}</Project>
+      <Name>BCS.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCS.ObjectModel\BCS.ObjectModel.csproj">
+      <Project>{15231e11-276a-4c6c-b600-0ca1fa5ed357}</Project>
+      <Name>BCS.ObjectModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Lib\HiQPdf.dep" />
+    <None Include="Service References\DocumentBoardingService\BCS.ObjectModel.Factories.DocumentBoardingService.OnBoardingDownloadCompleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentBoardingService\BCS.ObjectModel.Factories.DocumentBoardingService.OnBoardingDownloadReviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentBoardingService\BCS.ObjectModel.Factories.DocumentBoardingService.PDFWorkflowStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DocumentBoardingService\RRD.RightProspectus.wsdl" />
+    <None Include="Service References\DocumentBoardingService\RRD.RightProspectus.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentBoardingService\RRD.RightProspectus1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DocumentBoardingService\service.wsdl" />
+    <None Include="Service References\DocumentBoardingService\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PreflightLinkWCF\BCS.ObjectModel.Factories.PreflightLinkWCF.CustomerDealJobCycle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PreflightLinkWCF\PreflightLinkWCF.wsdl" />
+    <None Include="Service References\PreflightLinkWCF\PreflightLinkWCF.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PreflightLinkWCF\PreflightLinkWCF1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PreflightLinkWCF\PreflightLinkWCF2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DocumentBoardingService\" />
+    <WCFMetadataStorage Include="Service References\PreflightLinkWCF\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PreflightLinkWCF\PreflightLinkWCF.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PreflightLinkWCF\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PreflightLinkWCF\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PreflightLinkWCF\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\HiQPdf.dll" />
+    <Content Include="Lib\HiQPdf.xml" />
+    <Content Include="Lib\ICSharpCode.SharpZipLib.dll" />
+    <None Include="Service References\DocumentBoardingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DocumentBoardingService\configuration.svcinfo" />
+    <None Include="Service References\DocumentBoardingService\configuration91.svcinfo" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

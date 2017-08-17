@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="taxonomyAssociationHierarchy.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:include schemaLocation="taxonomyAssociationLink.xsd" />
+  <xs:element name="taxonomyAssociationHierarchy" type="taxonomyAssociationHierarchy" />
+  <xs:element name="taxonomyAssociationHierarchies" type="taxonomyAssociationHierarchies" />
+  <xs:complexType name="taxonomyAssociationHierarchy">
+    <xs:annotation>
+      <xs:documentation>
+        Defines an indirect parent/child relationship between the parent taxonomyAssociation entity and a collection of linked child taxonomyAssociation entities.
+        This allows nonlinear inheritance and association regardless of the associated entities hierarchy level and direct ancestry.
+        The association type is defined by the relationshipType attribute, and applies to all linked child taxonomyAssocation entities.
+        An example in the US vertical market would be a product group defined by one "parent" fund entity associated to multiple "child" fund entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="entity">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element ref="taxonomyAssociationLinks" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <!--TODO: Add the valid values to the attribute here as a restriction once the enumeration is defined-->
+        <xs:attribute name="relationshipType" type="xs:integer" use="required">
+          <xs:annotation>
+            <xs:documentation>
+              Defined the type of relationship the child entites have to the parent entity.
+              Valid values are defined in an enumeration.
+            </xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="taxonomyAssociationHierarchies">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of taxonomyAssociationHierarchy entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="taxonomyAssociationHierarchy" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

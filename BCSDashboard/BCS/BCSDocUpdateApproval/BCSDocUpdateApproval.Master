@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BCSDocUpdateApproval.Master.cs"
+    Inherits="BCSDocUpdateApproval.BCSDocUpdateApprovalMaster" %>
+
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" id="BCSDocUpdateApprovalMasterHead">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link href="Styles/BCS.css" rel="Stylesheet"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="ContentHead" runat="server">
+    </asp:ContentPlaceHolder>
+    <telerik:RadCodeBlock ID="radCodeBlock" runat="server">        
+        <style type="text/css">           
+        </style>
+        <script type="text/javascript">        
+        </script>
+    </telerik:RadCodeBlock>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <telerik:RadScriptManager runat="server" ID="select" />
+        <div id="divClientFrame" runat="server">
+            <div id="divClientLOGO" align="left" style="vertical-align:middle">
+                <table style="vertical-align:middle;width:100%;height:100%">
+                    <tr>
+                        <td width="35%" style="padding-left: 25px" >
+                            <img id="imgRightProspectusLogo" style="vertical-align: middle" src="Images/RightProspectus.jpg"/>
+                        </td>
+                        <td  width="65%">
+                            <asp:Label runat="server" ID="lblMasterHeader" ForeColor="#53555c" Font-Size="X-Large"  Font-Names="Georgia, 'Nanum Myeongjo', serif" Text="BCS Document Update Approval "></asp:Label>
+                            <%--<span style="color: #53555c; font-size: 25px; font-weight: normal; font-family: Georgia, 'Nanum Myeongjo', serif;">BCS Document Update Approval </span>--%>
+                        </td>
+                    </tr>
+                </table>                
+            </div>
+        </div>
+        <div id="divBCSDocUpdateApproval">
+            <asp:Panel ID="BCSDocUpdateApprovalMainPanel" runat="server" CssClass="ClientContentDiv">
+                <table style="width: 100%; height: 100%; border: none">
+                    <tr runat="server" width="100%" id="ContentRow" height="100%" class="RightPanelBody">
+                        <td id="Td4" runat="server" colspan="1" valign="top">
+                            <asp:Panel ID="BCSDocUpdateApprovalContentPanel" runat="server" Width="100%" Height="100%">
+                                <asp:ContentPlaceHolder ID="ContentBody" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </asp:Panel>
+                        </td>
+                    </tr>
+                </table>
+            </asp:Panel>
+        </div>
+    </form>
+</body>
+</html>

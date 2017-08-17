@@ -1,0 +1,632 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{320E5594-18DD-4CA3-A1C5-B3A5640E5D2C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RRD.FSG.RP.Web.UI.HostedAdmin</RootNamespace>
+    <AssemblyName>RRD.FSG.RP.Web.UI.HostedAdmin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\packages\RuleSet\RRD.FSG.RP.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <DocumentationFile>..\Documentation\RRD.FSG.RP.Web.UI.HostedAdmin.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RRD.DSA.Core\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RRD.DSA.Core\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RRD.DSA.Core\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RRD.DSA.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6e3d68ef7a1afedf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RRD.DSA.Core\RRD.DSA.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-datepicker.css" />
+    <Content Include="Content\bootstrap-multiselect.css" />
+    <Content Include="Content\bootstrap-switch.css" />
+    <Content Include="Content\FileBundling.xml" />
+    <Content Include="Content\Images\TemplatePageImages\1_4.JPG" />
+    <Content Include="Content\Images\TemplatePageImages\1_3.JPG" />
+    <Content Include="Content\Images\TemplatePageImages\1_2.JPG" />
+    <Content Include="Content\Images\TemplatePageImages\1_1.JPG" />
+    <Content Include="Content\Images\TemplatePageImages\1_5.jpg" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\Kendo\Bootstrap\editor.png" />
+    <Content Include="Content\Kendo\Bootstrap\imagebrowser.png" />
+    <Content Include="Content\Kendo\Bootstrap\indeterminate.gif" />
+    <Content Include="Content\Kendo\Bootstrap\loading-image.gif" />
+    <Content Include="Content\Kendo\Bootstrap\loading.gif" />
+    <Content Include="Content\Kendo\Bootstrap\loading_2x.gif" />
+    <Content Include="Content\Kendo\Bootstrap\markers.png" />
+    <Content Include="Content\Kendo\Bootstrap\markers_2x.png" />
+    <Content Include="Content\Kendo\Bootstrap\slider-h.gif" />
+    <Content Include="Content\Kendo\Bootstrap\slider-v.gif" />
+    <Content Include="Content\Kendo\Bootstrap\sprite.png" />
+    <Content Include="Content\Kendo\Bootstrap\sprite_2x.png" />
+    <Content Include="Content\Kendo\Images\ajax-loader.gif" />
+    <Content Include="Content\Kendo\Images\kendoui.ttf" />
+    <Content Include="Content\Kendo\Images\kendoui.woff" />
+    <None Include="..\Schema\hostedSchema\clientDocumentGroup.xsd">
+      <Link>XmlSchema\VerticalImport\clientDocumentGroup.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\clientDocumentGroupLink.xsd">
+      <Link>XmlSchema\VerticalImport\clientDocumentGroupLink.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\clientDocumentLink.xsd">
+      <Link>XmlSchema\VerticalImport\clientDocumentLink.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\commonTypes.xsd">
+      <Link>XmlSchema\VerticalImport\commonTypes.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\documentTypeAssociation.xsd">
+      <Link>XmlSchema\VerticalImport\documentTypeAssociation.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\documentTypeExternalId.xsd">
+      <Link>XmlSchema\VerticalImport\documentTypeExternalId.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\export.xsd">
+      <Link>XmlSchema\VerticalImport\export.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\externalId.xsd">
+      <Link>XmlSchema\VerticalImport\externalId.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\feature.xsd">
+      <Link>XmlSchema\VerticalImport\feature.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\footnote.xsd">
+      <Link>XmlSchema\VerticalImport\footnote.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\hostedSchema.xsd">
+      <Link>XmlSchema\VerticalImport\hostedSchema.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\import.xsd">
+      <Link>XmlSchema\VerticalImport\import.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\menuItem.xsd">
+      <Link>XmlSchema\VerticalImport\menuItem.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\menuRoot.xsd">
+      <Link>XmlSchema\VerticalImport\menuRoot.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\metaData.xsd">
+      <Link>XmlSchema\VerticalImport\metaData.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\page.xsd">
+      <Link>XmlSchema\VerticalImport\page.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\pageNavigation.xsd">
+      <Link>XmlSchema\VerticalImport\pageNavigation.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\site.xsd">
+      <Link>XmlSchema\VerticalImport\site.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\siteNavigation.xsd">
+      <Link>XmlSchema\VerticalImport\siteNavigation.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\sqltypes.xsd">
+      <Link>XmlSchema\VerticalImport\sqltypes.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\taxonomyAssociation.xsd">
+      <Link>XmlSchema\VerticalImport\taxonomyAssociation.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\taxonomyAssociationGroup.xsd">
+      <Link>XmlSchema\VerticalImport\taxonomyAssociationGroup.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\taxonomyAssociationHierarchy.xsd">
+      <Link>XmlSchema\VerticalImport\taxonomyAssociationHierarchy.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\taxonomyAssociationLink.xsd">
+      <Link>XmlSchema\VerticalImport\taxonomyAssociationLink.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\taxonomyLevelExternalId.xsd">
+      <Link>XmlSchema\VerticalImport\taxonomyLevelExternalId.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\text.xsd">
+      <Link>XmlSchema\VerticalImport\text.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="..\Schema\hostedSchema\urlRewrite.xsd">
+      <Link>XmlSchema\VerticalImport\urlRewrite.xsd</Link>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\RPV2.pubxml" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Content\bootstrap-duallistbox.css" />
+    <Content Include="Content\Kendo\Images\back.png" />
+    <Content Include="Content\Kendo\Images\check_name.png" />
+    <Content Include="Content\Kendo\Images\kendoui.svg" />
+    <Content Include="Content\Kendo\Images\wp8_icons.png" />
+    <Content Include="Content\Kendo\Images\wp8_inverseicons.png" />
+    <Content Include="Content\Kendo\kendo-latest.bootstrap.min.css" />
+    <Content Include="Content\Kendo\kendo-latest.common.min.css" />
+    <Content Include="Content\Kendo\kendo-latest.dataviz.bootstrap.min.css" />
+    <Content Include="Content\Kendo\kendo-latest.dataviz.default.min.css" />
+    <Content Include="Content\Kendo\kendo.bootstrap.min.css" />
+    <Content Include="Content\Kendo\kendo.common.min.css" />
+    <Content Include="Content\Kendo\kendo.dataviz.bootstrap.min.css" />
+    <Content Include="Content\Kendo\kendo.dataviz.default.min.css" />
+    <Content Include="Content\Kendo\kendo.dataviz.min.css" />
+    <Content Include="Content\Kendo\kendo.default.min.css" />
+    <Content Include="Content\Kendo\kendo.mobile.all.min.css" />
+    <Content Include="Content\normalize.css" />
+    <Content Include="Content\prettify.css" />
+    <Content Include="Content\RP\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Scripts\bootstrap-multiselect.js" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\HostedAdmin\AddVerticalXmlExportSettings.js" />
+    <Content Include="Scripts\HostedAdmin\AddVerticalXmlImportSettings.js" />
+    <Content Include="Scripts\HostedAdmin\CUDHistorySettings.js" />
+    <Content Include="Scripts\HostedAdmin\DocumentSubstitutionSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditBrowserVersionSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditDocumentSubstitutionSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditPageNavigation.js" />
+    <Content Include="Scripts\HostedAdmin\ClientDocumentGroupSettings.js" />
+    <Content Include="Scripts\HostedAdmin\ClientDocumentSettings.js" />
+    <Content Include="Scripts\HostedAdmin\ClientSettings.js" />
+    <Content Include="Scripts\HostedAdmin\DocumentTypeExternalIdSettings.js" />
+    <Content Include="Scripts\HostedAdmin\ClientDocumentTypeSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditClientDocumentGroupSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditClientDocumentSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditClientDocumentTypeSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditClientSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditDocumentTypeExternalIdSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditPageFeatureSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditPageTextSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditReportScheduleSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditSiteFeatureSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditSiteNavigation.js" />
+    <Content Include="Scripts\HostedAdmin\EditStaticResourceSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditTaxonamyLevelExternalIdSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditTaxonomyAssociationClientDocumentSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditUserSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditSiteSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditSiteTextSettings.js" />
+    <Content Include="Scripts\HostedAdmin\EditUrlRewriteSetiings.js" />
+    <Content Include="Scripts\HostedAdmin\PageFeatureSettings.js" />
+    <Content Include="Scripts\HostedAdmin\PageNavigation.js" />
+    <Content Include="Scripts\HostedAdmin\PageTextSettings.js" />
+    <Content Include="Scripts\HostedAdmin\ApproveProofingSettings.js" />
+    <Content Include="Scripts\HostedAdmin\ReportScheduleSettings.js" />
+    <Content Include="Scripts\HostedAdmin\SelectCustomer.js" />
+    <Content Include="Scripts\HostedAdmin\SiteFeatureSettings.js" />
+    <Content Include="Scripts\HostedAdmin\SiteNavigation.js" />
+    <Content Include="Scripts\HostedAdmin\BrowserVersionSettings.js" />
+    <Content Include="Scripts\HostedAdmin\TaxonomyAssociationClientDocumentSettings.js" />
+    <Content Include="Scripts\HostedAdmin\TaxonomyLevelExternalIdSettings.js" />
+    <Content Include="Scripts\HostedAdmin\UrlGeneratorSettings.js" />
+    <Content Include="Scripts\HostedAdmin\UserSettings.js" />
+    <Content Include="Scripts\HostedAdmin\SiteSettings.js" />
+    <Content Include="Scripts\HostedAdmin\SiteTextSettings.js" />
+    <Content Include="Scripts\HostedAdmin\StaticResourceSettings.js" />
+    <Content Include="Scripts\HostedAdmin\UrlRewriteSettings.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalDataImport\ApproveProofingSettings.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalDataImport\DocumentTypeSettings.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalDataImport\FootnoteSettings.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalDataImport\TaxonomyGroup.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalDataImport\ImportProduct.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalDataImport\MainSettings.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalDataImport\MarketIdCustomerSettings.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalDataImport\MarketIdSettings.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalDataImport\MarketLevelDocumentTypeSettings.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalDataImport\TaxonomyGroupFunds.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalDataImport\TaxonomyGroupMappingAndOrdering.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalXmlExportSettings.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\HostedAdmin\VerticalXmlImportSettings.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.bootstrap-duallistbox.js" />
+    <Content Include="Scripts\jquery.bootstrap.wizard.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jszip.min.js" />
+    <Content Include="Scripts\Kendo\angular.min.js" />
+    <Content Include="Scripts\Kendo\jquery.min.js" />
+    <Content Include="Scripts\Kendo\kendo-latest.all.min.js" />
+    <Content Include="Scripts\Kendo\kendo.all.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\prettify.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Views\TaxonomyLevelExternalId\EditTaxonomyLevelExternalId.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\_ClientConfigurationLayout.cshtml" />
+    <Content Include="Views\Client\List.cshtml" />
+    <Content Include="Views\Client\EditClient.cshtml" />
+    <Content Include="Views\User\List.cshtml" />
+    <Content Include="Views\User\EditUser.cshtml" />
+    <Content Include="Views\Shared\_AdminConfigurationLayout.cshtml" />
+    <Content Include="Views\Client\WelcomeClient.cshtml" />
+    <Content Include="Views\Site\List.cshtml" />
+    <Content Include="Views\PageNavigation\List.cshtml" />
+    <Content Include="Views\Shared\_SiteConfigurationLayout.cshtml" />
+    <Content Include="Views\UrlRewrite\List.cshtml" />
+    <Content Include="Views\PageText\PageText.cshtml" />
+    <Content Include="Views\StaticResource\List.cshtml" />
+    <Content Include="Views\PageText\EditPageText.cshtml" />
+    <Content Include="Views\Site\EditSite.cshtml" />
+    <Content Include="Views\SiteText\List.cshtml" />
+    <Content Include="Views\SiteText\Edit.cshtml" />
+    <Content Include="Views\Site\SiteConfiguration.cshtml" />
+    <Content Include="Views\Home\SelectCustomer.cshtml" />
+    <Content Include="Views\ApproveProofing\ApproveProofing.cshtml" />
+    <Content Include="Views\StaticResource\EditStaticResources.cshtml" />
+    <Content Include="Views\DocumentTypeExternalId\DocumentTypeExternalId.cshtml" />
+    <Content Include="Views\DocumentTypeExternalId\EditDocumentTypeExternalId.cshtml" />
+    <Content Include="Views\UrlRewrite\Edit.cshtml" />
+    <Content Include="Views\TaxonomyLevelExternalId\List.cshtml" />
+    <Content Include="Views\Error\InvalidUser.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\ClientDocumentType\List.cshtml" />
+    <Content Include="Views\ClientDocumentType\EditClientDocumentType.cshtml" />
+    <Content Include="Views\SiteFeature\List.cshtml" />
+    <Content Include="Views\SiteFeature\Edit.cshtml" />
+    <Content Include="Views\ClientDocument\List.cshtml" />
+    <Content Include="Views\ClientDocument\EditClientDocument.cshtml" />
+    <Content Include="Views\VerticalXmlImport\List.cshtml" />
+    <Content Include="Views\ReportSchedule\List.cshtml" />
+    <Content Include="Views\VerticalXmlImport\Add.cshtml" />
+    <Content Include="Views\PageFeature\List.cshtml" />
+    <Content Include="Views\PageFeature\EditPageFeature.cshtml" />
+    <Content Include="Views\SiteNavigation\List.cshtml" />
+    <Content Include="Views\SiteNavigation\Edit.cshtml" />
+    <Content Include="Views\ReportSchedule\EditReportSchedule.cshtml" />
+    <Content Include="Views\VerticalXmlExport\List.cshtml" />
+    <Content Include="Views\VerticalXmlExport\Add.cshtml" />
+    <Content Include="Views\PageNavigation\EditPageNavigation.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Shared\_ErrorLayout.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\CUDHistory\CUDHistoryView.cshtml" />
+    <Content Include="Views\ClientDocumentGroup\List.cshtml" />
+    <Content Include="Views\ClientDocumentGroup\Edit.cshtml" />
+    <Content Include="Views\Shared\SessionTimedOut.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\UrlGenerator\List.cshtml" />
+    <Content Include="Views\UrlGenerator\SiteConfiguration.cshtml" />
+    <Content Include="Views\TaxonomyAssociationClientDocument\List.cshtml" />
+    <Content Include="Views\TaxonomyAssociationClientDocument\EditTaxonomyAssociationClientDocument.cshtml" />
+    <Content Include="Views\BrowserVersion\BrowserVersion.cshtml" />
+    <Content Include="Views\BrowserVersion\EditBrowserVersion.cshtml" />
+    <Content Include="Views\VerticalDataImport\Index.cshtml" />
+    <Content Include="Views\VerticalDataImport\SitePartial.cshtml" />
+    <Content Include="Views\VerticalDataImport\DocumentTypePartial.cshtml" />
+    <Content Include="Views\VerticalDataImport\MarketLevelDocumentTypePartial.cshtml" />
+    <Content Include="Views\VerticalDataImport\ImportMarketIdPartial.cshtml" />
+    <Content Include="Views\VerticalDataImport\ApproveProofingPartial.cshtml" />
+    <Content Include="Views\VerticalDataImport\ImportProduct.cshtml" />
+    <Content Include="Views\VerticalDataImport\ImportMarketIdCustomerPartial.cshtml" />
+    <Content Include="Views\VerticalDataImport\FootnotePartial.cshtml" />
+    <Content Include="Views\DocumentSubstitution\DocumentSubstitution.cshtml" />
+    <Content Include="Views\DocumentSubstitution\EditDocumentSubstitution.cshtml" />
+    <Content Include="Views\VerticalDataImport\TaxonomyGroupPartial.cshtml" />
+    <Content Include="Views\VerticalDataImport\TaxonomyGroupFundsPartial.cshtml" />
+    <Content Include="Views\VerticalDataImport\TaxonomyGroupMappingAndOrdering.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Common\KendoGridPost.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BrowserVersionController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\ClientDocumentController.cs" />
+    <Compile Include="Controllers\ClientDocumentGroupController.cs" />
+    <Compile Include="Controllers\ClientDocumentTypeController.cs" />
+    <Compile Include="Controllers\CUDHistoryController.cs" />
+    <Compile Include="Controllers\DocumentSubstitutionController.cs" />
+    <Compile Include="Controllers\DocumentTypeExternalIdController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PageFeatureController.cs" />
+    <Compile Include="Controllers\PageNavigationController.cs" />
+    <Compile Include="Controllers\PageTextController.cs" />
+    <Compile Include="Controllers\ApproveProofingController.cs" />
+    <Compile Include="Controllers\ReportScheduleController.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
+    <Compile Include="Controllers\SiteFeatureController.cs" />
+    <Compile Include="Controllers\SiteNavigationController.cs" />
+    <Compile Include="Controllers\SiteTextController.cs" />
+    <Compile Include="Controllers\StaticResourceController.cs" />
+    <Compile Include="Controllers\TaxonomyAssociationClientDocumentController.cs" />
+    <Compile Include="Controllers\TaxonomyLevelExternalIdController.cs" />
+    <Compile Include="Controllers\UrlGeneratorController.cs" />
+    <Compile Include="Controllers\UrlRewriteController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\VerticalDataImport\VerticalDataImportController.cs" />
+    <Compile Include="Controllers\VerticalDataImport\VerticalFootnoteController.cs" />
+    <Compile Include="Controllers\VerticalDataImport\VerticalSDTAController.cs" />
+    <Compile Include="Controllers\VerticalDataImport\VerticalTAController.cs" />
+    <Compile Include="Controllers\VerticalDataImport\VerticalTAGDController.cs" />
+    <Compile Include="Controllers\VerticalDataImport\VerticalTAHDController.cs" />
+    <Compile Include="Controllers\VerticalXmlExportController.cs" />
+    <Compile Include="Controllers\VerticalXmlImportController.cs" />
+    <Compile Include="ExceptionHandler\ErrorLogHandler.cs" />
+    <Compile Include="Extension\RPActionFilterAttribute.cs" />
+    <Compile Include="Extension\RPAuthorize.cs" />
+    <Compile Include="Extension\RPCustomAttributes.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AddVerticalXmlExportViewModel.cs" />
+    <Compile Include="ViewModels\AddVerticalXmlImportViewModel.cs" />
+    <Compile Include="ViewModels\ClientDocumentGroupViewModel.cs" />
+    <Compile Include="ViewModels\ClientDocumentViewModel.cs" />
+    <Compile Include="ViewModels\ClientViewModel.cs" />
+    <Compile Include="ViewModels\CUDHistoryViewModel.cs" />
+    <Compile Include="ViewModels\DisplayValuePair.cs" />
+    <Compile Include="ViewModels\DocumentTypeAssociationViewModel.cs" />
+    <Compile Include="ViewModels\DocumentTypeExternalIdViewModel.cs" />
+    <Compile Include="ViewModels\ClientDocumentTypeViewModel.cs" />
+    <Compile Include="ViewModels\EditBrowserVersionViewModel.cs" />
+    <Compile Include="ViewModels\EditDocumentSubstitutionViewModel.cs" />
+    <Compile Include="ViewModels\EditDocumentTypeExternalIdViewModel.cs" />
+    <Compile Include="ViewModels\EditPageFeatureViewModel.cs" />
+    <Compile Include="ViewModels\EditPageNavigationViewModel.cs" />
+    <Compile Include="ViewModels\EditPageTextViewModel.cs" />
+    <Compile Include="ViewModels\EditReportScheduleViewModel.cs" />
+    <Compile Include="ViewModels\EditSiteFeatureViewModel.cs" />
+    <Compile Include="ViewModels\EditSiteNavigationViewModel.cs" />
+    <Compile Include="ViewModels\EditSiteTextViewModel.cs" />
+    <Compile Include="ViewModels\EditSiteViewModel.cs" />
+    <Compile Include="ViewModels\EditStaticResourceViewModel.cs" />
+    <Compile Include="ViewModels\EditTaxonomyAssociationClientDocumentViewModel.cs" />
+    <Compile Include="ViewModels\EditTaxonomyLevelExternalIdViewModel.cs" />
+    <Compile Include="ViewModels\EditUrlRewriteViewModel.cs" />
+    <Compile Include="ViewModels\PageFeatureViewModel.cs" />
+    <Compile Include="ViewModels\MultiSelectDropDownViewModel.cs" />
+    <Compile Include="ViewModels\PageNavigationViewModel.cs" />
+    <Compile Include="ViewModels\PageTextViewModel.cs" />
+    <Compile Include="ViewModels\PreviewViewModel.cs" />
+    <Compile Include="ViewModels\ReportScheduleViewModel.cs" />
+    <Compile Include="ViewModels\SelectCustomerViewModel.cs" />
+    <Compile Include="ViewModels\SiteFeatureViewModel.cs" />
+    <Compile Include="ViewModels\SiteNavigationViewModel.cs" />
+    <Compile Include="ViewModels\SiteTextViewModel.cs" />
+    <Compile Include="ViewModels\SiteViewModel.cs" />
+    <Compile Include="ViewModels\StaticResourceViewModel.cs" />
+    <Compile Include="ViewModels\TaxonomyLevelExternalIdViewModel.cs" />
+    <Compile Include="ViewModels\TaxonomyAssociationClientDocumentViewModel.cs" />
+    <Compile Include="ViewModels\UrlRewriteViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
+    <Compile Include="ViewModels\VerticalXmlExportViewModel.cs" />
+    <Compile Include="ViewModels\VerticalXmlImportViewModel.cs" />
+    <Compile Include="ViewModels\WeekViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HTTPHandler\" />
+    <Folder Include="HTTPModules\" />
+    <Folder Include="Import\Create\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\VerticalTAGD\" />
+    <Folder Include="Views\VerticalTAHD\" />
+    <Folder Include="Views\VerticalTA\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RRD.FSG.RP.Model.Cache\RRD.FSG.RP.Model.Cache.csproj">
+      <Project>{45464429-708b-4797-8b08-8c79113179e4}</Project>
+      <Name>RRD.FSG.RP.Model.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RRD.FSG.RP.Model\RRD.FSG.RP.Model.csproj">
+      <Project>{db74bd37-160c-441d-a33b-620789a8edd3}</Project>
+      <Name>RRD.FSG.RP.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RRD.FSG.RP.Utilities\RRD.FSG.RP.Utilities.csproj">
+      <Project>{cd1e0f10-fd82-45ec-8165-300a4d8b084e}</Project>
+      <Name>RRD.FSG.RP.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52448</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52448/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="CopyLinkedContentFiles" BeforeTargets="Build">
+    <Copy SourceFiles="%(None.Identity)" DestinationFiles="%(None.Link)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Condition="'%(None.Link)' != ''" />
+  </Target>
+</Project>

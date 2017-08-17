@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F21A7266-9488-4873-8F87-6EACE9F18E55}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCSDocUpdateApprovalV2</RootNamespace>
+    <AssemblyName>BCSDocUpdateApprovalV2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.0\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.2\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityModel.Core">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Core.1.2.0\lib\net45\Thinktecture.IdentityModel.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AudiencesStore.cs" />
+    <Compile Include="Controllers\AudienceController.cs" />
+    <Compile Include="Controllers\CustomerDocUpdateController.cs" />
+    <Compile Include="Controllers\CustomerDocUpdateDetailController.cs" />
+    <Compile Include="Controllers\DailyUpdateReportController.cs" />
+    <Compile Include="Controllers\EdgarOnlineController.cs" />
+    <Compile Include="Controllers\EdgarOnlineDataController.cs" />
+    <Compile Include="Controllers\ForgotPasswordController.cs" />
+    <Compile Include="Controllers\CompleteRegistrationController.cs" />
+    <Compile Include="Controllers\CUSIPController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\FullfillmentInfoController.cs" />
+    <Compile Include="Controllers\GatewayDocUpdateController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LiveUpdateController.cs" />
+    <Compile Include="Controllers\MisingReportController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\RPMissingCusipController.cs" />
+    <Compile Include="Controllers\SecurityTypeReportController.cs" />
+    <Compile Include="Controllers\SLINKController.cs" />
+    <Compile Include="Controllers\TRP\BlankFLTCUSIPController.cs" />
+    <Compile Include="Controllers\TRP\CustomerDocsController.cs" />
+    <Compile Include="Controllers\TRP\CustomerFLTController.cs" />
+    <Compile Include="Controllers\TRP\DocumentStatusController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Controllers\WatchlistController.cs" />
+    <Compile Include="Entities\Audience.cs" />
+    <Compile Include="Filters\CustomAuthorizationFilter.cs" />
+    <Compile Include="Filters\CustomAuthenticationFilter.cs" />
+    <Compile Include="Filters\CustomExceptionFilter.cs" />
+    <Compile Include="Formats\CustomJwtFormat.cs" />
+    <Compile Include="Formats\KendoGridPost.cs" />
+    <Compile Include="Formats\UserDetails.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AudienceModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MeViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Providers\CustomOAuthProvider.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-duallistbox.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\sign-in-with-google.png" />
+    <Content Include="Public\app.js" />
+    <Content Include="Public\appRoutes.js" />
+    <Content Include="Public\controllers\addEditMissingReport.js" />
+    <Content Include="Public\controllers\application.js" />
+    <Content Include="Public\controllers\customerDocUpdate.js" />
+    <Content Include="Public\controllers\customerDocUpdateDetail.js" />
+    <Content Include="Public\controllers\addEditUser.js" />
+    <Content Include="Public\controllers\edgarOnlineData.js" />
+    <Content Include="Public\controllers\EonlineFeed.js" />
+    <Content Include="Public\controllers\missingReport.js" />
+    <Content Include="Public\controllers\dailyUpdate.js" />
+    <Content Include="Public\controllers\profile.js" />
+    <Content Include="Public\controllers\rpMissingCusip.js" />
+    <Content Include="Public\controllers\script.js" />
+    <Content Include="Public\controllers\securityTypeReport.js" />
+    <Content Include="Public\controllers\TRP\blankFLTCusip.js" />
+    <Content Include="Public\controllers\TRP\customerDocs.js" />
+    <Content Include="Public\controllers\TRP\customerFLT.js" />
+    <Content Include="Public\controllers\TRP\documentStatus.js" />
+    <Content Include="Public\controllers\TRP\missingDocument.js" />
+    <Content Include="Public\controllers\TRP\missingRPCUSIP.js" />
+    <Content Include="Public\controllers\users.js" />
+    <Content Include="Public\controllers\gatewayDocUpdate.js" />
+    <Content Include="Public\controllers\liveUpdate.js" />
+    <Content Include="Public\controllers\slink.js" />
+    <Content Include="Public\controllers\fullfillmentInfo.js" />
+    <Content Include="Public\controllers\Error.js" />
+    <Content Include="Public\controllers\forgotPassword.js" />
+    <Content Include="Public\controllers\cusipReport.js" />
+    <Content Include="Public\controllers\home.js" />
+    <Content Include="Public\controllers\register.js" />
+    <Content Include="Public\controllers\login.js" />
+    <Content Include="index.html" />
+    <Content Include="Public\controllers\watchlist.js" />
+    <Content Include="Public\css\bootstrap\bootstrap-datepicker.css" />
+    <Content Include="Public\css\bootstrap\bootstrap-duallistbox.css" />
+    <Content Include="Public\css\bootstrap\bootstrap-multiselect.css" />
+    <Content Include="Public\css\bootstrap\bootstrap-theme.css" />
+    <Content Include="Public\css\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Public\css\bootstrap\bootstrap.css" />
+    <Content Include="Public\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Public\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Public\css\jQuery-ui\jquery-ui.css" />
+    <Content Include="Public\css\kendo\Bootstrap\editor.png" />
+    <Content Include="Public\css\kendo\Bootstrap\imagebrowser.png" />
+    <Content Include="Public\css\kendo\Bootstrap\indeterminate.gif" />
+    <Content Include="Public\css\kendo\Bootstrap\loading-image.gif" />
+    <Content Include="Public\css\kendo\Bootstrap\loading.gif" />
+    <Content Include="Public\css\kendo\Bootstrap\loading_2x.gif" />
+    <Content Include="Public\css\kendo\Bootstrap\markers.png" />
+    <Content Include="Public\css\kendo\Bootstrap\markers_2x.png" />
+    <Content Include="Public\css\kendo\Bootstrap\slider-h.gif" />
+    <Content Include="Public\css\kendo\Bootstrap\slider-v.gif" />
+    <Content Include="Public\css\kendo\Bootstrap\sprite.png" />
+    <Content Include="Public\css\kendo\Bootstrap\sprite_2x.png" />
+    <Content Include="Public\css\kendo\images\back.png" />
+    <Content Include="Public\css\kendo\images\check_name.png" />
+    <Content Include="Public\css\kendo\images\kendoui.svg" />
+    <Content Include="Public\css\kendo\images\wp8_icons.png" />
+    <Content Include="Public\css\kendo\images\wp8_inverseicons.png" />
+    <Content Include="Public\css\kendo\kendo.bootstrap.min.css" />
+    <Content Include="Public\css\kendo\kendo.common-bootstrap.min.css" />
+    <Content Include="Public\css\kendo\kendo.common.min.css" />
+    <Content Include="Public\css\kendo\kendo.custom.css" />
+    <Content Include="Public\css\kendo\kendo.dataviz.bootstrap.min.css" />
+    <Content Include="Public\css\kendo\kendo.dataviz.default.min.css" />
+    <Content Include="Public\css\kendo\kendo.default.min.css" />
+    <Content Include="Public\css\loadingbar\loading-bar.css" />
+    <Content Include="Public\css\Site.css" />
+    <Content Include="Public\scripts\angular\angular-animate.js" />
+    <Content Include="Public\scripts\angular\angular-jwt.js" />
+    <Content Include="Public\scripts\angular\angular-jwt.min.js" />
+    <Content Include="Public\scripts\angular\angular-ui-router.js" />
+    <Content Include="Public\scripts\angular\angular-ui-router.min.js" />
+    <Content Include="Public\scripts\angular\angular.js" />
+    <Content Include="Public\scripts\angular\angular.min.js" />
+    <Content Include="Public\scripts\bootstrap\bootstrap.js" />
+    <Content Include="Public\scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Public\scripts\bootstrap\jquery.bootstrap-duallistbox.js" />
+    <Content Include="Public\scripts\bootstrap\ui-bootstrap-tpls.min.js" />
+    <Content Include="Public\scripts\jQuery-ui\jquery-ui.js" />
+    <Content Include="Public\scripts\jQuery-ui\jquery-ui.min.js" />
+    <Content Include="Public\scripts\jQuery\jquery.js" />
+    <Content Include="Public\scripts\jQuery\jquery.min.js" />
+    <Content Include="Public\scripts\kendo\kendo.all.min.js" />
+    <Content Include="Public\scripts\kendo\kendo.angular.min.js" />
+    <Content Include="Public\scripts\kendo\kendo.autocomplete.min.js" />
+    <Content Include="Public\scripts\kendo\kendo.data.min.js" />
+    <Content Include="Public\scripts\kendo\kendo.grid.min.js" />
+    <Content Include="Public\scripts\loadingbar\loading-bar.js" />
+    <Content Include="Public\services\addEditMissingReportService.js" />
+    <Content Include="Public\services\cusipReport.js" />
+    <Content Include="Public\services\forgotPassword.js" />
+    <Content Include="Public\services\addEditUser.js" />
+    <Content Include="Public\services\rpMissingCusipService.js" />
+    <Content Include="Public\services\securityTypeReport.js" />
+    <Content Include="Public\services\trpReports.js" />
+    <Content Include="Public\services\users.js" />
+    <Content Include="Public\services\gatewayDocUpdate.js" />
+    <Content Include="Public\services\liveUpdate.js" />
+    <Content Include="Public\services\profile.js" />
+    <Content Include="Public\services\reports.js" />
+    <Content Include="Public\services\slink.js" />
+    <Content Include="Public\services\home.js" />
+    <Content Include="Public\services\fullfillmentInfo.js" />
+    <Content Include="Public\services\register.js" />
+    <Content Include="Public\services\login.js" />
+    <Content Include="Public\views\Error\Error.html" />
+    <Content Include="Public\views\login\addEditMissingReport.html" />
+    <Content Include="Public\views\login\ForgotPassword.html" />
+    <Content Include="Public\views\login\header.html" />
+    <Content Include="Public\views\login\login.html" />
+    <Content Include="Public\views\login\completeRegistration.html" />
+    <Content Include="Public\views\login\profile.html" />
+    <Content Include="Public\views\login\addEditUser.html" />
+    <Content Include="Public\views\login\users.html" />
+    <Content Include="Public\views\login\register.html" />
+    <Content Include="Public\views\home.html" />
+    <Content Include="Public\views\reports\customerDocUpdate.html" />
+    <Content Include="Public\views\reports\customerDocUpdateDetail.html" />
+    <Content Include="Public\views\reports\DailyUpdate.html" />
+    <Content Include="Public\views\reports\edgarOnlineData.html" />
+    <Content Include="Public\views\reports\EonlineFeed.html" />
+    <Content Include="Public\views\reports\missingReport.html" />
+    <Content Include="Public\views\reports\gatewayDocUpdate.html" />
+    <Content Include="Public\views\reports\liveUpdate.html" />
+    <Content Include="Public\views\reports\rpMissingCusip.html" />
+    <Content Include="Public\views\reports\securityTypes.html" />
+    <Content Include="Public\views\reports\slink.html" />
+    <Content Include="Public\views\reports\fullfillmentInfo.html" />
+    <Content Include="Public\views\reports\cusip.html" />
+    <Content Include="Public\views\reports\watchlist.html" />
+    <Content Include="Public\views\selectClient.html" />
+    <Content Include="Public\.bowerrc" />
+    <Content Include="Public\views\TRP\blankFLTCUSIP.html" />
+    <Content Include="Public\views\TRP\customerDocs.html" />
+    <Content Include="Public\views\TRP\customerFLT.html" />
+    <Content Include="Public\views\TRP\documentStatus.html" />
+    <Content Include="Public\views\TRP\missingDocument.html" />
+    <Content Include="Public\views\TRP\missingRPCusip.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Public\directives\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Public\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Public\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Public\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Public\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Public\css\kendo\images\kendoui.ttf" />
+    <Content Include="Public\css\kendo\images\kendoui.woff" />
+    <None Include="Properties\PublishProfiles\WebDeploy.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BCS.ObjectModel.Factories\BCS.ObjectModel.Factories.csproj">
+      <Project>{776e2243-51be-4920-9d6f-f284e131754b}</Project>
+      <Name>BCS.ObjectModel.Factories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BCS.ObjectModel\BCS.ObjectModel.csproj">
+      <Project>{15231e11-276a-4c6c-b600-0ca1fa5ed357}</Project>
+      <Name>BCS.ObjectModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64310</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64310/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

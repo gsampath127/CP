@@ -1,0 +1,887 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RRD.FSG.RP.Services.ScheduleTasks</name>
+    </assembly>
+    <members>
+        <member name="T:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorker">
+            <summary>
+            Interface for worker class
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorker.ProcessQueue(RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Proceses a queue entry associated with a specific queue.
+            </summary>
+            <param name="reportSchedule">The report schedule.</param>
+            <param name="reportScheduleEntry">The report schedule entry.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorker.ProcessRequest">
+            <summary>
+            Service specific method for processing a request.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorker.SaveResults(RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Saves the results back into the queue.
+            By default, this does not update all the fields on the queueEntry record in the database.
+            That can be achieved by overriding this method in your derived worker class and calling
+            an overload on the Queue object.
+            </summary>
+            <param name="reportSchedule">The report schedule.</param>
+            <param name="reportScheduleEntry">The report schedule entry.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorker.WorkerService">
+            <summary>
+            Gets the IWorkerService associated with this IWorker.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorker.OutputFilePath">
+            <summary>
+            Gets the output file path for the worker.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorker.WorkerName">
+            <summary>
+            Gets the name of the worker. Should be unique.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorker.WorkerId">
+            <summary>
+            Gets the numerical ID of the worker. Should be unique to the server instance it belongs to.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorker.LinkedToken">
+            <summary>
+            Gets the linked token that the worker process must monitor for cancellation requests.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorker.UserRequestToken">
+            <summary>
+            Gets the user requested cancellation token that the worker process validates against while monitoring the linked token.
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorkerService">
+            <summary>
+            Interface for worker service classes.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorkerService.NewWorker(System.Int32,System.String,System.Threading.CancellationToken,System.Threading.CancellationToken)">
+            <summary>
+            Returns a worker base instance that implements IWorkerBase.
+            </summary>
+            <param name="workerId">Unique number to represent the worker.</param>
+            <param name="workerName">Unique name to represent the worker.</param>
+            <param name="linkedToken">The linked token used to monitor for cancellation requests.</param>
+            <param name="userRequestToken">The user request token used to validate against the linked token.</param>
+            <returns>A worker instance that implements IWorkerBase.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorkerService.RequestAdditionalTime(System.Int32)">
+            <summary>
+            Wrapper for ServiceBase.RequesteAdditionalTime. Used by the internal implementation of service stop requests.
+            </summary>
+            <param name="milliseconds">number of milliseconds to request.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorkerService.NewReportSchedule">
+            <summary>
+            Retrieves the appropriate implementation of IQueue for the IWorkerService.
+            </summary>
+            <returns>IQueue instance.</returns>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorkerService.WorkerServiceName">
+            <summary>
+            Gets the name of the service.
+            Used for the ServiceNameAndServer propert as well as determining the MSMQ Queue name (if used).
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorkerService.ServiceNameAndServer">
+            <summary>
+            Gets the identifier for this service. Used for load balanced service identification.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorkerService.SetServerNameAndServerFromServiceQuery">
+            <summary>
+            Gets a value indicating whether or not to grab Service name from MMC. This gets around a known .NET bug with Service implementation.
+            Set "true" for actual windows services, false for other implementations such as unit tests.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorkerService.ServiceStopToken">
+            <summary>
+            Gets a cancellation token that indicates whether the service has been stopped.
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Services.ScheduleTasks.ProjectInstaller">
+            <summary>
+            Partial class setup that runs the service to schedule the tasks
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.ProjectInstaller.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.ProjectInstaller.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.ProjectInstaller.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Services.ScheduleTasks.ReportWorker">
+            <summary>
+            RRD.FSG.RP.Services.ScheduleTasks
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase">
+            <summary>
+            Abstract class that defines the common methods used by all of the worker services, 
+            including multi-threading
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.workerCore">
+            <summary>
+            Field to hold the instance of the core business logic class for IWorker.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.#ctor(RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorkerService,System.Int32,System.String,System.Threading.CancellationToken,System.Threading.CancellationToken)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WorkerBase"/> class.
+            </summary>
+            <param name="parentService">The parent worker service.</param>
+            <param name="workerId">Numerical Id of the worker.</param>
+            <param name="workerName">Unique name of the worker.</param>
+            <param name="linkedToken">The linked token used to monitor for cancellation requests.</param>
+            <param name="userRequestToken">The user request token used to validate against the linked token.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.ProcessQueue(RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            overloaded method needed for WaitCallback delegate used by ThreadPool for multi-threading
+            Has watchdog code to time out the ProcessQueue if it runs too long
+            </summary>
+            <param name="reportSchedule">The queue processor</param>
+            <param name="reportScheduleEntry">An itme from the queue</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.SaveResults(RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Saves the results back into the queue.
+            By default, this does not update all the fields on the queueEntry record in the database.
+            That can be achieved by overriding this method in your derived worker class and calling
+            an overload on the Queue object.
+            </summary>
+            <param name="reportSchedule">The queue.</param>
+            <param name="reportScheduleEntry">The queue entry.</param>
+            <param name="message">The message.</param>
+            <param name="success">If the results message status was successful.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.ProcessRequest">
+            <summary>
+            Service specific method for processing a request.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.WorkerService">
+            <summary>
+            Gets the worker service associated with this worker.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.OutputFilePath">
+            <summary>
+            Gets the output file path for the worker.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.WorkerId">
+            <summary>
+            Gets the numerical ID of the worker. Should be unique to the server instance it belongs to.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.WorkerName">
+            <summary>
+            Gets the name of the worker. Should be unique.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.LinkedToken">
+            <summary>
+            Gets the linked token that the worker process must monitor for cancellation requests.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.UserRequestToken">
+            <summary>
+            Gets the user requested cancellation token that the worker process validates against while monitoring the linked token.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.Core">
+            <summary>
+            Gets the worker Core business logic instance for this IWorker.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerBase.ServiceName">
+            <summary>
+            Gets the name of the service.
+            </summary>
+            <value>The name of the service.</value>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.ReportWorker.#ctor(RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorkerService,System.Int32,System.String,System.Threading.CancellationToken,System.Threading.CancellationToken)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Services.ScheduleTasks.ReportWorker"/> class.
+            </summary>
+            <param name="parentService">The parent worker service.</param>
+            <param name="workerId">Numeric Id of the worker.</param>
+            <param name="workerName">String Id of the worker.</param>
+            <param name="linkedToken">The linked token used to monitor for cancellation requests.</param>
+            <param name="userRequestToken">The user request token used to validate against the linked token.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.ReportWorker.ProcessRequest">
+            <summary>
+            Service specific method for processing a request.
+            </summary>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService">
+            <summary>
+            Partial class that runs a service which schedules the tasks 
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.workerServiceCore">
+            <summary>
+            Core business logic for the service.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.NewReportSchedule">
+            <summary>
+            Retrieves a new Queue instance specifically for this service.
+            The base class method returns the most basic implementation of IQueue, Queue.
+            If another type of IQueue is desired, please override this method to do so.
+            </summary>
+            <returns>Queue instance.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.NewWorker(System.Int32,System.String,System.Threading.CancellationToken,System.Threading.CancellationToken)">
+            <summary>
+            Loads the Worker.
+            </summary>
+            <param name="workerId">Unique number to represent the worker.</param>
+            <param name="workerName">Unique name to represent the worker.</param>
+            <param name="linkedToken">The linked token used to monitor for cancellation requests.</param>
+            <param name="userRequestToken">The user request token used to validate against the linked token.</param>
+            <returns>The application specific Worker.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.#ctor">
+            <summary>
+            Constructor that intializes the component
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.OnStart(System.String[])">
+            <summary>
+            Event handler for handling starting the service.
+            </summary>
+            <param name="args">The arguments used for starting the service.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.OnStop">
+            <summary>
+            Event handler for handling stopping the service.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.Process">
+            <summary>
+            Schedules the process
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.WorkerServiceName">
+            <summary>
+            Gets the name of the service.
+            Used for the ServiceNameAndServer propert as well as determining the MSMQ Queue name (if used).
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.ServiceNameAndServer">
+            <summary>
+            Gets the Service Name an Server as a single identifier.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.SetServerNameAndServerFromServiceQuery">
+            <summary>
+            Gets a value indicating whether or not to grab service name from MMC. Gets around a bug in .NET Service implementation.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.ScheduleTasksService.ServiceStopToken">
+            <summary>
+            Gets  a cancellation token that indicates whether the service has been stopped.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore">
+            <summary>
+            Core business logic for IWorker instances.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.ThreadJoinIntervalMS">
+            <summary>
+            Interval in which to wait before checking to see if the thread should be cancelled or aborted.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.#ctor(RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorker,RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorkerService,System.Int32,System.String,System.Threading.CancellationToken,System.Threading.CancellationToken)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore"/> class.
+            </summary>
+            <param name="parentWorker">IWorker associated with the worker business logic instance.</param>
+            <param name="parentService">IWorkerService associated with the IWorker instance.</param>
+            <param name="workerId">Numerical Id of the worker.</param>
+            <param name="workerName">Unique name of the worker.</param>
+            <param name="linkedToken">The linked token used to monitor for cancellation requests.</param>
+            <param name="userRequestToken">The user request token used to validate against the linked token.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.CreateDirectoryIfItDoesntExist(System.String)">
+            <summary>
+            Creates the specified directory if it doesn't exist.
+            </summary>
+            <param name="directory">The directory to create.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.SaveResults(RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Saves the results back into the queue.
+            By default, this does not update all the fields on the queueEntry record in the database.
+            That can be achieved by overriding this method in your derived this.Worker class and calling
+            an overload on the Queue object.
+            </summary>
+            <param name="queue">The queue.</param>
+            <param name="queueEntry">The queue entry.</param>
+            <param name="message">The message.</param>
+            <param name="success">If the results message status was successful.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.ProcessQueue(RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            overloaded method needed for WaitCallback delegate used by ThreadPool for multi-threading
+            Has watchdog code to time out the ProcessQueue if it runs too long
+            </summary>
+            <param name="queue">Queue to use in processing the entry.</param>
+            <param name="reportScheduleEntry">An item from the queue</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.ThrowWorkerTimedOutException">
+            <summary>
+            Throws an exception, to be used when the workerthread timeout is reached
+            </summary>
+            <exception cref="T:RRD.FSG.RP.Scheduler.WorkerThreadTimeoutException">Always thrown.</exception>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.OutputPath">
+            <summary>
+            Gets the output file path used by the IWorker instance.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.Worker">
+            <summary>
+            Gets the worker associated with this worker busines logic instance.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.WorkerService">
+            <summary>
+            Gets the worker service associated with the worker.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.ServiceName">
+            <summary>
+            Gets the name of the service.
+            </summary>
+            <value>The name of the service.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.WorkerId">
+            <summary>
+            Gets the numerical ID of the worker. Should be unique to the server instance it belongs to.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.WorkerName">
+            <summary>
+            Gets the name of the worker. Should be unique.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.LinkedToken">
+            <summary>
+            Gets the token used for signaling a cancellation request to the worker task. This request could originate from various sources.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.UserRequestToken">
+            <summary>
+            Gets the user requested cancellation token that the worker process validates against while monitoring the linked token.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.WorkerTimeoutTokenSource">
+            <summary>
+            Gets the token source for timeout cancellations. Allows us to attempt to exit a thread gracefully before aborting.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerCore.LinkedTokenSource">
+            <summary>
+            Gets the linked token source, joining the passed in token with the local timeout token.
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration">
+            <summary>
+            Static helper file for reading configuration values.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.ServiceNameRetryInterval">
+            <summary>
+            The interval to wait when retrying to get the service name.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.ServiceNameMaxRetries">
+            <summary>
+            The maximum number of retries to attempt to get the service name.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.InitialWorkerServiceTimerInterval">
+            <summary>
+            Initial workser service timer interval (10000 ms).
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.OutputPathKey">
+            <summary>
+            The key in AppSettings in the config for the temp output file path.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.DeleteFilesOlderThanDaysKey">
+            <summary>
+            The key in AppSettings in the config for the number of days to delete.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.MaxThreadsKey">
+            <summary>
+            The key for Max Threads.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.WorkerServiceTimerIntervalKey">
+            <summary>
+            The key for worker service timer interval.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.CleanupTimerIntervalKey">
+            <summary>
+            The key for cleanup timer interval.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.ThreadJoinWaitIntervalMSKey">
+            <summary>
+            The key for thread join wait interval in MS.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.AddDelayForDebugKey">
+            <summary>
+            The key for add delay for debug flag.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.SystemDBConnectionStringKey">
+            <summary>
+            The key for the service connection string.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.ErrorQueueNameKey">
+            <summary>
+            The key for the error queue name.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.WorkerThreadTimeOutMillisecondsKey">
+            <summary>
+            The key for the worker thread timeout.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.WorkerThreadMaxWaitTimeKey">
+            <summary>
+            The key for the total time to wait for Tasks to complete.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:WorkerServiceConfiguration"/> class. Retrieves values from config.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.GetConfigInt(System.String,System.Int32)">
+            <summary>
+            Retrieves an integer value from the configuration.
+            </summary>
+            <param name="key">key of the app setting.</param>
+            <param name="defaultValue">Optional default value if unable to parse configuration value (defaults to 0).</param>
+            <returns>The parsed value or the default.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.GetConfigBool(System.String,System.Boolean)">
+            <summary>
+            Retrieves an boolean value from the configuration.
+            </summary>
+            <param name="key">key of the app setting.</param>
+            <param name="defaultValue">Optional default value if unable to parse configuration value (defaults to 0).</param>
+            <returns>The parsed value or the default.</returns>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.WorkerServiceTimerInterval">
+            <summary>
+            Gets worker service timer polling interval in milliseconds.
+            <para>
+            The default value is 5,000 (5 seconds).
+            </para>
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.CleanupTimerInterval">
+            <summary>
+            Gets interval in milliseconds for running cleanup tasks.
+            <para>
+            The default and maximum value is 60,000 (1 minute).
+            </para>
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.ThreadJoinWaitIntervalMS">
+            <summary>
+            Gets number of milliseconds to wait for threads to complete during an OnStop event.
+            <para>
+            The default value is 5,000 (5 seconds).
+            </para>
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.MaxWorkerThreads">
+            <summary>
+            Gets the maximum amount of worker threads to use. This can be configured in the config file.
+            <para>
+            The default value is 4.
+            </para>
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.OutputFilePath">
+            <summary>
+            Gets the path to the temp location for storing output files.
+            <para>
+            The default value is "WorkerServiceOutput".
+            </para>
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.DaysOld">
+            <summary>
+            Gets the number of days old to delete files.
+            <para>
+            The default value is 1.
+            </para>
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.AddDelayForDebug">
+            <summary>
+            Gets a value indicating whether to add delay on start up for attaching a debugger.
+            <para>
+            The default value is false.
+            </para>
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.WorkerServiceDBConnectionString">
+            <summary>
+            Gets the connection string for the workser service database.
+            <para>
+            There is no default value - if the entry is missing the application will error out.
+            </para>
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.ErrorQueueName">
+            <summary>
+            Gets the name of the Error Queue table in the database.
+            <para>
+            There is no default value.
+            </para>
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.WorkerThreadTimeoutMS">
+            <summary>
+            Gets the timeout for worker threads in milliseconds.
+            <para>
+            The default value is 1,800,000 (30 minutes).
+            </para>
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceConfiguration.WorkerThreadMaxWaitTime">
+            <summary>
+            Gets the maximum time to wait for a task or join a thread.
+            <para>
+            The default value is 20,000 (20 seconds).
+            </para>
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore">
+            <summary>
+            Core business logic for the IWorkerService implementations, specifically for WorkerServiceBase.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.workerServiceTimer">
+            <summary>
+            High precision timer used to poll/process a queue.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.cleanupTimer">
+            <summary>
+            Cleanup process Timer
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.workerTasks">
+            <summary>
+            List of active tasks. Used for joining back to main thread when service is stopping.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.workerService">
+            <summary>
+            Worker service implementation utilizing this instance of the business logic class.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.serviceStopTokenSource">
+            <summary>
+            Cancellation token source used by various threads to signal stopping of service.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.serviceWorkerTask">
+            <summary>
+            Thread for the service worker, set when executed in order to provide a handle for joining when the service is stopped.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.cleanupTask">
+            <summary>
+            Thread for the cleanup tasks, set when executed in order to provide a handle for joining when the service is stopped.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.disposed">
+            <summary>
+            Flag for whether or not the instance is disposed.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.totalWorkersSpawned">
+            <summary>
+            Holds total amount of workers spawned.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.#ctor(RRD.FSG.RP.Services.ScheduleTasks.Interfaces.IWorkerService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WorkerServiceCore"/> class.
+            </summary>
+            <param name="service">Worker service implementation utilizing the core business logic.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.ServiceStart">
+            <summary>
+            Initializes and starts timers for the service.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.ServiceStop">
+            <summary>
+            Stops all timers and joins all threads.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.Dispose">
+            <summary>
+            Disposes of managed resources.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.HandleTaskWaitAggregateException(System.AggregateException)">
+            <summary>
+            Handle the aggregate exception thrown after waiting for a task to cancel.
+            There should only be OperationCanceledException instances. Anything else will be logged and rethrown.
+            </summary>
+            <param name="aggregateException">Exception to flatten and check.</param>
+            <exception cref="!:ArgumentExcception">Thrown if one or more exceptions in the original list were not of type OperationCanceledException.</exception>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.AddDelayForDebug">
+            <summary>
+            Delays the startup of the service if configured to do so in order for developers to be able to attach a debugger to the service.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.GetMMCServiceName">
+            <summary>
+            Gets the name of the current service from the MMC.
+            Calling System.ServiceProcess.ServiceBase::ServiceName always returns
+            an empty string,
+            see https://connect.microsoft.com/VisualStudio/feedback/ViewFeedback.aspx?FeedbackID=387024
+            So we have to do some more work to find out our service name, this only works if 
+            the process contains a single service, if there are more then one services hosted
+            in the process you will have to do something else
+            </summary>
+            <returns>The name of the current service in the MMC.</returns>
+            <exception cref="T:System.Exception">Thrown if any error encountered while trying to retrieve the service name.</exception>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.CleanupTimerElapsed(System.Object,System.Timers.ElapsedEventArgs)">
+            <summary>
+            Elapsed event for cleanup timer.
+            </summary>
+            <param name="sender">Timer that is firing the event.</param>
+            <param name="e">Event arguments for the timer.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.TaskSchedulerUnobservedTaskException(System.Object,System.Threading.Tasks.UnobservedTaskExceptionEventArgs)">
+            <summary>
+            Event handler for observing the unhandled exception.
+            </summary>
+            <param name="sender"> task that raises the exception</param>
+            <param name="e">Event arguments that holds the aggregate exception</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.Dispose(System.Boolean)">
+            <summary>
+            Disposes of managed resources if disposing is true.
+            </summary>
+            <param name="disposing">determines whether to dispose of managed resources.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WaitForTask(System.WeakReference)">
+            <summary>
+            Attempts to join a Task back to the main thread, requesting additional time for any pending operation to complete the join.
+            Not meant to be used on worker tasks.
+            </summary>
+            <param name="taskReference">Task to join.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WaitForTask(System.Threading.Tasks.Task)">
+            <summary>
+            Attempts to join a Task back to the main thread, requesting additional time for any pending operation to complete the join.
+            Not meant to be used on worker tasks.
+            </summary>
+            <param name="task">Task to join.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerServiceTimerEvent(System.Int64)">
+            <summary>
+            This is the primary callback for the service.
+            It's main purpose is to replace Tasks that have completed due to either no work or faults.
+            </summary>
+            <param name="time">Time in ms showing discrepancy between intended time of execution and actual time of execution. Required for the precision timer event handler, however we don't use it.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.ReportScheduleWorkerTasks">
+            <summary>
+            This method instantiates enough worker tasks to fill the max number of threads set in the configuration.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.EnsureReportSchedule">
+            <summary>
+            Verifies service queue has been initialized.
+            </summary>
+            <returns>True is successful, false if not.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.GetScheduleEntry(System.Threading.CancellationToken)">
+            <summary>
+            Checks to see if the service should still be processing entries.
+            If so, returns the next report schedule from the database.
+            If not, returns null.
+            </summary>
+            <param name="token">Cancellation token to check before returning an item.</param>
+            <returns>null if service should not be processing, false otherwise.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.ReportScheduleWorkerTask(RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Spins up and returns a new worker task.
+            </summary>
+            <param name="entry">Entry to be passed to new Task as initial work.</param>
+            <returns>The running task.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.DeleteOldOutputFiles">
+            <summary>
+            Delete the old output files
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.DeleteOldFiles(System.String,System.DateTime)">
+            <summary>
+            Deletes old temporary files.
+            </summary>
+            <param name="directory">The directory containing the files.</param>
+            <param name="olderThanDate">The date to use as the cutoff for deleting files.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerServiceName">
+            <summary>
+            Gets the name of the service.
+            Used for the ServiceNameAndServer propert as well as determining the MSMQ Queue name (if used).
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.ServiceNameAndServer">
+            <summary>
+            Gets the Service Name and Machine Name as a single unique identifier.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.ServiceStopToken">
+            <summary>
+            Gets a cancellation token that indicates whether the service has been stopped.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.ReportSchedule">
+            <summary>
+            Gets the ReportSchedule associated with this service.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.IsRunning">
+            <summary>
+            Gets a value indicating whether the service is running.
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerTask">
+            <summary>
+            Provides the interface between the Task, IWorker instance, and report schedule entry.
+            Contains the actual worker task action method.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerTask.Core">
+            <summary>
+            Gets or sets a reference to the parent core instance.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerTask.#ctor(RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerTask"/> class.
+            </summary>
+            <param name="core">worker service core instance that spawned the task.</param>
+            <param name="entry">first entry the task will process.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerTask.Dispose">
+            <summary>
+            Allows disposing of the cancellation token source objects.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerTask.StartTask">
+            <summary>
+            Instantiates a new Task instance and sets continuation tasks for error handling and recovery.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerTask.WorkerTaskAction">
+            <summary>
+            The  worker task: this pulls items out of the queue and processes them.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerTask.ReScheduleTaskAfterFault(System.Threading.Tasks.Task)">
+            <summary>
+            Removes references to the faulted task and requeues a task to replace it.
+            </summary>
+            <param name="faultedTask">A reference to the faulted task.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerTask.ReportScheduleEnrty">
+            <summary>
+            Gets the Entry associated with the thread.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerTask.UserRequestTokenSource">
+            <summary>
+            Gets the User Requested Cancellation Token Source, used for signaling cancellations from users.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerTask.TaskReference">
+            <summary>
+            Gets the reference to the Task instance that does the work.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Services.ScheduleTasks.WorkerServiceCore.WorkerTask.ServiceStopAndUserRequestLinkedTokenSource">
+            <summary>
+            Gets the linked token source that is passed to the Task.
+            This allows the task to receive signalling from both sources.
+            </summary>
+        </member>
+    </members>
+</doc>

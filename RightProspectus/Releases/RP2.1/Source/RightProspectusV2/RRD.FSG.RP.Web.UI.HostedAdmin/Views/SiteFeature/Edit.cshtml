@@ -1,0 +1,162 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @model RRD.FSG.RP.Web.UI.HostedAdmin.ViewModels.EditSiteFeatureViewModel
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=100">
+    <title>RightProspectus</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    @Styles.Render("~/Content/Kendo/css")
+    <link href="~/Content/bootstrap-multiselect.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/Kendo")
+
+    <script src="~/Scripts/bootstrap-multiselect.js"></script>
+    <script src="~/Scripts/HostedAdmin/EditSiteFeatureSettings.js"></script>
+    <link href="~/Content/RP/Site.css" rel="stylesheet" />
+</head>
+<body>
+
+    @using (Html.BeginForm("Edit", "SiteFeature"))
+    {
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container navigationFullMenu nowrap">
+                <div class="navbar-header">
+                    @*  Checking for modifiedby field here because the table SiteFeature does not have a primary key column which is an identity field
+                        instead is using a composite key whose value is got from other tables. Ideal solution is to check for presence of primary key value which is
+                        an identity column. *@
+                    @if (Model.ModifiedBy > 0)
+                    {
+                        <a class="navbar-brand" href="#">Edit Site Feature</a>
+                    }
+                    else
+                    {
+                        <a class="navbar-brand" href="#">Add Site Feature</a>
+                    }
+                    <input type="hidden" id="hdnSelectedFeatureKey" value="@Model.SelectedFeatureKey" />
+                    <button id="togglebutton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar-popup" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="popup-close" id="closeWindow" href="javascript:window.close();">Close Window</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="main" class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @if (Model.SiteId == 0)
+                            {
+                                @Html.LabelFor(model => model.FeatureKeys)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.DropDownListFor(model => model.SelectedFeatureKey, new System.Web.Mvc.SelectList(Model.FeatureKeys, "Value", "Display"), new { @class = "form-control", id = "comboFeatureKey" })
+                            }
+                            else
+                            {
+
+                                @Html.LabelFor(model => model.FeatureKeys)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.DropDownListFor(model => model.SelectedFeatureKey, new System.Web.Mvc.SelectList(Model.FeatureKeys, "Value", "Display"), new { @class = "form-control", id = "comboFeatureKey", @disabled = "disabled" })
+
+                                @Html.HiddenFor(model => model.SiteId, new { @id = "hdnSiteId" })
+                                @Html.HiddenFor(model => model.SelectedFeatureKey, new { @id = "hdnFeatureKey" })
+                                @Html.HiddenFor(model => model.FeatureMode, new { @id = "hdnFeatureModes" })
+
+
+
+                            }
+
+                            <input type="hidden" value="@ViewData["Success"].ToString()" id="hdnSuccessOrFailedMessage" />
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+
+                            @Html.LabelFor(model => model.FeatureModes)
+                            <span class="mandatoryAsterisk">*</span>
+                            <br />
+                            <select id="lstFeatureMode" multiple="multiple"></select>
+                            <input type="hidden" id="selectedFeatureModes" name="selectedFeatureModes" />
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            @* Checking for modifiedby field here because the table SiteFeature does not have a primary key column which is an identity field
+                instead is using a composite key whose value is got from other tables. Ideal solution is to check for presence of primary key value which is
+                an identity column. *@
+            @if (Model.ModifiedBy > 0)
+            {
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.UTCLastModifiedDate)
+                                @Html.TextBoxFor(model => model.UTCLastModifiedDate, new { @class = "form-control", placeholder = "ModifiedDate", type = "text", id = "txtModifiedDate", @disabled = "disabled" })
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ModifiedBy)
+                                @Html.TextBoxFor(model => model.ModifiedByName, new { @class = "form-control", placeholder = "ModifiedBy", type = "text", id = "txtModifiedBy", @disabled = "disabled" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="form-inline">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <div class="form-group col-sm-2">
+                                <button id="submitSiteFeature" type="submit" class="AlignButton btn btn-default m-top-15">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer" class="layoutFooter"></div>
+
+        </div>
+    }
+    <div>
+        <script id="divSiteFeatureValidations" type="text/x-kendo-template">
+        </script>
+    </div>
+    <div>
+        <script id="divSuccessOrFailedMessage" type="text/x-kendo-template">
+            <p class="message">Site Feature Saved Successfully.</p>
+            <button class="confirm k-button" style="margin:10px">OK</button>
+        </script>
+    </div>
+
+
+
+    <div id="dvLoadFeatureMode" data-request-url="@Url.Action("GetFeatureModes", "SiteFeature")"></div>
+    <div id="dvLoadFeatureModeByKey" data-request-url="@Url.Action("GetFeatureModesByKey", "SiteFeature")"></div>
+</body>
+</html>

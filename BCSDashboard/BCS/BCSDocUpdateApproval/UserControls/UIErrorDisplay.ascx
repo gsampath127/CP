@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UIErrorDisplay.ascx.cs" Inherits="BCSDocUpdateApproval.UserControls.UIErrorDisplay" %>
+<asp:Label ID="UIError" runat="server" ForeColor="Red" Visible="false"></asp:Label>

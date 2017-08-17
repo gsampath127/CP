@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="commonTypes.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="unqualified"
+           attributeFormDefault="unqualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="menuRoot.xsd" />
+  <xs:annotation>
+    <xs:appinfo>RightProspectus Hosted Sites Xml Schema</xs:appinfo>
+    <xs:documentation xml:lang="en">
+      This document contains common types (both simple and complex) and attribute groups used throughout the schema definition.
+    </xs:documentation>
+  </xs:annotation>
+  
+  <!-- Simple Types -->
+  <xs:simpleType name="max50Chars">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Value must be between 1 and 50 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0" />
+      <xs:maxLength value="50" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="max100Chars">
+    <xs:annotation>
+      <xs:documentation>
+        Value must be between 1 and 100 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0" />
+      <xs:maxLength value="100" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="max200Chars">
+    <xs:annotation>
+      <xs:documentation>
+        Value must be between 1 and 200 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0" />
+      <xs:maxLength value="200" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="max400Chars">
+    <xs:annotation>
+      <xs:documentation>
+        Value must be between 1 and 400 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0" />
+      <xs:maxLength value="400" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="languageCulture">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a language-culture tag that meets RFC 5646 (https://tools.ietf.org/html/rfc5646) specifications and is no longer than 50 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})?){0,5}" />
+      <xs:minLength value="0" />
+      <xs:maxLength value="50" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="fileName">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a string that is no longer than 260 characters (maximum file name length in Windows file system).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0" />
+      <xs:maxLength value="260" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="order">
+    <xs:annotation>
+      <xs:documentation>
+        Optional display order of the entity.
+        Must be a valid integer.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0" />
+      <xs:maxLength value="260" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="importId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a unique identifier to link import entities that have multiple matches from other identifiers, or do not have system identifiers yet (such as new items).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="name">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a display name for the entity.
+        Overrides any inherited name.
+        Maximum 100 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="max100Chars" />
+  </xs:simpleType>
+  <xs:simpleType name="description">
+    <xs:annotation>
+      <xs:documentation>
+        Defines an optional detailed description of the entity.
+        Will be used in help context such as tool tips.
+        Overrides any inherited description.
+        Maximum 400 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="max400Chars" />
+  </xs:simpleType>
+  <xs:simpleType name="cssClass">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a css class to append to any root html element defining this entity during html rendering.
+        Css class must meet the following specifications defined here: http://www.w3.org/TR/CSS2/syndata.html#characters.
+        Maximum 50 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="max50Chars"/>
+  </xs:simpleType>
+  <xs:simpleType name="headerText">
+    <xs:annotation>
+      <xs:documentation>
+        Defines display text to use for this entity when the entity is a header of a column.
+        Defaults to entity name if not set.
+        Maximum 100 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1" />
+      <xs:maxLength value="100" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="linkText">
+    <xs:annotation>
+      <xs:documentation>
+        Defines display text to use for this entity when the entity is a hyperlink.
+        Defaults to entity name if not set.
+        Maximum 100 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="max100Chars" />
+  </xs:simpleType>
+  <xs:simpleType name="exportId">
+    <xs:annotation>
+      <xs:documentation>
+        System identifier of the export job, included in the export xml.
+        Will always be a positive integer.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:unsignedInt" />
+  </xs:simpleType>
+  <xs:simpleType name="key">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a unique key used to identify the entity.
+        Maximum 200 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="max200Chars" />
+  </xs:simpleType>
+  <xs:simpleType name="pageId">
+    <xs:annotation>
+      <xs:documentation>
+        Identifies the page entity this entity belongs to.
+        Must be a positive integer.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:unsignedInt" />
+  </xs:simpleType>
+  <xs:simpleType name="level">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the taxonomy hierarchy level this entity belongs to.
+        Must be a positive integer.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:unsignedInt" />
+  </xs:simpleType>
+  <xs:simpleType name="systemId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a pre existing system identifier for this entity.
+        Used in the following contexts: updating, deleting, and linking (associating).
+        Must be a positive integer.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0" />
+      <xs:maxLength value="260" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="marketId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the market specific unique identifier for the entity.
+        Maximum 100 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="max100Chars" />
+  </xs:simpleType>
+  <xs:simpleType name="parentMarketId">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the market specific unique identifier for the parent entity.
+        Maximum 100 characters.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="max100Chars" />
+  </xs:simpleType>
+  <xs:simpleType name="siteId">
+    <xs:annotation>
+      <xs:documentation>
+        Identifies the site entity this entity belongs to.
+        Must be a positie integer.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:unsignedInt" />
+  </xs:simpleType>
+  <xs:simpleType name="delete">
+    <xs:annotation>
+      <xs:documentation>
+        Boolean attribute defining whether to delete the entity.
+        If set to true, only identifying attributes are necessary for the entity.
+        Only used during imports.
+        If omitted, false is assumed.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:boolean" />
+  </xs:simpleType>
+  <xs:simpleType name="isRPPage">
+    <xs:annotation>
+      <xs:documentation>
+        Boolean attribute defining whether to this is RP page or not.
+        If set to true, only identifying attributes are necessary for the entity.
+        Only used during imports.
+        If omitted, false is assumed.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:boolean" />
+  </xs:simpleType>
+  <xs:simpleType name="mirror">
+    <xs:annotation>
+      <xs:documentation>
+        Boolean attribute that determines whether or not any child items:
+        1) not defined in this list,
+        2) already existent in the database, and
+        3) matches the collection criteria (either rooted to a specific entity or globa/unrooted),
+        should be deleted.
+        Similar to the Robust Copy (robocopy.exe) tool's mirror flag.
+        If omitted, false is assumed.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:boolean" />
+  </xs:simpleType>
+  <xs:simpleType name="templateId">
+    <xs:annotation>
+      <xs:documentation>
+        Identifies the template this entity utilizes for display purposes.
+        Must be a positive integer.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:unsignedInt" />
+  </xs:simpleType>
+  <xs:simpleType name="displayName">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the display name for the menu item.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="id">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the id for the menu item.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="toolTip">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the tool tip for the menu item.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>  
+  <xs:simpleType name="target">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the frame target used for a link.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="onclick">
+    <xs:annotation>
+      <xs:documentation>
+        Defines an onclick event handler.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="href">
+    <xs:annotation>
+      <xs:documentation>
+        Defines an href value for an element such as an anchor tag.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>  
+
+  <!-- Attribute Groups -->
+  <xs:attributeGroup name="marketAttributes">
+    <xs:annotation>
+      <xs:documentation>
+        Defines attributes associated with market entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="marketId" type="marketId" use="required" />
+    <xs:attribute name="descriptionOverride" type="description" use="optional" />
+    <xs:attribute name="cssClass" type="cssClass" use="optional" />
+  </xs:attributeGroup>
+  <xs:attributeGroup name="linkAttributes">
+    <xs:annotation>
+      <xs:documentation>
+        Defines attributes used by link entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="importId" type="importId" use="optional" />
+    <xs:attribute name="systemId" type="systemId" use="optional" />
+    <xs:attribute name="order" type="order" use="optional" />
+  </xs:attributeGroup>
+  
+  <!-- Complex Types -->
+  <xs:complexType name="entity" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        Base entity complex type used for all other types.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="delete" type="delete" default="false" use="optional" />
+  </xs:complexType>
+  <xs:complexType name="systemEntity" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        Base entity with optional system identifier.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="entity">
+        <xs:attribute name="systemId" type="systemId" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="linkEntity" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        Base entity used for linking existing entities to a parent entity.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="entity">
+        <xs:attributeGroup ref="linkAttributes" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="marketEntity" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        Base entity with additional market specific attributes.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="entity">
+        <xs:attributeGroup ref="marketAttributes" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="stringEntity" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        Base entity with a string value.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="delete" type="delete" default="false" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="globalizedStringEntity" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        Base entity with a string value and an optional language-culture attribute.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="stringEntity">
+        <xs:attribute name="languageCulture" type="languageCulture" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="navigationEntity" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        Navigation entity with navigation xml schema as the content.
+        Contains a required navigation key attribute and an optional language-culture attribute.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="entity">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element ref="menuRoot" />
+        </xs:sequence>
+        <xs:attribute name="navigationKey" type="key" use="required" />
+        <xs:attribute name="languageCulture" type="languageCulture" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="childCollection">
+    <xs:annotation>
+      <xs:documentation>
+        Base entity for elements to contain other child elements as a collection.
+        Contains an optional attribute (mirror) that determines if the list is definitive.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="mirror" type="mirror" default="false" use="optional" />
+  </xs:complexType>
+</xs:schema>

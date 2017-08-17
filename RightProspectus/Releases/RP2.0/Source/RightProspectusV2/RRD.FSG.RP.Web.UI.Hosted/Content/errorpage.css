@@ -1,0 +1,37 @@
+﻿body {    
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.errorPageHeader {
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #666;
+    border-color: #e5e5e5;
+    height: 69px;
+    font-weight: 100;
+}
+.errorPageTitle{
+    color:#ff0000;
+    position: relative;
+    font-size: x-large;
+    top: 20px;
+    left: 10px;
+}
+.body{
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+.errorHeading{
+    color:maroon;
+    font-size: large;
+    font-style: italic;
+}
+.errorMessage{
+    font-size: small;
+    color:#000000;
+}
+a{
+    font-size: small;
+    color:#0b26fa;
+}
+

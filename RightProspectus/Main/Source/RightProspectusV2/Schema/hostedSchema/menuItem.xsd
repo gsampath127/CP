@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="menuItem.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:element name="menuItem" type="menuItem">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a menu item entity for an xml navigation document.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <!--Enumerations-->
+  <xs:simpleType name="menuItemFeatureEnum">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the type of menu feature defined by this element.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="documentTypes">
+        <xs:annotation>
+          <xs:documentation>
+            Document types feature - used on the tabbed document page.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="taxonomyAssociationClientDocumentTypes">
+        <xs:annotation>
+          <xs:documentation>
+            Client Document types feature - used on the client document page.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="menuLinkTypeEnum">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the type of menu links defined by this element.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="subscription">
+        <xs:annotation>
+          <xs:documentation>
+            subscription tab - used on the tabbed document page.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>      
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--Complex Types-->
+  <xs:complexType name="menuItem" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a menu item entity for an xml navigation document.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:complexType>
+  <xs:complexType name="menuDropDown">
+    <xs:annotation>
+      <xs:documentation>
+        Rendered as a menu with child elements.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="menuItem">
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+          <xs:element ref="menuItem" />
+        </xs:sequence>
+        <xs:attribute name="displayName" type="displayName" use="required" />
+        <xs:attribute name="toolTip" type="toolTip" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="menuFeature">
+    <xs:annotation>
+      <xs:documentation>
+        Rendered as a site or page specific menu feature.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="menuItem">
+        <xs:attribute name="featureType" type="menuItemFeatureEnum" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="menuLink">
+    <xs:annotation>
+      <xs:documentation>
+        Rendered as a clickable element or link.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="menuItem">
+        <xs:attribute name="displayName" type="displayName" use="required" />
+        <xs:attribute name="linkType" type="menuLinkTypeEnum" use="optional" />
+        <xs:attribute name="id" type="id" use="optional" />
+        <xs:attribute name="toolTip" type="toolTip" use="optional" />
+        <xs:attribute name="target" type="target" use="optional" />
+        <xs:attribute name="href" type="href" use="optional" />
+        <xs:attribute name="onclick" type="onclick" use="optional" />
+        <xs:attribute name="isRPPage" type="isRPPage" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

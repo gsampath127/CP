@@ -1,0 +1,100 @@
+﻿<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav" id="navigation">
+
+            <li>
+                <a ng-click="SecurityQuestion()">Security Question</a>
+            </li>
+            <li>
+                <a ng-click="ChangePassword()" class="current_page_item">Change Password</a>
+            </li>
+
+
+        </ul>
+    </div>
+    <div ng-include="viewTemplate">
+
+    </div>
+</div>
+
+<script type="text/ng-template" id="securityQuestion">
+    <div class="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3><b>Set Your Security Question</b></h3><br />
+                    <form id="securityQuestionForm" name="form" role="form" class="text-left" ng-submit="Submit" novalidate>
+                        <div class="form-group">
+                            <label for="securityQn">Security Question</label>
+                            <select class="form-control" name="SecurityQns" ng-model="user.selectedQuestion" ng-required="true" ng-options=" item as item.Name for item in AllSecurityQns track by item.Id" />
+                        </div>
+                        <div class="form-group">
+                            <label for="securityAns">Enter password</label>
+                            <input type="password" class="form-control" id="securityAns" ng-model="user.securityAnswer" ng-required="true" placeholder="Security Answer">
+                        </div>
+                        <button class="btn btn btn-primary" ng-click="UpdateSecurityQuestion()" type="submit">
+                            Save
+                        </button>
+                        <button class="btn btn btn-primary" ng-click="Clear()" type="reset">
+                            Clear
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<!-- Change Password -->
+<script type="text/ng-template" id="changePassword">
+    <div class="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3><b>Change Your Password</b></h3><br />
+                    <div class="form-group">
+                        <label for="oldpassword">Enter Old password</label>
+                        <input type="password" class="form-control" id="oldpassword" name="oldpassword" ng-model="user.oldPassword" ng-required="true" placeholder="Old Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Enter New password</label>
+                        <input type="password" class="form-control" id="password" name="password" ng-model="user.newPassword" ng-required="true" placeholder="New Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="ReEnterPassword">Re-Enter password</label>
+                        <input type="password" class="form-control" id="ReEnterPassword" name="ReEnterPassword" onkeydown="CheckPasswordStrength(this.value)" ng-model="user.ReEnterPassword" ng-required="true" placeholder="Re enter Password">
+                        <span id="password_strength"></span>
+                    </div>
+
+                    <div class="alert alert-danger" style="margin-bottom: 25px" ng-show="(ErrorMessage.length > 0)">
+                        <div>{{ErrorMessage}}</div>
+                    </div>
+                    <button class="btn btn btn-primary" ng-click="UpdateOldPassword()" type="submit">
+                        Save
+                    </button>
+                    <button class="btn btn btn-primary" ng-click="ClearSecurityQuestion()" type="reset">
+                        Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="success">
+    <div class="container">
+        <div style="margin-top:5%;" class="mainbox col-md-3 col-md-offset-1 col-sm-2 col-sm-offset-4">
+            <div class="panel panel-info" style="border-color: black;">
+                <div class="panel-heading" style="background-color: black;border-color: black;">
+                    <div class="panel-title">Success</div>
+                </div>
+                <div style="padding-top:30px" class="panel-body">
+                    <div style="display:none" class="alert alert-success col-sm-12"></div>
+                    <div>
+                         Changes Saved !
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

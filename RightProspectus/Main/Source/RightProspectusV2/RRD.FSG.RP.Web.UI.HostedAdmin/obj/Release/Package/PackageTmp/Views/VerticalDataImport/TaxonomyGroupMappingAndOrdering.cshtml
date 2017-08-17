@@ -1,0 +1,58 @@
+﻿<div class="row">
+    <div class="col-sm-12">
+        <div>            
+            <a id="btnSaveGroupMappingChanges" class="k-button k-button-icontext" href="#"><span class="k-icon k-i-update"></span>Save changes</a>
+            <a id="btnCancelGroupMappingChanges" class="k-button k-button-icontext" href="#"><span class="k-icon k-i-cancel"></span>Cancel changes</a>
+        </div>        
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <br />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div id="taxonomyAssociationGroupTreeView"></div>
+    </div>
+    <script id="taxonomyAssociationGroupTreeView-template" type="text/kendo-ui-template">
+        #: item.Name #
+        <a class='removeTreeNode  glyphicon glyphicon-remove' href='\#'></a>
+    </script>
+</div>
+<div id="dvTaxonomyAssociationGroupMapping" data-request-url="@Url.Action("GetTaxonomyGroupMapping", "VerticalTAGD")"></div>
+<div id="dvSaveTaxonomyAssociationGroupMapping" data-request-url="@Url.Action("SaveTaxonomyGroupMapping", "VerticalTAGD")"></div>
+<div id="dvTaxonomyAssociationGroupMappingExport" data-request-url="@Url.Action("ExportTaxonomyGroup", "VerticalTAGD")"></div>
+
+<script src="~/Scripts/HostedAdmin/VerticalDataImport/TaxonomyGroupMappingAndOrdering.js"></script>
+<script type="text/x-kendo-template" id="deleteTAGMappingTemplate">
+    Delete
+    <strong>Group and all Child groups</strong> ?
+    <button class="confirm k-button confirmButtonYesMultiple" id="confirmDelete">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo" id="cancelDelete"> No</button>
+</script>
+<style>
+    .k-state-focused {
+        box-shadow: none !important;
+    }
+
+    #taxonomyAssociationGroupTreeView .k-state-selected {
+        background-color: #fafafa !important;
+        color: #428bca;
+    }
+
+    .removeTreeNode {
+        text-decoration: none !important;
+    }
+
+    #btnSaveGroupMappingChanges {
+        color: #fff !important;
+        background-color: #08c !important;
+    }
+
+        #btnSaveGroupMappingChanges:hover {
+            color: white !important;
+            background-color: #286090 !important;
+        }
+</style>

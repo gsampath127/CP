@@ -1,0 +1,301 @@
+﻿@{
+    Layout = null;
+}
+@model RRD.FSG.RP.Web.UI.Hosted.RequestMaterialViewModel
+<div id="dvRequestMaterialPopUpOuter"  class="requestMaterialPopUpOuter">
+    Please select a delivery method and complete following form to request your documents.
+    <div id="dvRequestMaterialMenu" class="wizardStep">
+        <div id="contentDiv" class="contentDiv">
+            <h3 class="menuHead">Select Delivery Method</h3>
+            <ul>
+                <li><input id="radioElectronic" type="radio" value="Electronic" checked="checked" name="requestmaterial" onchange="RadioCheck(this.value)" />Electronic</li>
+                <li><input id="radioUSMail" type="radio" value="U.S. Mail" name="requestmaterial" onchange="RadioCheck(this.value)" />U.S. Mail</li>
+            </ul>
+            <div id="dvEmailText" class="emailText">Choose 'Electronic' if you wish to have the document(s) delivered via Email.</div>
+            <div id="dvPrintText" class="printText">Choose 'U.S. Mail' if you wish to have the document(s) mailed to you.</div>
+            <div id="dvButtons" class="row menuButtons">
+                <input type="button" value="&laquo;Back" disabled="disabled" class="pnlButtons" />
+                <input type="button" onclick="dvRequestMaterialMenu_Next();" value="Next&raquo;" class="pnlButtons" />
+                <input type="button" onclick="cancel();" value="Cancel" class="pnlButtons" />
+            </div>
+
+        </div>
+    </div>
+    <div id="contentDiv">
+        <div id="dvRequestMaterialEmail" class="wizardStep dvRequestMaterialEmail">
+
+            <table id="tableEmail" class="tblDetails">
+                <tr>
+                    <td valign="top"  class="tdEmailDetails">
+                        <br />
+                        Delivery Email<span class="required"> *</span><br />
+                        <input type="text" id="txtEmail" width="200" name="txtEmail" class="inputText">
+                        <input type="hidden" id="hdnClientName" value="@Model.ClientName" name="hdnClientName" />
+                        <input type="hidden" id="hdnSiteName" value="@Model.SiteName" name="hdnSiteName" />
+                        <input type="hidden" id="hdnRequestBatchId" value="@Model.RequestBatchId" name="hdnRequestBatchId" />
+
+                    </td>
+                    <td>
+                        <br />
+                        Please select the document(s) you wish to receive:<span class="required"> *</span>
+                        <input type="hidden" name="taxanomyAssociationId" id="taxanomyAssociationId" value="@Model.TaxonomyAssociationData.TaxonomyAssociationID" />
+                        <div id="dvcheckedEmail">
+                            @foreach (var item in Model.TaxonomyAssociationData.DocumentTypes.Where(x => x.DocumentTypeLinkText != "XBRL"))
+                            {
+                                <br /><input type="checkbox" value="@item.DocumentTypeId : @item.DocumentTypeLinkText" name="docType" />  @item.DocumentTypeLinkText
+                                <input type="hidden" value="@item.DocumentTypeLinkText" name="chkNames" />
+                            }
+                        </div>
+                    </td>
+
+                </tr>
+            </table>
+
+            <div id="dvButtons" class="row emailButtons" >
+                <input type="button" onclick="dvRequestMaterialEmail_Back();" value="&laquo;Back" class="pnlButtons" />
+                <input type="button" onclick="dvRequestMaterialEmail_Next();" value="Next&raquo;" class="pnlButtons" />
+                <input type="button" onclick="cancel();" value="Cancel" class="pnlButtons" />
+
+            </div>
+        </div>
+        <div id="dvEmailConfirm">
+
+            <div id="contentDiv">
+                <table id="tableConfirm" class="tblDetails">
+                    <tr>
+                        <td valign="top">
+                            <br />
+                            <span>Confirm Delivery Information</span>
+                            <br />
+                            <span>The following document(s):</span>
+                            <div id="dvConfirmEmailDocType">
+                            </div>
+
+                        </td>
+                        <td valign="top">
+                            <ul>
+                                <li>If this is correct, please select 'Request'.</li>
+                                <li>If you do not want to receive these documents, please select 'Cancel'.</li>
+                                <li>To change your delivery information, select 'Back'.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <div id="dvButtons" class="row emailConfirmButtons">
+                    <input type="button" onclick="EmailConfirmBack();" value="&laquo;Back" class="pnlButtons" />
+                    <input type="button" value="Request" onclick="SaveEmailDetails();" class="pnlButtons" />
+                    <input type="button" onclick="cancel();" value="Cancel" class="pnlButtons" />
+                </div>
+            </div>
+        </div>
+
+        <div id="dvEmailSentConfirm" class="emailSentConfirm">
+            <div id="contentDiv">
+                <table id="tableConfirm" class="tblEmailConfirm">
+                    <tr>
+                        <td valign="top">
+                            <br />
+                            <span>Electronic Delivery Details</span>
+                            <br />
+                            <br />
+                            <span style="color:green">Documents have been sent successfully!</span>
+                        </td>
+
+                    </tr>
+                </table>
+                <div id="dvButtons " class="row emailConfirmButtons">
+                    <input type="button" onclick="cancel();" value="Close" class="pnlButtons" />
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div id="contentDiv">
+        <div id="dvRequestMaterialPrint" class="requestMaterialPrint">
+
+            <input type="hidden" id="hdnClientName" value="@Model.ClientName" name="hdnClientName" />
+            <input type="hidden" id="hdnSiteName" value="@Model.SiteName" name="hdnSiteName" />
+            <input type="hidden" id="hdnRequestBatchId" value="@Model.RequestBatchId" name="hdnRequestBatchId" />
+
+            <table id="tableMail" visible="false" class="tblDetails">
+                <tr>
+                    <td valign="top" style="width: 263px">
+                        <br />
+                        Company Name (optional)<br />
+                        <input type="text" id="txtCompanyName" width="200" name="CompanyName" class="inputText">
+                        <br />
+                        <br />
+                        First Name<span> *</span><br />
+                        <input type="text" id="txtFirstName" width="200" name="FirstName" class="inputText">
+                        <br />
+                        Last Name<span> *</span><br />
+                        <input type="text" id="txtLastName" width="200" name="LastName" class="inputText">
+                        <br />
+                        Address Line 1<span> *</span><br />
+                        <input type="text" id="txtAddress1" width="200" name="Address1" class="inputText">
+                        <br />
+                        Address Line 2<br />
+                        <input type="text" id="txtAddress2" width="200" name="Address2" class="inputText">
+                        <br />
+                        City<span> *</span><br />
+                        <input type="text" id="txtCity" width="200" name="City" class="inputText">
+                        <br />
+                        <table cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>
+                                    State<span> *</span><br />
+                                </td>
+                                <td>
+                                    Zip<span> *</span><br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select id="ddlState" name="State" class="inputText">
+                                        <option value="0">Choose...</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AS">American Samoa</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="AE">Armed Forces Europe</option>
+                                        <option value="AP">Armed Forces Pacific</option>
+                                        <option value="AA">Armed Forces the Americas</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District of Columbia</option>
+                                        <option value="FM">Federated States of Micronesia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="GU">Guam</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MH">Marshall Islands</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="MP">Northern Mariana Islands</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="PR">Puerto Rico</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VI">Virgin Islands, U.S.</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" id="txtZip" width="200" name="Zip" class="inputText">
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                    <td valign="top">
+                        <br />
+                        Please select the document(s) you wish to receive:<span class="required"> *</span>
+                        <input type="hidden" id="taxanomyAssociationId" name="taxanomyAssociationId" value="@Model.TaxonomyAssociationData.TaxonomyAssociationID" />
+                        <div id="dvCheckedPrintDocType">
+                            @foreach (var item in Model.TaxonomyAssociationData.DocumentTypes.Where(x => x.DocumentTypeLinkText != "XBRL"))
+                            {
+                                <br /><input type="checkbox" value="@item.DocumentTypeId : @item.DocumentTypeLinkText" name="docType" id="checkPrintDocType" />  @item.DocumentTypeLinkText
+                                <input type="hidden" value="@item.DocumentTypeLinkText" name="chkNames" />
+
+                            }
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+
+            <div id="dvButtons" class="row requestMaterialPrintButtons" >
+                <input type="button" onclick="dvRequestMaterialPrint_Back();" value="&laquo;Back" class="pnlButtons" />
+                <input type="button" onclick="dvRequestMaterialPrint_Next();" value="Next&raquo;" class="pnlButtons" />
+                <input type="button" onclick="cancel();" value="Cancel" class="pnlButtons" />
+            </div>
+        </div>
+
+
+        <div id="dvPrintConfirm" class="printConfirm">
+
+            <div id="contentDiv">
+                <table id="tableConfirm" class="tblDetails">
+                    <tr>
+                        <td valign="top">
+                            <br />
+                            <span>Confirm Delivery Information</span>
+                            <br />
+                            <span>The following document(s):</span>
+                            <div id="dvConfirmPrintDocType"></div>
+
+                        <td valign="top">
+                            <ul>
+                                <li>If this is correct, please select 'Request'.</li>
+                                <li>If you do not want to receive these documents, please select 'Cancel'.</li>
+                                <li>To change your delivery information, select 'Back'.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <div id="dvButtons" class="row requestMaterialPrintConfirmButtons">
+                    <input type="button" onclick="PrintConfirmBack();" value="&laquo;Back" class="pnlButtons" />
+                    <input type="submit" value="Request" onclick="SavePrintDetails();" class="pnlButtons" />
+                    <input type="button" onclick="cancel();" value="Cancel" class="pnlButtons" />
+                </div>
+            </div>
+        </div>
+
+        <div id="dvPrintSentConfirm" class="printSentConfirm">
+            <div id="contentDiv">
+                <table id="tableConfirm">
+                    <tr>
+                        <td valign="top">
+                            <br />
+                            <span>U.S. Mail Delivery Details</span>
+                            <br />
+                            <br />
+
+                            <div id="dvPrintConfirmtext" style="color:green"></div>
+                        </td>
+
+                    </tr>
+                </table>
+                <div id="dvButtons" class="row printConfirmButtons">
+                    <input type="button" onclick="cancel();" value="Close" class="pnlButtons" />
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+<div id="divRequestMaterialValidations">
+</div>

@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_ClientConfigurationLayout.cshtml";
+}
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>
+                <li class="active">Taxonomy Level ExternalId</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Taxonomy Level ExternalId<span id="TaxonomyLevelExternalPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+        <div class="col-sm-3 text-right">
+            <a class="btn btn-success btn-sm m-top-20 pull-right-xs-max" id="btnAddNewTaxonomylevelexternal">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Taxonomy level external
+            </a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="TaxonomylevelCombo" class="form-control" type="text"  />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="TaxonomyCombo" type="text" class="form-control"  />
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="ExternalIdCombo" type="text" class="form-control"  />
+
+            </div>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="btnSearchTaxonomyLevelExternal" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="taxonomyLevelExternalClearFilters"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="taxonomyLevelExternalGridwithSortingButtons">
+
+        <div id="taxonomyLevelExternalcontainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="taxonomyLevelExternalGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div id="dvLoadAllTaxonomyLevelExternalId" data-request-url="@Url.Action("GetAllTaxonomyLevelExternalIdDetails", "TaxonomyLevelExternalId")"></div>
+    <div id="dvTaxonomylevelComboLoad" data-request-url="@Url.Action("GetLevels", "TaxonomyLevelExternalId")"></div>
+    <div id="dvTaxonomyComboLoad" data-request-url="@Url.Action("GetTaxonomy", "TaxonomyLevelExternalId")"></div>
+    <div id="dvExternalIdComboLoad" data-request-url="@Url.Action("GetExternalId", "TaxonomyLevelExternalId")"></div>
+    <div id="dvEditTaxonomyLevelExternalId" data-request-url="@Url.Action("EditTaxonomyLevelExternalId", "TaxonomyLevelExternalId")"></div>
+    <div id="dvDisable" data-request-url="@Url.Action("Disable", "TaxonomyLevelExternalId")"></div>
+
+
+<script id="alertDisable" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Taxonomy Level ExternalID?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+
+    <script src="~/Scripts/HostedAdmin/TaxonomyLevelExternalIdSettings.js"></script>
+<div id="dvTaxonomyLevelExternalPopOver" class="dispNone">
+    Taxonomy Level External page displays the <b>Taxonamies Level and ExternalID</b> in RightProspectus.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Taxonomy Level External</li>
+        <li>EDIT Existing Taxonomy Level External</li>
+        <li>SEARCH Taxonomy Level External based on Level, Taxonomy, External Id.</li>
+        <li>DELETE Taxonomy Level External</li>
+    </ul>
+    <br />
+</div>

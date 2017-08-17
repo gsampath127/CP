@@ -1,0 +1,143 @@
+﻿<div class="row">
+    <div class="col-sm-12">
+
+    </div>
+</div>
+<div id="importTaxonomyAssociationHierarchy" style="display:none">
+    <div class="row">
+        <div style="padding:10px 10px 10px 10px">
+            <input type="file" name="file" id="taxonomyAssociationHierarchyUpload" />
+        </div>
+
+        <div class="col-sm-12">
+            <div id="TAHDInvalidDataGridContainer" class="ScrollTable">
+                <div id="TAHDInvalidDataGridHeader" class="tableFixedWidth" style="margin:20px 0; display:none">
+                    Invalid Product and Underlying Fund mapping or Order
+                </div>
+                <div id="TAHDInvalidDataGrid" class="tableFixedWidth">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div id="dvSwitchIM" class="btn-group pull-right dvSwitch">
+            <a href="#" class="btn btn-default dropdown-toggle, ImportActions" data-toggle="dropdown">Actions <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a id="TAHDlnkImport" href="#">Import</a></li>
+                <li><a id="exportTAHD" href="#">Export</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div id="GridContainer" class="ScrollTable">
+            <div id="importProductGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dvTaxonomyAssociation" data-request-url="@Url.Action("GetTaxonomy", "VerticalTA")"></div>
+<div id="dvTaxonomyAssociationHierarchy" data-request-url="@Url.Action("GetTaxonomyAssociationHierarchy", "VerticalTAHD")"></div>
+<div id="dvSaveDocumentTypeAssociationHierarchy" data-request-url="@Url.Action("SaveTaxonomyAssociationHierarchy", "VerticalTAHD")"></div>
+<div id="dvTaxonomyAssociationHierarchyExport" data-request-url="@Url.Action("ExportTAHD", "VerticalTAHD")"></div>
+<div id="dvTaxonomyHierarchyImport" data-request-url="@Url.Action("TAHDImport", "VerticalTAHD")"></div>
+<script src="~/Scripts/jquery-ui.js"></script>
+<script src="~/Scripts/bootstrap-multiselect.js"></script>
+<link href="~/Content/bootstrap-multiselect.css" rel="stylesheet" />
+<script src="~/Scripts/HostedAdmin/VerticalDataImport/ImportProduct.js"></script>
+<script type="text/x-kendo-template" id="deleteTaxonomyHierarchyFund">
+    Delete
+    <strong>MarketId</strong> ?
+    <button class="confirm k-button confirmButtonYesMultiple" id="confirmDelete">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo" id="cancelDelete"> No</button>
+</script>
+
+<script type="text/x-kendo-template" id="underlyingFundTemplate">
+
+    <div class="tabstrip">
+        <ul>
+            <li class="k-state-active">
+                Underlying Fund Data
+            </li>
+        </ul>
+        <div>
+            <div id="underlyingFundGrid"></div>
+        </div>
+    </div>
+</script>
+<style>
+    .file-icon {
+        display: inline-block;
+        float: left;
+        width: 48px;
+        height: 48px;
+        margin-left: 10px;
+        margin-top: 13.5px;
+    }
+
+
+    #importProductUpload .file-heading {
+        font-family: Arial;
+        font-size: 1.1em;
+        display: inline-block;
+        float: left;
+        width: 60%;
+        margin: 0 0 0 20px;
+        height: 25px;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    #importProductUpload .file-name-heading {
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    #importProductUpload .file-size-heading {
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    li.k-file .file-wrapper .k-upload-action {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    li.k-file div.file-wrapper {
+        position: relative;
+        height: 75px;
+    }
+
+    div.k-window-content {
+        overflow: hidden !important;
+    }
+
+    .ImportProduct-EditPopup .k-edit-form-container {
+        width: 400px !important;
+    }
+
+    .ImportProduct-EditPopup .editor-label, .ImportProduct-EditPopup .k-edit-label {
+        width: 35% !important;
+    }
+
+    .ImportProduct-EditPopup .editor-field, .ImportProduct-EditPopup .k-edit-field {
+        width: 55% !important;
+    }
+
+    .ImportProduct-EditPopup .k-textbox, .ImportProduct-EditPopup .k-dropdown, .ImportProduct-EditPopup .k-numerictextbox {
+        width: 100%;
+    }
+
+    
+    #importProductGrid .k-grid, #importProductGrid .k-grid-content{
+        overflow: hidden;
+    }
+</style>

@@ -1,0 +1,52 @@
+﻿@using RRD.FSG.RP.Web.UI.Hosted
+@using System.Web
+@model RRD.FSG.RP.Web.UI.Hosted.TaxonomyAssociationGroupViewModel
+<link href="@(((BaseViewModel)Model).BaseURL)PageTextHandler.ashx?ClientName=@(((BaseViewModel)Model).ClientName)&SiteName=@(((BaseViewModel)Model).SiteName)&Key=@(((BaseViewModel)Model).PageCSSResourceKey)&IsProofing=@(((BaseViewModel)Model).IsProofing)&PageId=@(((BaseViewModel)Model).PageId)" rel="stylesheet" media="all" />
+@Scripts.Render("~/Scripts/MinJS")
+
+
+<div class="content-outer">
+    <div class="content-outer-top"></div>
+    <div class="content-outer-mid">
+
+        @(Html.Raw(HttpUtility.HtmlDecode(Model.ClientCustomHeader)))
+
+        <div class="content-inner">
+            <div class="content-inner-top"></div>
+            <div class="content-inner-mid">
+                <div id="mainDiv" class="cssTAGDMainDiv">
+                    <div class="cssHeaderTable">
+                        <div class="cssHeaderTableRow">
+                            <div class="cssHeaderTableCell cssClientLogoPlaceHolder">
+                                <div class="cssClientLogo">@(Html.Raw(HttpUtility.HtmlDecode(((BaseViewModel)Model).LogoText)))</div>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                  
+
+                    <div id="divTAGDGrid">
+                        @Html.Partial("TaxonomyAssociationGroupPartialT1", Model)
+                    </div>
+
+
+
+                    <div id="divGlossary" class="cssTAGDGlossary">
+                        @(Html.Raw(HttpUtility.HtmlDecode(Model.Glossary)))
+                    </div>
+                    <div id="divFooter" class="cssTAGDFooter">
+                        <div class="cssTAGDFootnotesHeaderText">@(Html.Raw(HttpUtility.HtmlDecode(Model.FootnotesHeaderText)))</div>
+                        <div class="cssTAGDFootnotesItems">
+                            @foreach (var item in Model.TaxonomyAssociationGroupModelData.FootNotes.OrderBy(p => p.Order))
+                            {
+                                <div class="cssTAGDFootnotesItemText">@item.Text</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

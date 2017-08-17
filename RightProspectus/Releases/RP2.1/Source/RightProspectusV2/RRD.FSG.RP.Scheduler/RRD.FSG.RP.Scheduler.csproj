@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEF98AEC-94EF-4C8E-BBFE-2849CAA81F25}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RRD.FSG.RP.Scheduler</RootNamespace>
+    <AssemblyName>RRD.FSG.RP.Scheduler</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\packages\RuleSet\RRD.FSG.RP.Ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\Documentation\RRD.FSG.RP.Scheduler.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RRD.DSA.Core\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RRD.DSA.Core\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling">
+      <HintPath>..\packages\RRD.DSA.Core\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging">
+      <HintPath>..\packages\RRD.DSA.Core\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RRD.DSA.Core\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="RRD.DSA.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6e3d68ef7a1afedf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RRD.DSA.Core\RRD.DSA.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions\CustomDatabaseTraceListener.cs" />
+    <Compile Include="Exceptions\ExceptionHandler.cs" />
+    <Compile Include="Exceptions\WorkerThreadTimeoutException.cs" />
+    <Compile Include="Interfaces\IReportSchedule.cs" />
+    <Compile Include="Interfaces\IReportScheduleEntry.cs" />
+    <Compile Include="Interfaces\IReportScheduleEntryFactory.cs" />
+    <Compile Include="Interfaces\IReportScheduleEntryFactoryOf%28TScheduleEntry%29.cs" />
+    <Compile Include="Interfaces\IReportScheduleOfT%28ScheduleEntry%29.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportSchedule.cs" />
+    <Compile Include="ReportScheduleBase.cs" />
+    <Compile Include="ReportScheduleEntry.cs" />
+    <Compile Include="ReportScheduleEntryFactory.cs" />
+    <Compile Include="ReportScheduleEntryFactoryBase.cs" />
+    <Compile Include="ReportTransfer.cs" />
+    <Compile Include="TaskEngine.cs" />
+    <Compile Include="Task\BillingReports\MonthlyBillingReportGenerator.cs" />
+    <Compile Include="Task\BillingReports\BillingReportTask.cs" />
+    <Compile Include="Task\ErrorReports\ErrorReportsTask.cs" />
+    <Compile Include="Task\DocumentUpdateReport\DocumentUpdateReportGenerator.cs" />
+    <Compile Include="Task\DocumentUpdateReport\DocumentUpdateReportTask.cs" />
+    <Compile Include="Task\PrintRequest\PrintRequestGenerator.cs" />
+    <Compile Include="Task\PrintRequest\PrintRequestsTask.cs" />
+    <Compile Include="Task\ErrorReports\MonthlyErrorReportGenerator.cs" />
+    <Compile Include="Task\Reports\MonthlyReportGenerator.cs" />
+    <Compile Include="Task\Reports\QuarterlyReportGenerator.cs" />
+    <Compile Include="ReportContent.cs" />
+    <Compile Include="Task\Reports\ReportsTask.cs" />
+    <Compile Include="Task\ErrorReports\WeeklyErrorReportGenerator.cs" />
+    <Compile Include="Task\Reports\WeeklyReportGenerator.cs" />
+    <Compile Include="Task\BaseTask.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RRD.FSG.RP.Model\RRD.FSG.RP.Model.csproj">
+      <Project>{db74bd37-160c-441d-a33b-620789a8edd3}</Project>
+      <Name>RRD.FSG.RP.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RRD.FSG.RP.Utilities\RRD.FSG.RP.Utilities.csproj">
+      <Project>{cd1e0f10-fd82-45ec-8165-300a4d8b084e}</Project>
+      <Name>RRD.FSG.RP.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

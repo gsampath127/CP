@@ -1,0 +1,65 @@
+﻿
+<form name="customerDocUpdateDetailForm" novalidate ng-submit="GenerateReport()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9">
+                <p class="pageCaption">
+                    Customer Doc Update Detail Reports<span class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp BCSPopOver"
+                                                     data-toggle="popover"></span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="form-group required">
+
+                    <input kendo-date-picker name="customerDocUpdateDetailDate"
+                           ng-model="CustomerDocUpdateDetailDate" ng-required="true"
+                           placeholder="Select Date:" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <input class="btn btn-primary btn-sm clear-after" type="submit" value="Generate">
+                <button class="btn btn-link btn-sm clear-form" type="reset" ng-click="btnClearCustomerDetail()"><span><u>Clear Filters</u></span></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div ng-show="showGrid" kendo-grid k-options="gridOptionsHeader" k-data-source="gridDataSourceHeader"></div>
+<br /><br />
+<div ng-show="showGrid" kendo-grid k-options="gridOptionsDetails" k-data-source="gridDataSourceDetails"></div>
+<br />
+<div id="dvCustomerDocUpdateDetailReportPopOver" class="dispNone">
+    TODO : Write Info on Customer Doc Update Details Reports
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>write info on Customer Doc Update Details reports</li>
+
+    </ul>
+    <br />
+</div>

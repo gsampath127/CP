@@ -1,0 +1,3 @@
+D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RP_System\bin\Debug\RP_System.dacpac
+D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RP_System\obj\Debug\RP_System.dll
+D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RP_System\obj\Debug\RP_System.pdb

@@ -1,0 +1,41 @@
+﻿
+<div class="text-center" style="padding:50px 0;background: #efefef;margin-top:5%;width:50%;margin-left:auto;margin-right:auto;
+  padding: 10px;
+  font-family: 'Varela Round';">
+    <div class="logo">Register</div>
+    <!-- Main Form -->
+    <div class="login-form-1" style="margin-top:30px;">
+        <form id="register-form" class="text-left" role="form" name="form" ng-submit="submit()">
+            <div class="login-form-main-message"></div>
+            <div class="main-login-form">
+                <div class="login-group">
+
+                    <span ng-show="ShowSaveError" ng-class="InvalidData">Registration Failed!</span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="fName" name="fName" ng-model="user.fName" ng-required="true" ng-class="{submitted:form.submitted}" placeholder="First Name">
+                        <span ng-show="ShowFNError" ng-class="InvalidData">First Name Already Exists!</span>
+                    </div><br />
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="lName" ng-model="user.lName" ng-required="true" ng-class="{submitted:form.submitted}" placeholder="Last Name">
+                    </div><br />
+                   
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="email" name="email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" ng-model="user.email" ng-required="true" ng-class="{submitted:form.submitted}" placeholder="Email">
+                        <span class="msg-error" ng-show="form.email.$dirty&&form.email.$error.pattern">Please Enter Valid Email</span>
+                        <span ng-show="ShowEmailError" ng-class="InvalidData">Email Already Exists!</span>
+                    </div><br />
+                    <div class="form-group">
+                        <select multiple="multiple" id="optUserClients" ng-model="user.selectedRoles" ng-required="true" ng-class="{submitted:form.submitted}" name="optUserClients[]"></select>
+                        <span ng-show="ShowRolesError" ng-class="InvalidData">Please select atleast one role</span>
+                    </div>
+
+                    <button class="btn btn btn-primary" ng-click="Register()" type="submit">
+                        Register
+                    </button>
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>
+
+

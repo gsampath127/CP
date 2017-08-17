@@ -1,0 +1,59 @@
+﻿<form name="EonlineForm" novalidate ng-submit="GenerateReport()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9">
+                <p class="pageCaption">
+                    EonlineFeed Reports<span class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp BCSPopOver"
+                                           data-toggle="popover"></span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group required">
+
+                    <input kendo-date-picker 
+                           ng-model="EonlineDate" ng-required="true"
+                           style="width: 100%;" placeholder="Select Date:" />
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <input class="btn btn-primary btn-sm clear-after" type="submit" value="Generate">
+                <button class="btn btn-link btn-sm clear-form" type="reset" ng-click="ClearFilter()"><span><u>Clear Filters</u></span></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+    </div>
+</form>
+<div kendo-grid k-options="gridOptions" k-data-source="gridDataSource" ng-show="showGrid" id="EonlineFeedGrid"></div>
+<div id="dvEonlineReportPopOver" class="dispNone">
+    TODO : Write Info on Eonline Feed Reports
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>write info on EonlineFeed reports</li>
+
+    </ul>
+    <br />
+</div>

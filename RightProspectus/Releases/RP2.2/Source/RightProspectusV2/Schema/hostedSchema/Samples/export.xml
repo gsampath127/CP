@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<export exportId="0" xmlns="http://rightprospectus.com/hostedSchema">
+  <market>
+    <clientDocumentGroups mirror="false">
+      <clientDocumentGroup importId="importId1" name="name1" description="description1" cssClass="cssClass1" systemId="0" delete="false">
+        <clientDocumentLinks mirror="false">
+          <clientDocumentLink fileName="fileName1" order="1" delete="false" />
+          <clientDocumentLink fileName="fileName2" order="-79228162514264337593543950335" delete="true" />
+          <clientDocumentLink fileName="fileName3" order="79228162514264337593543950335" delete="false" />
+        </clientDocumentLinks>
+      </clientDocumentGroup>
+      <clientDocumentGroup importId="importId2" name="name2" description="description2" cssClass="cssClass2" systemId="4294967295" delete="true">
+        <clientDocumentLinks mirror="true">
+          <clientDocumentLink fileName="fileName4" order="0" delete="true" />
+          <clientDocumentLink fileName="fileName5" order="2" delete="false" />
+          <clientDocumentLink fileName="fileName6" order="-79228162514264337593543950334" delete="true" />
+        </clientDocumentLinks>
+      </clientDocumentGroup>
+      <clientDocumentGroup importId="importId3" name="name3" description="description3" cssClass="cssClass3" systemId="1" delete="false">
+        <clientDocumentLinks mirror="false">
+          <clientDocumentLink fileName="fileName7" order="79228162514264337593543950334" delete="false" />
+          <clientDocumentLink fileName="fileName8" order="-1" delete="true" />
+          <clientDocumentLink fileName="fileName9" order="3" delete="false" />
+        </clientDocumentLinks>
+      </clientDocumentGroup>
+    </clientDocumentGroups>
+    <taxonomyAssociations mirror="false">
+      <taxonomyAssociation level="0" importId="importId1" systemId="0" nameOverride="nameOverride1" marketId="marketId1" descriptionOverride="descriptionOverride1" cssClass="cssClass1" delete="false">
+        <documentTypeAssociations mirror="false">
+          <documentTypeAssociation headerText="headerText1" linkText="linkText1" order="1" marketId="marketId1" descriptionOverride="descriptionOverride1" cssClass="cssClass1" delete="false" />
+          <documentTypeAssociation headerText="headerText2" linkText="linkText2" order="-79228162514264337593543950335" marketId="marketId2" descriptionOverride="descriptionOverride2" cssClass="cssClass2" delete="true" />
+          <documentTypeAssociation headerText="headerText3" linkText="linkText3" order="79228162514264337593543950335" marketId="marketId3" descriptionOverride="descriptionOverride3" cssClass="cssClass3" delete="false" />
+        </documentTypeAssociations>
+        <taxonomyAssociationGroups mirror="false">
+          <taxonomyAssociationGroup name="name1" description="description1" cssClass="cssClass1" delete="false">
+            <taxonomyAssociationLinks mirror="false">
+              <taxonomyAssociationLink level="0" marketId="marketId1" parentMarketId="parentMarketId1" siteId="0" importId="importId1" systemId="0" order="1" delete="false" />
+              <taxonomyAssociationLink level="4294967295" marketId="marketId2" parentMarketId="parentMarketId2" siteId="4294967295" importId="importId2" systemId="4294967295" order="-79228162514264337593543950335" delete="true" />
+              <taxonomyAssociationLink level="1" marketId="marketId3" parentMarketId="parentMarketId3" siteId="1" importId="importId3" systemId="1" order="79228162514264337593543950335" delete="false" />
+            </taxonomyAssociationLinks>
+            <footnotes mirror="false">
+              <footnote languageCulture="languageCulture1" delete="false">footnote1</footnote>
+              <footnote languageCulture="languageCulture2" delete="true">footnote2</footnote>
+              <footnote languageCulture="languageCulture3" delete="false">footnote3</footnote>
+            </footnotes>
+          </taxonomyAssociationGroup>
+          <taxonomyAssociationGroup name="name2" description="description2" cssClass="cssClass2" delete="true">
+            <taxonomyAssociationLinks mirror="true">
+              <taxonomyAssociationLink level="4294967294" marketId="marketId4" parentMarketId="parentMarketId4" siteId="4294967294" importId="importId4" systemId="4294967294" order="0" delete="true" />
+              <taxonomyAssociationLink level="2" marketId="marketId5" parentMarketId="parentMarketId5" siteId="2" importId="importId5" systemId="2" order="2" delete="false" />
+              <taxonomyAssociationLink level="4294967293" marketId="marketId6" parentMarketId="parentMarketId6" siteId="4294967293" importId="importId6" systemId="4294967293" order="-79228162514264337593543950334" delete="true" />
+            </taxonomyAssociationLinks>
+            <footnotes mirror="true">
+              <footnote languageCulture="languageCulture4" delete="true">footnote4</footnote>
+              <footnote languageCulture="languageCulture5" delete="false">footnote5</footnote>
+              <footnote languageCulture="languageCulture6" delete="true">footnote6</footnote>
+            </footnotes>
+          </taxonomyAssociationGroup>
+          <taxonomyAssociationGroup name="name3" description="description3" cssClass="cssClass3" delete="false">
+            <taxonomyAssociationLinks mirror="false">
+              <taxonomyAssociationLink level="3" marketId="marketId7" parentMarketId="parentMarketId7" siteId="3" importId="importId7" systemId="3" order="79228162514264337593543950334" delete="false" />
+              <taxonomyAssociationLink level="4294967292" marketId="marketId8" parentMarketId="parentMarketId8" siteId="4294967292" importId="importId8" systemId="4294967292" order="-1" delete="true" />
+              <taxonomyAssociationLink level="4" marketId="marketId9" parentMarketId="parentMarketId9" siteId="4" importId="importId9" systemId="4" order="3" delete="false" />
+            </taxonomyAssociationLinks>
+            <footnotes mirror="false">
+              <footnote languageCulture="languageCulture7" delete="false">footnote7</footnote>
+              <footnote languageCulture="languageCulture8" delete="true">footnote8</footnote>
+              <footnote languageCulture="languageCulture9" delete="false">footnote9</footnote>
+            </footnotes>
+          </taxonomyAssociationGroup>
+        </taxonomyAssociationGroups>
+        <taxonomyAssociationHierarchies mirror="false">
+          <taxonomyAssociationHierarchy relationshipType="1" delete="false" />
+          <taxonomyAssociationHierarchy relationshipType="-79228162514264337593543950335" delete="true" />
+          <taxonomyAssociationHierarchy relationshipType="79228162514264337593543950335" delete="false" />
+        </taxonomyAssociationHierarchies>
+        <clientDocumentGroupLinks mirror="false">
+          <clientDocumentGroupLink importId="importId1" systemId="0" order="1" delete="false" />
+          <clientDocumentGroupLink importId="importId2" systemId="4294967295" order="-79228162514264337593543950335" delete="true" />
+          <clientDocumentGroupLink importId="importId3" systemId="1" order="79228162514264337593543950335" delete="false" />
+        </clientDocumentGroupLinks>
+        <metaDataCollection mirror="false">
+          <metaData key="key1" dataType="BigInt" order="1" delete="false">metaData1</metaData>
+          <metaData key="key2" dataType="Binary" order="-79228162514264337593543950335" delete="true">metaData2</metaData>
+          <metaData key="key3" dataType="Bit" order="79228162514264337593543950335" delete="false">metaData3</metaData>
+        </metaDataCollection>
+      </taxonomyAssociation>
+      <taxonomyAssociation level="4294967295" importId="importId2" systemId="4294967295" nameOverride="nameOverride2" marketId="marketId2" descriptionOverride="descriptionOverride2" cssClass="cssClass2" delete="true">
+        <documentTypeAssociations mirror="true">
+          <documentTypeAssociation headerText="headerText4" linkText="linkText4" order="0" marketId="marketId4" descriptionOverride="descriptionOverride4" cssClass="cssClass4" delete="true" />
+          <documentTypeAssociation headerText="headerText5" linkText="linkText5" order="2" marketId="marketId5" descriptionOverride="descriptionOverride5" cssClass="cssClass5" delete="false" />
+          <documentTypeAssociation headerText="headerText6" linkText="linkText6" order="-79228162514264337593543950334" marketId="marketId6" descriptionOverride="descriptionOverride6" cssClass="cssClass6" delete="true" />
+        </documentTypeAssociations>
+        <taxonomyAssociationGroups mirror="true">
+          <taxonomyAssociationGroup name="name4" description="description4" cssClass="cssClass4" delete="true">
+            <taxonomyAssociationLinks mirror="true">
+              <taxonomyAssociationLink level="4294967291" marketId="marketId10" parentMarketId="parentMarketId10" siteId="4294967291" importId="importId10" systemId="4294967291" order="-79228162514264337593543950333" delete="true" />
+              <taxonomyAssociationLink level="5" marketId="marketId11" parentMarketId="parentMarketId11" siteId="5" importId="importId11" systemId="5" order="79228162514264337593543950333" delete="false" />
+              <taxonomyAssociationLink level="4294967290" marketId="marketId12" parentMarketId="parentMarketId12" siteId="4294967290" importId="importId12" systemId="4294967290" order="-2" delete="true" />
+            </taxonomyAssociationLinks>
+            <footnotes mirror="true">
+              <footnote languageCulture="languageCulture10" delete="true">footnote10</footnote>
+              <footnote languageCulture="languageCulture11" delete="false">footnote11</footnote>
+              <footnote languageCulture="languageCulture12" delete="true">footnote12</footnote>
+            </footnotes>
+          </taxonomyAssociationGroup>
+          <taxonomyAssociationGroup name="name5" description="description5" cssClass="cssClass5" delete="false">
+            <taxonomyAssociationLinks mirror="false">
+              <taxonomyAssociationLink level="6" marketId="marketId13" parentMarketId="parentMarketId13" siteId="6" importId="importId13" systemId="6" order="4" delete="false" />
+              <taxonomyAssociationLink level="4294967289" marketId="marketId14" parentMarketId="parentMarketId14" siteId="4294967289" importId="importId14" systemId="4294967289" order="-79228162514264337593543950332" delete="true" />
+              <taxonomyAssociationLink level="7" marketId="marketId15" parentMarketId="parentMarketId15" siteId="7" importId="importId15" systemId="7" order="79228162514264337593543950332" delete="false" />
+            </taxonomyAssociationLinks>
+            <footnotes mirror="false">
+              <footnote languageCulture="languageCulture13" delete="false">footnote13</footnote>
+              <footnote languageCulture="languageCulture14" delete="true">footnote14</footnote>
+              <footnote languageCulture="languageCulture15" delete="false">footnote15</footnote>
+            </footnotes>
+          </taxonomyAssociationGroup>
+          <taxonomyAssociationGroup name="name6" description="description6" cssClass="cssClass6" delete="true">
+            <taxonomyAssociationLinks mirror="true">
+              <taxonomyAssociationLink level="4294967288" marketId="marketId16" parentMarketId="parentMarketId16" siteId="4294967288" importId="importId16" systemId="4294967288" order="-3" delete="true" />
+              <taxonomyAssociationLink level="8" marketId="marketId17" parentMarketId="parentMarketId17" siteId="8" importId="importId17" systemId="8" order="5" delete="false" />
+              <taxonomyAssociationLink level="4294967287" marketId="marketId18" parentMarketId="parentMarketId18" siteId="4294967287" importId="importId18" systemId="4294967287" order="-79228162514264337593543950331" delete="true" />
+            </taxonomyAssociationLinks>
+            <footnotes mirror="true">
+              <footnote languageCulture="languageCulture16" delete="true">footnote16</footnote>
+              <footnote languageCulture="languageCulture17" delete="false">footnote17</footnote>
+              <footnote languageCulture="languageCulture18" delete="true">footnote18</footnote>
+            </footnotes>
+          </taxonomyAssociationGroup>
+        </taxonomyAssociationGroups>
+        <taxonomyAssociationHierarchies mirror="true">
+          <taxonomyAssociationHierarchy relationshipType="0" delete="true" />
+          <taxonomyAssociationHierarchy relationshipType="2" delete="false" />
+          <taxonomyAssociationHierarchy relationshipType="-79228162514264337593543950334" delete="true" />
+        </taxonomyAssociationHierarchies>
+        <clientDocumentGroupLinks mirror="true">
+          <clientDocumentGroupLink importId="importId4" systemId="4294967294" order="0" delete="true" />
+          <clientDocumentGroupLink importId="importId5" systemId="2" order="2" delete="false" />
+          <clientDocumentGroupLink importId="importId6" systemId="4294967293" order="-79228162514264337593543950334" delete="true" />
+        </clientDocumentGroupLinks>
+        <metaDataCollection mirror="true">
+          <metaData key="key4" dataType="Char" order="0" delete="true">metaData4</metaData>
+          <metaData key="key5" dataType="Date" order="2" delete="false">metaData5</metaData>
+          <metaData key="key6" dataType="DateTime" order="-79228162514264337593543950334" delete="true">metaData6</metaData>
+        </metaDataCollection>
+      </taxonomyAssociation>
+      <taxonomyAssociation level="1" importId="importId3" systemId="1" nameOverride="nameOverride3" marketId="marketId3" descriptionOverride="descriptionOverride3" cssClass="cssClass3" delete="false">
+        <documentTypeAssociations mirror="false">
+          <documentTypeAssociation headerText="headerText7" linkText="linkText7" order="79228162514264337593543950334" marketId="marketId7" descriptionOverride="descriptionOverride7" cssClass="cssClass7" delete="false" />
+          <documentTypeAssociation headerText="headerText8" linkText="linkText8" order="-1" marketId="marketId8" descriptionOverride="descriptionOverride8" cssClass="cssClass8" delete="true" />
+          <documentTypeAssociation headerText="headerText9" linkText="linkText9" order="3" marketId="marketId9" descriptionOverride="descriptionOverride9" cssClass="cssClass9" delete="false" />
+        </documentTypeAssociations>
+        <taxonomyAssociationGroups mirror="false">
+          <taxonomyAssociationGroup name="name7" description="description7" cssClass="cssClass7" delete="false">
+            <taxonomyAssociationLinks mirror="false">
+              <taxonomyAssociationLink level="9" marketId="marketId19" parentMarketId="parentMarketId19" siteId="9" importId="importId19" systemId="9" order="79228162514264337593543950331" delete="false" />
+              <taxonomyAssociationLink level="4294967286" marketId="marketId20" parentMarketId="parentMarketId20" siteId="4294967286" importId="importId20" systemId="4294967286" order="-4" delete="true" />
+              <taxonomyAssociationLink level="10" marketId="marketId21" parentMarketId="parentMarketId21" siteId="10" importId="importId21" systemId="10" order="6" delete="false" />
+            </taxonomyAssociationLinks>
+            <footnotes mirror="false">
+              <footnote languageCulture="languageCulture19" delete="false">footnote19</footnote>
+              <footnote languageCulture="languageCulture20" delete="true">footnote20</footnote>
+              <footnote languageCulture="languageCulture21" delete="false">footnote21</footnote>
+            </footnotes>
+          </taxonomyAssociationGroup>
+          <taxonomyAssociationGroup name="name8" description="description8" cssClass="cssClass8" delete="true">
+            <taxonomyAssociationLinks mirror="true">
+              <taxonomyAssociationLink level="4294967285" marketId="marketId22" parentMarketId="parentMarketId22" siteId="4294967285" importId="importId22" systemId="4294967285" order="-79228162514264337593543950330" delete="true" />
+              <taxonomyAssociationLink level="11" marketId="marketId23" parentMarketId="parentMarketId23" siteId="11" importId="importId23" systemId="11" order="79228162514264337593543950330" delete="false" />
+              <taxonomyAssociationLink level="4294967284" marketId="marketId24" parentMarketId="parentMarketId24" siteId="4294967284" importId="importId24" systemId="4294967284" order="-5" delete="true" />
+            </taxonomyAssociationLinks>
+            <footnotes mirror="true">
+              <footnote languageCulture="languageCulture22" delete="true">footnote22</footnote>
+              <footnote languageCulture="languageCulture23" delete="false">footnote23</footnote>
+              <footnote languageCulture="languageCulture24" delete="true">footnote24</footnote>
+            </footnotes>
+          </taxonomyAssociationGroup>
+          <taxonomyAssociationGroup name="name9" description="description9" cssClass="cssClass9" delete="false">
+            <taxonomyAssociationLinks mirror="false">
+              <taxonomyAssociationLink level="12" marketId="marketId25" parentMarketId="parentMarketId25" siteId="12" importId="importId25" systemId="12" order="7" delete="false" />
+              <taxonomyAssociationLink level="4294967283" marketId="marketId26" parentMarketId="parentMarketId26" siteId="4294967283" importId="importId26" systemId="4294967283" order="-79228162514264337593543950329" delete="true" />
+              <taxonomyAssociationLink level="13" marketId="marketId27" parentMarketId="parentMarketId27" siteId="13" importId="importId27" systemId="13" order="79228162514264337593543950329" delete="false" />
+            </taxonomyAssociationLinks>
+            <footnotes mirror="false">
+              <footnote languageCulture="languageCulture25" delete="false">footnote25</footnote>
+              <footnote languageCulture="languageCulture26" delete="true">footnote26</footnote>
+              <footnote languageCulture="languageCulture27" delete="false">footnote27</footnote>
+            </footnotes>
+          </taxonomyAssociationGroup>
+        </taxonomyAssociationGroups>
+        <taxonomyAssociationHierarchies mirror="false">
+          <taxonomyAssociationHierarchy relationshipType="79228162514264337593543950334" delete="false" />
+          <taxonomyAssociationHierarchy relationshipType="-1" delete="true" />
+          <taxonomyAssociationHierarchy relationshipType="3" delete="false" />
+        </taxonomyAssociationHierarchies>
+        <clientDocumentGroupLinks mirror="false">
+          <clientDocumentGroupLink importId="importId7" systemId="3" order="79228162514264337593543950334" delete="false" />
+          <clientDocumentGroupLink importId="importId8" systemId="4294967292" order="-1" delete="true" />
+          <clientDocumentGroupLink importId="importId9" systemId="4" order="3" delete="false" />
+        </clientDocumentGroupLinks>
+        <metaDataCollection mirror="false">
+          <metaData key="key7" dataType="DateTimeOffset" order="79228162514264337593543950334" delete="false">metaData7</metaData>
+          <metaData key="key8" dataType="DateTime2" order="-1" delete="true">metaData8</metaData>
+          <metaData key="key9" dataType="Decimal" order="3" delete="false">metaData9</metaData>
+        </metaDataCollection>
+      </taxonomyAssociation>
+    </taxonomyAssociations>
+    <documentTypeExternalIds mirror="false">
+      <documentTypeExternalId marketId="marketId1" delete="false">
+        <externalIds mirror="false">
+          <externalId value="value1" delete="false" />
+          <externalId value="value2" delete="true" />
+          <externalId value="value3" delete="false" />
+        </externalIds>
+      </documentTypeExternalId>
+      <documentTypeExternalId marketId="marketId2" delete="true">
+        <externalIds mirror="true">
+          <externalId value="value4" delete="true" />
+          <externalId value="value5" delete="false" />
+          <externalId value="value6" delete="true" />
+        </externalIds>
+      </documentTypeExternalId>
+      <documentTypeExternalId marketId="marketId3" delete="false">
+        <externalIds mirror="false">
+          <externalId value="value7" delete="false" />
+          <externalId value="value8" delete="true" />
+          <externalId value="value9" delete="false" />
+        </externalIds>
+      </documentTypeExternalId>
+    </documentTypeExternalIds>
+    <taxonomyLevelExternalIds mirror="false">
+      <taxonomyLevelExternalId level="0" marketId="marketId1" delete="false">
+        <externalIds mirror="true">
+          <externalId value="value10" delete="true" />
+          <externalId value="value11" delete="false" />
+          <externalId value="value12" delete="true" />
+        </externalIds>
+      </taxonomyLevelExternalId>
+      <taxonomyLevelExternalId level="4294967295" marketId="marketId2" delete="true">
+        <externalIds mirror="false">
+          <externalId value="value13" delete="false" />
+          <externalId value="value14" delete="true" />
+          <externalId value="value15" delete="false" />
+        </externalIds>
+      </taxonomyLevelExternalId>
+      <taxonomyLevelExternalId level="1" marketId="marketId3" delete="false">
+        <externalIds mirror="true">
+          <externalId value="value16" delete="true" />
+          <externalId value="value17" delete="false" />
+          <externalId value="value18" delete="true" />
+        </externalIds>
+      </taxonomyLevelExternalId>
+    </taxonomyLevelExternalIds>
+  </market>
+  <webSite>
+    <urlRewrites mirror="false">
+      <urlRewrite systemId="0" delete="false">
+        <matchPattern>matchPattern1</matchPattern>
+        <rewriteFormat>rewriteFormat1</rewriteFormat>
+      </urlRewrite>
+      <urlRewrite systemId="4294967295" delete="true">
+        <matchPattern>matchPattern2</matchPattern>
+        <rewriteFormat>rewriteFormat2</rewriteFormat>
+      </urlRewrite>
+      <urlRewrite systemId="1" delete="false">
+        <matchPattern>matchPattern3</matchPattern>
+        <rewriteFormat>rewriteFormat3</rewriteFormat>
+      </urlRewrite>
+    </urlRewrites>
+  </webSite>
+  <sites mirror="false">
+    <site name="name1" description="description1" templateId="0" systemId="0" delete="false">
+      <market />
+      <webSite>
+        <texts mirror="false">
+          <text resourceKey="resourceKey1" languageCulture="languageCulture1" delete="false">text1</text>
+          <text resourceKey="resourceKey2" languageCulture="languageCulture2" delete="true">text2</text>
+          <text resourceKey="resourceKey3" languageCulture="languageCulture3" delete="false">text3</text>
+        </texts>
+        <siteNavigations mirror="false">
+          <siteNavigation pageId="0" navigationKey="navigationKey1" languageCulture="languageCulture1" delete="false" />
+          <siteNavigation pageId="4294967295" navigationKey="navigationKey2" languageCulture="languageCulture2" delete="true" />
+          <siteNavigation pageId="1" navigationKey="navigationKey3" languageCulture="languageCulture3" delete="false" />
+        </siteNavigations>
+        <pages mirror="false">
+          <page systemId="0" delete="false">
+            <pageNavigations mirror="false">
+              <pageNavigation navigationKey="navigationKey1" languageCulture="languageCulture1" delete="false" />
+              <pageNavigation navigationKey="navigationKey2" languageCulture="languageCulture2" delete="true" />
+              <pageNavigation navigationKey="navigationKey3" languageCulture="languageCulture3" delete="false" />
+            </pageNavigations>
+            <features mirror="false">
+              <feature key="key1" featureMode="1" delete="false" />
+              <feature key="key2" featureMode="-79228162514264337593543950335" delete="true" />
+              <feature key="key3" featureMode="79228162514264337593543950335" delete="false" />
+            </features>
+          </page>
+          <page systemId="4294967295" delete="true">
+            <pageNavigations mirror="true">
+              <pageNavigation navigationKey="navigationKey4" languageCulture="languageCulture4" delete="true" />
+              <pageNavigation navigationKey="navigationKey5" languageCulture="languageCulture5" delete="false" />
+              <pageNavigation navigationKey="navigationKey6" languageCulture="languageCulture6" delete="true" />
+            </pageNavigations>
+            <features mirror="true">
+              <feature key="key4" featureMode="0" delete="true" />
+              <feature key="key5" featureMode="2" delete="false" />
+              <feature key="key6" featureMode="-79228162514264337593543950334" delete="true" />
+            </features>
+          </page>
+          <page systemId="1" delete="false">
+            <pageNavigations mirror="false">
+              <pageNavigation navigationKey="navigationKey7" languageCulture="languageCulture7" delete="false" />
+              <pageNavigation navigationKey="navigationKey8" languageCulture="languageCulture8" delete="true" />
+              <pageNavigation navigationKey="navigationKey9" languageCulture="languageCulture9" delete="false" />
+            </pageNavigations>
+            <features mirror="false">
+              <feature key="key7" featureMode="79228162514264337593543950334" delete="false" />
+              <feature key="key8" featureMode="-1" delete="true" />
+              <feature key="key9" featureMode="3" delete="false" />
+            </features>
+          </page>
+        </pages>
+      </webSite>
+    </site>
+    <site name="name2" description="description2" templateId="4294967295" systemId="4294967295" delete="true">
+      <market />
+      <webSite>
+        <texts mirror="true">
+          <text resourceKey="resourceKey4" languageCulture="languageCulture4" delete="true">text4</text>
+          <text resourceKey="resourceKey5" languageCulture="languageCulture5" delete="false">text5</text>
+          <text resourceKey="resourceKey6" languageCulture="languageCulture6" delete="true">text6</text>
+        </texts>
+        <siteNavigations mirror="true">
+          <siteNavigation pageId="4294967294" navigationKey="navigationKey4" languageCulture="languageCulture4" delete="true" />
+          <siteNavigation pageId="2" navigationKey="navigationKey5" languageCulture="languageCulture5" delete="false" />
+          <siteNavigation pageId="4294967293" navigationKey="navigationKey6" languageCulture="languageCulture6" delete="true" />
+        </siteNavigations>
+        <pages mirror="true">
+          <page systemId="4294967294" delete="true">
+            <pageNavigations mirror="true">
+              <pageNavigation navigationKey="navigationKey10" languageCulture="languageCulture10" delete="true" />
+              <pageNavigation navigationKey="navigationKey11" languageCulture="languageCulture11" delete="false" />
+              <pageNavigation navigationKey="navigationKey12" languageCulture="languageCulture12" delete="true" />
+            </pageNavigations>
+            <features mirror="true">
+              <feature key="key10" featureMode="-79228162514264337593543950333" delete="true" />
+              <feature key="key11" featureMode="79228162514264337593543950333" delete="false" />
+              <feature key="key12" featureMode="-2" delete="true" />
+            </features>
+          </page>
+          <page systemId="2" delete="false">
+            <pageNavigations mirror="false">
+              <pageNavigation navigationKey="navigationKey13" languageCulture="languageCulture13" delete="false" />
+              <pageNavigation navigationKey="navigationKey14" languageCulture="languageCulture14" delete="true" />
+              <pageNavigation navigationKey="navigationKey15" languageCulture="languageCulture15" delete="false" />
+            </pageNavigations>
+            <features mirror="false">
+              <feature key="key13" featureMode="4" delete="false" />
+              <feature key="key14" featureMode="-79228162514264337593543950332" delete="true" />
+              <feature key="key15" featureMode="79228162514264337593543950332" delete="false" />
+            </features>
+          </page>
+          <page systemId="4294967293" delete="true">
+            <pageNavigations mirror="true">
+              <pageNavigation navigationKey="navigationKey16" languageCulture="languageCulture16" delete="true" />
+              <pageNavigation navigationKey="navigationKey17" languageCulture="languageCulture17" delete="false" />
+              <pageNavigation navigationKey="navigationKey18" languageCulture="languageCulture18" delete="true" />
+            </pageNavigations>
+            <features mirror="true">
+              <feature key="key16" featureMode="-3" delete="true" />
+              <feature key="key17" featureMode="5" delete="false" />
+              <feature key="key18" featureMode="-79228162514264337593543950331" delete="true" />
+            </features>
+          </page>
+        </pages>
+      </webSite>
+    </site>
+    <site name="name3" description="description3" templateId="1" systemId="1" delete="false">
+      <market />
+      <webSite>
+        <texts mirror="false">
+          <text resourceKey="resourceKey7" languageCulture="languageCulture7" delete="false">text7</text>
+          <text resourceKey="resourceKey8" languageCulture="languageCulture8" delete="true">text8</text>
+          <text resourceKey="resourceKey9" languageCulture="languageCulture9" delete="false">text9</text>
+        </texts>
+        <siteNavigations mirror="false">
+          <siteNavigation pageId="3" navigationKey="navigationKey7" languageCulture="languageCulture7" delete="false" />
+          <siteNavigation pageId="4294967292" navigationKey="navigationKey8" languageCulture="languageCulture8" delete="true" />
+          <siteNavigation pageId="4" navigationKey="navigationKey9" languageCulture="languageCulture9" delete="false" />
+        </siteNavigations>
+        <pages mirror="false">
+          <page systemId="3" delete="false">
+            <pageNavigations mirror="false">
+              <pageNavigation navigationKey="navigationKey19" languageCulture="languageCulture19" delete="false" />
+              <pageNavigation navigationKey="navigationKey20" languageCulture="languageCulture20" delete="true" />
+              <pageNavigation navigationKey="navigationKey21" languageCulture="languageCulture21" delete="false" />
+            </pageNavigations>
+            <features mirror="false">
+              <feature key="key19" featureMode="79228162514264337593543950331" delete="false" />
+              <feature key="key20" featureMode="-4" delete="true" />
+              <feature key="key21" featureMode="6" delete="false" />
+            </features>
+          </page>
+          <page systemId="4294967292" delete="true">
+            <pageNavigations mirror="true">
+              <pageNavigation navigationKey="navigationKey22" languageCulture="languageCulture22" delete="true" />
+              <pageNavigation navigationKey="navigationKey23" languageCulture="languageCulture23" delete="false" />
+              <pageNavigation navigationKey="navigationKey24" languageCulture="languageCulture24" delete="true" />
+            </pageNavigations>
+            <features mirror="true">
+              <feature key="key22" featureMode="-79228162514264337593543950330" delete="true" />
+              <feature key="key23" featureMode="79228162514264337593543950330" delete="false" />
+              <feature key="key24" featureMode="-5" delete="true" />
+            </features>
+          </page>
+          <page systemId="4" delete="false">
+            <pageNavigations mirror="false">
+              <pageNavigation navigationKey="navigationKey25" languageCulture="languageCulture25" delete="false" />
+              <pageNavigation navigationKey="navigationKey26" languageCulture="languageCulture26" delete="true" />
+              <pageNavigation navigationKey="navigationKey27" languageCulture="languageCulture27" delete="false" />
+            </pageNavigations>
+            <features mirror="false">
+              <feature key="key25" featureMode="7" delete="false" />
+              <feature key="key26" featureMode="-79228162514264337593543950329" delete="true" />
+              <feature key="key27" featureMode="79228162514264337593543950329" delete="false" />
+            </features>
+          </page>
+        </pages>
+      </webSite>
+    </site>
+  </sites>
+</export>

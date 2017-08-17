@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>RRD.FSG.RP.Services.ScheduleTasks</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>ada2f884-c573-40d9-b877-d9e0dd1ae73b</ProjectGuid>
+  <FullPath>D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RRD.FSG.RP.Services.ScheduleTasks\RRD.FSG.RP.Services.ScheduleTasks.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\.sonarqube\out\\RRD.FSG.RP.Services.ScheduleTasks_AnyCPU_Debug_8611\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.stylecop.projectFilePath">D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RRD.FSG.RP.Services.ScheduleTasks\RRD.FSG.RP.Services.ScheduleTasks.csproj</Property>
+  </AnalysisSettings>
+</ProjectInfo>

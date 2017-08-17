@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_SiteConfigurationLayout.cshtml";
+}
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+<style type="text/css">
+    .WidthFixed {
+        width: 150px;
+    }
+</style>
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+            <li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>
+            <li><a href="@Url.Action("List", "Site")">Sites</a></li>
+            <li class="active">@ViewData["SelectedSite"]</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <h2>You are the site configuration admin page for @ViewData["SelectedSite"] ! </h2>
+        <br />
+        On the top right you can navigate to the the menu for this site to administer various functionalities i.e. Site Text, Page Text and Preview..
+    </div>
+</div>

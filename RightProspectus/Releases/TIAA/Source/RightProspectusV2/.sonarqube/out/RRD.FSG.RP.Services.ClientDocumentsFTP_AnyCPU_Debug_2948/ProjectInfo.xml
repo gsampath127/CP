@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>RRD.FSG.RP.Services.ClientDocumentsFTP</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>d341aca9-1758-44f1-bc89-4b595d1fc90b</ProjectGuid>
+  <FullPath>D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RRD.FSG.RP.Services.ClientDocumentsFTP\RRD.FSG.RP.Services.ClientDocumentsFTP.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\.sonarqube\out\\RRD.FSG.RP.Services.ClientDocumentsFTP_AnyCPU_Debug_2948\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.stylecop.projectFilePath">D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RRD.FSG.RP.Services.ClientDocumentsFTP\RRD.FSG.RP.Services.ClientDocumentsFTP.csproj</Property>
+  </AnalysisSettings>
+</ProjectInfo>

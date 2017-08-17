@@ -1,0 +1,126 @@
+﻿<div class="row">
+    <div class="col-sm-12">
+
+    </div>
+</div>
+<div id="importTaxonomyAssociationCustomer" style="display:none">
+    <div class="row">
+        <div style="padding:10px 10px 10px 10px">
+            <input type="file" name="file" id="taxonomyAssociationCustomerUpload" />
+        </div>
+        <div class="col-sm-12">
+            <div id="CustomerTAInvalidDataGridContainer" class="ScrollTable">
+                <div id="CustomerTAInvalidDataGridHeader" class="tableFixedWidth" style="margin:20px 0; display:none">
+                    Invalid CUSIPs
+                </div>
+                <div id="CustomerTAInvalidDataGrid" class="tableFixedWidth">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+</div>
+<div class="row">
+    @* TODO: Commenting Import Export action button - Phase - 2 changes *@
+    @*<div class="col-lg-6 dvSwitch">
+        <input class="k-textbox " type=text id="txtSearchCustomerTAString" placeholder="enter search text..." />
+        <button id="btnMarketIDCustomerSearch">Search</button>
+
+    </div>*@
+    <div class="col-lg-12">
+        <div id="dvSwitchIM" class="btn-group pull-right dvSwitch">
+            <a href="#" class="btn btn-default dropdown-toggle, ImportActions" data-toggle="dropdown">Actions <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a id="CustomerlnkImport" href="#">Import</a></li>
+                <li><a id="exportCustomer" href="#">Export</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div id="GridContainer" class="ScrollTable">
+            <div id="taxonomyAssociationCustomerGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dvTaxonomyAssociationCustomer" data-request-url="@Url.Action("GetTaxonomy", "VerticalTA")"></div>
+<div id="dvSaveTaxonomyAssociationCustomer" data-request-url="@Url.Action("SaveTaxonomyAssociation", "VerticalTA")"></div>
+<div id="dvTaxonomyImportCustomer" data-request-url="@Url.Action("TaxonomyAssocaitionImport", "VerticalTA")"></div>
+<script src="~/Scripts/HostedAdmin/VerticalDataImport/MarketIdCustomerSettings.js"></script>
+<script type="text/x-kendo-template" id="deleteTaxonomyAssociationCustomerTemplate">
+    Delete
+    <strong>MarketId</strong> ?
+    <button class="confirm k-button confirmButtonYesMultiple" id="confirmCustomerDelete">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo" id="cancelCustomerDelete"> No</button>
+</script>
+<style>
+    .file-icon {
+        display: inline-block;
+        float: left;
+        width: 48px;
+        height: 48px;
+        margin-left: 10px;
+        margin-top: 13.5px;
+    }
+
+
+    #taxonomyAssociationUpload .file-heading {
+        font-family: Arial;
+        font-size: 1.1em;
+        display: inline-block;
+        float: left;
+        width: 60%;
+        margin: 0 0 0 20px;
+        height: 25px;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    #taxonomyAssociationUpload .file-name-heading {
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    #taxonomyAssociationUpload .file-size-heading {
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    li.k-file .file-wrapper .k-upload-action {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    li.k-file div.file-wrapper {
+        position: relative;
+        height: 75px;
+    }
+
+    div.k-window-content {
+        overflow: hidden !important;
+    }
+
+    .ImportMarketIdCustomer-EditPopup .k-edit-form-container{
+        width: 700px !important
+    }
+    .ImportMarketIdCustomer-EditPopup .editor-label, .ImportMarketIdCustomer-EditPopup .k-edit-label{
+        width: 25% !important;
+    }
+
+    .ImportMarketIdCustomer-EditPopup .editor-field, .ImportMarketIdCustomer-EditPopup .k-edit-field{
+        width: 65% !important;
+    }
+    .ImportMarketIdCustomer-EditPopup .k-textbox {
+        width: 100%;
+    }
+    .ImportMarketIdCustomer-EditPopup .selectMultipleDelete {
+        display:none;
+    }
+</style>

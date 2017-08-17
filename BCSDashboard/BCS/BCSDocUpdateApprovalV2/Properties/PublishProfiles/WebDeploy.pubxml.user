@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Deployment\BCSV2</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>09/20/2016 18:15:07</publishTime>
+    </File>
+    <File Include="bin/BCS.Core.dll">
+      <publishTime>10/18/2016 19:09:52</publishTime>
+    </File>
+    <File Include="bin/BCS.ObjectModel.dll">
+      <publishTime>11/30/2016 17:18:34</publishTime>
+    </File>
+    <File Include="bin/BCS.ObjectModel.Factories.dll">
+      <publishTime>11/30/2016 17:18:35</publishTime>
+    </File>
+    <File Include="bin/BCSDocUpdateApprovalV2.dll">
+      <publishTime>11/30/2016 17:18:37</publishTime>
+    </File>
+    <File Include="bin/ChilkatDotNet4.dll">
+      <publishTime>09/15/2016 10:08:24</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>09/20/2016 18:15:18</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>09/20/2016 18:15:09</publishTime>
+    </File>
+    <File Include="bin/HiQPdf.dep">
+      <publishTime>09/15/2016 10:08:53</publishTime>
+    </File>
+    <File Include="bin/HiQPdf.dll">
+      <publishTime>09/15/2016 10:08:12</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>09/15/2016 10:08:07</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>09/15/2016 10:08:17</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>09/20/2016 18:15:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>09/20/2016 18:15:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>09/20/2016 18:15:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Cors.dll">
+      <publishTime>09/20/2016 18:15:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>09/20/2016 18:15:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>09/20/2016 18:15:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>09/20/2016 18:15:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>09/20/2016 18:15:21</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>09/20/2016 18:15:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>09/20/2016 18:15:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>09/20/2016 18:15:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>09/20/2016 18:15:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>09/20/2016 18:15:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>09/15/2016 10:08:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+      <publishTime>09/15/2016 10:08:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll">
+      <publishTime>09/15/2016 10:08:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ServiceLocation.dll">
+      <publishTime>09/15/2016 10:07:59</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.dll">
+      <publishTime>09/15/2016 10:08:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.Unity.Interception.dll">
+      <publishTime>09/15/2016 10:08:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>09/20/2016 18:15:22</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>09/20/2016 18:15:24</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>09/20/2016 18:15:24</publishTime>
+    </File>
+    <File Include="bin/System.IdentityModel.Tokens.Jwt.dll">
+      <publishTime>09/20/2016 18:15:27</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>09/20/2016 18:15:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>09/20/2016 18:17:15</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>09/20/2016 18:15:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>09/20/2016 18:15:17</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Owin.dll">
+      <publishTime>09/20/2016 18:15:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>09/20/2016 18:15:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>09/20/2016 18:15:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>09/20/2016 18:15:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>09/20/2016 18:15:13</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>09/20/2016 18:15:20</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>09/20/2016 18:15:21</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>09/20/2016 18:15:20</publishTime>
+    </File>
+    <File Include="bin/Thinktecture.IdentityModel.Core.dll">
+      <publishTime>09/20/2016 18:15:25</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>09/20/2016 18:15:28</publishTime>
+    </File>
+    <File Include="Content/bootstrap-duallistbox.css">
+      <publishTime>10/14/2016 19:16:17</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>09/20/2016 18:17:04</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>09/20/2016 18:17:05</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>09/20/2016 18:17:05</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>09/20/2016 18:17:05</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>09/20/2016 18:17:05</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>09/20/2016 18:17:04</publishTime>
+    </File>
+    <File Include="images/sign-in-with-google.png">
+      <publishTime>09/26/2016 14:20:30</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>11/30/2016 17:16:24</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/20/2016 18:21:34</publishTime>
+    </File>
+    <File Include="Public/.bowerrc">
+      <publishTime>09/20/2016 18:14:26</publishTime>
+    </File>
+    <File Include="Public/app.js">
+      <publishTime>10/25/2016 17:48:43</publishTime>
+    </File>
+    <File Include="Public/appRoutes.js">
+      <publishTime>11/30/2016 17:16:24</publishTime>
+    </File>
+    <File Include="Public/controllers/addEditUser.js">
+      <publishTime>11/03/2016 17:11:47</publishTime>
+    </File>
+    <File Include="Public/controllers/application.js">
+      <publishTime>09/27/2016 18:55:05</publishTime>
+    </File>
+    <File Include="Public/controllers/cusipReport.js">
+      <publishTime>11/03/2016 17:11:48</publishTime>
+    </File>
+    <File Include="Public/controllers/customerDocUpdate.js">
+      <publishTime>11/16/2016 12:40:03</publishTime>
+    </File>
+    <File Include="Public/controllers/customerDocUpdateDetail.js">
+      <publishTime>11/16/2016 12:40:04</publishTime>
+    </File>
+    <File Include="Public/controllers/dailyUpdate.js">
+      <publishTime>11/30/2016 17:16:24</publishTime>
+    </File>
+    <File Include="Public/controllers/Error.js">
+      <publishTime>10/21/2016 17:38:51</publishTime>
+    </File>
+    <File Include="Public/controllers/forgotPassword.js">
+      <publishTime>11/03/2016 17:11:48</publishTime>
+    </File>
+    <File Include="Public/controllers/fullfillmentInfo.js">
+      <publishTime>10/21/2016 10:12:12</publishTime>
+    </File>
+    <File Include="Public/controllers/gatewayDocUpdate.js">
+      <publishTime>11/16/2016 12:40:04</publishTime>
+    </File>
+    <File Include="Public/controllers/home.js">
+      <publishTime>10/21/2016 16:54:19</publishTime>
+    </File>
+    <File Include="Public/controllers/liveUpdate.js">
+      <publishTime>10/25/2016 11:28:05</publishTime>
+    </File>
+    <File Include="Public/controllers/login.js">
+      <publishTime>10/21/2016 17:38:51</publishTime>
+    </File>
+    <File Include="Public/controllers/profile.js">
+      <publishTime>11/03/2016 18:33:44</publishTime>
+    </File>
+    <File Include="Public/controllers/register.js">
+      <publishTime>11/03/2016 17:11:48</publishTime>
+    </File>
+    <File Include="Public/controllers/script.js">
+      <publishTime>10/27/2016 12:30:24</publishTime>
+    </File>
+    <File Include="Public/controllers/slink.js">
+      <publishTime>11/03/2016 17:11:48</publishTime>
+    </File>
+    <File Include="Public/controllers/TRP/blankFLTCusip.js">
+      <publishTime>11/03/2016 17:11:47</publishTime>
+    </File>
+    <File Include="Public/controllers/TRP/customerDocs.js">
+      <publishTime>11/03/2016 17:11:52</publishTime>
+    </File>
+    <File Include="Public/controllers/TRP/customerFLT.js">
+      <publishTime>11/03/2016 17:11:50</publishTime>
+    </File>
+    <File Include="Public/controllers/TRP/documentStatus.js">
+      <publishTime>10/25/2016 14:52:23</publishTime>
+    </File>
+    <File Include="Public/controllers/TRP/missingDocument.js">
+      <publishTime>10/25/2016 16:45:32</publishTime>
+    </File>
+    <File Include="Public/controllers/TRP/missingRPCUSIP.js">
+      <publishTime>10/25/2016 17:22:48</publishTime>
+    </File>
+    <File Include="Public/controllers/users.js">
+      <publishTime>11/03/2016 17:11:48</publishTime>
+    </File>
+    <File Include="Public/controllers/watchlist.js">
+      <publishTime>11/16/2016 12:40:04</publishTime>
+    </File>
+    <File Include="Public/css/bootstrap/bootstrap-datepicker.css">
+      <publishTime>10/06/2016 18:06:54</publishTime>
+    </File>
+    <File Include="Public/css/bootstrap/bootstrap-duallistbox.css">
+      <publishTime>10/06/2016 18:06:54</publishTime>
+    </File>
+    <File Include="Public/css/bootstrap/bootstrap-multiselect.css">
+      <publishTime>10/06/2016 18:06:54</publishTime>
+    </File>
+    <File Include="Public/css/bootstrap/bootstrap-theme.css">
+      <publishTime>10/06/2016 18:06:54</publishTime>
+    </File>
+    <File Include="Public/css/bootstrap/bootstrap-theme.min.css">
+      <publishTime>10/06/2016 18:06:55</publishTime>
+    </File>
+    <File Include="Public/css/bootstrap/bootstrap.css">
+      <publishTime>10/18/2016 10:29:57</publishTime>
+    </File>
+    <File Include="Public/css/bootstrap/bootstrap.min.css">
+      <publishTime>10/18/2016 10:29:58</publishTime>
+    </File>
+    <File Include="Public/css/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/06/2016 18:06:55</publishTime>
+    </File>
+    <File Include="Public/css/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/06/2016 18:06:55</publishTime>
+    </File>
+    <File Include="Public/css/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/06/2016 18:06:55</publishTime>
+    </File>
+    <File Include="Public/css/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/06/2016 18:06:55</publishTime>
+    </File>
+    <File Include="Public/css/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>10/06/2016 18:06:55</publishTime>
+    </File>
+    <File Include="Public/css/jQuery-ui/jquery-ui.css">
+      <publishTime>10/06/2016 13:07:11</publishTime>
+    </File>
+    <File Include="Public/css/kendo/Bootstrap/editor.png">
+      <publishTime>10/18/2016 17:24:52</publishTime>
+    </File>
+    <File Include="Public/css/kendo/Bootstrap/imagebrowser.png">
+      <publishTime>10/18/2016 17:24:52</publishTime>
+    </File>
+    <File Include="Public/css/kendo/Bootstrap/indeterminate.gif">
+      <publishTime>10/18/2016 17:24:52</publishTime>
+    </File>
+    <File Include="Public/css/kendo/Bootstrap/loading-image.gif">
+      <publishTime>10/18/2016 17:24:52</publishTime>
+    </File>
+    <File Include="Public/css/kendo/Bootstrap/loading.gif">
+      <publishTime>10/18/2016 17:24:52</publishTime>
+    </File>
+    <File Include="Public/css/kendo/Bootstrap/loading_2x.gif">
+      <publishTime>10/18/2016 17:24:52</publishTime>
+    </File>
+    <File Include="Public/css/kendo/Bootstrap/markers.png">
+      <publishTime>10/18/2016 17:24:52</publishTime>
+    </File>
+    <File Include="Public/css/kendo/Bootstrap/markers_2x.png">
+      <publishTime>10/18/2016 17:24:52</publishTime>
+    </File>
+    <File Include="Public/css/kendo/Bootstrap/slider-h.gif">
+      <publishTime>10/18/2016 17:24:52</publishTime>
+    </File>
+    <File Include="Public/css/kendo/Bootstrap/slider-v.gif">
+      <publishTime>10/18/2016 17:24:52</publishTime>
+    </File>
+    <File Include="Public/css/kendo/Bootstrap/sprite.png">
+      <publishTime>10/18/2016 17:24:53</publishTime>
+    </File>
+    <File Include="Public/css/kendo/Bootstrap/sprite_2x.png">
+      <publishTime>10/18/2016 17:24:53</publishTime>
+    </File>
+    <File Include="Public/css/kendo/images/back.png">
+      <publishTime>10/18/2016 17:24:53</publishTime>
+    </File>
+    <File Include="Public/css/kendo/images/check_name.png">
+      <publishTime>10/18/2016 17:24:53</publishTime>
+    </File>
+    <File Include="Public/css/kendo/images/kendoui.svg">
+      <publishTime>10/18/2016 17:24:53</publishTime>
+    </File>
+    <File Include="Public/css/kendo/images/kendoui.ttf">
+      <publishTime>10/18/2016 17:24:53</publishTime>
+    </File>
+    <File Include="Public/css/kendo/images/kendoui.woff">
+      <publishTime>10/18/2016 17:24:53</publishTime>
+    </File>
+    <File Include="Public/css/kendo/images/wp8_icons.png">
+      <publishTime>10/18/2016 17:24:53</publishTime>
+    </File>
+    <File Include="Public/css/kendo/images/wp8_inverseicons.png">
+      <publishTime>10/18/2016 17:24:53</publishTime>
+    </File>
+    <File Include="Public/css/kendo/kendo.bootstrap.min.css">
+      <publishTime>10/06/2016 14:20:19</publishTime>
+    </File>
+    <File Include="Public/css/kendo/kendo.common-bootstrap.min.css">
+      <publishTime>10/06/2016 13:07:55</publishTime>
+    </File>
+    <File Include="Public/css/kendo/kendo.common.min.css">
+      <publishTime>10/06/2016 13:07:55</publishTime>
+    </File>
+    <File Include="Public/css/kendo/kendo.custom.css">
+      <publishTime>10/06/2016 13:07:55</publishTime>
+    </File>
+    <File Include="Public/css/kendo/kendo.dataviz.bootstrap.min.css">
+      <publishTime>10/06/2016 14:20:19</publishTime>
+    </File>
+    <File Include="Public/css/kendo/kendo.dataviz.default.min.css">
+      <publishTime>10/06/2016 14:20:19</publishTime>
+    </File>
+    <File Include="Public/css/kendo/kendo.default.min.css">
+      <publishTime>10/06/2016 13:07:55</publishTime>
+    </File>
+    <File Include="Public/css/loadingbar/loading-bar.css">
+      <publishTime>10/06/2016 19:47:54</publishTime>
+    </File>
+    <File Include="Public/css/Site.css">
+      <publishTime>10/27/2016 12:28:17</publishTime>
+    </File>
+    <File Include="Public/scripts/angular/angular-animate.js">
+      <publishTime>10/06/2016 19:45:42</publishTime>
+    </File>
+    <File Include="Public/scripts/angular/angular-jwt.js">
+      <publishTime>10/06/2016 13:11:17</publishTime>
+    </File>
+    <File Include="Public/scripts/angular/angular-jwt.min.js">
+      <publishTime>10/06/2016 13:11:17</publishTime>
+    </File>
+    <File Include="Public/scripts/angular/angular-ui-router.js">
+      <publishTime>10/06/2016 12:49:36</publishTime>
+    </File>
+    <File Include="Public/scripts/angular/angular-ui-router.min.js">
+      <publishTime>10/06/2016 12:49:36</publishTime>
+    </File>
+    <File Include="Public/scripts/angular/angular.js">
+      <publishTime>10/06/2016 12:49:14</publishTime>
+    </File>
+    <File Include="Public/scripts/angular/angular.min.js">
+      <publishTime>10/06/2016 12:49:14</publishTime>
+    </File>
+    <File Include="Public/scripts/bootstrap/bootstrap.js">
+      <publishTime>10/06/2016 12:50:01</publishTime>
+    </File>
+    <File Include="Public/scripts/bootstrap/bootstrap.min.js">
+      <publishTime>10/06/2016 12:50:01</publishTime>
+    </File>
+    <File Include="Public/scripts/bootstrap/jquery.bootstrap-duallistbox.js">
+      <publishTime>10/06/2016 12:50:01</publishTime>
+    </File>
+    <File Include="Public/scripts/bootstrap/ui-bootstrap-tpls.min.js">
+      <publishTime>10/18/2016 17:24:53</publishTime>
+    </File>
+    <File Include="Public/scripts/jQuery-ui/jquery-ui.js">
+      <publishTime>10/06/2016 13:02:47</publishTime>
+    </File>
+    <File Include="Public/scripts/jQuery-ui/jquery-ui.min.js">
+      <publishTime>10/06/2016 13:02:44</publishTime>
+    </File>
+    <File Include="Public/scripts/jQuery/jquery.js">
+      <publishTime>10/06/2016 13:01:23</publishTime>
+    </File>
+    <File Include="Public/scripts/jQuery/jquery.min.js">
+      <publishTime>10/06/2016 13:01:23</publishTime>
+    </File>
+    <File Include="Public/scripts/kendo/kendo.all.min.js">
+      <publishTime>10/06/2016 13:01:42</publishTime>
+    </File>
+    <File Include="Public/scripts/kendo/kendo.angular.min.js">
+      <publishTime>10/06/2016 13:01:42</publishTime>
+    </File>
+    <File Include="Public/scripts/kendo/kendo.autocomplete.min.js">
+      <publishTime>10/06/2016 13:01:42</publishTime>
+    </File>
+    <File Include="Public/scripts/kendo/kendo.data.min.js">
+      <publishTime>10/06/2016 13:01:42</publishTime>
+    </File>
+    <File Include="Public/scripts/kendo/kendo.grid.min.js">
+      <publishTime>10/06/2016 13:01:42</publishTime>
+    </File>
+    <File Include="Public/scripts/loadingbar/loading-bar.js">
+      <publishTime>10/06/2016 19:47:49</publishTime>
+    </File>
+    <File Include="Public/services/addEditUser.js">
+      <publishTime>10/14/2016 19:16:17</publishTime>
+    </File>
+    <File Include="Public/services/cusipReport.js">
+      <publishTime>10/04/2016 15:06:47</publishTime>
+    </File>
+    <File Include="Public/services/forgotPassword.js">
+      <publishTime>11/03/2016 17:11:50</publishTime>
+    </File>
+    <File Include="Public/services/fullfillmentInfo.js">
+      <publishTime>10/04/2016 15:06:19</publishTime>
+    </File>
+    <File Include="Public/services/gatewayDocUpdate.js">
+      <publishTime>11/03/2016 17:11:50</publishTime>
+    </File>
+    <File Include="Public/services/home.js">
+      <publishTime>10/06/2016 18:47:58</publishTime>
+    </File>
+    <File Include="Public/services/liveUpdate.js">
+      <publishTime>10/14/2016 19:16:17</publishTime>
+    </File>
+    <File Include="Public/services/login.js">
+      <publishTime>11/03/2016 17:11:50</publishTime>
+    </File>
+    <File Include="Public/services/profile.js">
+      <publishTime>11/03/2016 17:11:50</publishTime>
+    </File>
+    <File Include="Public/services/register.js">
+      <publishTime>10/19/2016 18:15:58</publishTime>
+    </File>
+    <File Include="Public/services/reports.js">
+      <publishTime>11/03/2016 17:11:50</publishTime>
+    </File>
+    <File Include="Public/services/slink.js">
+      <publishTime>10/06/2016 19:23:28</publishTime>
+    </File>
+    <File Include="Public/services/trpReports.js">
+      <publishTime>10/24/2016 12:40:11</publishTime>
+    </File>
+    <File Include="Public/services/users.js">
+      <publishTime>10/14/2016 19:16:17</publishTime>
+    </File>
+    <File Include="Public/views/Error/Error.html">
+      <publishTime>10/21/2016 17:38:51</publishTime>
+    </File>
+    <File Include="Public/views/home.html">
+      <publishTime>09/26/2016 14:20:44</publishTime>
+    </File>
+    <File Include="Public/views/login/addEditUser.html">
+      <publishTime>10/21/2016 17:38:51</publishTime>
+    </File>
+    <File Include="Public/views/login/completeRegistration.html">
+      <publishTime>10/21/2016 16:15:26</publishTime>
+    </File>
+    <File Include="Public/views/login/ForgotPassword.html">
+      <publishTime>10/20/2016 15:52:28</publishTime>
+    </File>
+    <File Include="Public/views/login/header.html">
+      <publishTime>10/27/2016 12:30:24</publishTime>
+    </File>
+    <File Include="Public/views/login/login.html">
+      <publishTime>10/20/2016 16:58:29</publishTime>
+    </File>
+    <File Include="Public/views/login/profile.html">
+      <publishTime>11/03/2016 17:11:50</publishTime>
+    </File>
+    <File Include="Public/views/login/register.html">
+      <publishTime>10/21/2016 10:36:06</publishTime>
+    </File>
+    <File Include="Public/views/login/users.html">
+      <publishTime>10/21/2016 16:43:25</publishTime>
+    </File>
+    <File Include="Public/views/reports/cusip.html">
+      <publishTime>10/20/2016 10:57:27</publishTime>
+    </File>
+    <File Include="Public/views/reports/customerDocUpdate.html">
+      <publishTime>11/16/2016 12:40:04</publishTime>
+    </File>
+    <File Include="Public/views/reports/customerDocUpdateDetail.html">
+      <publishTime>10/27/2016 17:43:30</publishTime>
+    </File>
+    <File Include="Public/views/reports/DailyUpdate.html">
+      <publishTime>11/30/2016 17:16:24</publishTime>
+    </File>
+    <File Include="Public/views/reports/fullfillmentInfo.html">
+      <publishTime>10/21/2016 10:12:14</publishTime>
+    </File>
+    <File Include="Public/views/reports/gatewayDocUpdate.html">
+      <publishTime>10/27/2016 17:43:43</publishTime>
+    </File>
+    <File Include="Public/views/reports/liveUpdate.html">
+      <publishTime>10/21/2016 16:15:26</publishTime>
+    </File>
+    <File Include="Public/views/reports/slink.html">
+      <publishTime>10/21/2016 10:12:14</publishTime>
+    </File>
+    <File Include="Public/views/reports/watchlist.html">
+      <publishTime>11/16/2016 12:40:04</publishTime>
+    </File>
+    <File Include="Public/views/selectClient.html">
+      <publishTime>10/18/2016 17:31:42</publishTime>
+    </File>
+    <File Include="Public/views/TRP/blankFLTCUSIP.html">
+      <publishTime>10/27/2016 12:30:24</publishTime>
+    </File>
+    <File Include="Public/views/TRP/customerDocs.html">
+      <publishTime>10/27/2016 12:30:24</publishTime>
+    </File>
+    <File Include="Public/views/TRP/customerFLT.html">
+      <publishTime>10/27/2016 12:30:24</publishTime>
+    </File>
+    <File Include="Public/views/TRP/documentStatus.html">
+      <publishTime>10/24/2016 14:22:42</publishTime>
+    </File>
+    <File Include="Public/views/TRP/missingDocument.html">
+      <publishTime>10/25/2016 14:59:59</publishTime>
+    </File>
+    <File Include="Public/views/TRP/missingRPCusip.html">
+      <publishTime>10/25/2016 17:22:30</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/30/2016 17:18:40</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

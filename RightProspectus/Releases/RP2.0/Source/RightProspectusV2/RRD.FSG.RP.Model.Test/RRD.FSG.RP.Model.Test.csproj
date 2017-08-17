@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{50A9CFAF-F368-4F8D-B698-D837EFF70B1B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RRD.FSG.RP.Model.Test</RootNamespace>
+    <AssemblyName>RRD.FSG.RP.Model.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1507.0118\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="RRD.DSA.Core">
+      <HintPath>..\packages\RRD.DSA.Core\RRD.DSA.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RRD.FSG.RP.Web.UI.HostedAdmin\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Factories\BaseTestFactory.cs" />
+    <Compile Include="Factories\Client\ApproveProofingFactoryTest.cs" />
+    <Compile Include="Factories\Client\BadRequestFactoryTests.cs" />
+    <Compile Include="Factories\Client\ClientDocumentFactoryTests.cs" />
+    <Compile Include="Factories\Client\ClientDocumentGroupFactoryTests.cs" />
+    <Compile Include="Factories\Client\ClientDocumentTypeFactoryTests.cs" />
+    <Compile Include="Factories\Client\ClientTests.cs" />
+    <Compile Include="Factories\Client\CUDHistoryFactoryTests.cs" />
+    <Compile Include="Factories\Client\DocumentTypeAssociationFactoryTests.cs" />
+    <Compile Include="Factories\Client\DocumentTypeExternalIdFactoryTests.cs" />
+    <Compile Include="Factories\Client\FootnoteFactoryTests.cs" />
+    <Compile Include="Factories\Client\PageFeatureFactoryTests.cs" />
+    <Compile Include="Factories\Client\PageNavigationFactoryTests.cs" />
+    <Compile Include="Factories\Client\PageTextFactoryTests.cs" />
+    <Compile Include="Factories\Client\ReportContentFactoryTests.cs" />
+    <Compile Include="Factories\Client\SiteActivityFactoryTests.cs" />
+    <Compile Include="Factories\Client\SiteAdministrationFactoryTests.cs" />
+    <Compile Include="Factories\Client\SiteFactoryTests.cs" />
+    <Compile Include="Factories\Client\SiteFeatureFactoryTests.cs" />
+    <Compile Include="Factories\Client\SiteNavigationFactoryTests.cs" />
+    <Compile Include="Factories\Client\SiteTextFactoryTests.cs" />
+    <Compile Include="Factories\Client\StaticResourceFactoryTests.cs" />
+    <Compile Include="Factories\Client\TaxonomyAssociationFactoryTests.cs" />
+    <Compile Include="Factories\Client\TaxonomyAssociationHierarchyFactoryTests.cs" />
+    <Compile Include="Factories\Client\TaxonomyLevelExternalIdFactoryTests.cs" />
+    <Compile Include="Factories\Client\TemplateTextTests.cs" />
+    <Compile Include="Factories\Client\UrlRewriteFactoryTests.cs" />
+    <Compile Include="Factories\Client\UserFactoryTests.cs" />
+    <Compile Include="Factories\Client\VerticalImportExportGenerationFactoryTests.cs" />
+    <Compile Include="Factories\Client\VerticalXmlExportFactoryTests.cs" />
+    <Compile Include="Factories\Client\VerticalXmlImportFactoryTests.cs" />
+    <Compile Include="Factories\HostedPages\HostedClientPageScenariosFactoryTest.cs" />
+    <Compile Include="Factories\HostedPages\HostedClientRequestMaterialFactoryTest.cs" />
+    <Compile Include="Factories\System\ReportScheduleFactoryTests.cs" />
+    <Compile Include="Factories\System\RolesTests.cs" />
+    <Compile Include="Factories\System\SystemCommonFactoryTests.cs" />
+    <Compile Include="Factories\System\TemplateFeatureFactoryTests.cs" />
+    <Compile Include="Factories\System\TemplateNavigationFactoryTests.cs" />
+    <Compile Include="Factories\System\TemplatePageFactoryTests.cs" />
+    <Compile Include="Factories\System\TemplatePageFeatureFactoryTests.cs" />
+    <Compile Include="Factories\System\TemplatePageNavigationFactoryTests.cs" />
+    <Compile Include="Factories\System\TemplatePageTextFactoryTests.cs" />
+    <Compile Include="Factories\System\VerticalMarketFactoryTest.cs" />
+    <Compile Include="Factories\VerticalMarket\DocumentTypeFactoryTests.cs" />
+    <Compile Include="Factories\VerticalMarket\HostedVerticalBasePageScenariosFactoryTests.cs" />
+    <Compile Include="Factories\VerticalMarket\TaxonomyFactoryTests.cs" />
+    <Compile Include="Keys\CUDHistoryKeyTests.cs" />
+    <Compile Include="Keys\DocumentTypeExternalIdKeyTests.cs" />
+    <Compile Include="Keys\PageFeatureKeyTests.cs" />
+    <Compile Include="Keys\PageNavigationKeyTests.cs" />
+    <Compile Include="Keys\PageTextKeyTests.cs" />
+    <Compile Include="Keys\SiteFeatureKeyTests.cs" />
+    <Compile Include="Keys\SiteNavigationKeyTests.cs" />
+    <Compile Include="Keys\SiteTextKeyTests.cs" />
+    <Compile Include="Keys\TaxonomyAssociationHierarchyKeyTests.cs" />
+    <Compile Include="Keys\TaxonomyKeyTests.cs" />
+    <Compile Include="Keys\TaxonomyLevelExternalIdKeyTests.cs" />
+    <Compile Include="Keys\TemplateFeatureKeyTests.cs" />
+    <Compile Include="Keys\TemplateNavigationKeyTests.cs" />
+    <Compile Include="Keys\TemplatePageFeatureKeyTests.cs" />
+    <Compile Include="Keys\TemplatePageKeyTests.cs" />
+    <Compile Include="Keys\TemplatePageNavigationKeyTests.cs" />
+    <Compile Include="Keys\TemplatePageTextKeyTests.cs" />
+    <Compile Include="Keys\TemplateTextKeyTests.cs" />
+    <Compile Include="ObjectModels\Client\ClientDocumentGroupObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\ClientDocumentObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\ClientDocumentTypeObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\CUDHistoryObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\DocumentTypeAssociationObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\DocumentTypeExternalIdObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\FootnoteObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\PageFeatureObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\PageNavigationObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\PageTextObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\ReportContentObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\SiteActivityObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\SiteFeatureObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\SiteNavigationObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\SiteObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\SiteTextObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\StaticResourceObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\TaxonomyAssociationHierarchyObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\TaxonomyAssociationObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\TaxonomyLevelExternalIdObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\UrlRewriteObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\VerticalXmlExportObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Client\VerticalXmlImportObjectModelTests.cs" />
+    <Compile Include="ObjectModels\ErrorLogObjectModelTests.cs" />
+    <Compile Include="ObjectModels\SearchBaseModelTests.cs" />
+    <Compile Include="ObjectModels\System\ClientObjectModelTests.cs" />
+    <Compile Include="ObjectModels\System\ReportScheduleObjectModelTests.cs" />
+    <Compile Include="ObjectModels\System\RolesObjectModelTests.cs" />
+    <Compile Include="ObjectModels\System\TemplateFeatureObjectModelTests.cs" />
+    <Compile Include="ObjectModels\System\TemplateNavigationObjectModelTests.cs" />
+    <Compile Include="ObjectModels\System\TemplatePageFeatureObjectModelTests.cs" />
+    <Compile Include="ObjectModels\System\TemplatePageNavigationObjectModelTests.cs" />
+    <Compile Include="ObjectModels\System\TemplatePageObjectModelTests.cs" />
+    <Compile Include="ObjectModels\System\TemplatePageTextObjectModelTests.cs" />
+    <Compile Include="ObjectModels\System\TemplateTextObjectModelTests.cs" />
+    <Compile Include="ObjectModels\System\UserObjectModelTests.cs" />
+    <Compile Include="ObjectModels\System\VerticalMarketsObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Vertical Market\DocumentTypeObjectModelTests.cs" />
+    <Compile Include="ObjectModels\Vertical Market\TaxonomyObjectModelTests.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RRD.FSG.RP.Model.Cache\RRD.FSG.RP.Model.Cache.csproj">
+      <Project>{45464429-708b-4797-8b08-8c79113179e4}</Project>
+      <Name>RRD.FSG.RP.Model.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RRD.FSG.RP.Model\RRD.FSG.RP.Model.csproj">
+      <Project>{db74bd37-160c-441d-a33b-620789a8edd3}</Project>
+      <Name>RRD.FSG.RP.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RRD.FSG.RP.Scheduler\RRD.FSG.RP.Scheduler.csproj">
+      <Project>{fef98aec-94ef-4c8e-bbfe-2849caa81f25}</Project>
+      <Name>RRD.FSG.RP.Scheduler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RRD.FSG.RP.Utilities\RRD.FSG.RP.Utilities.csproj">
+      <Project>{cd1e0f10-fd82-45ec-8165-300a4d8b084e}</Project>
+      <Name>RRD.FSG.RP.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RRD.FSG.RP.Web.UI.HostedAdmin\RRD.FSG.RP.Web.UI.HostedAdmin.csproj">
+      <Project>{320e5594-18dd-4ca3-a1c5-b3a5640e5d2c}</Project>
+      <Name>RRD.FSG.RP.Web.UI.HostedAdmin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Task\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Factories\UnitTestDocs\VerticalImportExportGenerationFactory.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ChilkatDotNet4.dll" />
+    <Content Include="bin\Debug\Ionic.Zip.dll" />
+    <Content Include="bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml" />
+    <Content Include="bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml" />
+    <Content Include="bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" />
+    <Content Include="bin\Debug\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.xml" />
+    <Content Include="bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.dll" />
+    <Content Include="bin\Debug\Microsoft.Practices.EnterpriseLibrary.Logging.xml" />
+    <Content Include="bin\Debug\Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="bin\Debug\Microsoft.Practices.Unity.Configuration.dll" />
+    <Content Include="bin\Debug\Microsoft.Practices.Unity.dll" />
+    <Content Include="bin\Debug\Microsoft.Practices.Unity.Interception.dll" />
+    <Content Include="bin\Debug\Moq.dll" />
+    <Content Include="bin\Debug\Moq.xml" />
+    <Content Include="bin\Debug\RRD.DSA.Core.dll" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Model.Cache.dll" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Model.Cache.pdb" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Model.dll" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Model.pdb" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Model.Test.dll" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Model.Test.pdb" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Scheduler.dll" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Scheduler.pdb" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Utilities.dll" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Utilities.pdb" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Utilities.xml" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Web.UI.HostedAdmin.dll" />
+    <Content Include="bin\Debug\RRD.FSG.RP.Web.UI.HostedAdmin.pdb" />
+    <Content Include="bin\Debug\System.Web.Mvc.dll" />
+    <Content Include="bin\Debug\System.Web.Mvc.xml" />
+    <Content Include="bin\Debug\System.Web.Optimization.dll" />
+    <Content Include="bin\Debug\System.Web.Optimization.xml" />
+    <Content Include="bin\Debug\System.Web.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.Razor.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\Debug\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\Debug\System.Web.WebPages.xml" />
+    <Content Include="bin\Debug\Telerik.JustMock.dll" />
+    <Content Include="bin\Debug\Telerik.JustMock.xml" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

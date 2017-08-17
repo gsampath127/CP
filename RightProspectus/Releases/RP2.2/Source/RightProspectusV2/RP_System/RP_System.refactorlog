@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="a6be8ca2-879c-49fd-9a3c-7d0feabe5b27" ChangeDateTime="09/01/2015 15:27:39">
+    <Property Name="ElementName" Value="[dbo].[Clients].[DatabaseInstance]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Clients]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DatabaseName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6b6891fb-4b74-443e-8ffb-c372e977c8b5" ChangeDateTime="09/01/2015 15:27:58">
+    <Property Name="ElementName" Value="[dbo].[VerticalMarkets].[DatabaseInstance]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[VerticalMarkets]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DatabaseName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9c81b667-8f59-47d2-a1d1-59d96379212c" ChangeDateTime="09/10/2015 17:27:17">
+    <Property Name="ElementName" Value="[dbo].[CK_CUDHistory_Column]" />
+    <Property Name="ElementType" Value="SqlCheckConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[CUDHistory]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[DF_CUDHistory_UtcCUDDate]" />
+  </Operation>
+</Operations>

@@ -1,0 +1,118 @@
+﻿<div class="row">
+    <div class="col-sm-12">
+
+    </div>
+</div>
+<div class="row">
+    @* TODO: Commenting Import Export action button - Phase - 2 changes *@
+    @*<div class="col-lg-6 dvSwitch">
+        <input class="k-textbox " type=text id="txtSearchTAString" placeholder="enter search text..." />
+        <button id="btnGroupSearch">Search</button>
+    </div>*@   
+</div>
+<div id="importTaxonomygroups" style="display:none">
+    <div class="row">
+        <div style="padding:10px 10px 10px 10px">
+            <input type="file" name="file" id="taxonomyAssociationGroupsUpload" />
+        </div>
+
+        <div class="col-sm-12">
+            <div id="TAGDInvalidDataGridContainer" class="ScrollTable">
+                <div id="TAGDInvalidDataGridHeader" class="tableFixedWidth" style="margin:20px 0; display:none">
+                    Invalid Group Data
+                </div>
+                <div id="TAGDinvalidGrid" class="tableFixedWidth">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div id="dvSwitchIM" class="btn-group pull-right dvSwitch">
+            <a href="#" class="btn btn-default dropdown-toggle, ImportActions" data-toggle="dropdown">Actions <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a id="importTAGD" href="#">Import</a></li>
+                <li><a id="exportTAGD" href="#">Export</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div id="GridContainer" class="ScrollTable">
+            <div id="taxonomyAssociationGroupGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dvTaxonomyAssociationGroup" data-request-url="@Url.Action("GetTaxonomyGroup", "VerticalTAGD")"></div>
+<div id="dvSaveTaxonomyAssociationGroup" data-request-url="@Url.Action("SaveTaxonomyGroups", "VerticalTAGD")"></div>
+<div id="dvTaxonomyGroupExport" data-request-url="@Url.Action("ExportTaxonomyGroup", "VerticalTAGD")"></div>
+<div id="dvTaxonomyGroupImport" data-request-url="@Url.Action("TAGDImport", "VerticalTAGD")"></div>
+<script src="~/Scripts/HostedAdmin/VerticalDataImport/TaxonomyGroup.js"></script>
+<script type="text/x-kendo-template" id="deleteTaxonomyAssociationGroupTemplate">
+    Delete
+    <strong>Group</strong> ?
+    <button class="confirm k-button confirmButtonYesMultiple" id="confirmDelete">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo" id="cancelDelete"> No</button>
+</script>
+<style>
+    .file-icon {
+        display: inline-block;
+        float: left;
+        width: 48px;
+        height: 48px;
+        margin-left: 10px;
+        margin-top: 13.5px;
+    }
+      #taxonomyAssociationGroupsUpload .file-heading {
+        font-family: Arial;
+        font-size: 1.1em;
+        display: inline-block;
+        float: left;
+        width: 60%;
+        margin: 0 0 0 20px;
+        height: 25px;
+        -ms-text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    #taxonomyAssociationGroupsUpload .file-name-heading {
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    #taxonomyAssociationGroupsUpload .file-size-heading {
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    li.k-file div.file-wrapper {
+        position: relative;
+        height: 75px;
+    }
+
+    div.k-window-content {
+        overflow: hidden !important;
+    }
+
+    .TaxonomyGroups-EditPopup .k-edit-form-container{
+        width: 600px !important
+    }
+    .TaxonomyGroups-EditPopup .editor-label, .TaxonomyGroups-EditPopup .k-edit-label{
+        width: 20% !important;        
+    }
+
+    .TaxonomyGroups-EditPopup .editor-field, .TaxonomyGroups-EditPopup .k-edit-field{
+        width: 70% !important;         
+    }
+    .TaxonomyGroups-EditPopup .k-textbox, .TaxonomyGroups-EditPopup .k-dropdown {
+        width: 100%;
+    }
+</style>
+

@@ -1,0 +1,1630 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RRD.FSG.RP.Model.Cache</name>
+    </assembly>
+    <members>
+        <member name="T:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3">
+            <summary>
+            Base factory cache that interfaces the factory class with sql dependency caching schema.
+            </summary>
+            <typeparam name="TFactory">Type of factory to interface with.</typeparam>
+            <typeparam name="TModel">Type of entity the factory creates.</typeparam>
+            <typeparam name="TKey">Primary key data type of the entity.</typeparam>
+            <remarks>IFactoryCache implements IFactory.
+            This means any factory cache solution can be used in place of the original factory class via dependency injection or other means.
+            Any non cacheable factory methods such as CreateEntity will pass to the underyling factory for processing.</remarks>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3">
+            <summary>
+            Base factory cache interface that interfaces the factory class with sql dependency caching schema.
+            </summary>
+            <typeparam name="TFactory">Type of factory to interface with.</typeparam>
+            <typeparam name="TModel">Type of entity the factory creates.</typeparam>
+            <typeparam name="TKey">Primary key data type of the entity.</typeparam>
+            <remarks>IFactoryCache implements IFactory.
+            This means any factory cache solution can be used in place of the original factory class via dependency injection or other means.
+            Any non cacheable factory methods such as CreateEntity will pass to the underlying factory for processing.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.CacheEntities(System.Data.DataTable)">
+            <summary>
+            Allows a series of entities retrieved from an external data source to be cached. Only allowed when the cache mode is set to FactoryCacheMode.All.
+            Good when loading groups of disparate entity data with a single fetch from the source.
+            </summary>
+            <param name="entityTable">DataTable containing the entity records to be cached.</param>
+            <returns>Total count of entities added (excluding duplicates ignored).</returns>
+            <remarks>Duplicate entries are ignored. An item is considered duplicate if it shares the same key as a cached entity.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.CacheEntities``1(System.Data.DataTable)">
+            <summary>
+            Allows a series of entities retrieved from an external data source to be cached. Only allowed when the cache mode is set to FactoryCacheMode.All.
+            Good when loading groups of disparate entity data with a single fetch from the source.
+            </summary>
+            <typeparam name="TEntity">Type of entity to cache. Good when there is specialization of various types a single factory can support.</typeparam>
+            <param name="entityTable">DataTable containing the entity records to be cached.</param>
+            <returns>Total count of entities added (excluding duplicates ignored).</returns>
+            <remarks>Duplicate entries are ignored. An item is considered duplicate if it shares the same key as a cached entity.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.CacheEntities(System.Data.IDataReader)">
+            <summary>
+            Allows a series of entities retrieved from an external data source to be cached. Only allowed when the cache mode is set to FactoryCacheMode.All.
+            Good when loading groups of disparate entity data with a single fetch from the source.
+            </summary>
+            <param name="entityReader">IDataReader containing the entity records to be cached.</param>
+            <returns>Total count of entities added (excluding duplicates ignored).</returns>
+            <remarks>Duplicate entries are ignored. An item is considered duplicate if it shares the same key as a cached entity.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.CacheEntities``1(System.Data.IDataReader)">
+            <summary>
+            Allows a series of entities retrieved from an external data source to be cached. Only allowed when the cache mode is set to FactoryCacheMode.All.
+            Good when loading groups of disparate entity data with a single fetch from the source.
+            </summary>
+            <typeparam name="TEntity">Type of entity to cache. Good when there is specialization of various types a single factory can support.</typeparam>
+            <param name="entityReader">IDataReader containing the entity records to be cached.</param>
+            <returns>Total count of entities added (excluding duplicates ignored).</returns>
+            <remarks>Duplicate entries are ignored. An item is considered duplicate if it shares the same key as a cached entity.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.CacheEntities(System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            Allows a series of entities retrieved from an external data source to be cached. Only allowed when the cache mode is set to FactoryCacheMode.All.
+            Good when loading groups of disparate entity data with a single fetch from the source.
+            </summary>
+            <param name="entities">Collection containing the entity records to be cached.</param>
+            <returns>Total count of entities added (excluding duplicates ignored).</returns>
+            <remarks>Duplicate entries are ignored. An item is considered duplicate if it shares the same key as a cached entity.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.CacheEntities``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Allows a series of entities retrieved from an external data source to be cached. Only allowed when the cache mode is set to FactoryCacheMode.All.
+            Good when loading groups of disparate entity data with a single fetch from the source.
+            </summary>
+            <typeparam name="TEntity">Type of entity to cache. Good when there is specialization of various types a single factory can support.</typeparam>
+            <param name="entities">Collection containing the entity records to be cached.</param>
+            <returns>Total count of entities added (excluding duplicates ignored).</returns>
+            <remarks>Duplicate entries are ignored. An item is considered duplicate if it shares the same key as a cached entity.</remarks>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.Factory">
+            <summary>
+            Gets a reference for the underlying factory.
+            </summary>
+            <value>The factory.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.Mode">
+            <summary>
+            Gets or sets the mode.
+            </summary>
+            <value>The mode.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the stored procedure (paramaterless) that is used to build the query notification used by sql cache dependency feature of HttpCache object.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.CollectionCache">
+            <summary>
+            Property for the cached dictionary. Wraps a call to the <see cref="!:DependencyHelper"/> class to retrieve the dictionary from cache.
+            </summary>
+            <value>The collection cache.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Interfaces.IFactoryCache`3.Priority">
+            <summary>
+            Defines the cache priority of the collection. The default is Normal.
+            </summary>
+            <value>The priority.</value>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="!:BaseFactoryCache"/> class.
+            </summary>
+            <param name="factory">Factory instance for the caching class.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CreateEntity``1(System.Data.IDataRecord)">
+            <summary>
+            Wrapper for the underyling Factory.CreateEntity method.
+            </summary>
+            <typeparam name="TEntity">Type of entity to create.</typeparam>
+            <param name="entityRecord">Data record used to create the entity.</param>
+            <returns>A new entity of type <typeparamref name="TEntity" />.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CreateEntity``1(System.Data.DataRow)">
+            <summary>
+            Wrapper for the underlying Factory.CreateEntity method.
+            </summary>
+            <typeparam name="TEntity">Type of entity to create.</typeparam>
+            <param name="entityRow">Data row used to create the entity.</param>
+            <returns>A new entity of type <typeparamref name="TEntity" />.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CreateEntities(System.Data.DataTable)">
+            <summary>
+            Creates a collection of entities populated by the data from the table passed in.
+            </summary>
+            <param name="entityTable">Table containing the entity data.</param>
+            <returns>A collection of <see cref="!:TModel"/> entities.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CreateEntities``1(System.Data.DataTable)">
+            <summary>
+            Creates a collection of entities populated by the data from the table passed in.
+            </summary>
+            <typeparam name="TEntity">Type of entity to populate the collection with.</typeparam>
+            <param name="entityTable">Table containing the entity data.</param>
+            <returns>A collection of <see cref="!:TEntity"/> entities.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CreateEntities(System.Data.IDataReader)">
+            <summary>
+            Creates a collection of entities populated by the data from the table passed in.
+            </summary>
+            <param name="entityReader">IDataReader containing the entity data.</param>
+            <returns>A collection of <see cref="!:TModel"/> entities.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CreateEntities``1(System.Data.IDataReader)">
+            <summary>
+            Creates a collection of entities populated by the data from the table passed in.
+            </summary>
+            <typeparam name="TEntity">Type of entity to populate the collection with.</typeparam>
+            <param name="entityReader">IDataReader containing the entity data.</param>
+            <returns>A collection of <see cref="!:TEntity"/> entities.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.SaveEntity(`1)">
+            <summary>
+            Wrapper for the underlying Factory.SaveEntity method.
+            </summary>
+            <param name="entity">Entity to be saved.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.SaveEntity(`1,System.Int32)">
+            <summary>
+            Wrapper for the underlying Factory.SaveEntity method.
+            </summary>
+            <param name="entity">Entity to be saved.</param>
+            <param name="modifiedBy">The modified by.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.DeleteEntity(`2)">
+            <summary>
+            Deletes the entity associated with the key from the data store.
+            </summary>
+            <param name="key">Identity of the entity to delete.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.DeleteEntity(`2,System.Int32)">
+            <summary>
+            Deletes the entity associated with the key from the data store.
+            </summary>
+            <param name="key">Identity of the entity to delete.</param>
+            <param name="modifiedBy">The modified by.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.DeleteEntity(`1)">
+            <summary>
+            Deletes the entity associated with the entity from the data store.
+            </summary>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.DeleteEntity(`1,System.Int32)">
+            <summary>
+            Deletes the entity associated with the entity from the data store.
+            </summary>
+            <param name="entity">The entity.</param>
+            <param name="deletedBy">The deleted by.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntityByKey(`2)">
+            <summary>
+            Retrieves entity details from the underlying data access and uses them to populate an entity instance.
+            </summary>
+            <param name="key">Primary key identifier of the entity to retrieve.</param>
+            <returns>A new instance of type <typeparamref name="TModel" /> if found. Null otherwise.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntityByKey``1(`2)">
+            <summary>
+            Attempts to retrieve an entity from the collection cache by the Key. If unavailable, attempts to retrieve the item from the underyling factory, storing a reference in the colleciton.
+            </summary>
+            <typeparam name="TEntity">Type of entity to retrieve.</typeparam>
+            <param name="key">Primary key identifier of the entity to retrieve.</param>
+            <returns>A new instance of type <typeparamref name="TEntity" /> if found. Null otherwise.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetAllEntities">
+            <summary>
+            Retrieves all entities from the underlying data access and uses them to populate a collection of entities.
+            </summary>
+            <returns>A collection of all the entities from the data store.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetAllEntities(RRD.FSG.RP.Model.Interfaces.ISortDetail{`1})">
+            <summary>
+            Retrieves all entities from the underlying data access and uses them to populate a collection of entities.
+            </summary>
+            <param name="sort">Sort details used for the query (column and order).</param>
+            <returns>A collection of entities representing all the entities from the data store.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetAllEntities(System.Int32,System.Int32)">
+            <summary>
+            Retrieves all entities from the underlying data access and uses them to populate a collection of entities.
+            </summary>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <returns>A collection of all the entities from the data store.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetAllEntities(System.Int32,System.Int32,RRD.FSG.RP.Model.Interfaces.ISortDetail{`1})">
+            <summary>
+            Retrieves all entities from the underlying data access and uses them to populate a collection of entities.
+            </summary>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <param name="sort">Sort details used for the query (column and order).</param>
+            <returns>A collection of entities representing all the entities from the data store.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetAllEntities``1">
+            <summary>
+            Retrieves all entities from the underlying data access and uses them to populate a collection of entities.
+            </summary>
+            <typeparam name="TEntity">Type of entity to retrieve.</typeparam>
+            <returns>A collection of all the entities from the data store.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetAllEntities``1(RRD.FSG.RP.Model.Interfaces.ISortDetail{``0})">
+            <summary>
+            Retrieves all entities from the underlying data access and uses them to populate a collection of entities.
+            </summary>
+            <typeparam name="TEntity">Type of entity to retrieve.</typeparam>
+            <param name="sort">Sort details used for the query (column and order).</param>
+            <returns>A collection of entities representing all the entities from the data store.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetAllEntities``1(System.Int32,System.Int32)">
+            <summary>
+            Retrieves all entities from the underlying data access and uses them to populate a collection of entities.
+            </summary>
+            <typeparam name="TEntity">Type of entity to retrieve.</typeparam>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <returns>A collection of all the entities from the data store.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetAllEntities``1(System.Int32,System.Int32,RRD.FSG.RP.Model.Interfaces.ISortDetail{``0})">
+            <summary>
+            Retrieves all entities from the underlying data access and uses them to populate a collection of entities.
+            </summary>
+            <typeparam name="TEntity">Type of entity to retrieve.</typeparam>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <param name="sort">Sort details used for the query (column and order).</param>
+            <returns>A collection of entities representing all the entities from the data store.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntitiesBySearch(RRD.FSG.RP.Model.Interfaces.ISearchDetail{`1},`2[])">
+            <summary>
+            Searches the data store for entities using the details set in the search detail instance.
+            </summary>
+            <param name="search">Details of what to search for.</param>
+            <param name="entitiesToIgnore">Optional parameterized list of entities to ignore while searching.</param>
+            <returns>A collection of entities matching the search details.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntitiesBySearch(RRD.FSG.RP.Model.Interfaces.ISearchDetail{`1},RRD.FSG.RP.Model.Interfaces.ISortDetail{`1},`2[])">
+            <summary>
+            Searches the data store for entities using the details set in the search detail instance.
+            </summary>
+            <param name="search">Details of what to search for.</param>
+            <param name="sort">Sort details used for the query (column and order).</param>
+            <param name="entitiesToIgnore">Optional parameterized list of entities to ignore while searching.</param>
+            <returns>A collection of entities matching the search details.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntitiesBySearch(System.Int32,System.Int32,RRD.FSG.RP.Model.Interfaces.ISearchDetail{`1},`2[])">
+            <summary>
+            Searches the data store for entities using the details set in the search detail instance.
+            </summary>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <param name="search">Details of what to search for.</param>
+            <param name="entitiesToIgnore">Optional parameterized list of entities to ignore while searching.</param>
+            <returns>A collection of entities matching the search details.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntitiesBySearch(System.Int32,System.Int32,RRD.FSG.RP.Model.Interfaces.ISearchDetail{`1},RRD.FSG.RP.Model.Interfaces.ISortDetail{`1},`2[])">
+            <summary>
+            Searches the data store for entities using the details set in the search detail instance.
+            </summary>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <param name="search">Details of what to search for.</param>
+            <param name="sort">Sort details used for the query (column and order).</param>
+            <param name="entitiesToIgnore">Optional parameterized list of entities to ignore while searching.</param>
+            <returns>A collection of entities matching the search details.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntitiesBySearch(System.Int32,System.Int32,RRD.FSG.RP.Model.Interfaces.ISearchDetail{`1},RRD.FSG.RP.Model.Interfaces.ISortDetail{`1},System.Int32@,`2[])">
+            <summary>
+            Searches the data store for entities using the details set in the search detail instance.
+            </summary>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <param name="search">Details of what to search for.</param>
+            <param name="sort">Sort details used for the query (column and order).</param>
+            <param name="totalRecordCount">The total record count.</param>
+            <param name="entitiesToIgnore">Optional parameterized list of entities to ignore while searching.</param>
+            <returns>A collection of entities matching the search details.</returns>
+            <exception cref="!:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntitiesBySearch``1(RRD.FSG.RP.Model.Interfaces.ISearchDetail{``0},`2[])">
+            <summary>
+            Searches the data store for entities using the details set in the search detail instance.
+            </summary>
+            <typeparam name="TEntity">Type of entity to search for.</typeparam>
+            <param name="search">Details of what to search for.</param>
+            <param name="entitiesToIgnore">Optional parameterized list of entities to ignore while searching.</param>
+            <returns>A collection of entities matching the search details.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntitiesBySearch``1(RRD.FSG.RP.Model.Interfaces.ISearchDetail{``0},RRD.FSG.RP.Model.Interfaces.ISortDetail{``0},`2[])">
+            <summary>
+            Searches the data store for entities using the details set in the search detail instance.
+            </summary>
+            <typeparam name="TEntity">Type of entity to search for.</typeparam>
+            <param name="search">Details of what to search for.</param>
+            <param name="sort">Sort details used for the query (column and order).</param>
+            <param name="entitiesToIgnore">Optional parameterized list of entities to ignore while searching.</param>
+            <returns>A collection of entities matching the search details.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntitiesBySearch``1(System.Int32,System.Int32,RRD.FSG.RP.Model.Interfaces.ISearchDetail{``0},`2[])">
+            <summary>
+            Searches the data store for entities using the details set in the search detail instance.
+            </summary>
+            <typeparam name="TEntity">Type of entity to search for.</typeparam>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <param name="search">Details of what to search for.</param>
+            <param name="entitiesToIgnore">Optional parameterized list of entities to ignore while searching.</param>
+            <returns>A collection of entities matching the search details.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntitiesBySearch``1(System.Int32,System.Int32,RRD.FSG.RP.Model.Interfaces.ISearchDetail{``0},RRD.FSG.RP.Model.Interfaces.ISortDetail{``0},`2[])">
+            <summary>
+            Searches the data store for entities using the details set in the search detail instance.
+            </summary>
+            <typeparam name="TEntity">Type of entity to search for.</typeparam>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <param name="search">Details of what to search for.</param>
+            <param name="sort">Sort details used for the query (column and order).</param>
+            <param name="entitiesToIgnore">Optional parameterized list of entities to ignore while searching.</param>
+            <returns>A collection of entities matching the search details.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntitiesBySearch``1(System.Int32,System.Int32,RRD.FSG.RP.Model.Interfaces.ISearchDetail{``0},RRD.FSG.RP.Model.Interfaces.ISortDetail{``0},System.Int32@,`2[])">
+            <summary>
+            Searches the data store for entities using the details set in the search detail instance.
+            </summary>
+            <typeparam name="TEntity">Type of entity to search for.</typeparam>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <param name="search">Details of what to search for.</param>
+            <param name="sort">Sort details used for the query (column and order).</param>
+            <param name="totalRecordCount">total Record Count</param>
+            <param name="entitiesToIgnore">Optional parameterized list of entities to ignore while searching.</param>
+            <returns>A collection of entities matching the search details.</returns>
+            <exception cref="!:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CacheEntities(System.Data.DataTable)">
+            <summary>
+            Allows a series of entities retrieved from an external data source to be cached. Only allowed when the cache mode is set to FactoryCacheMode.All.
+            Good when loading groups of disparate entity data with a single fetch from the source.
+            </summary>
+            <param name="entityTable">DataTable containing the entity records to be cached.</param>
+            <returns>Total count of entities added (excluding duplicates ignored).</returns>
+            <remarks>Duplicate entries are ignored. An item is considered duplicate if it shares the same key as a cached entity.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CacheEntities``1(System.Data.DataTable)">
+            <summary>
+            Allows a series of entities retrieved from an external data source to be cached. Only allowed when the cache mode is set to FactoryCacheMode.All.
+            Good when loading groups of disparate entity data with a single fetch from the source.
+            </summary>
+            <typeparam name="TEntity">Type of entity to cache. Good when there is specialization of various types a single factory can support.</typeparam>
+            <param name="entityTable">DataTable containing the entity records to be cached.</param>
+            <returns>Total count of entities added (excluding duplicates ignored).</returns>
+            <remarks>Duplicate entries are ignored. An item is considered duplicate if it shares the same key as a cached entity.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CacheEntities(System.Data.IDataReader)">
+            <summary>
+            Allows a series of entities retrieved from an external data source to be cached. Only allowed when the cache mode is set to FactoryCacheMode.All.
+            Good when loading groups of disparate entity data with a single fetch from the source.
+            </summary>
+            <param name="entityReader">IDataReader containing the entity records to be cached.</param>
+            <returns>Total count of entities added (excluding duplicates ignored).</returns>
+            <remarks>Duplicate entries are ignored. An item is considered duplicate if it shares the same key as a cached entity.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CacheEntities``1(System.Data.IDataReader)">
+            <summary>
+            Allows a series of entities retrieved from an external data source to be cached. Only allowed when the cache mode is set to FactoryCacheMode.All.
+            Good when loading groups of disparate entity data with a single fetch from the source.
+            </summary>
+            <typeparam name="TEntity">Type of entity to cache. Good when there is specialization of various types a single factory can support.</typeparam>
+            <param name="entityReader">IDataReader containing the entity records to be cached.</param>
+            <returns>Total count of entities added (excluding duplicates ignored).</returns>
+            <remarks>Duplicate entries are ignored. An item is considered duplicate if it shares the same key as a cached entity.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CacheEntities(System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            Allows a series of entities retrieved from an external data source to be cached. Only allowed when the cache mode is set to FactoryCacheMode.All.
+            Good when loading groups of disparate entity data with a single fetch from the source.
+            </summary>
+            <param name="entities">Collection containing the entity records to be cached.</param>
+            <returns>Total count of entities added (excluding duplicates ignored).</returns>
+            <remarks>Duplicate entries are ignored. An item is considered duplicate if it shares the same key as a cached entity.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CacheEntities``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Allows a series of entities retrieved from an external data source to be cached. Only allowed when the cache mode is set to FactoryCacheMode.All.
+            Good when loading groups of disparate entity data with a single fetch from the source.
+            </summary>
+            <typeparam name="TEntity">Type of entity to cache. Good when there is specialization of various types a single factory can support.</typeparam>
+            <param name="entities">Collection containing the entity records to be cached.</param>
+            <returns>Total count of entities added (excluding duplicates ignored).</returns>
+            <remarks>Duplicate entries are ignored. An item is considered duplicate if it shares the same key as a cached entity.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntitiesBySearchInternal``1(System.Int32,System.Int32,RRD.FSG.RP.Model.Interfaces.ISearchDetail{``0},RRD.FSG.RP.Model.Interfaces.ISortDetail{``0},`2[],System.Func{RRD.FSG.RP.Model.Interfaces.ISearchDetail{``0},`2[],System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+            Searches the data store for entities using the details set in the search detail instance.
+            </summary>
+            <typeparam name="TEntity">Type of entity to search for.</typeparam>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <param name="search">Details of what to search for.</param>
+            <param name="sort">Sort details used for the query (column and order).</param>
+            <param name="entitiesToIgnore">List of entities to ignore while searching.</param>
+            <param name="searchFunction">Delegate function to execute when retrieving entities from the underlying Factory.</param>
+            <returns>A collection of entities matching the search details.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetEntityByKeyInternal``1(`2,System.Func{`2,``0})">
+            <summary>
+            Gets the entity by key internal.
+            </summary>
+            <typeparam name="TEntity">The type of the t entity.</typeparam>
+            <param name="key">The key.</param>
+            <param name="getEntityFunction">The get entity function.</param>
+            <returns>TEntity.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetAllEntitiesInternal``1(System.Int32,System.Int32,RRD.FSG.RP.Model.Interfaces.ISortDetail{``0},System.Func{System.Collections.Generic.IEnumerable{``0}})">
+            <summary>
+            Retrieves all entities from the underlying data access and uses them to populate a collection of entities.
+            </summary>
+            <typeparam name="TEntity">Type of entity to retrieve.</typeparam>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <param name="sort">Sort details used for the query (column and order).</param>
+            <param name="getEntitiesFunction">Delegate function to execute when retrieving entities from the underlying Factory.</param>
+            <returns>A collection of all the entities from the data store.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.GetParametersFromEntity``1(``0)">
+            <summary>
+            Gets the parameters from entity.
+            </summary>
+            <typeparam name="TEntity">The type of the t entity.</typeparam>
+            <param name="entity">The entity.</param>
+            <returns>IEnumerable&lt;DbParameter&gt;.</returns>
+            <exception cref="!:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.VerifyMode(RRD.FSG.RP.Model.Cache.FactoryCacheMode)">
+            <summary>
+            Verifies the cache mode passed in matches the factory. Throws an error upon mismatch.
+            </summary>
+            <param name="allowedMode">Cache mode to compare.</param>
+            <exception cref="!:System.InvalidOperationException"></exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if there is a mismatch.</exception>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.SortSkipTake``1(System.Collections.Generic.IEnumerable{``0},RRD.FSG.RP.Model.Interfaces.ISortDetail{``0},System.Int32,System.Int32)">
+            <summary>
+            Skips and takes a number of items for paging purposes.
+            </summary>
+            <typeparam name="TEntity">Type of entity in the collection.</typeparam>
+            <param name="entities">Source entities to skip and take from.</param>
+            <param name="sort">The sort.</param>
+            <param name="startRowIndex">First row of the results to return.</param>
+            <param name="maximumRows">Total number of rows to return.</param>
+            <returns>IEnumerable&lt;TEntity&gt;.</returns>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.Factory">
+            <summary>
+            Gets a reference for the underlying factory.
+            </summary>
+            <value>The factory.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.Mode">
+            <summary>
+            Gets or sets the mode.
+            </summary>
+            <value>The mode.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.ConnectionString">
+            <summary>
+            Gets the connection string for the factory's underlying data access.
+            </summary>
+            <value>The connection string.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.VerticalMarketConnectionString">
+            <summary>
+            Gets the vertical market connection string for the factory's underlying data access.
+            </summary>
+            <value>The vertical market connection string.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.ClientName">
+            <summary>
+            Gets and Sets the Client Name.
+            </summary>
+            <value>The name of the client.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.DataAccess">
+            <summary>
+            Gets the data access instance used to interface between factory and persisted storage of entity data.
+            </summary>
+            <value>The data access.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the stored procedure (parameterless) that is used to build the query notification used by sql cache dependency feature of HttpCache object.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.Priority">
+            <summary>
+            Defines the cache priority of the collection. The default is Normal.
+            </summary>
+            <value>The priority.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CollectionCache">
+            <summary>
+            Gets a read only wrapper for the cached dictionary. Wraps a call to the <see cref="T:RRD.DSA.Core.DAL.DependencyHelper"/> class to retrieve the dictionary from cache.
+            </summary>
+            <value>The collection cache.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CollectionCacheInternal">
+            <summary>
+            Internal property for the cached dictionary. Wraps a call to the <see cref="T:RRD.DSA.Core.DAL.DependencyHelper"/> class to retrieve the dictionary from cache.
+            </summary>
+            <value>The collection cache internal.</value>
+            <exception cref="!:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CachedCollection">
+            <summary>
+            Internal class to hold both the concurrent dictionary as well as cache mode used at the time of creation.
+            </summary>
+            <remarks>The FactoryCacheMode is used to help verify any single application domain is using only one cache mode for a specific factory cache implementation.</remarks>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CachedCollection.Dictionary">
+            <summary>
+            Gets or sets the concurrent dictionary holding the cached entities.
+            </summary>
+            <value>The dictionary.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.BaseFactoryCache`3.CachedCollection.Mode">
+            <summary>
+            Gets or sets the cache mode of the Factory that created this collection.
+            </summary>
+            <value>The mode.</value>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.BrowserVersionFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.DocumentTypeExternalIdFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.BrowserVersionFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.BrowserVersionFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.BrowserVersionFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.ClientDocumentGroupFactoryCache">
+            <summary>
+            Class ClientDocumentGroupFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.ClientDocumentGroupFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.ClientDocumentGroupFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.ClientDocumentGroupFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.ClientDocumentGroupFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.ClientDocumentGroupFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.ClientDocumentTypeFactoryCache">
+            <summary>
+            Class ClientDocumentTypeFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.ClientDocumentTypeFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="!:DocumentTypeFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.ClientDocumentTypeFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.ClientDocumentTypeFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.ClientDocumentTypeFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.ClientDocumentFactoryCache">
+            <summary>
+            Class ClientDocumentFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.ClientDocumentFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.SiteFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.ClientDocumentFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.ClientDocumentFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.ClientDocumentFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.CUDHistoryFactoryCache">
+            <summary>
+            Class CUDHistoryFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.CUDHistoryFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.CUDHistoryFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.CUDHistoryFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.CUDHistoryFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.CUDHistoryFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.DocumentSubstitutionFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.DocumentTypeExternalIdFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.DocumentSubstitutionFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.DocumentSubstitutionFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.DocumentSubstitutionFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.DocumentTypeExternalIdFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.DocumentTypeExternalIdFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.DocumentTypeExternalIdFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.DocumentTypeExternalIdFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.DocumentTypeExternalIdFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.DocumentTypeExternalIdFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.ReportContentFactoryCache">
+            <summary>
+            Factory cache for ReportContent entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.ReportContentFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the ReportContentFactoryCache class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.ReportContentFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.ReportContentFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.ReportContentFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.TaxonomyAssociationClientDocumentFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.TaxonomyLevelExternalIdFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.TaxonomyAssociationClientDocumentFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.TaxonomyAssociationClientDocumentFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.TaxonomyAssociationClientDocumentFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.VerticalMarket.DocumentTypeFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.VerticalMarket.DocumentTypeFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.VerticalMarket.DocumentTypeFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.VerticalMarket.DocumentTypeFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.VerticalMarket.DocumentTypeFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.VerticalMarket.DocumentTypeFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.PageFeatureFactoryCache">
+            <summary>
+            Class PageFeatureFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.PageFeatureFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="!:PageFeatureCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.PageFeatureFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.PageFeatureFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.PageFeatureFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.PageNavigationFactoryCache">
+            <summary>
+            Class PageNavigationFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.PageNavigationFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.PageNavigationFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">The data access.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.PageNavigationFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.PageNavigationFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the stored procedure (parameterless) that is used to build the query notification used by sql cache dependency feature of HttpCache object.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.PageNavigationFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.PageTextFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.PageTextFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.PageTextFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.PageTextFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.PageTextFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.PageTextFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.SiteFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.SiteFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.SiteFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.SiteFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.SiteFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.SiteFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.SiteFeatureFactoryCache">
+            <summary>
+            Class SiteFeatureFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.SiteFeatureFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="!:SiteFeatureCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.SiteFeatureFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.SiteFeatureFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.SiteFeatureFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.SiteNavigationFactoryCache">
+            <summary>
+            Class SiteNavigationFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.SiteNavigationFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.UrlRewriteFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.SiteNavigationFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.SiteNavigationFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.SiteNavigationFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.SiteTextFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.SiteTextFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.SiteTextFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.SiteTextFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.SiteTextFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.SiteTextFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.StaticResourceFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.StaticResourceFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.StaticResourceFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.StaticResourceFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.StaticResourceFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.StaticResourceFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.TaxonomyLevelExternalIdFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.TaxonomyLevelExternalIdFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.TaxonomyLevelExternalIdFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.TaxonomyLevelExternalIdFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.TaxonomyLevelExternalIdFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.TaxonomyLevelExternalIdFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.UrlRewriteFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.UrlRewriteFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.UrlRewriteFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.UrlRewriteFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.UrlRewriteFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.UrlRewriteFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.VerticalXmlExportFactoryCache">
+            <summary>
+            Class VerticalXmlExportFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.VerticalXmlExportFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.VerticalXmlExportFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.VerticalXmlExportFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.VerticalXmlExportFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.VerticalXmlExportFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.Client.VerticalXmlImportFactoryCache">
+            <summary>
+            Class VerticalXmlImportFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.Client.VerticalXmlImportFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.Client.VerticalXmlImportFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.VerticalXmlImportFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.VerticalXmlImportFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.Client.VerticalXmlImportFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.FactoryCacheMode">
+            <summary>
+            Determines the caching mode for a factory cache implementation.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Model.Cache.FactoryCacheMode.Granular">
+            <summary>
+            Entities are cached as needed.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Model.Cache.FactoryCacheMode.All">
+            <summary>
+            All entities are cached with one fetch from the underlying data store, either internally or from calls to CacheEntities methods.
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.System.ReportScheduleFactoryCache">
+            <summary>
+            Class ReportScheduleFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.System.ReportScheduleFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.System.ReportScheduleFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.ReportScheduleFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.ReportScheduleFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.ReportScheduleFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.System.RolesFactoryCache">
+            <summary>
+            Factory cache for <see cref="!:Roles"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.System.RolesFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.System.RolesFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.RolesFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.RolesFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.RolesFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.System.TemplateFeatureFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.System.TemplateFeatureFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplateFeatureFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplateFeatureFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplateFeatureFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.System.TemplatePageFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.System.TemplatePageFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplatePageFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplatePageFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplatePageFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.System.TemplatePageFeatureFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.System.TemplatePageFeatureFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplatePageFeatureFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplatePageFeatureFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplatePageFeatureFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.System.TemplatePageNavigationFactoryCache">
+            <summary>
+            Class TemplatePageNavigationFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.System.TemplatePageNavigationFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplatePageNavigationFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplatePageNavigationFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplatePageNavigationFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.System.TemplatePageTextFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.System.TemplatePageTextFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplatePageTextFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplatePageTextFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplatePageTextFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.System.TemplateNavigationFactoryCache">
+            <summary>
+            Class TemplateNavigationFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.System.TemplateNavigationFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplateNavigationFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplateNavigationFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplateNavigationFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.System.TemplateTextFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.System.TemplateTextFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplateTextFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplateTextFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.TemplateTextFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.System.UserFactoryCache">
+            <summary>
+            Factory cache for <see cref="!:User"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.System.UserFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.System.UserFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.UserFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.UserFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.UserFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.System.VerticalMarketsFactoryCache">
+            <summary>
+            Class VerticalMarketsFactoryCache.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.System.VerticalMarketsFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.System.ClientFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.VerticalMarketsFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.VerticalMarketsFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.System.VerticalMarketsFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Model.Cache.VerticalMarket.TaxonomyFactoryCache">
+            <summary>
+            Factory cache for <see cref="N:RRD.FSG.RP.Model.Cache.Client"/> entities.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Model.Cache.VerticalMarket.TaxonomyFactoryCache.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Model.Cache.VerticalMarket.TaxonomyFactoryCache"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.VerticalMarket.TaxonomyFactoryCache.CollectionCacheKey">
+            <summary>
+            Defines the collection cache key to be used for the dictionary stored in cache that holds all the retrieved items.
+            </summary>
+            <value>The collection cache key.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.VerticalMarket.TaxonomyFactoryCache.CollectionDependencyCheckStoredProcedure">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory.
+            </summary>
+            <value>The collection dependency check stored procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Model.Cache.VerticalMarket.TaxonomyFactoryCache.SlidingExpiration">
+            <summary>
+            Defines the default sliding expiration to be used for the entities returned by the underlying factory. Defaults to one day.
+            </summary>
+            <value>The sliding expiration.</value>
+        </member>
+    </members>
+</doc>

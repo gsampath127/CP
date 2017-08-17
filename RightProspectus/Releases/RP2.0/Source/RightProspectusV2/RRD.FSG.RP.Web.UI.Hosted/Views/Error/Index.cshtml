@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Error Page";
+    Layout = "";
+}
+<head>
+    <link href="~/Content/errorpage.css" rel="stylesheet" media="all">
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</head>
+<body>
+    <div class="errorPageHeader">
+        <div class="errorPageTitle">RightProspectus V2 - Error Page</div>
+    </div>
+    <div class="body">
+        <div class="errorHeading">
+            @ViewBag.Heading
+        </div><br />
+        <div class="errorMessage">
+            @ViewBag.Message
+        </div><br />
+        <a href="#" onclick="goBack()">Return to previous page</a>
+    </div>
+</body>

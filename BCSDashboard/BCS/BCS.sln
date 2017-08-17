@@ -1,0 +1,175 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCSInitialLoadBatch", "BCSInitialLoadBatch\BCSInitialLoadBatch.csproj", "{C9934862-80AC-4B18-8AEB-C3C98DF6D9A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCSDocumentSynchonizerService", "BCSDocumentSynchonizerService\BCSDocumentSynchonizerService.csproj", "{450366B2-506B-4135-88B9-523FD75CA19C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCSDocUpdateValidationService", "BCSDocUpdateValidationService\BCSDocUpdateValidationService.csproj", "{31E7677F-5C7E-449D-9431-C414416F3DA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCSDocUpdateSlinkIntegrationService", "BCSDocUpdateSlinkIntegrationService\BCSDocUpdateSlinkIntegrationService.csproj", "{3CB33FE6-D11F-40FA-8378-2DA5ABA8950A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCS.ObjectModel", "BCS.ObjectModel\BCS.ObjectModel.csproj", "{15231E11-276A-4C6C-B600-0CA1FA5ED357}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCS.ObjectModel.Factories", "BCS.ObjectModel.Factories\BCS.ObjectModel.Factories.csproj", "{776E2243-51BE-4920-9D6F-F284E131754B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCS.DataAccess", "BCS.DataAccess\BCS.DataAccess.csproj", "{60E0E231-C7D3-4884-8BB0-81C190854AEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCSDocUpdateApproval", "BCSDocUpdateApproval\BCSDocUpdateApproval.csproj", "{DBA8201F-778F-4F06-8ABE-EA39C4D10F45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCS.CompareDownloadedSLINKFilesWithOriginal", "BCS.CompareDownloadedSLINKFilesWithOriginal\BCS.CompareDownloadedSLINKFilesWithOriginal.csproj", "{87BC21F8-057C-4685-87D2-6DD476CC2C7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCSFLTIntegrationService", "BCSFLTIntegrationService\BCSFLTIntegrationService.csproj", "{7D1DF089-8BBC-4863-A9B2-DD4F1C1A17E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBCSFLTIntegrationService", "TestBCSFLTIntegrationService\TestBCSFLTIntegrationService.csproj", "{C90BCDE9-B99F-4BAD-9869-8F4A290D6FA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCSTRPReportService", "BCSTRPReportService\BCSTRPReportService.csproj", "{F62707E8-CB9E-466D-B7E0-8572A0A16CA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCSWatchListIntegrationService", "BCSWatchListIntegrationService\BCSWatchListIntegrationService.csproj", "{AFAC1D20-59AD-4422-BC1E-907FEF51E9A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayUpdateGoldRepositoryBatch", "GatewayUpdateGoldRepositoryBatch\GatewayUpdateGoldRepositoryBatch.csproj", "{C2E7ABB9-269E-4C84-90AF-BB75B82105DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestManualZipFileUpload", "TestManualZipFileUpload\TestManualZipFileUpload.csproj", "{2A340950-3D58-4FC9-9C90-B28AB48F3F87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPSecurityTypeFeedSourceService", "RPSecurityTypeFeedSourceService\RPSecurityTypeFeedSourceService.csproj", "{82FBFFAE-CDF5-41BB-8C41-D2F20CB39E78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BCSDocUpdateApprovalV2", "BCSDocUpdateApprovalV2\BCSDocUpdateApprovalV2.csproj", "{F21A7266-9488-4873-8F87-6EACE9F18E55}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 18
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://10.79.66.242:8080/tfs/rightprospectus%20collection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BCS.ObjectModel.Factories\\BCS.ObjectModel.Factories.csproj
+		SccProjectName1 = BCS.ObjectModel.Factories
+		SccLocalPath1 = BCS.ObjectModel.Factories
+		SccProjectUniqueName2 = BCS.ObjectModel\\BCS.ObjectModel.csproj
+		SccProjectName2 = BCS.ObjectModel
+		SccLocalPath2 = BCS.ObjectModel
+		SccProjectUniqueName3 = BCSDocumentSynchonizerService\\BCSDocumentSynchonizerService.csproj
+		SccProjectName3 = BCSDocumentSynchonizerService
+		SccLocalPath3 = BCSDocumentSynchonizerService
+		SccProjectUniqueName4 = BCSDocUpdateSlinkIntegrationService\\BCSDocUpdateSlinkIntegrationService.csproj
+		SccProjectName4 = BCSDocUpdateSlinkIntegrationService
+		SccLocalPath4 = BCSDocUpdateSlinkIntegrationService
+		SccProjectUniqueName5 = BCSDocUpdateValidationService\\BCSDocUpdateValidationService.csproj
+		SccProjectName5 = BCSDocUpdateValidationService
+		SccLocalPath5 = BCSDocUpdateValidationService
+		SccProjectUniqueName6 = BCSInitialLoadBatch\\BCSInitialLoadBatch.csproj
+		SccProjectName6 = BCSInitialLoadBatch
+		SccLocalPath6 = BCSInitialLoadBatch
+		SccProjectUniqueName7 = BCS.DataAccess\\BCS.DataAccess.csproj
+		SccProjectName7 = BCS.DataAccess
+		SccLocalPath7 = BCS.DataAccess
+		SccProjectUniqueName8 = BCSDocUpdateApproval\\BCSDocUpdateApproval.csproj
+		SccProjectName8 = BCSDocUpdateApproval
+		SccLocalPath8 = BCSDocUpdateApproval
+		SccProjectUniqueName9 = BCS.CompareDownloadedSLINKFilesWithOriginal\\BCS.CompareDownloadedSLINKFilesWithOriginal.csproj
+		SccProjectName9 = BCS.CompareDownloadedSLINKFilesWithOriginal
+		SccLocalPath9 = BCS.CompareDownloadedSLINKFilesWithOriginal
+		SccProjectUniqueName10 = BCSFLTIntegrationService\\BCSFLTIntegrationService.csproj
+		SccProjectName10 = BCSFLTIntegrationService
+		SccLocalPath10 = BCSFLTIntegrationService
+		SccProjectUniqueName11 = TestBCSFLTIntegrationService\\TestBCSFLTIntegrationService.csproj
+		SccProjectName11 = TestBCSFLTIntegrationService
+		SccLocalPath11 = TestBCSFLTIntegrationService
+		SccProjectUniqueName12 = BCSTRPReportService\\BCSTRPReportService.csproj
+		SccProjectName12 = BCSTRPReportService
+		SccLocalPath12 = BCSTRPReportService
+		SccProjectUniqueName13 = BCSWatchListIntegrationService\\BCSWatchListIntegrationService.csproj
+		SccProjectName13 = BCSWatchListIntegrationService
+		SccLocalPath13 = BCSWatchListIntegrationService
+		SccProjectUniqueName14 = GatewayUpdateGoldRepositoryBatch\\GatewayUpdateGoldRepositoryBatch.csproj
+		SccProjectName14 = GatewayUpdateGoldRepositoryBatch
+		SccLocalPath14 = GatewayUpdateGoldRepositoryBatch
+		SccProjectUniqueName15 = TestManualZipFileUpload\\TestManualZipFileUpload.csproj
+		SccProjectName15 = TestManualZipFileUpload
+		SccLocalPath15 = TestManualZipFileUpload
+		SccProjectUniqueName16 = RPSecurityTypeFeedSourceService\\RPSecurityTypeFeedSourceService.csproj
+		SccProjectName16 = RPSecurityTypeFeedSourceService
+		SccLocalPath16 = RPSecurityTypeFeedSourceService
+		SccProjectUniqueName16 = BCSDocUpdateApprovalV2\\BCSDocUpdateApprovalV2.csproj
+		SccProjectName16 = BCSDocUpdateApprovalV2
+		SccLocalPath16 = BCSDocUpdateApprovalV2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9934862-80AC-4B18-8AEB-C3C98DF6D9A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9934862-80AC-4B18-8AEB-C3C98DF6D9A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9934862-80AC-4B18-8AEB-C3C98DF6D9A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9934862-80AC-4B18-8AEB-C3C98DF6D9A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{450366B2-506B-4135-88B9-523FD75CA19C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{450366B2-506B-4135-88B9-523FD75CA19C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{450366B2-506B-4135-88B9-523FD75CA19C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{450366B2-506B-4135-88B9-523FD75CA19C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31E7677F-5C7E-449D-9431-C414416F3DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31E7677F-5C7E-449D-9431-C414416F3DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31E7677F-5C7E-449D-9431-C414416F3DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31E7677F-5C7E-449D-9431-C414416F3DA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB33FE6-D11F-40FA-8378-2DA5ABA8950A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB33FE6-D11F-40FA-8378-2DA5ABA8950A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB33FE6-D11F-40FA-8378-2DA5ABA8950A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB33FE6-D11F-40FA-8378-2DA5ABA8950A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15231E11-276A-4C6C-B600-0CA1FA5ED357}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15231E11-276A-4C6C-B600-0CA1FA5ED357}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15231E11-276A-4C6C-B600-0CA1FA5ED357}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15231E11-276A-4C6C-B600-0CA1FA5ED357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{776E2243-51BE-4920-9D6F-F284E131754B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{776E2243-51BE-4920-9D6F-F284E131754B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{776E2243-51BE-4920-9D6F-F284E131754B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{776E2243-51BE-4920-9D6F-F284E131754B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60E0E231-C7D3-4884-8BB0-81C190854AEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60E0E231-C7D3-4884-8BB0-81C190854AEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60E0E231-C7D3-4884-8BB0-81C190854AEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60E0E231-C7D3-4884-8BB0-81C190854AEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBA8201F-778F-4F06-8ABE-EA39C4D10F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBA8201F-778F-4F06-8ABE-EA39C4D10F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBA8201F-778F-4F06-8ABE-EA39C4D10F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBA8201F-778F-4F06-8ABE-EA39C4D10F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87BC21F8-057C-4685-87D2-6DD476CC2C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87BC21F8-057C-4685-87D2-6DD476CC2C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87BC21F8-057C-4685-87D2-6DD476CC2C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87BC21F8-057C-4685-87D2-6DD476CC2C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D1DF089-8BBC-4863-A9B2-DD4F1C1A17E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D1DF089-8BBC-4863-A9B2-DD4F1C1A17E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D1DF089-8BBC-4863-A9B2-DD4F1C1A17E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D1DF089-8BBC-4863-A9B2-DD4F1C1A17E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C90BCDE9-B99F-4BAD-9869-8F4A290D6FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C90BCDE9-B99F-4BAD-9869-8F4A290D6FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C90BCDE9-B99F-4BAD-9869-8F4A290D6FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C90BCDE9-B99F-4BAD-9869-8F4A290D6FA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F62707E8-CB9E-466D-B7E0-8572A0A16CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62707E8-CB9E-466D-B7E0-8572A0A16CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F62707E8-CB9E-466D-B7E0-8572A0A16CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F62707E8-CB9E-466D-B7E0-8572A0A16CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFAC1D20-59AD-4422-BC1E-907FEF51E9A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFAC1D20-59AD-4422-BC1E-907FEF51E9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFAC1D20-59AD-4422-BC1E-907FEF51E9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFAC1D20-59AD-4422-BC1E-907FEF51E9A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2E7ABB9-269E-4C84-90AF-BB75B82105DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E7ABB9-269E-4C84-90AF-BB75B82105DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E7ABB9-269E-4C84-90AF-BB75B82105DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E7ABB9-269E-4C84-90AF-BB75B82105DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A340950-3D58-4FC9-9C90-B28AB48F3F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A340950-3D58-4FC9-9C90-B28AB48F3F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A340950-3D58-4FC9-9C90-B28AB48F3F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A340950-3D58-4FC9-9C90-B28AB48F3F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82FBFFAE-CDF5-41BB-8C41-D2F20CB39E78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82FBFFAE-CDF5-41BB-8C41-D2F20CB39E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82FBFFAE-CDF5-41BB-8C41-D2F20CB39E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82FBFFAE-CDF5-41BB-8C41-D2F20CB39E78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F21A7266-9488-4873-8F87-6EACE9F18E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F21A7266-9488-4873-8F87-6EACE9F18E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F21A7266-9488-4873-8F87-6EACE9F18E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F21A7266-9488-4873-8F87-6EACE9F18E55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

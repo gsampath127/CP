@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @model RRD.FSG.RP.Web.UI.Hosted.ViewModels.ClientViewModel
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit Client</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container navigationFullMenu nowrap">
+                <div class="navbar-header">
+                    @if (Model.ClientID.Equals(0))
+                    {
+                        <a class="navbar-brand" href="#">Add Client</a>
+                    }
+                    else
+                    {
+                        <a class="navbar-brand" href="#">Edit Client</a>
+                    }
+
+                    <button id="togglebutton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar-popup" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="popup-close" id="closeWindow" href="javascript:window.close();">Close Window</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="main" class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div id="dvValMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowMsg"></div></div>
+                            @Html.LabelFor(model => model.ClientID)
+                            <span class="mandatoryAsterisk">*</span>
+                            @Html.TextBoxFor(model => model.ClientID, new { @class = "form-control", placeholder = "Client ID", type = "text", id = "txtClientID", MaxLength = "50" })
+                            @*<label for="txtcontactCode">Contact Code</label>
+                        <input id="txtcontactCode" class="form-control" type="text" placeholder="Contact Code" value="@Model.ContactCode">*@
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ClientName)
+                            <span class="mandatoryAsterisk">*</span>
+                            @Html.TextBoxFor(model => model.ClientName, new { @class = "form-control", placeholder = "Client Name", type = "text", id = "txtClientName", MaxLength = "200" })
+                            @*<label for="txtFullName">Full Name</label>
+                        <input id="txtFullName" class="form-control" type="text" placeholder="Full Name" value="@Model.FullName">*@
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

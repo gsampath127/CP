@@ -1,0 +1,1504 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RRD.FSG.RP.Scheduler</name>
+    </assembly>
+    <members>
+        <member name="M:RRD.FSG.RP.Scheduler.CustomDatabaseTraceListener.Write(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.CustomDatabaseTraceListener.WriteLine(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.CustomDatabaseTraceListener.ExecuteWriteLogStoredProcedure(Microsoft.Practices.EnterpriseLibrary.Logging.LogEntry,Microsoft.Practices.EnterpriseLibrary.Data.Database)">
+            <summary>
+            Executes the WriteLog stored procedure
+            </summary>
+            <param name="logEntry">The LogEntry to store in the database.</param>
+            <param name="db">An instance of the database class to use for storing the LogEntry</param>
+            <param name="transaction">The transaction that wraps around the execution calls for storing the LogEntry</param>
+            <returns>An integer for the LogEntry Id</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.CustomDatabaseTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)">
+            <summary>
+            Delivers the trace data to the underlying database.
+            </summary>
+            <param name="eventCache">The context information provided by <see cref="N:System.Diagnostics"/>.</param>
+            <param name="source">The name of the trace source that delivered the trace data.</param>
+            <param name="eventType">The type of event.</param>
+            <param name="id">The id of the event.</param>
+            <param name="data">The data to trace.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.CustomDatabaseTraceListener.ExecuteStoredProcedure(Microsoft.Practices.EnterpriseLibrary.Logging.LogEntry)">
+            <summary>
+            Executes the stored procedures
+            </summary>
+            <param name="logEntry">The LogEntry to store in the database</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.ExceptionHandler">
+            <summary>
+            Wrapper for Microsoft ExceptionHandling Application Block
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ExceptionHandler.FaultedWorkserServiceProcessTaskHandler(System.Threading.Tasks.Task)">
+            <summary>
+            Used for handling worker service process exceptions in Tasks.
+            </summary>
+            <param name="faultedTask">Task that completed with an exception.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ExceptionHandler.FaultedWorkerServiceTaskHandler(System.Threading.Tasks.Task)">
+            <summary>
+            Used for handling worker service exceptions in Tasks.
+            </summary>
+            <param name="faultedTask">Task that completed with an exception.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ExceptionHandler.FaultedClassLibraryTaskHandler(System.Threading.Tasks.Task)">
+            <summary>
+            Used for handling class library exceptions in Tasks.
+            </summary>
+            <param name="faultedTask">Task that completed with an exception.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ExceptionHandler.HandleWebsiteException(System.Exception)">
+            <summary>
+            Used for handling exceptions in a web site.
+            </summary>
+            <param name="ex">The Exception</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ExceptionHandler.HandleWebServiceException(System.Exception)">
+            <summary>
+            Used for handling exceptions in a web service.
+            </summary>
+            <param name="ex">The Exception</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ExceptionHandler.HandleWorkerServiceException(System.Exception)">
+            <summary>
+            Used for handling exceptions in a windows service which affect the operation of the service.
+            </summary>
+            <param name="ex">The Exception</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ExceptionHandler.HandleWorkerServiceProcessException(System.Exception)">
+            <summary>
+            Used for handling exceptions in a windows service which only affect the operation of a particular thread/process.
+            </summary>
+            <param name="ex">The Exception</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ExceptionHandler.HandleThreadException(System.Exception)">
+            <summary>
+            Used for handling exceptions caused by aborting of a thread.
+            </summary>
+            <param name="ex">The Exception</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ExceptionHandler.HandleQueueListenerException(System.Exception)">
+            <summary>
+            Used for handling exceptions when a QueueListener can't be contacted.
+            </summary>
+            <param name="ex">The Exception</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ExceptionHandler.HandleException(System.Exception,RRD.FSG.RP.Scheduler.ExceptionHandler.ExceptionPolicyType)">
+            <summary>
+            Used for handling exceptions.
+            </summary>
+            <param name="ex">The Exception</param>
+            <param name="policyType">Type of exception that is being handled.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ExceptionHandler.HandleException(System.Exception,System.String)">
+            <summary>
+            Handles exceptions of all types.
+            </summary>
+            <param name="ex">The ex.</param>
+            <param name="policyName">Name of the policy.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.ExceptionHandler.ExceptionPolicyType">
+            <summary>
+            Enumeration depicting different policy types used for logging exceptions.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.ExceptionHandler.ExceptionPolicyType.WebSite">
+            <summary>
+            The web site
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.ExceptionHandler.ExceptionPolicyType.WebService">
+            <summary>
+            The web service
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.ExceptionHandler.ExceptionPolicyType.WorkerService">
+            <summary>
+            The worker service
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.ExceptionHandler.ExceptionPolicyType.WorkerServiceProcess">
+            <summary>
+            The worker service process
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.ExceptionHandler.ExceptionPolicyType.Thread">
+            <summary>
+            The thread
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.ExceptionHandler.ExceptionPolicyType.QueueListener">
+            <summary>
+            The queue listener
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.ExceptionHandler.ExceptionPolicyType.ClassLibrary">
+            <summary>
+            The class library
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.ExceptionHandler.ExceptionPolicyType.Default">
+            <summary>
+            The default
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.WorkerThreadTimeoutException">
+            <summary>
+            Class WorkerThreadTimeoutException.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.WorkerThreadTimeoutException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.WorkerThreadTimeoutException"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.WorkerThreadTimeoutException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.WorkerThreadTimeoutException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.WorkerThreadTimeoutException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.WorkerThreadTimeoutException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">Inner exception to wrap with this exception.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.WorkerThreadTimeoutException.TimeoutInSeconds">
+            <summary>
+            Gets the seconds timeout that was exceeded to cause this exception.
+            </summary>
+            <value>The timeout in seconds.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule">
+            <summary>
+            Interface IReportSchedule
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule.Process">
+            <summary>
+            Processes the report schedule and returns an entry.
+            </summary>
+            <returns>IReportScheduleEntry representing the item to be processed.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule.ProcessReset">
+            <summary>
+            Resets all items owned by this worker service in the queue.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule.ProcessResetEntry(RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Resets a specific IReportScheduleEntry that is marked as InProcess.
+            </summary>
+            <param name="reportScheduleEntry">Entry to reset.</param>
+            <remarks>Due to the asynchronous nature of queue processing it is possible that a cancellation request might result
+            in multiple calls to this method for the same Entry. It is important that any implementation can handle multiple
+            calls without negative consequence.. Essentially if the item is already reset, do nothing.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule.SaveResults(System.Int32,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Saves the ReportScheduleEntry in Report schedule table for the given reportScheduleId
+            </summary>
+            <param name="reportScheduleId">The report schedule identifier.</param>
+            <param name="reportScheduleEntry">The report schedule entry.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry">
+            <summary>
+            Interface defining report schedule entries to be processed.
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.ReportScheduleId">
+            <summary>
+            Gets or sets the report schedule identifier.
+            </summary>
+            <value>The report schedule identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.ReportName">
+            <summary>
+            Gets or sets the name of the report.
+            </summary>
+            <value>The name of the report.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.ClientId">
+            <summary>
+            Gets or sets the Id of the client.
+            Optional
+            </summary>
+            <value>The client identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.ClientName">
+            <summary>
+            Gets or sets the name of the client.
+            </summary>
+            <value>The name of the client.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.Status">
+            <summary>
+            Status of report schedule entries
+            </summary>
+            <value>The status.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.FrequencyType">
+            <summary>
+            Frequency Type
+            </summary>
+            <value>The type of the frequency.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.FrequencyInterval">
+            <summary>
+            Gets or sets the frequency interval.
+            </summary>
+            <value>The frequency interval.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.UtcNextScheduledRunDate">
+            <summary>
+            Gets or sets the next scheduled run date
+            </summary>
+            <value>The UTC next scheduled run date.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.ServiceName">
+            <summary>
+            This will be a combination of the name of service + machine name to provide a unique fingerprint of which service is processing a job.
+            </summary>
+            <value>The name of the service.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.ExecutionCount">
+            <summary>
+            Total execution count for the current report run attempt.
+            </summary>
+            <value>The execution count.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.Email">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>The email.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.FTPServerIP">
+            <summary>
+            Gets or sets the FTPServerIP address
+            </summary>
+            <value>The FTP server ip.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.FTPFilePath">
+            <summary>
+            Gets or sets the FTPFilePath address
+            </summary>
+            <value>The FTP file path.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.FTPUsername">
+            <summary>
+            Gets or sets the FTPUsername address
+            </summary>
+            <value>The FTP username.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.FTPPassword">
+            <summary>
+            Gets or sets the FTPPassword address
+            </summary>
+            <value>The FTP password.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.IsSFTP">
+            <summary>
+            Gets or sets whether it is SFTP or not
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.UtcDataStartDate">
+            <summary>
+            Gets or sets the data start date
+            </summary>
+            <value>The UTC data start date.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.UtcNextDataEndDate">
+            <summary>
+            Gets or sets the next data end date
+            </summary>
+            <value>The UTC next data end date.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.ErrorEmailSub">
+            <summary>
+            Gets or sets the ErrorEmailSub
+            </summary>
+            <value>The ErrorEmailSub.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.ErrorEmailTemplate">
+            <summary>
+            Gets or sets the ErrorEmailTemplate
+            </summary>
+            <value>The ErrorEmailTemplate.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.ErrorEmail">
+            <summary>
+            Gets or sets the email.
+            </summary>
+            <value>The email.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry.UtcLastDataEndDate">
+            <summary>
+            Gets or sets the UtcLastDataEndDate
+            </summary>
+            <value>The UTC next data end date.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntryFactory">
+            <summary>
+            Interface for IReportScheduleEntry Factories (non generic).
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntryFactory.SaveResults(System.String,System.Int32,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Saves the content and content type in the queue record.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="reportScheduleId">The report schedule identifier.</param>
+            <param name="reportScheduleEntry">The report schedule entry.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntryFactory.Process(System.String,System.String)">
+            <summary>
+            Processes the specified connection string.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="serviceName">Name of the service.</param>
+            <returns>IReportScheduleEntry.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntryFactory.ProcessReset(System.String,System.Int32)">
+            <summary>
+            Resets every QueueEntry that is marked as InProcess
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="reportScheduleId">Report schedule Id.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntryFactory.ProcessResetEntry(System.String,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry,System.Boolean)">
+            <summary>
+            Reset a specific IQueueEntry that is marked as InProcess. Usually called for a graceful exit.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="reportScheduleEntry">The report schedule entry.</param>
+            <param name="reduceAttempts">True if we should reduce total attempts (such as for a graceful exit), false otherwise.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntryFactory.Update(System.String,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry,System.Boolean)">
+            <summary>
+            Updates all the properties on the queue record.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="reportScheduleEntry">The report schedule entry.</param>
+            <param name="success">if set to <c>true</c> [success].</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntryFactory.DataAccess">
+            <summary>
+            Gets the data access instance used to interface between factory and persisted storage of entity data.
+            </summary>
+            <value>The data access.</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntryFactory`1">
+            <summary>
+            Interface for IReportScheduleEntry Factories
+            </summary>
+            <typeparam name="TScheduleEntry">Type of IReportScheduleEntry the factory creates.</typeparam>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntryFactory`1.Process(System.String,System.String)">
+            <summary>
+            Processes the specified connection string.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="serviceName">Name of the service.</param>
+            <returns>TScheduleEntry.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntryFactory`1.Update(System.String,`0,System.Boolean)">
+            <summary>
+            Updates all the properties on the queue record.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="queueEntry">The queue entry.</param>
+            <param name="success">if set to <c>true</c> [success].</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntryFactory`1.ProcessResetEntry(System.String,`0,System.Boolean)">
+            <summary>
+            Reset a specific TQueueEntry that is marked as InProcess. Usually called for a graceful exit.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="queueEntry">Entry to reset.</param>
+            <param name="reduceAttempts">True if we should reduce total attempts (such as for a graceful exit), false otherwise.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule`1">
+            <summary>
+            Interface IReportSchedule
+            </summary>
+            <typeparam name="TScheduleEntry">The type of the t schedule entry.</typeparam>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule`1.Process">
+            <summary>
+            Processes the queue and returns an entry.
+            </summary>
+            <returns>TQueueEntry representing the item to be processed.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Interfaces.IReportSchedule`1.ProcessResetEntry(`0)">
+            <summary>
+            Reset a specific TQueueEntry that is marked as InProcess
+            </summary>
+            <param name="scheduleEntry">The schedule entry.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.ReportSchedule">
+            <summary>
+            Class ReportSchedule.
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.ReportScheduleBase`1">
+            <summary>
+            Class ReportScheduleBase.
+            </summary>
+            <typeparam name="TScheduleEntry">The type of the t schedule entry.</typeparam>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="!:QueueOf(TQueueEntry)"/> class.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="serviceName">Name of the service.</param>
+            <param name="errorReportScheduleName">Name of the error report schedule.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="!:Queue"/> class.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="serviceName">Name of the service.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.Update(`0,System.Boolean)">
+            <summary>
+            Updates all properties on the queue record.
+            </summary>
+            <param name="scheduleEntry">The schedule entry.</param>
+            <param name="success">if set to <c>true</c> [success].</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.Process">
+            <summary>
+            Processes the queue and returns an entry.
+            </summary>
+            <returns>TQueueEntry representing the item to be processed.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.SaveResults(System.Int32,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Saves the content and content type fields on the queueEntry with the given context id.
+            </summary>
+            <param name="reportScheduleId">The report schedule identifier.</param>
+            <param name="reportScheduleEntry">The report schedule entry.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.ProcessReset">
+            <summary>
+            Processes the reset.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.ProcessResetEntry(`0)">
+            <summary>
+            Resets a specific IQueueEntry that is marked as InProcess.
+            </summary>
+            <param name="scheduleEntry">The schedule entry.</param>
+            <remarks>Due to the asynchronous nature of queue processing it is possible that a cancellation request might result
+            in multiple calls to this method for the same Entry. It is important that any implementation can handle multiple
+            calls without negative consequence.. Essentially if the item is already reset, do nothing.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.RRD#FSG#RP#Scheduler#Interfaces#IReportSchedule#ProcessResetEntry(RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Resets a specific IQueueEntry that is marked as InProcess.
+            </summary>
+            <param name="reportScheduleEntry">Entry to reset.</param>
+            <remarks>Due to the asynchronous nature of queue processing it is possible that a cancellation request might result
+            in multiple calls to this method for the same Entry. It is important that any implementation can handle multiple
+            calls without negative consequence.. Essentially if the item is already reset, do nothing.</remarks>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.RRD#FSG#RP#Scheduler#Interfaces#IReportSchedule#Process">
+            <summary>
+            Processes the queue and returns an entry.
+            </summary>
+            <returns>IQueueEntry representing the item to be processed.</returns>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.ReportSchedulerId">
+            <summary>
+            Gets the report scheduler identifier.
+            </summary>
+            <value>The report scheduler identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.ServiceName">
+            <summary>
+            Gets the name of the service.
+            </summary>
+            <value>The name of the service.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.ConnectionString">
+            <summary>
+            Gets the connection string.
+            </summary>
+            <value>The connection string.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.ErrorReportScheduleName">
+            <summary>
+            Gets the name of the error report schedule.
+            </summary>
+            <value>The name of the error report schedule.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleBase`1.Factory">
+            <summary>
+            Gets or sets the factory.
+            </summary>
+            <value>The factory.</value>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportSchedule.#ctor(System.String,System.String,System.String,RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="!:Queue"/> class.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="serviceName">Name of the service.</param>
+            <param name="errorReportScheduleName">Name of the error report schedule.</param>
+            <param name="dataAccess">The data access.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportSchedule.#ctor(System.String,System.String,RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="!:Queue"/> class.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="serviceName">Name of the service.</param>
+            <param name="dataAccess">The data access.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.ReportScheduleEntry">
+            <summary>
+            Class ReportScheduleEntry.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntry.#ctor(System.Int32,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Nullable{System.Int32},System.String,System.String,System.String,System.String,System.String,System.Boolean,System.DateTime,System.DateTime,System.String,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.ReportScheduleEntry"/> class.
+            </summary>
+            <param name="reportScheduleId">The report schedule identifier.</param>
+            <param name="reportName">Name of the report.</param>
+            <param name="clientId">The client identifier.</param>
+            <param name="clientName">Name of the client.</param>
+            <param name="status">The status.</param>
+            <param name="frequencyType">Type of the frequency.</param>
+            <param name="frequencyInterval">The frequency interval.</param>
+            <param name="utcNextScheduledRunDate">The UTC next scheduled run date.</param>
+            <param name="serviceName">Name of the service.</param>
+            <param name="executionCount">The execution count.</param>
+            <param name="email">The email.</param>
+            <param name="ftpServerIP">The FTP server ip.</param>
+            <param name="ftpFilePath">The FTP file path.</param>
+            <param name="ftpUserName">Name of the FTP user.</param>
+            <param name="ftpPassword">The FTP password.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.ReportScheduleId">
+            <summary>
+            Gets or sets the report schedule identifier.
+            </summary>
+            <value>The report schedule identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.ReportName">
+            <summary>
+            Gets or sets the report name
+            </summary>
+            <value>The name of the report.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.ClientId">
+            <summary>
+            Gets or sets the Id of the client.
+            Optional
+            </summary>
+            <value>The client identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.ClientName">
+            <summary>
+            Gets or sets the client name
+            </summary>
+            <value>The name of the client.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.Status">
+            <summary>
+            Status of report schedule entries
+            </summary>
+            <value>The status.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.FrequencyType">
+            <summary>
+            Frequency Type
+            </summary>
+            <value>The type of the frequency.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.FrequencyInterval">
+            <summary>
+            Gets or sets the frequency interval.
+            </summary>
+            <value>The frequency interval.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.UtcNextScheduledRunDate">
+            <summary>
+            Gets or sets the next scheduled run date
+            </summary>
+            <value>The UTC next scheduled run date.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.ServiceName">
+            <summary>
+            This will be a combination of the name of service + machine name to provide a unique fingerprint of which service is processing a job.
+            </summary>
+            <value>The name of the service.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.ExecutionCount">
+            <summary>
+            Total execution count for the current report run attempt.
+            </summary>
+            <value>The execution count.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.Email">
+            <summary>
+            Gets or sets the email address
+            </summary>
+            <value>The email.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.ErrorEmail">
+            <summary>
+            Gets or sets the error email address
+            </summary>
+            <value>The  error email.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.FTPServerIP">
+            <summary>
+            Gets or sets the FTPServerIP address
+            </summary>
+            <value>The FTP server ip.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.FTPFilePath">
+            <summary>
+            Gets or sets the FTPFilePath address
+            </summary>
+            <value>The FTP file path.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.FTPUsername">
+            <summary>
+            Gets or sets the FTPUsername address
+            </summary>
+            <value>The FTP username.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.FTPPassword">
+            <summary>
+            Gets or sets the FTPPassword address
+            </summary>
+            <value>The FTP password.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.IsSFTP">
+            <summary>
+            ISSFTP
+            </summary>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.UtcDataStartDate">
+            <summary>
+            Gets or sets the data start date
+            </summary>
+            <value>The UTC data start date.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.UtcNextDataEndDate">
+            <summary>
+            Gets or sets the next data end date
+            </summary>
+            <value>The UTC next data end date.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.ErrorEmailSub">
+            <summary>
+            Gets or sets the ErrorEmailSub
+            </summary>
+            <value>The ErrorEmailSub.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.ErrorEmailTemplate">
+            <summary>
+            Gets or sets the ErrorEmailTemplate
+            </summary>
+            <value>The ErrorEmailTemplate.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntry.UtcLastDataEndDate">
+            <summary>
+            Gets or sets the UtcLastDataEndDate
+            </summary>
+            <value>The UtcLastDataEndDate</value>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactory">
+            <summary>
+            Class ReportScheduleEntryFactory.
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1">
+            <summary>
+            Base class for IReportScheduleEntry factories.
+            </summary>
+            <typeparam name="TScheduleEntry">The type of the t schedule entry.</typeparam>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="!:BaseFactory"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.SaveResults(System.String,System.Int32,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Saves the content and content type in the queue record.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="reportScheduleId">The report schedule identifier.</param>
+            <param name="reportScheduleEntry">The report schedule entry.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.Update(System.String,`0,System.Boolean)">
+            <summary>
+            Updates all the properties on the queue record.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="scheduleEntry">The queue entry.</param>
+            <param name="success">if set to <c>true</c> [success].</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.Process(System.String,System.String)">
+            <summary>
+            Processes the specified connection string.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="serviceName">Name of the service.</param>
+            <returns>The next item from the queue.</returns>
+            <exception cref="T:System.ApplicationException">Unable to Process the ReportScheduleEntry</exception>
+            <exception cref="T:System.ApplicationException">Thrown if processing the entry resulted in an unknown error.</exception>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.ProcessReset(System.String,System.Int32)">
+            <summary>
+            Resets every QueueEntry that is marked as InProcess
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="reportSchedulerId">Report scheduler id.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.ProcessResetEntry(System.String,`0,System.Boolean)">
+            <summary>
+            Reset a specific TQueueEntry that is marked as InProcess. Usually called for a graceful exit.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="scheduleEntry">The schedule entry.</param>
+            <param name="reduceAttempts">True if we should reduce total attempts (such as for a graceful exit), false otherwise.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.CreateScheduleEntry(System.Data.IDataRecord)">
+            <summary>
+            Instantiates a TQueueEntry object using the data record.
+            </summary>
+            <param name="record">record used to instantiate the object.</param>
+            <returns>the instantiated TQueueEntry object.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.CreateScheduleEntry(System.Data.DataRow)">
+            <summary>
+            Instantiates a TQueueEntry object using the data row.
+            </summary>
+            <param name="row">row used to instantiate the object.</param>
+            <returns>the instantiated TQueueEntry object.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.GetScheduleEntry(System.String,System.String,System.String)">
+            <summary>
+            Used by both Peek and Process operations, they both do the exact same functionality in code the differences lie in the stored procedures
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="spName">The name of the stored procedure to run</param>
+            <param name="serviceName">Name of the service.</param>
+            <returns>TScheduleEntry.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.RRD#FSG#RP#Scheduler#Interfaces#IReportScheduleEntryFactory#Update(System.String,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry,System.Boolean)">
+            <summary>
+            Updates all the properties on the queue record.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="reportScheduleEntry">The report schedule entry.</param>
+            <param name="success">if set to <c>true</c> [success].</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.RRD#FSG#RP#Scheduler#Interfaces#IReportScheduleEntryFactory#Process(System.String,System.String)">
+            <summary>
+            Processes the specified connection string.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="serviceName">Name of the service.</param>
+            <returns>IReportScheduleEntry.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.RRD#FSG#RP#Scheduler#Interfaces#IReportScheduleEntryFactory#ProcessResetEntry(System.String,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry,System.Boolean)">
+            <summary>
+            Reseta a specific TQueueEntry that is marked as InProcess. Usually called for a graceful exit.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="reportScheduleEntry">The report schedule entry.</param>
+            <param name="reduceAttempts">True if we should reduce total attempts (such as for a graceful exit), false otherwise.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.SaveResultsProcedure">
+            <summary>
+            Gets the stored procedure for saving results.
+            </summary>
+            <value>The save results procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.EnQueueProcedure">
+            <summary>
+            Gets the stored procedure for en queuing items.
+            </summary>
+            <value>The en queue procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.GetCountProcedure">
+            <summary>
+            Gets the stored procedure for getting a count of items in queue.
+            </summary>
+            <value>The get count procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.ProcessProcedure">
+            <summary>
+            Gets the stored procedure for dequeuing an item.
+            </summary>
+            <value>The process procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.ProcessResetProcedure">
+            <summary>
+            Gets the stored procedure for reseting queue items owned by a specific process.
+            </summary>
+            <value>The process reset procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.ProcessResetEntryProcedure">
+            <summary>
+            Gets the stored procedure for resetting queue items owned by a specific process.
+            </summary>
+            <value>The process reset entry procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.UpdateProcedure">
+            <summary>
+            Gets the stored procedure for updating the queue.
+            </summary>
+            <value>The update procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.InitCancelProcedure">
+            <summary>
+            Gets the initialize cancel procedure.
+            </summary>
+            <value>The initialize cancel procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.InitBatchCancelProcedure">
+            <summary>
+            Gets the initialize batch cancel procedure.
+            </summary>
+            <value>The initialize batch cancel procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.CompleteCancelProcedure">
+            <summary>
+            Gets the complete cancel procedure.
+            </summary>
+            <value>The complete cancel procedure.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactoryBase`1.DataAccess">
+            <summary>
+            Gets the data access instance used to interface between factory and persisted storage of entity data.
+            </summary>
+            <value>The data access.</value>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactory.#ctor(RRD.DSA.Core.DAL.IDataAccess)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactory"/> class.
+            </summary>
+            <param name="dataAccess">Data access entity used to interface between the factory and the persisted storage.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactory.CreateScheduleEntry(System.Data.IDataRecord)">
+            <summary>
+            Instantiates a ReportScheduleEntry object using the data record.
+            </summary>
+            <param name="record">record used to instantiate the object.</param>
+            <returns>the instantiated ReportScheduleEntry object.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactory.CreateScheduleEntry(System.Data.DataRow)">
+            <summary>
+            Instantiates a ReportScheduleEntry object using the data row.
+            </summary>
+            <param name="row">row used to instantiate the object.</param>
+            <returns>the instantiated ReportScheduleEntry object.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportScheduleEntryFactory.CreateScheduleEntry(System.Int32,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.DateTime,System.String,System.Nullable{System.Int32},System.String,System.String,System.String,System.String,System.String,System.Boolean,System.DateTime,System.DateTime,System.String,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Instantiates a ReportScheduleEntry object using the passed in data.
+            </summary>
+            <param name="reportScheduleId">The report schedule identifier.</param>
+            <param name="reportName">Name of the report.</param>
+            <param name="clientId">The client identifier.</param>
+            <param name="clientName">Name of the client.</param>
+            <param name="status">The status.</param>
+            <param name="frequencyType">Type of the frequency.</param>
+            <param name="frequencyInterval">The frequency interval.</param>
+            <param name="utcNextScheduledRunDate">The UTC next scheduled run date.</param>
+            <param name="serviceName">Name of the service.</param>
+            <param name="executionCount">The execution count.</param>
+            <param name="email">The email.</param>
+            <param name="ftpServerIP">The FTP server ip.</param>
+            <param name="ftpFilePath">The FTP file path.</param>
+            <param name="ftpUserName">Name of the FTP user.</param>
+            <param name="ftpPassword">The FTP password.</param>
+            <returns>returns an entry of report schedule</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.ReportTransfer">
+            <summary>
+            Class ReportTransfer.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.ReportTransfer.Process(RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Email
+            </summary>
+            <param name="reportContentObjectModel">The report content object model.</param>
+            <param name="entry">The entry.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.TaskEngine">
+            <summary>
+            Class TaskEngine.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.TaskEngine.Process(RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Processes the specified report schedule entry.
+            </summary>
+            <param name="reportScheduleEntry">The report schedule entry.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.TaskEngine.RetrieveTaskObject(System.String)">
+            <summary>
+            Retrieves the task object.
+            </summary>
+            <param name="reportName">Name of the report.</param>
+            <returns>BaseTask.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Task.BillingReports.MonthlyBillingReportGenerator">
+            <summary>
+            Class for monthly billing report
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.Task.BillingReports.MonthlyBillingReportGenerator.hostedClientPagescenariosFactory">
+            <summary>
+            object for IHostedClientPageScenariosFactory
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.BillingReports.MonthlyBillingReportGenerator.#ctor(System.String)">
+            <summary>
+            Constructor for billing report
+            </summary>
+            <param name="clientName"></param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.BillingReports.MonthlyBillingReportGenerator.GetBillingReport(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Method that fetches data from factory
+            </summary>
+            <param name="fromDate"></param>
+            <param name="toDate"></param>
+            <param name="clientName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.BillingReports.MonthlyBillingReportGenerator.GenerateReport(RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel,System.String)">
+            <summary>
+            Method that calls excel generator
+            </summary>
+            <param name="reportContentObjectModel"></param>
+            <param name="clientName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.BillingReports.MonthlyBillingReportGenerator.PrepareBillingreportData(RRD.FSG.RP.Model.Entities.HostedPages.BillingReportModel,System.String,System.DateTime,System.DateTime,System.String,System.Int32)">
+            <summary>
+            Method for organizing data 
+            </summary>
+            <param name="billingReport"></param>
+            <param name="frequencyType"></param>
+            <param name="from"></param>
+            <param name="to"></param>
+            <param name="clientName"></param>
+            <param name="sheetNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Task.BillingReportTask">
+            <summary>
+            class BillingReportTask
+            </summary>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.BaseTask">
+            <summary>
+            Class BaseTask.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.BaseTask.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BaseTask" /> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.BaseTask.#ctor(System.Int32,RRD.FSG.RP.Model.Entities.System.ClientObjectModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.BaseTask"/> class.
+            </summary>
+            <param name="objectId">The object identifier.</param>
+            <param name="clientObjectModel">The client object model.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.BaseTask.Process(RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Process the task.
+            </summary>
+            <param name="entry">The entry.</param>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.BaseTask.ObjectId">
+            <summary>
+            Gets or sets Object Id
+            </summary>
+            <value>The object identifier.</value>
+        </member>
+        <member name="P:RRD.FSG.RP.Scheduler.BaseTask.ClientObjectModel">
+            <summary>
+            Gets or sets Client object.
+            </summary>
+            <value>The client object model.</value>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.BillingReportTask.#ctor">
+            <summary>
+            Default constructor for billing report 
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.BillingReportTask.Process(RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Process the task
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.BillingReportTask.GenerateReportByFrequencyType(System.Int32,System.Int32,System.String,RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel,System.Nullable{System.DateTime})">
+            <summary>
+            Generates the report for the given frequency type
+            </summary>
+            <param name="frequencyType"></param>
+            <param name="frequencyInterval"></param>
+            <param name="clientName"></param>
+            <param name="reportContentObjectModel"></param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Task.ErrorReportsTask">
+            <summary>
+            Class ErrorReportsTask.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.ErrorReportsTask.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.ErrorReportsTask"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.ErrorReportsTask.Process(RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Overriden process method, that generates the report and does the distribution
+            </summary>
+            <param name="entry">Object of type IReportScheduleEntry</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.ErrorReportsTask.GenerateReportByFrequencyType(System.Int32,System.Int32,System.String,RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel,System.Nullable{System.DateTime})">
+            <summary>
+            Generates the type of the report by frequency.
+            </summary>
+            <param name="frequencyType">Type of the frequency.</param>
+            <param name="frequencyInterval">Interval of the frequency.</param>
+            <param name="clientName">Name of the client.</param>
+            <param name="reportContentObjectModel">The report content object model.</param>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.Task.DocumentUpdateReport.DocumentUpdateReportGenerator.hostedClientPagescenariosFactory">
+            <summary>
+            object for IHostedClientPageScenariosFactory
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.DocumentUpdateReport.DocumentUpdateReportGenerator.#ctor(System.String)">
+            <summary>
+            Costructor
+            </summary>
+            <param name="clientName"></param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.DocumentUpdateReport.DocumentUpdateReportGenerator.GenerateReport(System.String,RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel)">
+            <summary>
+            GenerateReport
+            </summary>
+            <param name="clientName">clientName</param>
+            <param name="reportContentObjectModel">reportContentObjectModel</param>
+            <returns></returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.DocumentUpdateReportTask.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.ErrorReportsTask"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.DocumentUpdateReportTask.Process(RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Overriden process method, that generates the report and does the distribution
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.DocumentUpdateReportTask.GenerateReportByFrequencyType(System.Int32,System.Int32,System.String,RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            GenerateReportByFrequencyType
+            </summary>
+            <param name="frequencyType"></param>
+            <param name="frequencyInterval"></param>
+            <param name="clientName"></param>
+            <param name="reportContentObjectModel"></param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Task.PrintRequest.PrintRequestGenerator">
+            <summary>
+            Class PrintRequestGenerator.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.Task.PrintRequest.PrintRequestGenerator.hostedClientRequestMaterialFactory">
+            <summary>
+            The hosted client request material factory
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.PrintRequest.PrintRequestGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.PrintRequest.PrintRequestGenerator"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.PrintRequest.PrintRequestGenerator.#ctor(RRD.FSG.RP.Model.Interfaces.HostedPages.IHostedClientRequestMaterialFactory)">
+            <summary>
+            PrintRequestGeneratorTest
+            </summary>
+            <param name="mockhostedClientRequestMaterialFactory">The mockhosted client request material factory.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.PrintRequest.PrintRequestGenerator.GeneratePrintRequestXML(System.String,RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel)">
+            <summary>
+            Generates the print request XML.
+            </summary>
+            <param name="clientName">Name of the client.</param>
+            <param name="reportContentObjectModel">The report content object model.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Task.PrintRequestsTask">
+            <summary>
+            Class PrintRequestsTask.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.PrintRequestsTask.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.PrintRequestsTask"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.PrintRequestsTask.Process(RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Process the task.
+            </summary>
+            <param name="entry">The entry.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.PrintRequestsTask.GenerateReportByFrequencyType(RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel,RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Generates the type of the report by frequency.
+            </summary>
+            <param name="reportContentObjectModel">The report content object model.</param>
+            <param name="entry">The entry.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Task.Reports.MonthlyErrorReportGenerator">
+            <summary>
+            Class MonthlyErrorReportGenerator.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.Task.Reports.MonthlyErrorReportGenerator.badRequestFactory">
+            <summary>
+            The Bad request factory
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.MonthlyErrorReportGenerator.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.Reports.MonthlyErrorReportGenerator"/> class.
+            </summary>
+            <param name="clientName">Name of the client.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.MonthlyErrorReportGenerator.#ctor(RRD.FSG.RP.Model.Interfaces.IFactory{RRD.FSG.RP.Model.Entities.Client.SiteActivityObjectModel,System.Int32})">
+            <summary>
+            Parameterized Constructor for Testing
+            </summary>
+            <param name="BadRequestFactory">The bad request factory.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.MonthlyErrorReportGenerator.GetMonthlyErrorReportbyDate(System.DateTime,System.DateTime)">
+            <summary>
+            Gets the monthly report by date.
+            </summary>
+            <param name="fromDate">From date.</param>
+            <param name="toDate">To date.</param>
+            <returns>IEnumerable&lt;SiteActivityObjectModel&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.MonthlyErrorReportGenerator.GenerateReport(RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel)">
+            <summary>
+            Generates the report.
+            </summary>
+            <param name="reportContentObjectModel">The report content object model.</param>
+            <returns>System.Byte[].</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.MonthlyErrorReportGenerator.PrepareMonthlyErrorDataset(System.Collections.Generic.IEnumerable{RRD.FSG.RP.Model.Entities.Client.SiteActivityObjectModel},System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Prepares the summary Monthly dataset.
+            </summary>
+            <param name="list">The list.</param>
+            <param name="frequencyType">Type of the frequency.</param>
+            <param name="from">From.</param>
+            <param name="to">To.</param>
+            <returns>DataTable.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Task.MonthlyReportGenerator">
+            <summary>
+            Class MonthlyReportGenerator.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.Task.MonthlyReportGenerator.siteActivityFactory">
+            <summary>
+            The site activity factory
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.Task.MonthlyReportGenerator.docTypes">
+            <summary>
+            The document types
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.MonthlyReportGenerator.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.MonthlyReportGenerator"/> class.
+            </summary>
+            <param name="clientName">Name of the client.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.MonthlyReportGenerator.#ctor(RRD.FSG.RP.Model.Interfaces.IFactory{RRD.FSG.RP.Model.Entities.Client.SiteActivityObjectModel,System.Int32})">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.MonthlyReportGenerator"/> class.
+            </summary>
+            <param name="SiteActivityFactory">The site activity factory.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.MonthlyReportGenerator.GetMonthlyReportbyDate(System.DateTime,System.DateTime)">
+            <summary>
+            Gets the monthly reportby date.
+            </summary>
+            <param name="fromDate">From date.</param>
+            <param name="toDate">To date.</param>
+            <returns>IEnumerable&lt;SiteActivityObjectModel&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.MonthlyReportGenerator.GenerateReport(RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel)">
+            <summary>
+            Generates the report.
+            </summary>
+            <param name="reportContentObjectModel">The report content object model.</param>
+            <returns>System.Byte[].</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.MonthlyReportGenerator.PrepareMonthlyDataset(System.Collections.Generic.IEnumerable{RRD.FSG.RP.Model.Entities.Client.SiteActivityObjectModel},System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Prepares the summary Monthly dataset.
+            </summary>
+            <param name="list">The list.</param>
+            <param name="frequencyType">Type of the frequency.</param>
+            <param name="from">From.</param>
+            <param name="to">To.</param>
+            <returns>DataTable.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Task.QuarterlyReportGenerator">
+            <summary>
+            Class QuarterlyReportGenerator.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.Task.QuarterlyReportGenerator.siteActivityFactory">
+            <summary>
+            The site activity factory
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.Task.QuarterlyReportGenerator.docTypes">
+            <summary>
+            The document types
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.QuarterlyReportGenerator.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.QuarterlyReportGenerator"/> class.
+            </summary>
+            <param name="clientName">Name of the client.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.QuarterlyReportGenerator.#ctor(RRD.FSG.RP.Model.Interfaces.IFactory{RRD.FSG.RP.Model.Entities.Client.SiteActivityObjectModel,System.Int32})">
+            <summary>
+            Parameterized Constructor for Testing
+            </summary>
+            <param name="SiteActivityFactory">The site activity factory.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.QuarterlyReportGenerator.GetQuarterlyReportbyDate(System.DateTime,System.DateTime)">
+            <summary>
+            Gets the Quarterly report by date.
+            </summary>
+            <param name="fromDate">From date.</param>
+            <param name="toDate">To date.</param>
+            <returns>IEnumerable&lt;SiteActivityObjectModel&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.QuarterlyReportGenerator.GenerateReport(RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel)">
+            <summary>
+            Generates the report.
+            </summary>
+            <param name="reportContentObjectModel">The report content object model.</param>
+            <returns>System.Byte[].</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.QuarterlyReportGenerator.PrepareSummaryQuarterlyDataset(System.Collections.Generic.IEnumerable{RRD.FSG.RP.Model.Entities.Client.SiteActivityObjectModel},System.DateTime,System.DateTime)">
+            <summary>
+            Prepares the summary weekly dataset.
+            </summary>
+            <param name="list">The list.</param>
+            <param name="from">From.</param>
+            <param name="to">To.</param>
+            <returns>DataTable.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.QuarterlyReportGenerator.PrepareQuarterlyDataset(System.Collections.Generic.IEnumerable{RRD.FSG.RP.Model.Entities.Client.SiteActivityObjectModel})">
+            <summary>
+            Prepares the Quarterly dataset.
+            </summary>
+            <param name="list">The list.</param>
+            <returns>DataTable.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Task.Reports.ReportContent">
+            <summary>
+            Class ReportContent.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.Task.Reports.ReportContent.reportContentFactory">
+            <summary>
+            The report content factory
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.ReportContent.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.Reports.ReportContent"/> class.
+            </summary>
+            <param name="clientName">Name of the client.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.ReportContent.#ctor(RRD.FSG.RP.Model.Interfaces.IFactory{RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel,System.Int32},System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.Reports.ReportContent"/> class.
+            </summary>
+            <param name="ReportContentFactory">The report content factory.</param>
+            <param name="clientName">Name of the client.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.ReportContent.SaveReportContent(RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel)">
+            <summary>
+            Saves all Report Details
+            </summary>
+            <param name="objReportContentModel">The object report content model.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Task.ActivityReportTask">
+            <summary>
+            Class ReportsTask.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.ActivityReportTask.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.ActivityReportTask"/> class.
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.ActivityReportTask.Process(RRD.FSG.RP.Scheduler.Interfaces.IReportScheduleEntry)">
+            <summary>
+            Process the task.
+            </summary>
+            <param name="entry">The entry.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.ActivityReportTask.GenerateReportByFrequencyType(System.Int32,System.Int32,System.String,RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel,System.Nullable{System.DateTime})">
+            <summary>
+            Generates the type of the report by frequency.
+            </summary>
+            <param name="frequencyType">Type of the frequency.</param>
+            <param name="frequencyInterval">Interval of the frequency.</param>
+            <param name="clientName">Name of the client.</param>
+            <param name="reportContentObjectModel">The report content object model.</param>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyErrorReportGenerator">
+            <summary>
+            Class WeeklyErrorReportGenerator.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyErrorReportGenerator.badRequestFactory">
+            <summary>
+            The Bad request factory
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyErrorReportGenerator.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.Reports.MonthlyErrorReportGenerator"/> class.
+            </summary>
+            <param name="clientName">Name of the client.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyErrorReportGenerator.#ctor(RRD.FSG.RP.Model.Interfaces.IFactory{RRD.FSG.RP.Model.Entities.Client.SiteActivityObjectModel,System.Int32},System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.Reports.MonthlyErrorReportGenerator"/> class.
+            </summary>
+            <param name="BadRequestFactory">The bad request factory.</param>
+            <param name="clientName">Name of the client.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyErrorReportGenerator.GetWeeklyErrorReportbyDate(System.DateTime,System.DateTime)">
+            <summary>
+            Gets the weekly report by date.
+            </summary>
+            <param name="fromDate">From date.</param>
+            <param name="toDate">To date.</param>
+            <returns>IEnumerable&lt;SiteActivityObjectModel&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyErrorReportGenerator.GenerateReport(RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel)">
+            <summary>
+            Generates the report.
+            </summary>
+            <param name="reportContentObjectModel">The report content object model.</param>
+            <returns>System.Byte[].</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyErrorReportGenerator.PrepareWeeklyErrorDataset(System.Collections.Generic.IEnumerable{RRD.FSG.RP.Model.Entities.Client.SiteActivityObjectModel},System.DateTime,System.DateTime)">
+            <summary>
+            Prepares the weekly error dataset.
+            </summary>
+            <param name="list">The list.</param>
+            <param name="from">From.</param>
+            <param name="to">To.</param>
+            <returns>DataTable.</returns>
+        </member>
+        <member name="T:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyReportGenerator">
+            <summary>
+            Class WeeklyReportGenerator.
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyReportGenerator.siteActivityFactory">
+            <summary>
+            The site activity factory
+            </summary>
+        </member>
+        <member name="F:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyReportGenerator.docTypes">
+            <summary>
+            The document types
+            </summary>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyReportGenerator.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyReportGenerator"/> class.
+            </summary>
+            <param name="clientName">Name of the client.</param>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyReportGenerator.GetWeeklyReportbyDate(System.DateTime,System.DateTime)">
+            <summary>
+            Gets the Weekly report by date.
+            </summary>
+            <param name="fromDate">From date.</param>
+            <param name="toDate">To date.</param>
+            <returns>IEnumerable&lt;SiteActivityObjectModel&gt;.</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyReportGenerator.GenerateReport(RRD.FSG.RP.Model.Entities.Client.ReportContentObjectModel)">
+            <summary>
+            Generates the report.
+            </summary>
+            <param name="reportContentObjectModel">The report content object model.</param>
+            <returns>System.Byte[].</returns>
+        </member>
+        <member name="M:RRD.FSG.RP.Scheduler.Task.Reports.WeeklyReportGenerator.PrepareWeeklyDataset(System.Collections.Generic.IEnumerable{RRD.FSG.RP.Model.Entities.Client.SiteActivityObjectModel},System.DateTime,System.DateTime)">
+            <summary>
+            Prepares the summary weekly dataset.
+            </summary>
+            <param name="list">The list.</param>
+            <param name="from">From.</param>
+            <param name="to">To.</param>
+            <returns>DataTable.</returns>
+        </member>
+    </members>
+</doc>

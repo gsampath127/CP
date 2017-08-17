@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB74BD37-160C-441D-A33B-620789A8EDD3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RRD.FSG.RP.Model</RootNamespace>
+    <AssemblyName>RRD.FSG.RP.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\packages\RuleSet\RRD.FSG.RP.Ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\Documentation\RRD.FSG.RP.Model.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RRD.DSA.Core">
+      <HintPath>..\packages\RRD.DSA.Core\RRD.DSA.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Client\ApproveProofingObjectModel.cs" />
+    <Compile Include="Entities\Client\ClientDocumentGroupObjectModel.cs" />
+    <Compile Include="Entities\Client\ClientDocumentTypeObjectModel.cs" />
+    <Compile Include="Entities\Client\ClientDocumentObjectModel.cs" />
+    <Compile Include="Entities\Client\CUDHistoryObjectModel.cs" />
+    <Compile Include="Entities\Client\DocumentTypeAssociationObjectModel.cs" />
+    <Compile Include="Entities\Client\ReportContentObjectModel.cs" />
+    <Compile Include="Entities\HostedPages\BillingReportModel.cs" />
+    <Compile Include="Entities\Client\UrlGenerationObjectModel.cs" />
+    <Compile Include="Entities\HostedPages\HostedPageFeature.cs" />
+    <Compile Include="Entities\HostedPages\HostedSiteFeature.cs" />
+    <Compile Include="Entities\HostedPages\RequestMaterialEmailHistory.cs" />
+    <Compile Include="Entities\HostedPages\RequestMaterialPrintHistory.cs" />
+    <Compile Include="Entities\VerticalMarket\DocumentTypeObjectModel.cs" />
+    <Compile Include="Entities\Client\DocumentTypeExternalIdObjectModel.cs" />
+    <Compile Include="Entities\Client\PageFeatureObjectModel.cs" />
+    <Compile Include="Entities\Client\PageNavigationObjectModel.cs" />
+    <Compile Include="Entities\Client\PageTextObjectModel.cs" />
+    <Compile Include="Entities\Client\SiteActivityObjectModel.cs" />
+    <Compile Include="Entities\Client\SiteFeatureObjectModel.cs" />
+    <Compile Include="Entities\Client\SiteNavigationObjectModel.cs" />
+    <Compile Include="Entities\Client\SiteObjectModel.cs" />
+    <Compile Include="Entities\Client\SiteTextObjectModel.cs" />
+    <Compile Include="Entities\Client\TaxonomyAssociationHierarchyObjectModel.cs" />
+    <Compile Include="Entities\Client\TaxonomyAssociationObjectModel.cs" />
+    <Compile Include="Entities\Client\TaxonomyLevelExternalIdObjectModel.cs" />
+    <Compile Include="Entities\Client\UrlRewriteObjectModel.cs" />
+    <Compile Include="Entities\Client\VerticalXmlExportObjectModel.cs" />
+    <Compile Include="Entities\Client\VerticalXmlImportObjectModel.cs" />
+    <Compile Include="Entities\Client\XBRLObjectModel.cs" />
+    <Compile Include="Entities\ErrorLogObjectModel.cs" />
+    <Compile Include="Entities\HostedPages\HostedPageNavigation.cs" />
+    <Compile Include="Entities\System\HostedTemplatePageNavigation.cs" />
+    <Compile Include="Entities\System\ReportScheduleObjectModel.cs" />
+    <Compile Include="Entities\System\ReportsObjectModel.cs" />
+    <Compile Include="Entities\System\RolesObjectModel.cs" />
+    <Compile Include="Entities\System\TemplateFeatureObjectModel.cs" />
+    <Compile Include="Entities\System\TemplatePageFeatureObjectModel.cs" />
+    <Compile Include="Entities\System\TemplatePageNavigationObjectModel.cs" />
+    <Compile Include="Entities\System\TemplatePageObjectModel.cs" />
+    <Compile Include="Entities\System\TemplatePageTextObjectModel.cs" />
+    <Compile Include="Entities\System\TemplateNavigationObjectModel.cs" />
+    <Compile Include="Entities\System\TemplateTextObjectModel.cs" />
+    <Compile Include="Entities\System\VerticalMarketsObjectModel.cs" />
+    <Compile Include="Entities\VerticalMarket\TaxonomyObjectModel.cs" />
+    <Compile Include="Enumerations\BadRequestEnums.cs" />
+    <Compile Include="Enumerations\CompareEnums.cs" />
+    <Compile Include="Enumerations\FrequencyType.cs" />
+    <Compile Include="Enumerations\FeatureEnums.cs" />
+    <Compile Include="Enumerations\PrintRequestEnums.cs" />
+    <Compile Include="Enumerations\ScheduleStatus.cs" />
+    <Compile Include="Enumerations\SortEnums.cs" />
+    <Compile Include="Enumerations\TaxonomyLevelEnums.cs" />
+    <Compile Include="Enumerations\XBRLItemType.cs" />
+    <Compile Include="Factories\Client\ApproveProofingFactory.cs" />
+    <Compile Include="Factories\Client\BadRequestFactory.cs" />
+    <Compile Include="Factories\Client\ClientDocumentGroupFactory.cs" />
+    <Compile Include="Factories\Client\ClientDocumentTypeFactory.cs" />
+    <Compile Include="Factories\Client\ClientDocumentFactory.cs" />
+    <Compile Include="Factories\Client\CUDHistoryFactory.cs" />
+    <Compile Include="Factories\Client\DocumentTypeAssociationFactory.cs" />
+    <Compile Include="Factories\Client\DocumentTypeExternalIdFactory.cs" />
+    <Compile Include="Entities\Client\FootnoteObjectModel.cs" />
+    <Compile Include="Factories\Client\FootnoteFactory.cs" />
+    <Compile Include="Factories\Client\ReportContentFactory.cs" />
+    <Compile Include="Factories\HostedPages\HostedClientRequestMaterialFactory.cs" />
+    <Compile Include="Factories\System\UrlGeneratorFactory.cs" />
+    <Compile Include="Factories\VerticalMarket\DocumentTypeFactory.cs" />
+    <Compile Include="Factories\Client\PageFeatureFactory.cs" />
+    <Compile Include="Factories\Client\PageNavigationFactory.cs" />
+    <Compile Include="Factories\Client\PageTextFactory.cs" />
+    <Compile Include="Factories\Client\SiteActivityFactory.cs" />
+    <Compile Include="Factories\Client\SiteFactory.cs" />
+    <Compile Include="Factories\Client\SiteFeatureFactory.cs" />
+    <Compile Include="Factories\Client\SiteNavigationFactory.cs" />
+    <Compile Include="Factories\Client\SiteTextFactory.cs" />
+    <Compile Include="Factories\Client\StaticResourceFactory.cs" />
+    <Compile Include="Factories\Client\TaxonomyAssociationFactory.cs" />
+    <Compile Include="Factories\Client\TaxonomyAssociationHierarchyFactory.cs" />
+    <Compile Include="Factories\Client\TaxonomyLevelExternalIdFactory.cs" />
+    <Compile Include="Factories\Client\UrlRewriteFactory.cs" />
+    <Compile Include="Factories\Client\VerticalImportExportGenerationFactory.cs" />
+    <Compile Include="Factories\Client\VerticalXmlExportFactory.cs" />
+    <Compile Include="Factories\Client\VerticalXmlImportFactory.cs" />
+    <Compile Include="Factories\ErrorLogFactory.cs" />
+    <Compile Include="Factories\System\ReportScheduleFactory.cs" />
+    <Compile Include="Factories\System\RolesFactory.cs" />
+    <Compile Include="Factories\System\TemplateFeatureFactory.cs" />
+    <Compile Include="Factories\System\TemplatePageFactory.cs" />
+    <Compile Include="Factories\System\TemplatePageFeatureFactory.cs" />
+    <Compile Include="Factories\System\TemplatePageNavigationFactory.cs" />
+    <Compile Include="Factories\System\TemplatePageTextFactory.cs" />
+    <Compile Include="Factories\System\TemplateNavigationFactory.cs" />
+    <Compile Include="Factories\System\TemplateTextFactory.cs" />
+    <Compile Include="Factories\System\VerticalMarketsFactory.cs" />
+    <Compile Include="Factories\VerticalMarket\TaxonomyFactory.cs" />
+    <Compile Include="Interfaces\HostedPages\IHostedClientRequestMaterialFactory.cs" />
+    <Compile Include="Interfaces\IAuditedSearchDetail.cs" />
+    <Compile Include="Entities\BaseModel.cs" />
+    <Compile Include="Entities\Client\SiteAdministrationObjectModel.cs" />
+    <Compile Include="Entities\Client\StaticResourceObjectModel.cs" />
+    <Compile Include="Entities\HostedPages\ClientSiteData.cs" />
+    <Compile Include="Entities\HostedPages\HostedCacheItems.cs" />
+    <Compile Include="Entities\HostedPages\HostedDocumentType.cs" />
+    <Compile Include="Entities\HostedPages\HostedDocumentTypeHeader.cs" />
+    <Compile Include="Entities\HostedPages\HostedSiteFootNotes.cs" />
+    <Compile Include="Entities\HostedPages\HostedPageText.cs" />
+    <Compile Include="Entities\HostedPages\HostedSite.cs" />
+    <Compile Include="Entities\HostedPages\HostedSiteNavigation.cs" />
+    <Compile Include="Entities\HostedPages\HostedSiteText.cs" />
+    <Compile Include="Entities\HostedPages\HostedStaticResource.cs" />
+    <Compile Include="Entities\HostedPages\TaxonomyAssociationData.cs" />
+    <Compile Include="Entities\HostedPages\TaxonomyAssociationDocumentsModel.cs" />
+    <Compile Include="Entities\HostedPages\TaxonomyAssociationHierarchyModel.cs" />
+    <Compile Include="Entities\HostedPages\TaxonomyAssociationLinkModel.cs" />
+    <Compile Include="Entities\SearchBaseModel.cs" />
+    <Compile Include="Entities\System\ClientDataFromSystem.cs" />
+    <Compile Include="Entities\System\ClientDbConnection.cs" />
+    <Compile Include="Entities\System\ClientObjectModel.cs" />
+    <Compile Include="Entities\System\HostedTemplateNavigation.cs" />
+    <Compile Include="Entities\System\SystemCacheItems.cs" />
+    <Compile Include="Entities\System\HostedTemplatePage.cs" />
+    <Compile Include="Entities\System\UserObjectModel.cs" />
+    <Compile Include="Factories\AuditedBaseFactory.cs" />
+    <Compile Include="Entities\AuditedBaseModel.cs" />
+    <Compile Include="Factories\BaseFactory.cs" />
+    <Compile Include="Factories\Client\SiteAdministrationFactory.cs" />
+    <Compile Include="Factories\DBConnectionString.cs" />
+    <Compile Include="Factories\HostedPageBaseFactory.cs" />
+    <Compile Include="Factories\HostedPages\HostedClientPageScenariosFactory.cs" />
+    <Compile Include="Factories\System\ClientFactory.cs" />
+    <Compile Include="Factories\System\SystemCommonFactory.cs" />
+    <Compile Include="Factories\System\UserFactory.cs" />
+    <Compile Include="Factories\VerticalMarket\HostedVerticalBasePageScenariosFactory.cs" />
+    <Compile Include="Interfaces\IAuditedModel.cs" />
+    <Compile Include="Interfaces\HostedPages\IHostedClientPageScenariosFactory.cs" />
+    <Compile Include="Interfaces\IAuditedModelInternal.cs" />
+    <Compile Include="Interfaces\IFactory.cs" />
+    <Compile Include="Interfaces\IModel.cs" />
+    <Compile Include="Interfaces\ISearchDetail.cs" />
+    <Compile Include="Interfaces\ISearchDetailCopyAs.cs" />
+    <Compile Include="Interfaces\ISortDetail.cs" />
+    <Compile Include="Interfaces\System\ISystemCommonFactory.cs" />
+    <Compile Include="Interfaces\VerticalMarket\IHostedVerticalPageScenariosFactory.cs" />
+    <Compile Include="Keys\CUDHistoryKey.cs" />
+    <Compile Include="Keys\DocumentTypeExternalIdKey.cs" />
+    <Compile Include="Keys\PageFeatureKey.cs" />
+    <Compile Include="Keys\PageNavigationKey.cs" />
+    <Compile Include="Keys\PageTextKey.cs" />
+    <Compile Include="Keys\SiteFeatureKey.cs" />
+    <Compile Include="Keys\SiteTextKey.cs" />
+    <Compile Include="Keys\TaxonomyAssociationHierarchyKey.cs" />
+    <Compile Include="Keys\TaxonomyKey.cs" />
+    <Compile Include="Keys\TaxonomyLevelExternalIdKey.cs" />
+    <Compile Include="Keys\TemplateFeatureKey.cs" />
+    <Compile Include="Keys\TemplatePageFeatureKey.cs" />
+    <Compile Include="Keys\TemplateNavigationKey.cs" />
+    <Compile Include="Keys\TemplatePageKey.cs" />
+    <Compile Include="Keys\TemplatePageNavigationKey.cs" />
+    <Compile Include="Keys\TemplatePageTextKey.cs" />
+    <Compile Include="Keys\SiteNavigationKey.cs" />
+    <Compile Include="Keys\TemplateTextKey.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchEntities\AuditedSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\ClientDocumentGroupSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\ClientDocumentTypeSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\ClientDocumentSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\CUDHistorySearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\DocumentTypeAssociationSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\DocumentTypeExternalIdSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\SiteActivitySearchDetail.cs" />
+    <Compile Include="SearchEntities\ErrorLogSearchDetail.cs" />
+    <Compile Include="SearchEntities\VerticalMarkets\DocumentTypeSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\PageFeatureSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\PageNavigationSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\PageTextSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\SiteFeatureSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\SiteNavigationSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\SiteSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\SiteTextSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\StaticResourceSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\TaxonomyLevelExternalIdSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\UrlRewriteSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\VerticalXmlExportSearchDetail.cs" />
+    <Compile Include="SearchEntities\Client\VerticalXmlImportSearchDetail.cs" />
+    <Compile Include="SearchEntities\SearchDetail.cs" />
+    <Compile Include="SearchEntities\System\ClientSearchDetail.cs" />
+    <Compile Include="SearchEntities\System\ReportScheduleSearchDetail.cs" />
+    <Compile Include="SearchEntities\System\RolesSearchDetail.cs" />
+    <Compile Include="SearchEntities\System\TemplateFeatureSearchDetail.cs" />
+    <Compile Include="SearchEntities\System\TemplatePageFeatureSearchDetail.cs" />
+    <Compile Include="SearchEntities\System\TemplatePageNavigationSearchDetail.cs" />
+    <Compile Include="SearchEntities\System\TemplatePageSearchDetail.cs" />
+    <Compile Include="SearchEntities\System\TemplatePageTextSearchDetail.cs" />
+    <Compile Include="SearchEntities\System\TemplateNavigationSearchDetail.cs" />
+    <Compile Include="SearchEntities\System\TemplateTextSearchDetail.cs" />
+    <Compile Include="SearchEntities\System\UserSearchDetail.cs" />
+    <Compile Include="SearchEntities\VerticalMarkets\TaxonomySearchDetail.cs" />
+    <Compile Include="SortDetail\AuditedSortDetail.cs" />
+    <Compile Include="SortDetail\Client\ClientDocumentGroupSortDetail.cs" />
+    <Compile Include="SortDetail\Client\ClientDocumentSortDetail.cs" />
+    <Compile Include="SortDetail\Client\CUDHistorySortDetail.cs" />
+    <Compile Include="SortDetail\Client\DocumentTypeExternalIdSortDetail.cs" />
+    <Compile Include="SortDetail\Client\ClientDocumentTypeSortDetail.cs" />
+    <Compile Include="SortDetail\Client\PageFeatureSortDetail.cs" />
+    <Compile Include="SortDetail\Client\PageNavigationSortDetail.cs" />
+    <Compile Include="SortDetail\Client\PageTextSortDetail.cs" />
+    <Compile Include="SortDetail\Client\SiteFeatureSortDetail.cs" />
+    <Compile Include="SortDetail\Client\SiteNavigationSortDetail.cs" />
+    <Compile Include="SortDetail\Client\SiteSortDetail.cs" />
+    <Compile Include="SortDetail\Client\SiteTextSortDetail.cs" />
+    <Compile Include="SortDetail\Client\StaticResourceSortDetail.cs" />
+    <Compile Include="SortDetail\Client\TaxonomyLevelExternalIdSortDetail.cs" />
+    <Compile Include="SortDetail\Client\UrlRewriteSortDetail.cs" />
+    <Compile Include="SortDetail\Client\VerticalXmlExportSortDetail.cs" />
+    <Compile Include="SortDetail\Client\VerticalXmlImportSortDetail.cs" />
+    <Compile Include="SortDetail\SortDetail.cs" />
+    <Compile Include="SortDetail\System\ClientSortDetail.cs" />
+    <Compile Include="SortDetail\System\ReportScheduleSortDetail.cs" />
+    <Compile Include="SortDetail\System\RolesSortDetail.cs" />
+    <Compile Include="SortDetail\System\TemplateFeatureSortDetail.cs" />
+    <Compile Include="SortDetail\System\TemplatePageFeatureSortDetail.cs" />
+    <Compile Include="SortDetail\System\TemplatePageSortDetail.cs" />
+    <Compile Include="SortDetail\System\TemplatePageTextSortDetail.cs" />
+    <Compile Include="SortDetail\System\TemplateTextSortDetail.cs" />
+    <Compile Include="SortDetail\System\UserSortDetail.cs" />
+    <Compile Include="SortDetail\VerticalMarkets\TaxonomySortDetail.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entities\VerticalMarket\US\" />
+    <Folder Include="Factories\VerticalMarket\US\" />
+    <Folder Include="Interfaces\Client\" />
+    <Folder Include="Interfaces\VerticalMarket\US\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RRD.FSG.RP.Utilities\RRD.FSG.RP.Utilities.csproj">
+      <Project>{cd1e0f10-fd82-45ec-8165-300a4d8b084e}</Project>
+      <Name>RRD.FSG.RP.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

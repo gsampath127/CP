@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15231E11-276A-4C6C-B600-0CA1FA5ED357}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BCS.ObjectModel</RootNamespace>
+    <AssemblyName>BCS.ObjectModel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BCSClient.cs" />
+    <Compile Include="BCSClientIPFileConfigDetails.cs" />
+    <Compile Include="BCSDailyIPReportData.cs" />
+    <Compile Include="BCSDailyIPReportDetailRecords.cs" />
+    <Compile Include="BCSDailyUpdateReport.cs" />
+    <Compile Include="BCSDocUpdateApprovalCUSIPData.cs" />
+    <Compile Include="BCSDocUpdateApprovalCUSIPDetails.cs" />
+    <Compile Include="BCSDocUpdateSecDetailsNotMatchingReportData.cs" />
+    <Compile Include="BCSClientDetails.cs" />
+    <Compile Include="BCSecurityType.cs" />
+    <Compile Include="BCSEdgarOnlineData.cs" />
+    <Compile Include="BCSGatewayDocUpdateData.cs" />
+    <Compile Include="BCSMissingReports.cs" />
+    <Compile Include="BCSReports.cs" />
+    <Compile Include="BCSSLINKNotAvailableReportData.cs" />
+    <Compile Include="BCSSLINKReportData.cs" />
+    <Compile Include="BCSSupplement.cs" />
+    <Compile Include="BCSTRPFLTFileInfo.cs" />
+    <Compile Include="BCSTRPReportBlankFLTCUSIPData.cs" />
+    <Compile Include="BCSTRPReportRPCUSIPMissingData.cs" />
+    <Compile Include="BCSTRPReportData.cs" />
+    <Compile Include="BCSTRPReportFLTFTPInfoData.cs" />
+    <Compile Include="BCSTRPReportFLTMissingData.cs" />
+    <Compile Include="BCSV2Roles.cs" />
+    <Compile Include="BCSV2SecurityQuestions.cs" />
+    <Compile Include="BCSV2User.cs" />
+    <Compile Include="DocUpdate.cs" />
+    <Compile Include="BCSEdgarDocUpdateValidationReportData.cs" />
+    <Compile Include="FLTDocument.cs" />
+    <Compile Include="PDFProperties.cs" />
+    <Compile Include="PDFWork.cs" />
+    <Compile Include="PreFlightJob.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Slink.cs" />
+    <Compile Include="UploadDocument.cs" />
+    <Compile Include="UserTokenDetails.cs" />
+    <Compile Include="ZipFileCounter.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

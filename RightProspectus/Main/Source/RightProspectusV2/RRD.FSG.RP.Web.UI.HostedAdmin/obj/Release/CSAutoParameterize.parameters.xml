@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="SystemDB-Web.config Connection String" description="SystemDB Connection String used in web.config by the application to access the database." defaultValue="Server=10.234.206.230;Database=RPV2SystemDB;Trusted_Connection=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\TFS-RP\\RightProspectus\\Main\\Source\\RightProspectusV2\\RRD\.FSG\.RP\.Web\.UI\.HostedAdmin\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SystemDB']/@connectionString" />
+  </parameter>
+  <parameter name="ClientDBInstance1-Web.config Connection String" description="ClientDBInstance1 Connection String used in web.config by the application to access the database." defaultValue="Server=10.234.206.230;Database=#DBName#;Trusted_Connection=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\TFS-RP\\RightProspectus\\Main\\Source\\RightProspectusV2\\RRD\.FSG\.RP\.Web\.UI\.HostedAdmin\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ClientDBInstance1']/@connectionString" />
+  </parameter>
+  <parameter name="USVerticalMarketDBInstance-Web.config Connection String" description="USVerticalMarketDBInstance Connection String used in web.config by the application to access the database." defaultValue="Server=10.234.206.230;Database=#DBName#;Trusted_Connection=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\TFS-RP\\RightProspectus\\Main\\Source\\RightProspectusV2\\RRD\.FSG\.RP\.Web\.UI\.HostedAdmin\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='USVerticalMarketDBInstance']/@connectionString" />
+  </parameter>
+</parameters>

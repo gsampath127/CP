@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="clientDocumentGroup.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:include schemaLocation="clientDocumentLink.xsd" />
+  <xs:element name="clientDocumentGroup" type="clientDocumentGroup" />
+  <xs:element name="clientDocumentGroups" type="clientDocumentGroups" />
+  <xs:complexType name="clientDocumentGroup">
+    <xs:annotation>
+      <xs:documentation>
+        Represents a group of client documents and other clientDocumentGroup entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="systemEntity">
+        <xs:sequence minOccurs="0" maxOccurs="1">
+          <xs:element ref="clientDocumentGroups" minOccurs="0" maxOccurs="1" />
+          <xs:element ref="clientDocumentLinks" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="importId" type="importId" use="optional" />
+        <xs:attribute name="name" type="name" use="required" />
+        <xs:attribute name="description" type="description" use="optional" />
+        <xs:attribute name="cssClass" type="cssClass" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="clientDocumentGroups">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of child clientDocumentGroup entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="clientDocumentGroup" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

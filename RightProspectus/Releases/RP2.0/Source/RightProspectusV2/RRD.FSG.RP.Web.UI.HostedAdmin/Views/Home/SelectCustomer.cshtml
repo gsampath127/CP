@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=100">
+    <title>RightProspectus</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/Kendo/css")
+    @Scripts.Render("~/bundles/Kendo")
+    <link href="~/Content/RP/Site.css" rel="stylesheet" />
+    <script src="~/Scripts/HostedAdmin/SelectCustomer.js"></script>
+    @model RRD.FSG.RP.Web.UI.HostedAdmin.ViewModels.SelectCustomerViewModel
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Hosted Sites Admin", "SelectCustomer", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+        </div>
+    </div>
+    <div id="main" class="container body-content">
+        @using (Html.BeginForm("SelectCustomer", "Home"))
+        {
+                      <div class="row">
+                <div class="col-lg-12">
+                    
+                        @if (TempData["SessionTimeOutMessage"] != null)
+                        {
+                            <h2>@Convert.ToString(TempData["SessionTimeOutMessage"])</h2>
+                        }
+                        else
+                        {
+                            <h2>Welcome @ViewBag.UserName to Hosted Site Admin!</h2>
+                        }    
+                        
+                        <p>
+                            You are on the Home Page of Hosted Site Admin. Please select a Client that you would like to configure..
+                            <br /> 
+                            <br />                            
+                        </p>                   
+                </div>
+            </div>
+            <div class="row">                
+                <div class="col-sm-12">
+                    <h4>Select Client<span class="mandatoryAsterisk">*</span></h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                </div>                
+            </div>
+            <div class="row">                
+                <div class="col-sm-8">
+                    @Html.DropDownListFor(model => model.SelectedCustomerID, new System.Web.Mvc.SelectList(Model.CustomerNames, "Value", "Display"), new { @class = "form-control", id = "comboCustomerNames" })
+                </div>
+            </div>
+            <div class="row">                
+                <div class="col-sm-12">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="row">               
+                <div class="col-md-8">
+                    <input type="submit" value="Submit" class="btn btn-default" id="btnSelectCustomer" />
+                </div>
+            </div>
+            <div>
+                <script id="divCustomerSelectionValidations" type="text/x-kendo-template">
+                </script>
+            </div>
+        }
+    </div>
+
+</body>
+</html>

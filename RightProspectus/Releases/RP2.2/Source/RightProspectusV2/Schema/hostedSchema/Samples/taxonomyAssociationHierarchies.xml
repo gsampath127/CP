@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<taxonomyAssociationHierarchies mirror="false" xmlns="http://rightprospectus.com/hostedSchema">
+  <taxonomyAssociationHierarchy relationshipType="1" delete="false">
+    <taxonomyAssociationLinks mirror="false">
+      <taxonomyAssociationLink level="0" marketId="marketId1" parentMarketId="parentMarketId1" siteId="0" importId="importId1" systemId="0" order="1" delete="false" />
+      <taxonomyAssociationLink level="4294967295" marketId="marketId2" parentMarketId="parentMarketId2" siteId="4294967295" importId="importId2" systemId="4294967295" order="-79228162514264337593543950335" delete="true" />
+      <taxonomyAssociationLink level="1" marketId="marketId3" parentMarketId="parentMarketId3" siteId="1" importId="importId3" systemId="1" order="79228162514264337593543950335" delete="false" />
+    </taxonomyAssociationLinks>
+  </taxonomyAssociationHierarchy>
+  <taxonomyAssociationHierarchy relationshipType="-79228162514264337593543950335" delete="true">
+    <taxonomyAssociationLinks mirror="true">
+      <taxonomyAssociationLink level="4294967294" marketId="marketId4" parentMarketId="parentMarketId4" siteId="4294967294" importId="importId4" systemId="4294967294" order="0" delete="true" />
+      <taxonomyAssociationLink level="2" marketId="marketId5" parentMarketId="parentMarketId5" siteId="2" importId="importId5" systemId="2" order="2" delete="false" />
+      <taxonomyAssociationLink level="4294967293" marketId="marketId6" parentMarketId="parentMarketId6" siteId="4294967293" importId="importId6" systemId="4294967293" order="-79228162514264337593543950334" delete="true" />
+    </taxonomyAssociationLinks>
+  </taxonomyAssociationHierarchy>
+  <taxonomyAssociationHierarchy relationshipType="79228162514264337593543950335" delete="false">
+    <taxonomyAssociationLinks mirror="false">
+      <taxonomyAssociationLink level="3" marketId="marketId7" parentMarketId="parentMarketId7" siteId="3" importId="importId7" systemId="3" order="79228162514264337593543950334" delete="false" />
+      <taxonomyAssociationLink level="4294967292" marketId="marketId8" parentMarketId="parentMarketId8" siteId="4294967292" importId="importId8" systemId="4294967292" order="-1" delete="true" />
+      <taxonomyAssociationLink level="4" marketId="marketId9" parentMarketId="parentMarketId9" siteId="4" importId="importId9" systemId="4" order="3" delete="false" />
+    </taxonomyAssociationLinks>
+  </taxonomyAssociationHierarchy>
+</taxonomyAssociationHierarchies>

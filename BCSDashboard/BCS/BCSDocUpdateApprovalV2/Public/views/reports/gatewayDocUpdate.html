@@ -1,0 +1,74 @@
+﻿
+<form name="gatewayDocUpdateForm" novalidate ng-submit="GenerateReport()">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9">
+                <p class="pageCaption">
+                    Gateway Doc Update Reports<span class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp BCSPopOver"
+                                                  data-toggle="popover"></span>
+                </p>
+               
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group required">
+                    <div id="cap-view" class="demo-section k-content">
+                        <!-- <h5>Customer Doc Update (NU/IP)</h5>-->
+                        <input kendo-combo-box k-options='GatewayDocUpdateOptions' ng-model="GatewayDocUpdate" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group required">
+
+                    <input kendo-date-picker name="gatewayDocUpdateDate"
+                           ng-model="GatewayDocUpdateDate" ng-required="true"
+                           placeholder="Select Date:" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <input class="btn btn-primary btn-sm clear-after" type="submit" value="Generate">
+                <button class="btn btn-link btn-sm clear-form" type="reset" ng-click="btnClearGateway()"><span><u>Clear Filters</u></span></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div ng-show="showGrid" kendo-grid k-options="gridOptionsHeader" k-data-source="gridDataSourceHeader"></div>
+<br /><br />
+<div ng-show="showGrid" kendo-grid k-options="gridOptionsDetails" k-data-source="gridDataSourceDetails"></div>
+<br />
+<div id="dvGatewayDocUpdateReportPopOver" class="dispNone">
+    TODO : Write Info on Slink Reports
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>write info on Slink reports</li>
+
+    </ul>
+    <br />
+</div>

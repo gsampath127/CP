@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Preview";
+    Layout = "~/Views/Shared/_SiteConfigurationLayout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+<script src="~/Scripts/HostedAdmin/ApproveProofingSettings.js"></script>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                <li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>
+                <li><a href="@Url.Action("List", "Site")">Sites</a></li>
+                <li><a href="@Url.Action("SiteConfiguration", "Site")">@ViewData["SelectedSite"]</a></li>
+                <li class="active">Preview</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Preview<span id="approveProofingPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+        <div class="col-sm-3 text-right">
+            <a class="btn btn-success btn-sm m-top-20 pull-right-xs-max" id="btnPreview">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Preview
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="btnApproveProofing" class="btn btn-primary btn-sm clear-after" type="button">Approve Proofing</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+</div>
+
+<div id="dvGetHostedSiteProofingURL" data-request-url="@Url.Action("GetHostedSiteProofingURL", "ApproveProofing")"></div>
+<div id="dvApproveProofingChangesURL" data-request-url="@Url.Action("ApproveProofingChanges", "ApproveProofing")"></div>
+<div>
+    <script id="divSuccessOrFailedMessage" type="text/x-kendo-template">
+        <p class="message">Approve Proofing Changes Saved Successfully.</p>
+        <button class="confirm k-button" style="margin:10px">OK</button>
+    </script>
+</div>
+<script id="approveProofingConfirmation" type="text/x-kendo-template">
+    <p class="message">Production version will be updated with proofing version. Are you sure?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+<div id="dvApproveProofingPopOver" class="dispNone">
+    Preview page provides a way to view proofing version of the site with changes done for Static Text, CSS, Taxonomy Data. User can preveiw and approve changes.
+    <br /><br />
+    Once you click on Approve Proofing, Production will be updated with all Proofing changes for Static Text, CSS, Taxonomy Data etc.
+    <br />
+</div>
+

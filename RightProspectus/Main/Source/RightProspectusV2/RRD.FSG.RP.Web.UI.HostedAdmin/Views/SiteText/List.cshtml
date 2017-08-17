@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_SiteConfigurationLayout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>
+                @*<li><a href="@Url.Action("WelcomeClient", "Client")">@ViewData["SelectedCustomer"]</a></li>*@
+                <li><a href="@Url.Action("List", "Site")">Sites</a></li>
+                <li><a href="@Url.Action("SiteConfiguration", "Site")">@ViewData["SelectedSite"]</a></li>
+                <li class="active">Site Texts</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Site Texts<span id="siteTextPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+
+        <div class="col-sm-3 newAddButton">
+            <a id="newSiteText" class="btn btn-success btn-sm m-top-5 pull-right-xs-max">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Site Text
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+
+    @*-----------------------------------------------------SearchParameters--------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="form-group">
+                <div class="form-group">
+                    <input id="comboResourceKey" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <div class="form-group">
+                    <input id="comboVersion" type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="searchSiteText" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="clearSiteTextSearch"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*----------------------------------------------------------GRID-------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="siteTextGridwithSortingButtons">
+        <div id="siteTextContainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer" class="ScrollTable">
+            <div id="siteTextGrid" class="tableFixedWidth">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="dvLoadAllSiteText" data-request-url="@Url.Action("Search", "SiteText")"></div>
+<div id="dvResourceKeyComboLoad" data-request-url="@Url.Action("GetResourceKeys", "SiteText")"></div>
+<div id="dvVersionComboLoad" data-request-url="@Url.Action("GetVersions", "SiteText")"></div>
+<div id="dvEditSiteText" data-request-url="@Url.Action("Edit", "SiteText")"></div>
+<div id="dvDisableSiteText" data-request-url="@Url.Action("Disable", "SiteText")"></div>
+<div id="dvSiteTextPopOver" class="dispNone">
+    Site Text page displays all the resource text to be used in the Site such as buttons and labels. This text is global to the Template.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Resource Text</li>
+        <li>EDIT Existing Resource Text</li>
+        <li>SEARCH Resource Text based on Resource Key and Version.</li>
+        <li>DELETE Resource Text</li>
+    </ul>
+    <br />
+</div>
+
+<script id="alertDisableSiteText" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to disable this Site Text?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+<script src="~/Scripts/HostedAdmin/SiteTextSettings.js"></script>

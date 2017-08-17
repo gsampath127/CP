@@ -1,0 +1,666 @@
+﻿/*************************************************** SiteCSS *******************************************/
+body {
+    font-family: Arial,Helvetica,sans-serif;
+    background-color: #FFF;
+    font-size: 13px;
+    color: #464646;
+    margin: 0;
+}
+
+.cssClientLogoPlaceHolder {
+}
+
+.cssClientLogo {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+    .cssClientLogo img {
+        cursor: pointer;
+    }
+
+.cssDocumentNotAvailableItemDiv {
+    padding-left: 30px;
+    padding-top: 40px;
+    border-top: 2px solid black;
+    margin-top: 40px;
+}
+
+.cssDocumentNotAvailableGoBackButtonDiv {
+    margin-top: 20px;
+}
+
+.cssTaxonomyDataNotAvailableMainDiv {
+    background-color: #fff;
+    width: 1000px;
+    display: table;
+    margin: auto;
+    height: 100%;
+    border-radius: 20px;
+    margin-top: 21px;
+}
+
+.cssTaxonomyDataNotAvailableItemDiv {
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.cssTaxonomyDataNotAvailableGoBackButtonDiv {
+    margin-top: 20px;
+}
+
+.td {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: table-cell;
+    table-layout: fixed;
+    vertical-align: middle;
+}
+
+.cssLinks {
+    color: #464646;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .cssLinks: hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+.cssHeaderTable {
+    display: table;
+    width: 100%;
+}
+
+.cssHeaderTableRow {
+    display: table-row;
+    width: 100%;
+}
+
+.cssHeaderTableCell {
+    display: table-cell;
+}
+
+
+
+/*************************************************** SiteCSS *******************************************/
+
+
+/*************************************************** TAGD *******************************************/
+.cssHeaderTableCell {
+    height: 150px;
+}
+
+.cssTAGDMainDiv {
+    margin-left: 100px;
+    margin-right: 100px;
+    margin: auto;
+    width: 960px;
+    background-color: white;
+}
+
+.cssTAGDGroupHeaderTextPlaceHolder {
+    font-size: 18px;
+    display: table;
+    width: 100%;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.cssTAGDUnderlyingFundDocumentGridDiv {
+    position: fixed;
+    width: 960px;
+    border: solid 1px #d0d0d0;
+    border-bottom: none !important;
+}
+
+.cssHeaderTable {
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+}
+
+.cssTAGDUnderlyingFundDocumentGridHeader {
+    height: 42px;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #d0d0d0;
+    color: black;
+}
+
+.cssTAGDGroups {
+    margin-top: 116px;
+}
+
+.cssTAGDUnderlyingFundDocumentGridFundNameColumn {
+    width: 30%;
+    border-right: solid 1px #b9b5b1;
+}
+
+.cssTAGDGroupLevel0NamePlaceHolder {
+    height: 31px;
+    width: 100%;
+    border-left: 1px solid #034983;
+    border-right: 1px solid #034983;
+    background: #034983;
+    color: white;
+    font-weight: 200;
+    margin-bottom: 1px;
+}
+
+.cssTAGDGroupLevel0NameText {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: table-cell;
+    width: 100%;
+    height: 31px;
+    vertical-align: middle;
+    color: #fff;
+}
+
+.cssTAGDGroupLevel0NameText span{
+   display: inline-block;
+   vertical-align: middle;
+}
+
+.cssTAGDUnderlyingFundDocumentGridDocTypeColumn {
+    width: 10%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    border-right: solid 1px #b9b5b1;
+}
+
+    .cssTAGDUnderlyingFundDocumentGridDocTypeColumn:last-child {
+        border-right: none !important;
+    }
+
+.cssTAGDUnderlyingFundDocumentGridItem {
+    background-color: #fff;
+    height: 30px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border-right: 1px solid #e5e4e2;
+    border-left: 1px solid #e5e4e2;
+}
+
+.cssTAGDUnderlyingFundDocumentGridItemFundNameColumn {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 12px;
+    border-right: solid 1px #b9b5b1;
+    border-bottom: 1px solid #e5e4e2;
+    color: #000;
+    width: 30%;
+}
+
+.cssTAGDUnderlyingFundDocumentGridItemDocTypeColumn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-right: 1px solid #b9b5b1;
+    border-bottom: solid 1px #e5e4e2;
+    color: black;
+    width: 10%;
+}
+
+    .cssTAGDUnderlyingFundDocumentGridItemDocTypeColumn:last-child {
+        border-right: none !important;
+    }
+
+.cssTAGDUnderlyingFundDocumentGridAlternateItem {
+    background-color: #e5e4e2;
+    height: 30px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border-right: 1px solid #e5e4e2;
+    border-left: 1px solid #e5e4e2;
+}
+
+.cssTAGDUnderlyingFundDocumentGridAlternateItemFundNameColumn {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 12px;
+    color: black;
+    border-right: 1px solid #b9b5b1;
+    width: 30%;
+}
+
+.cssTAGDUnderlyingFundDocumentGridAlternateItemDocTypeColumn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-right: 1px solid #b9b5b1;
+    width: 10%;
+}
+
+    .cssTAGDUnderlyingFundDocumentGridAlternateItemDocTypeColumn:last-child {
+        border-right: none !important;
+    }
+
+.cssTAGDDocumentNAText {
+}
+
+.cssTAGDGlossary {
+    margin: 20px;
+}
+
+.cssTAGDFooter {
+    margin: 20px;
+}
+
+.cssTAGDFootnotesHeaderText {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cssTAGDFootnotesItems {
+    margin-top: 20px;
+}
+
+.cssTADHFootnotesItemText {
+}
+
+.cssDocumentTypeLinkImage {
+    background-image: url(staticresource/DocumentLinkImage.gif?client=TIAA );
+    background-repeat: no-repeat;
+    height: 16px !important;
+    width: 16px !important;
+    margin: auto;
+}
+
+.cssDocumentTypeLinkText {
+    display: none;
+}
+
+.cssXBRLLinkImage {
+    background-image: url(staticresource/XBRLLinkImage.gif?client=TIAA);
+    background-repeat: no-repeat;
+    height: 20px !important;
+    width: 16px !important;
+    margin: auto;
+}
+
+.cssXBRLLinkText {
+    display: none;
+}
+
+.cssDocumentTypeLinkNAImage {
+}
+
+.cssDocumentTypeLinkNAText {
+    text-align: center;
+}
+
+.cssTAGDGroupSelectDiv {
+    padding: 20px;
+}
+
+.cssTAGDGroupSelect {
+    border: 1px solid #9A968F;
+    background-color: #edeceb;
+    color: #333332;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.cssTAGDUnderlyingFundDocumentGridItem:hover {
+    background-color: #FDE9C9;
+}
+
+.cssTAGDUnderlyingFundDocumentGridAlternateItem:hover {
+    background-color: #FDE9C9;
+}
+
+.cssTAGDBrowserDetailDiv {
+    padding: 20px 0 0 20px;
+}
+
+.cssTAGDGroupLevel1NameText {
+    height: 30px;
+}
+
+.cssTAGDGroupLevel1NamePlaceHolder {
+    width: 100%;
+    border-left: 1px solid #e5e4e2;
+    border-right: 1px solid #e5e4e2;
+    border-bottom: 1px solid #e5e4e2;
+}
+
+.cssTAGDGroupLevel1NameText span {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    width: 100%;
+    font-size: 13px;
+}
+
+.maximize {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    border: 2px solid #5acbf7;
+    background-color: white;
+    color: #5acbf7;
+}
+
+.maximizeAll {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    border: 2px solid #5acbf7;
+    background-color: white;
+    color: #5acbf7;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.cssTAGDUnderlyingFundDetailsMainDiv {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 80px;
+}
+
+.expandContract {
+    background-image: url(staticresource/sprite_icon.png?client=TIAA );
+    background-position: -20px -66px;
+    height: 16px;
+    width: 16px;
+    font-size: 0;
+    margin-right: 6px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    cursor:pointer;
+}
+
+.collapseContract {
+    background-image: url(staticresource/sprite_icon.png?client=TIAA);
+    background-position: 0 -66px;
+    height: 16px;
+    width: 16px;
+    font-size: 0;
+    margin-right: 6px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    cursor:pointer;
+}
+
+.cssTAGDExpandAll {
+    color: #000;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.cssdivTAGDExpandCollapseAll {
+    display: table;
+    margin-top: 5px;
+}
+    
+.cssdivTAGDExpandCollapseAll span.cssTAGDExpandAll {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cssTAGDFooterTemplate {
+    width: 100%;
+    height: 600px;
+    border: none;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+/*************************************************** END : TAGD  *******************************************/
+
+
+/*************************************************** START : TADF  *******************************************/
+
+
+.cssTADFBody {
+    overflow-y: hidden;
+}
+
+.cssTADFSinglePDFBody {
+    overflow-y: hidden;
+}
+
+#TADFDocumentTypeNavMainDiv {
+    margin-top: 40px;
+    border-top-style: solid;
+    border-top-width: 2px;
+}
+
+.cssClientLogo {
+    margin-left: 30px;
+    padding: 0 !important;
+}
+.cssHeaderTable{
+    margin-top: 40px;
+}
+.cssTADFMainDiv {
+    background-color: #fff;
+    display: table;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+.cssTADFFundName {
+    display: table-cell;
+    padding-right: 20px;
+    font-size: 20px;
+    font-weight: normal;
+    font-family: Verdana,Geneva,sans-serif;
+    color: #000;
+    text-align: right;
+}
+
+.TADFDocumentTypeNavPlaceHolderDiv {
+    color: #fff;
+    margin-top: 0;
+}
+
+.cssTADFPDFPlaceHolderDiv {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    margin-top: 0;
+}
+
+.cssTADFXBRLPlaceHolderDiv {
+}
+
+.cssTADFPDFFrame {
+    border-style: none;
+    width: 100%;
+}
+
+.cssTADFDocumentNotAvailableText {
+    margin-top: 20px;
+}
+
+.cssTADFDocumentNotAvailablePlaceHolderDiv {
+    position: absolute;
+    background: #FFF;
+    height: 100%;
+    width: 100%;
+}
+
+#NavMenu {
+    color: #000;
+    background-color: #d1d0ce;
+    margin: auto;
+    padding: 0;
+}
+
+    #NavMenu ul {
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+    }
+
+    #NavMenu li.top {
+        display: table-cell;
+        line-height: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-width: 0;
+        vertical-align: middle;
+        font-family: Verdana,Geneva,sans-serif;
+        font-weight: bold;
+        color: #000;
+        text-decoration: none;
+        font-size: 12px;
+        width: 150px;
+        text-align: center;
+        background-color: #D1D0CE;
+        border-right: 2px solid #FFF;
+    }
+
+    #NavMenu li:hover li {
+        background-color: #004B85;
+        display: block;
+        float: left;
+        line-height: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 25px;
+        vertical-align: middle;
+        font-family: Verdana,Geneva,sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 11px;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    #NavMenu li:hover {
+        background-color: #004B85;
+        position: relative;
+    }
+
+        #NavMenu li:hover ul {
+            left: 0;
+            top: 25px;
+            padding-top: 2px;
+            background: #ffffff;
+            padding-left: 0 !important;
+            z-index: 100;
+        }
+
+.cssMenuTdActive {
+    color: #ffffff !important;
+    height: 100%;
+    background-color: #004B85 !important;
+    text-decoration: none;
+}
+
+.cssMenuTdInActive {
+    text-decoration: none;
+}
+
+.cssMenuTdActive a {
+    color: #FFF !important;
+    height: 100%;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cssMenuTdInActive a {
+    color: #000;
+    text-decoration: none;
+}
+
+.cssMenuTdActive a:hover {
+    color: #FFF !important;
+    text-decoration: none;
+}
+
+.cssMenuTdInActive a:hover {
+    color: #FFF !important;
+    text-decoration: none;
+}
+
+.divMenuTD {
+    display: table-cell;
+    height: 30px;
+    vertical-align: middle;
+    width: 200px;
+}
+
+#MenuTdIDS {
+    Width: 180px !important;
+}
+
+/*************************************************** START : END  *******************************************/
+
+/*************************************************** START : XBRL  *******************************************/
+
+body {
+    background-color: #FFF;
+}
+
+.cssXBRLMainDiv {
+    background-color: #fff;
+    display: table;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    padding: 18px 0 0 0;
+}
+
+.cssXBRLFundName {
+    display: table-cell;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Verdana,Geneva,sans-serif;
+    color: #1C4877;
+    width: 50%;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.cssXBRLContentDiv {
+    background-color: #fff;
+}
+
+.cssXBRLContentMainTable {
+    margin-left: 5px;
+    margin-top: 25px;
+    background-color: #fff;
+}
+
+.cssXBRLPlaceHolder {
+    list-style-image: url(staticresource/XBRLZipFile.jpg?client=TIAA);
+}
+
+.cssXBRLViewerPlaceHolder {
+    list-style-image: none;
+    list-style-type: disc;
+}
+
+.cssXBRLZipFilesHeaderText {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.cssXBRLViewerHeaderText {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/*************************************************** START : END  *******************************************/

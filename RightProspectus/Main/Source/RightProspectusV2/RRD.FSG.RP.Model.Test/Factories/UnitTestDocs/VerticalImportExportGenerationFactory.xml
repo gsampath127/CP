@@ -1,0 +1,796 @@
+﻿<?mso-infoPathSolution solutionVersion="1.0.0.21"  PIVersion="1.0.0.0" href="file:///\\rrwin-rpiwt1\RPV2Forms\RPV2Hosted_TAHD_Form.xsn" name="urn:schemas-microsoft-com:office:infopath:RPV2HostedInfoPathForm:http---rightprospectus-com-hostedSchema" language="en-us" productVersion="12.0.0" ?>
+<?mso-application progid="InfoPath.Document"?>
+<mstns:import xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mstns="http://rightprospectus.com/hostedSchema" xmlns:sql="http://schemas.microsoft.com/sqlserver/2004/sqltypes" xmlns:my="http://schemas.microsoft.com/office/infopath/2003/myXSD/2015-10-06T20:30:47" xmlns:xd="http://schemas.microsoft.com/office/infopath/2003">
+  <!--Generated on :2015-10-30T14:38:04.7488183Z-->
+  <mstns:market>
+    <mstns:taxonomyAssociations>
+      <mstns:taxonomyAssociation level="1" importId="024936692C" systemId="6" nameOverride="American Century VP Growth Fund" marketId="024936692" descriptionOverride="" cssClass="abc" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote languageCulture="" delete="false">Footnote for American Century VP Growth Fund</mstns:footnote>
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="024936742C" systemId="7" nameOverride="American Century VP Mid Cap Value Fund&#x9;" marketId="024936742" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote languageCulture="" delete="false">American Century VP Mid Cap Value Fund </mstns:footnote>
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="024936833C" systemId="9" nameOverride="American Century VP Value Fund&#x9;" marketId="024936833" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="02630E848C" systemId="10" nameOverride="American Funds Insurance Series Global Growth and Income Fund&#x9;" marketId="02630E848" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="015565849C" systemId="12" nameOverride="AlgerCapital Appreciation Fund" marketId="015565849" descriptionOverride="AlgerCapital Appreciation Fund" cssClass="abc" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="55274F844C" systemId="13" nameOverride="MFSVIT II International Value Portfolio Service Class" marketId="55274F844" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="55273F779C" systemId="14" nameOverride="MFSVIT Investors Trust Series Service Class" marketId="55273F779" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="55273F811C" systemId="15" nameOverride="MFSVIT Growth Series Service Class" marketId="55273F811" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="55273F761C" systemId="16" nameOverride="MFSVIT II New Discovery Series Service Shares" marketId="55273F761" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="55273F647C" systemId="17" nameOverride="MFSVIT Value Series Service Class" marketId="55273F647" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="380987651C" systemId="18" nameOverride="Goldman SachsVIT Global Trends Allocation Fund Service Shares" marketId="380987651" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="380987578C" systemId="19" nameOverride="Goldman SachsVIT Multi-Strategy Alternatives Portfolio Advisor Shares" marketId="380987578" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="380987586C" systemId="20" nameOverride="Goldman SachsVIT Strategic Income Fund Advisor Shares" marketId="380987586" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="19765R501C" systemId="21" nameOverride="ColumbiaVariable Portfolio - Strategic Income Fund" marketId="19765R501" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="543910806C" systemId="22" nameOverride="Lord AbbettSeries Fund-Fundamental Equity Portfolio" marketId="543910806" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="543910608C" systemId="23" nameOverride="Lord AbbettSeries Fund-Bond Debenture Portfolio" marketId="543910608" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="543910889C" systemId="24" nameOverride="Lord AbbettSeries Fund-Growth Opportunities Portfolio" marketId="543910889" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="020875605C" systemId="25" nameOverride="AlpineAccelerating Dividend Fund" marketId="020875605" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="020875803C" systemId="26" nameOverride="AlpineAccelerating Dividend Fund" marketId="020875803" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="00767H840C" systemId="27" nameOverride="PrudentialAST Schroders Multi-Asset World Strategies Portfolio" marketId="00767H840" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="008892655C" systemId="28" nameOverride="InvescoV.I. International Growth Fund Series II" marketId="008892655" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="008892572C" systemId="29" nameOverride="InvescoV.I. Mid Cap Core Equity Fund Series II" marketId="008892572" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="008892671C" systemId="30" nameOverride="InvescoV.I. Core Equity Fund Series II" marketId="008892671" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="008892606C" systemId="31" nameOverride="InvescoV.I. Money Market Fund Series I" marketId="008892606" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="008892531C" systemId="32" nameOverride="InvescoV.I. Small Cap Equity Fund Series II" marketId="008892531" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="008892135C" systemId="33" nameOverride="InvescoV.I. Balanced-Risk Allocation Fund Series II" marketId="008892135" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="41664R440C" systemId="34" nameOverride="HartfordMulti-Asset Income Fund" marketId="41664R440" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="41664R374C" systemId="35" nameOverride="HartfordMulti-Asset Income Fund" marketId="41664R374" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="693394637C" systemId="37" nameOverride="PIMCOVIT All Asset Portfolio Advisor Shares" marketId="693394637" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="72201V305C" systemId="38" nameOverride="PIMCOVIT Global Dividend Portfolio Advisor Shares" marketId="72201V305" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="693394538C" systemId="39" nameOverride="PIMCOVIT Total Return Portfolio Advisor Shares" marketId="693394538" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="74348A467C" systemId="40" nameOverride="ProSharesS&amp;P 500 Aristocrats ETF " marketId="74348A467" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="355151804C" systemId="41" nameOverride="Franklin Templeton VIPTempleton Foreign VIP Fund Class 4 Shares" marketId="355151804" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="355150160C" systemId="42" nameOverride="Franklin Templeton VIPFranklin Income VIP Fund Class 4 Shares" marketId="355150160" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="355150194C" systemId="43" nameOverride="Franklin Templeton VIPFranklin Rising Dividends VIP Fund Class 4 Shares" marketId="355150194" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="355150210C" systemId="44" nameOverride="Franklin Templeton VIPFranklin Small Cap Value VIP Fund Class 4 Shares" marketId="355150210" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="355151200C" systemId="45" nameOverride="Franklin Templeton VIPFranklin Strategic Income VIP Fund Class 4 Shares" marketId="355151200" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="355151887C" systemId="46" nameOverride="Franklin Templeton VIPTempleton Global Bond VIP Fund Class 4 Shares" marketId="355151887" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="355151879C" systemId="47" nameOverride="Franklin Templeton VIPTempleton Growth VIP Fund Class 4 Shares" marketId="355151879" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="355151606C" systemId="48" nameOverride="Franklin Templeton VIPFranklin Mutual Shares VIP Fund Class 4 Shares" marketId="355151606" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="446771305C" systemId="49" nameOverride="Huntington VADividend Capture Fund" marketId="446771305" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="446771883C" systemId="50" nameOverride="Huntington VASitus Fund" marketId="446771883" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="018821389C" systemId="51" nameOverride="Allianz Variable Insurance Products TrustAZL Fusion Edge Fund " marketId="018821389" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="09253L827C" systemId="52" nameOverride="BlackRock VariableCapital Appreciation V.I. Fund" marketId="09253L827" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="09253L488C" systemId="53" nameOverride="BlackRock VariableEquity Dividend V.I. Fund" marketId="09253L488" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="09253L751C" systemId="54" nameOverride="BlackRock VariableGlobal Allocation V.I. Fund" marketId="09253L751" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="09253L686C" systemId="55" nameOverride="BlackRock VariableHigh Yield V.I. Fund Class III" marketId="09253L686" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="09253L728C" systemId="56" nameOverride="BlackRock VariableU.S. Government Bond V.I. Fund" marketId="09253L728" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="02630E608C" systemId="57" nameOverride="American Funds Insurance SeriesManaged Risk Asset Allocation Fund" marketId="02630E608" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="02630E889C" systemId="58" nameOverride="American Funds Insurance SeriesGrowth Fund Class 4" marketId="02630E889" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="02630E830C" systemId="59" nameOverride="American Funds Insurance SeriesGrowth-Income Fund Class 4" marketId="02630E830" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="02630E871C" systemId="60" nameOverride="American Funds Insurance SeriesInternational Fund Class 4" marketId="02630E871" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="02630E863C" systemId="61" nameOverride="" marketId="02630E863" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="416528859C" systemId="63" nameOverride="" marketId="416528859" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="416528487C" systemId="64" nameOverride="" marketId="416528487" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="416528107C" systemId="65" nameOverride="" marketId="416528107" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="416528313C" systemId="67" nameOverride="" marketId="416528313" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="416528842C" systemId="68" nameOverride="" marketId="416528842" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="746896356C" systemId="69" nameOverride="" marketId="746896356" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="746896406C" systemId="70" nameOverride="" marketId="746896406" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="746896109C" systemId="71" nameOverride="" marketId="746896109" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="66537U593C" systemId="72" nameOverride="" marketId="66537U593" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="66537U635C" systemId="74" nameOverride="" marketId="66537U635" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="34628V227C" systemId="75" nameOverride="" marketId="34628V227" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="34628V219C" systemId="76" nameOverride="" marketId="34628V219" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="34628U500C" systemId="77" nameOverride="" marketId="34628U500" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="34628U104C" systemId="78" nameOverride="" marketId="34628U104" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="34628U203C" systemId="79" nameOverride="" marketId="34628U203" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="34628U302C" systemId="80" nameOverride="" marketId="34628U302" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="34628U401C" systemId="81" nameOverride="" marketId="34628U401" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="34628U807C" systemId="82" nameOverride="" marketId="34628U807" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="34628U609C" systemId="83" nameOverride="" marketId="34628U609" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="34628U708C" systemId="84" nameOverride="" marketId="34628U708" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="40422J302C" systemId="85" nameOverride="" marketId="40422J302" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="416528503C" systemId="86" nameOverride="" marketId="416528503" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="024936692C" systemId="6" nameOverride="American Century VP Growth Fund" marketId="024936692" descriptionOverride="" cssClass="abc" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote languageCulture="" delete="false">Footnote for American Century VP Growth Fund</mstns:footnote>
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="024936742C" systemId="7" nameOverride="American Century VP Mid Cap Value Fund&#x9;" marketId="024936742" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote languageCulture="" delete="false">American Century VP Mid Cap Value Fund </mstns:footnote>
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="024936833C" systemId="9" nameOverride="American Century VP Value Fund&#x9;" marketId="024936833" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="02630E848C" systemId="10" nameOverride="American Funds Insurance Series Global Growth and Income Fund&#x9;" marketId="02630E848" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="024936692C" systemId="6" nameOverride="American Century VP Growth Fund" marketId="024936692" descriptionOverride="" cssClass="abc" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote languageCulture="" delete="false">Footnote for American Century VP Growth Fund</mstns:footnote>
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="024936742C" systemId="7" nameOverride="American Century VP Mid Cap Value Fund&#x9;" marketId="024936742" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote languageCulture="" delete="false">American Century VP Mid Cap Value Fund </mstns:footnote>
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="024936833C" systemId="9" nameOverride="American Century VP Value Fund&#x9;" marketId="024936833" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="02630E848C" systemId="10" nameOverride="American Funds Insurance Series Global Growth and Income Fund&#x9;" marketId="02630E848" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="024936692C" systemId="6" nameOverride="American Century VP Growth Fund" marketId="024936692" descriptionOverride="" cssClass="abc" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote languageCulture="" delete="false">Footnote for American Century VP Growth Fund</mstns:footnote>
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="024936833C" systemId="9" nameOverride="American Century VP Value Fund&#x9;" marketId="024936833" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+      <mstns:taxonomyAssociation level="1" importId="02630E848C" systemId="10" nameOverride="American Funds Insurance Series Global Growth and Income Fund&#x9;" marketId="02630E848" descriptionOverride="" cssClass="" delete="false">
+        <mstns:documentTypeAssociations mirror="false" />
+        <mstns:footnotes mirror="false">
+          <mstns:footnote />
+        </mstns:footnotes>
+      </mstns:taxonomyAssociation>
+    </mstns:taxonomyAssociations>
+  </mstns:market>
+  <mstns:sites mirror="true">
+    <mstns:site name="Forethought" description="Forethought Site" templateId="1" systemId="1" delete="false">
+      <mstns:market>
+        <mstns:documentTypeAssociations mirror="false">
+          <mstns:documentTypeAssociation headerText="Summary Prospectus" linkText="Summary Prospectus" order="0" marketId="" descriptionOverride="Summary Prospectus - SP" cssClass="abc" delete="false" />
+          <mstns:documentTypeAssociation headerText="" linkText="" order="1" marketId="P" descriptionOverride="" cssClass="" delete="false" />
+          <mstns:documentTypeAssociation headerText="Statement of Additional Info." linkText="Additional Information" order="2" marketId="S" descriptionOverride="SAI - S" cssClass="" delete="false" />
+          <mstns:documentTypeAssociation headerText="Annual Report" linkText="Annual Report" order="3" marketId="AR" descriptionOverride="Annual Report - AR" cssClass="" delete="false" />
+          <mstns:documentTypeAssociation headerText="Semi-Annual Report" linkText="Semi-Annual Report" order="4" marketId="SAR" descriptionOverride="Semi-Annual Report - SAR" cssClass="" delete="false" />
+          <mstns:documentTypeAssociation headerText="XBRL" linkText="XBRL" order="5" marketId="XBRL" descriptionOverride="XBRL" cssClass="" delete="false" />
+        </mstns:documentTypeAssociations>
+        <mstns:taxonomyAssociations mirror="false">
+          <mstns:taxonomyAssociation level="1" importId="" systemId="1" nameOverride="ForeRetirement Foundation Variable Annuity Suite (Effective 5/5/14)&#x9;" marketId="34628V268" descriptionOverride="ForeRetirement Foundation Variable Annuity Suite" cssClass="" delete="false">
+            <mstns:documentTypeAssociations mirror="false">
+              <mstns:documentTypeAssociation headerText="Prospectus" linkText="Prospectus" order="0" marketId="P" descriptionOverride="Prospectus" cssClass="" delete="false" />
+              <mstns:documentTypeAssociation headerText="SAI" linkText="Additional Information" order="1" marketId="S" descriptionOverride="Additional Information" cssClass="abc" delete="false" />
+            </mstns:documentTypeAssociations>
+            <mstns:taxonomyAssociationHierarchies mirror="false">
+              <mstns:taxonomyAssociationHierarchy relationshipType="1" delete="false">
+                <mstns:taxonomyAssociationLinks mirror="false">
+                  <mstns:taxonomyAssociationLink marketId="" importId="024936692C" systemId="6" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="024936742" importId="" systemId="7" order="" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="024936833" importId="024936833C" systemId="9" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="02630E848" importId="02630E848C" systemId="10" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="015565849" importId="015565849C" systemId="12" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="55274F844" importId="55274F844C" systemId="13" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="55273F779" importId="55273F779C" systemId="14" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="55273F811" importId="55273F811C" systemId="15" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="55273F761" importId="55273F761C" systemId="16" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="55273F647" importId="55273F647C" systemId="17" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="380987651" importId="380987651C" systemId="18" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="380987578" importId="380987578C" systemId="19" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="380987586" importId="380987586C" systemId="20" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="19765R501" importId="19765R501C" systemId="21" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="543910806" importId="543910806C" systemId="22" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="543910608" importId="543910608C" systemId="23" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="543910889" importId="543910889C" systemId="24" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="020875605" importId="020875605C" systemId="25" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="020875803" importId="020875803C" systemId="26" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="00767H840" importId="00767H840C" systemId="27" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="008892655" importId="008892655C" systemId="28" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="008892572" importId="008892572C" systemId="29" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="008892671" importId="008892671C" systemId="30" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="008892606" importId="008892606C" systemId="31" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="008892531" importId="008892531C" systemId="32" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="008892135" importId="008892135C" systemId="33" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="41664R440" importId="41664R440C" systemId="34" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="41664R374" importId="41664R374C" systemId="35" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="693394637" importId="693394637C" systemId="37" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="72201V305" importId="72201V305C" systemId="38" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="693394538" importId="693394538C" systemId="39" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="74348A467" importId="74348A467C" systemId="40" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="355151804" importId="355151804C" systemId="41" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="355150160" importId="355150160C" systemId="42" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="355150194" importId="355150194C" systemId="43" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="355150210" importId="355150210C" systemId="44" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="355151200" importId="355151200C" systemId="45" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="355151887" importId="355151887C" systemId="46" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="355151879" importId="355151879C" systemId="47" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="355151606" importId="355151606C" systemId="48" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="446771305" importId="446771305C" systemId="49" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="446771883" importId="446771883C" systemId="50" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="018821389" importId="018821389C" systemId="51" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="09253L827" importId="09253L827C" systemId="52" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="09253L488" importId="09253L488C" systemId="53" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="09253L751" importId="09253L751C" systemId="54" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="09253L686" importId="09253L686C" systemId="55" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="09253L728" importId="09253L728C" systemId="56" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="02630E608" importId="02630E608C" systemId="57" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="02630E889" importId="02630E889C" systemId="58" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="02630E830" importId="02630E830C" systemId="59" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="02630E871" importId="02630E871C" systemId="60" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="02630E863" importId="02630E863C" systemId="61" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="416528859" importId="416528859C" systemId="63" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="416528487" importId="416528487C" systemId="64" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="416528107" importId="416528107C" systemId="65" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="416528313" importId="416528313C" systemId="67" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="416528842" importId="416528842C" systemId="68" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="746896356" importId="746896356C" systemId="69" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="746896406" importId="746896406C" systemId="70" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="746896109" importId="746896109C" systemId="71" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="66537U593" importId="66537U593C" systemId="72" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="66537U635" importId="66537U635C" systemId="74" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="34628V227" importId="34628V227C" systemId="75" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="34628V219" importId="34628V219C" systemId="76" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="34628U500" importId="34628U500C" systemId="77" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="34628U104" importId="34628U104C" systemId="78" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="34628U203" importId="34628U203C" systemId="79" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="34628U302" importId="34628U302C" systemId="80" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="34628U401" importId="34628U401C" systemId="81" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="34628U807" importId="34628U807C" systemId="82" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="34628U609" importId="34628U609C" systemId="83" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="34628U708" importId="34628U708C" systemId="84" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="40422J302" importId="40422J302C" systemId="85" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="416528503" importId="416528503C" systemId="86" order="0" delete="false" />
+                </mstns:taxonomyAssociationLinks>
+              </mstns:taxonomyAssociationHierarchy>
+            </mstns:taxonomyAssociationHierarchies>
+            <mstns:footnotes mirror="false">
+              <mstns:footnote />
+            </mstns:footnotes>
+          </mstns:taxonomyAssociation>
+          <mstns:taxonomyAssociation level="1" importId="" systemId="2" nameOverride="ForeRetirement I Variable Annuity Suite (Effective 3/4/13)&#x9;" marketId="34628V201" descriptionOverride="ForeRetirement I Variable Annuity Suite" cssClass="" delete="false">
+            <mstns:documentTypeAssociations mirror="false">
+              <mstns:documentTypeAssociation headerText="Prospectus" linkText="Prospectus" order="0" marketId="P" descriptionOverride="Prospectus" cssClass="" delete="false" />
+              <mstns:documentTypeAssociation headerText="SAI" linkText="Additional Information" order="1" marketId="S" descriptionOverride="Additional Information" cssClass="" delete="false" />
+            </mstns:documentTypeAssociations>
+            <mstns:taxonomyAssociationHierarchies mirror="false">
+              <mstns:taxonomyAssociationHierarchy relationshipType="1" delete="false">
+                <mstns:taxonomyAssociationLinks mirror="false">
+                  <mstns:taxonomyAssociationLink marketId="" importId="024936692C" systemId="6" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="024936742" importId="" systemId="7" order="" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="024936833" importId="024936833C" systemId="9" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="02630E848" importId="02630E848C" systemId="10" order="0" delete="false" />
+                </mstns:taxonomyAssociationLinks>
+              </mstns:taxonomyAssociationHierarchy>
+            </mstns:taxonomyAssociationHierarchies>
+            <mstns:footnotes mirror="false">
+              <mstns:footnote />
+            </mstns:footnotes>
+          </mstns:taxonomyAssociation>
+          <mstns:taxonomyAssociation level="1" importId="" systemId="3" nameOverride="ForeRetirement II Variable Annuity Suite (Effective 5/5/14)&#x9;" marketId="34628V300" descriptionOverride="" cssClass="" delete="false">
+            <mstns:documentTypeAssociations mirror="false">
+              <mstns:documentTypeAssociation headerText="Prospectus" linkText="Prospectus" order="0" marketId="P" descriptionOverride="Prospectus" cssClass="" delete="false" />
+              <mstns:documentTypeAssociation headerText="SAI" linkText="Additional Information" order="1" marketId="S" descriptionOverride="Additional Information" cssClass="" delete="false" />
+            </mstns:documentTypeAssociations>
+            <mstns:taxonomyAssociationHierarchies mirror="false">
+              <mstns:taxonomyAssociationHierarchy relationshipType="1" delete="false">
+                <mstns:taxonomyAssociationLinks mirror="false">
+                  <mstns:taxonomyAssociationLink marketId="024936692" importId="024936692C" systemId="6" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="024936742" importId="" systemId="7" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="" importId="" systemId="7" order="0" delete="false" />
+                </mstns:taxonomyAssociationLinks>
+              </mstns:taxonomyAssociationHierarchy>
+            </mstns:taxonomyAssociationHierarchies>
+            <mstns:footnotes mirror="false">
+              <mstns:footnote />
+            </mstns:footnotes>
+          </mstns:taxonomyAssociation>
+          <mstns:taxonomyAssociation level="1" importId="" systemId="4" nameOverride="ForeRetirement III Variable Annuity Suite (Effective 5/4/15)&#x9;" marketId="34628V367" descriptionOverride="" cssClass="" delete="false">
+            <mstns:documentTypeAssociations mirror="false">
+              <mstns:documentTypeAssociation headerText="SAI" linkText="Additional Information" order="1" marketId="S" descriptionOverride="Additional Information" cssClass="" delete="false" />
+              <mstns:documentTypeAssociation headerText="Prospectus" linkText="Prospectus" order="0" marketId="P" descriptionOverride="Prospectus" cssClass="" delete="false" />
+            </mstns:documentTypeAssociations>
+            <mstns:taxonomyAssociationHierarchies mirror="false">
+              <mstns:taxonomyAssociationHierarchy relationshipType="1" delete="false">
+                <mstns:taxonomyAssociationLinks mirror="false">
+                  <mstns:taxonomyAssociationLink marketId="024936833" importId="024936833C" systemId="9" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="02630E848" importId="02630E848C" systemId="10" order="0" delete="false" />
+                </mstns:taxonomyAssociationLinks>
+              </mstns:taxonomyAssociationHierarchy>
+            </mstns:taxonomyAssociationHierarchies>
+            <mstns:footnotes mirror="false">
+              <mstns:footnote />
+            </mstns:footnotes>
+          </mstns:taxonomyAssociation>
+          <mstns:taxonomyAssociation level="1" importId="" systemId="5" nameOverride="" marketId="34628V193" descriptionOverride="" cssClass="" delete="false">
+            <mstns:documentTypeAssociations mirror="false">
+              <mstns:documentTypeAssociation headerText="Prospectus" linkText="Prospectus" order="0" marketId="P" descriptionOverride="Prospectus" cssClass="" delete="false" />
+              <mstns:documentTypeAssociation headerText="SAI" linkText="Additional Information" order="1" marketId="S" descriptionOverride="Additional Information" cssClass="" delete="false" />
+            </mstns:documentTypeAssociations>
+            <mstns:taxonomyAssociationHierarchies mirror="false">
+              <mstns:taxonomyAssociationHierarchy relationshipType="1" delete="false">
+                <mstns:taxonomyAssociationLinks mirror="false">
+                  <mstns:taxonomyAssociationLink marketId="" importId="024936692C" systemId="6" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="024936833" importId="" systemId="9" order="" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="02630E848" importId="02630E848C" systemId="10" order="0" delete="false" />
+                </mstns:taxonomyAssociationLinks>
+              </mstns:taxonomyAssociationHierarchy>
+            </mstns:taxonomyAssociationHierarchies>
+            <mstns:footnotes mirror="false">
+              <mstns:footnote />
+            </mstns:footnotes>
+          </mstns:taxonomyAssociation>
+        </mstns:taxonomyAssociations>
+      </mstns:market>
+    </mstns:site>
+   <mstns:site name="" description="" templateId="1" systemId="2" delete="false">
+      <mstns:market>
+        <mstns:documentTypeAssociations mirror="false">
+          
+        </mstns:documentTypeAssociations>
+        <mstns:taxonomyAssociations mirror="false">
+          <mstns:taxonomyAssociation level="1" importId="" systemId="1" nameOverride="ForeRetirement Foundation Variable Annuity Suite (Effective 5/5/14)&#x9;" marketId="34628V268" descriptionOverride="ForeRetirement Foundation Variable Annuity Suite" cssClass="" delete="false">
+            <mstns:documentTypeAssociations mirror="false">
+              <mstns:documentTypeAssociation headerText="Prospectus" linkText="Prospectus" order="0" marketId="P" descriptionOverride="Prospectus" cssClass="" delete="false" />
+              <mstns:documentTypeAssociation headerText="SAI" linkText="Additional Information" order="1" marketId="S" descriptionOverride="Additional Information" cssClass="abc" delete="false" />
+            </mstns:documentTypeAssociations>
+            <mstns:taxonomyAssociationHierarchies mirror="false">
+              <mstns:taxonomyAssociationHierarchy relationshipType="1" delete="false">
+                <mstns:taxonomyAssociationLinks mirror="false">
+                 
+                </mstns:taxonomyAssociationLinks>
+              </mstns:taxonomyAssociationHierarchy>
+            </mstns:taxonomyAssociationHierarchies>
+            <mstns:footnotes mirror="false">
+              <mstns:footnote />
+            </mstns:footnotes>
+          </mstns:taxonomyAssociation>
+          <mstns:taxonomyAssociation level="1" importId="" systemId="2" nameOverride="ForeRetirement I Variable Annuity Suite (Effective 3/4/13)&#x9;" marketId="34628V201" descriptionOverride="ForeRetirement I Variable Annuity Suite" cssClass="" delete="false">
+            <mstns:documentTypeAssociations mirror="false">
+              <mstns:documentTypeAssociation headerText="Prospectus" linkText="Prospectus" order="0" marketId="P" descriptionOverride="Prospectus" cssClass="" delete="false" />
+              <mstns:documentTypeAssociation headerText="SAI" linkText="Additional Information" order="1" marketId="S" descriptionOverride="Additional Information" cssClass="" delete="false" />
+            </mstns:documentTypeAssociations>
+            <mstns:taxonomyAssociationHierarchies mirror="false">
+              <mstns:taxonomyAssociationHierarchy relationshipType="1" delete="false">
+                <mstns:taxonomyAssociationLinks mirror="false">
+                  
+                </mstns:taxonomyAssociationLinks>
+              </mstns:taxonomyAssociationHierarchy>
+            </mstns:taxonomyAssociationHierarchies>
+            <mstns:footnotes mirror="false">
+              <mstns:footnote />
+            </mstns:footnotes>
+          </mstns:taxonomyAssociation>
+          <mstns:taxonomyAssociation level="1" importId="" systemId="3" nameOverride="ForeRetirement II Variable Annuity Suite (Effective 5/5/14)&#x9;" marketId="34628V300" descriptionOverride="" cssClass="" delete="false">
+            <mstns:documentTypeAssociations mirror="false">
+              <mstns:documentTypeAssociation headerText="Prospectus" linkText="Prospectus" order="0" marketId="P" descriptionOverride="Prospectus" cssClass="" delete="false" />
+              <mstns:documentTypeAssociation headerText="SAI" linkText="Additional Information" order="1" marketId="S" descriptionOverride="Additional Information" cssClass="" delete="false" />
+            </mstns:documentTypeAssociations>
+            <mstns:taxonomyAssociationHierarchies mirror="false">
+              <mstns:taxonomyAssociationHierarchy relationshipType="1" delete="false">
+                <mstns:taxonomyAssociationLinks mirror="false">
+                  <mstns:taxonomyAssociationLink marketId="024936692" importId="024936692C" systemId="6" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="024936742" importId="024936742C" systemId="7" order="0" delete="false" />
+                </mstns:taxonomyAssociationLinks>
+              </mstns:taxonomyAssociationHierarchy>
+            </mstns:taxonomyAssociationHierarchies>
+            <mstns:footnotes mirror="false">
+              <mstns:footnote />
+            </mstns:footnotes>
+          </mstns:taxonomyAssociation>
+          <mstns:taxonomyAssociation level="1" importId="" systemId="4" nameOverride="ForeRetirement III Variable Annuity Suite (Effective 5/4/15)&#x9;" marketId="34628V367" descriptionOverride="" cssClass="" delete="false">
+            <mstns:documentTypeAssociations mirror="false">
+              <mstns:documentTypeAssociation headerText="SAI" linkText="Additional Information" order="1" marketId="S" descriptionOverride="Additional Information" cssClass="" delete="false" />
+              <mstns:documentTypeAssociation headerText="Prospectus" linkText="Prospectus" order="0" marketId="P" descriptionOverride="Prospectus" cssClass="" delete="false" />
+            </mstns:documentTypeAssociations>
+            <mstns:taxonomyAssociationHierarchies mirror="false">
+              <mstns:taxonomyAssociationHierarchy relationshipType="1" delete="false">
+                <mstns:taxonomyAssociationLinks mirror="false">
+                  <mstns:taxonomyAssociationLink marketId="024936833" importId="024936833C" systemId="9" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="02630E848" importId="02630E848C" systemId="10" order="0" delete="false" />
+                </mstns:taxonomyAssociationLinks>
+              </mstns:taxonomyAssociationHierarchy>
+            </mstns:taxonomyAssociationHierarchies>
+            <mstns:footnotes mirror="false">
+              <mstns:footnote />
+            </mstns:footnotes>
+          </mstns:taxonomyAssociation>
+          <mstns:taxonomyAssociation level="1" importId="" systemId="5" nameOverride="" marketId="34628V193" descriptionOverride="" cssClass="" delete="false">
+            <mstns:documentTypeAssociations mirror="false">
+              <mstns:documentTypeAssociation headerText="Prospectus" linkText="Prospectus" order="0" marketId="P" descriptionOverride="Prospectus" cssClass="" delete="false" />
+              <mstns:documentTypeAssociation headerText="SAI" linkText="Additional Information" order="1" marketId="S" descriptionOverride="Additional Information" cssClass="" delete="false" />
+            </mstns:documentTypeAssociations>
+            <mstns:taxonomyAssociationHierarchies mirror="false">
+              <mstns:taxonomyAssociationHierarchy relationshipType="1" delete="false">
+                <mstns:taxonomyAssociationLinks mirror="false">
+                  <mstns:taxonomyAssociationLink marketId="024936692" importId="024936692C" systemId="6" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="024936833" importId="024936833C" systemId="9" order="0" delete="false" />
+                  <mstns:taxonomyAssociationLink marketId="02630E848" importId="02630E848C" systemId="10" order="0" delete="false" />
+                </mstns:taxonomyAssociationLinks>
+              </mstns:taxonomyAssociationHierarchy>
+            </mstns:taxonomyAssociationHierarchies>
+            <mstns:footnotes mirror="false">
+              <mstns:footnote />
+            </mstns:footnotes>
+          </mstns:taxonomyAssociation>
+        </mstns:taxonomyAssociations>
+      </mstns:market>
+    </mstns:site>
+  </mstns:sites>
+</mstns:import>

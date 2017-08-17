@@ -1,0 +1,21 @@
+﻿
+<div class="col-lg-3">
+    <button id="btnApproveAllProofing" class=" btn btn-primary btn-sm clear-after" type="button">Approve Proofing</button>
+</div>
+<div class="col-lg-3">
+</div>
+<div class="col-lg-6">
+    <div class="col-lg-2"></div>
+        <div class="col-lg-4">
+            <a class="btn btn-success" href="" target="_blank" id="lnkShowProofing">Preview Proofing</a>
+        </div>
+    <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+
+            <a class="btn btn-success" href="" target="_blank" id="lnkShowProduction">Preview Production</a>
+        </div>
+    </div>
+    <div id="dvApproveProofing" data-request-url="@Url.Action("ApproveProofing", "VerticalDataImport")"></div>
+<div id="dvShowProofing" data-request-url="@Url.Action("GetHostedSiteProofingURL", "VerticalDataImport")"></div>
+<script src="~/Scripts/HostedAdmin/VerticalDataImport/ApproveProofingSettings.js"></script>
+

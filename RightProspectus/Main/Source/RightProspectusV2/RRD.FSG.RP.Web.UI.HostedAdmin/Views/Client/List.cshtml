@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_AdminConfigurationLayout.cshtml";
+}
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("SelectCustomer", "Home")">Client Selection</a></li>                
+                <li class="active">Clients</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <p class="pageCaption">
+                Clients<span id="clientPopOver" class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp" data-toggle="popover"></span>
+            </p>
+        </div>
+
+        <div class="col-sm-3 newAddButton">
+            <a id="newClient" class="btn btn-success btn-sm m-top-5 pull-right-xs-max">
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;New Client
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="ClientNameCombo" class="form-control" type="text" placeholder="Client Name">
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="VerticalMarketCombo" type="text" class="form-control" placeholder="Vertical Market" />
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <input id="DatabaseNameCombo" type="text" class="form-control" placeholder="Database Name" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="searchClients" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="clearClientSearch"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="GridContainer" class="ScrollTable">
+                <div id="clientGrid" class="tableFixedWidth">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="alertDeleteClient" type="text/x-kendo-template">
+    <p class="message">Are you sure you want to Delete this Client?</p>
+    <button class="confirm k-button confirmButtonYesMultiple">Yes</button>
+    <button class="cancel k-button confirmButtonSingleYesNo">No</button>
+</script>
+<div id="dvLoadAllClients" data-request-url="@Url.Action("GetAllClients", "Client")"></div>
+<div id="dvEditClient" data-request-url="@Url.Action("EditClient", "Client")"></div>
+
+<div id="dvClientNameComboLoad" data-request-url="@Url.Action("GetClientNames", "Client")"></div>
+<div id="dvVerticalMarketComboLoad" data-request-url="@Url.Action("GetVerticalMarkets", "Client")"></div>
+<div id="dvDatabaseNameComboLoad" data-request-url="@Url.Action("GetDatabaseNames", "Client")"></div>
+<div id="dvDeleteClientDetails" data-request-url="@Url.Action("DeleteClientDetails", "Client")"></div>
+<div id="dvWelComeClientPageURL" data-request-url="@Url.Action("WelcomeClient", "Client")"></div>
+
+<script src="~/Scripts/HostedAdmin/ClientSettings.js"></script>
+<div id="dvClientPopOver" class="dispNone">
+    Client page displays all the available <b>Hosted Clients</b> in RightProspectus.
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>ADD New Client</li>
+        <li>EDIT Existing Client</li>
+        <li>SEARCH Client based on Client Name, Verical Market, Database Name.</li>
+    </ul>
+    <br />
+</div>

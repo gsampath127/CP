@@ -1,0 +1,82 @@
+﻿<form name="cusipForm" novalidate ng-submit="GenerateReport()">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-9">
+                <p class="pageCaption">
+                    CUSIP Reports<span class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp BCSPopOver"
+                                       data-toggle="popover"></span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group required">
+
+                    <input kendo-date-picker
+                           ng-model="StartDate" name="StartDate"
+                           ng-required="true" placeholder="Select Start Date:" />
+
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group required">
+                    <input kendo-date-picker
+                           ng-model="EndDate" name="EndDate"
+                           ng-required="true" placeholder="Select End Date:" />
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="form-group required">
+                    <input kendo-combo-box k-options='ReportTypeOptions' ng-model="SelectedReport" ng-required="true" />
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <input class="btn btn-primary btn-sm clear-after" type="submit" value="Generate">
+                <button class="btn btn-link btn-sm clear-form" type="reset" ng-click="ClearFilters()"><span><u>Clear Filters</u></span></button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+
+
+    </div>
+</form>
+<div id="cusipGrid" kendo-grid k-options="gridOptions" k-data-source="gridDataSource" ng-show="DisplayGrid"></div>
+
+<div id="dvCUSIPReportPopOver" class="dispNone">
+    TODO : Write Info on CUSIP Reports
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>write info on cusip reports</li>
+
+    </ul>
+    <br />
+</div>

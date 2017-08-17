@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "SessionTimedOut";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Convert.ToString(TempData["SessionTimeOutMessage"])</h2>
+<br />
+<button id="btnClose" type="submit" class="AlignButton btn btn-default m-top-15" onclick="javascript: window.close();">Close</button>
+

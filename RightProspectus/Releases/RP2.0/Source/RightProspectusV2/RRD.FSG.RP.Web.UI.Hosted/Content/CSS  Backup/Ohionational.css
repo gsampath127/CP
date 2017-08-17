@@ -1,0 +1,529 @@
+body {
+    font-family: arial, tahoma, sans-serif;
+    background-color: #fff;
+    font-size: 13px;
+    font-family: arial, tahoma, sans-serif;
+    margin: 0px;
+}
+
+.cssClientLogoPlaceHolder {
+    display: table-cell;
+    width: 50%;
+}
+
+.cssClientLogo {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16pt;
+    padding-left: 5px;
+}
+
+/*DocumentNotAvailable Start*/
+.cssDocumentNotAvailableItemDiv {
+    margin-top: 40px;
+    padding-left: 5px;
+}
+
+.cssDocumentNotAvailableGoBackButtonDiv {
+    margin-top: 20px;
+}
+/*DocumentNotAvailable End*/
+
+
+/*TaxonomyDataNotAvailable Start*/
+
+.cssTaxonomyDataNotAvailableMainDiv {
+    background-color: #fff;
+    display: table;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    padding: 18px 0px 0px 0px;
+}
+
+.cssTaxonomyDataNotAvailableItemDiv {
+    margin-top: 40px;
+    padding-left: 5px;
+}
+
+.cssTaxonomyDataNotAvailableGoBackButtonDiv {
+    margin-top: 20px;
+}
+
+/*TaxonomyDataNotAvailable End*/
+
+.cssLinks {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.td {
+    padding-left: 10px;
+    display: table-cell;
+    table-layout: fixed;
+    vertical-align: middle;
+}
+
+.cssHeaderTable {
+    display: table;
+    width: 100%;
+}
+
+.cssHeaderTableRow {
+    display: table-row;
+    width: 100%;
+}
+
+.cssHeaderTableCell {
+    display: table-cell;
+}
+
+
+
+
+
+/****************************************************TAD Start*************************************************************************/
+
+
+
+/*TAD Start:*/
+.cssTADMainDiv {
+    margin: auto;
+    height: 100%;
+    width: 1024px;
+    padding: 18px 0px 0px 0px;
+    background-color: #fff;
+}
+
+.TADHeaderMenuMainDiv{
+    display:none;
+}
+.cssTADHeaderText {
+    font-size: 12px;
+    font-family: Verdana,Geneva,sans-serif;    
+    display: table;    
+    width: 100%;
+    margin-bottom: 15px; 
+    margin-top: 15px;  
+}
+
+.cssTADUnderlyingFundDocumentGridDiv {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cssTADUnderlyingFundDocumentGridHeader {
+    height: 47px;
+    display: table-row;
+    width: 100%;
+    table-layout: fixed;
+    background: #336699;
+    color: #fff;
+    font-family: Verdana, Geneva, sans-serif;
+    padding-left: 10px;
+}
+
+.cssTADUnderlyingFundDocumentGridFundNameColumn {
+    width: 40%;
+    vertical-align: middle;
+    font-size: 17px;
+}
+
+.cssTADUnderlyingFundDocumentGridDocTypeColumn {
+    width: 10%;
+    text-align: center;
+    vertical-align: middle;
+    border-left: 2px;
+    border-left-style: solid;
+    border-left-color: #FFF;
+}
+
+.cssTADUnderlyingFundDocumentGridItem {
+    background-color: #ECEDEE;
+    height: 20px;
+    display: table-row;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.cssTADUnderlyingFundDocumentGridItemFundNameColumn {
+    width: 40%;
+}
+
+.cssTADUnderlyingFundDocumentGridItemDocTypeColumn {
+    width: 10%;
+    border-left: 2px;
+    border-left-style: solid;
+    border-left-color: #FFF;
+}
+
+.cssTADUnderlyingFundDocumentGridAlternateItemFundNameColumn {
+    width: 40%;
+}
+
+.cssTADUnderlyingFundDocumentGridAlternateItemDocTypeColumn {
+    width: 10%;
+    border-left: 2px;
+    border-left-style: solid;
+    border-left-color: #FFF;
+}
+
+.cssTADUnderlayingFundGridNAText {
+    text-align: center;
+}
+
+.cssTADUnderlyingFundDocumentGridAlternateItem {
+    background-color: #fff;
+    height: 20px;
+    display: table-row;
+    width: 100%;
+}
+
+.cssTADFooter {
+    margin-top: 20px;
+}
+
+.cssTADFootnotesHeaderText {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cssTADFootnotesItems {
+    margin-top: 20px;
+}
+
+.cssTADFootnotesItemText {
+}
+
+.TADHeaderMenuPlaceHolderDiv {
+    color: #fff;
+    margin-top: 15px;
+}
+
+/****************************************************Start : Menu CSS********************************************************/
+#NavMenu {
+    color: #FFF !important;
+    margin: 0; 
+    padding: 0;
+}
+
+#NavMenu ul {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+#NavMenu li.top {
+    display: inline-block;
+    line-height: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 25px;
+    vertical-align: middle;
+    color: #1C4877;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 11px;
+    min-width: 100px;
+    text-align: center;
+}
+
+#NavMenu li:hover li {
+    display: block;
+    float: left;         
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 25px;
+    vertical-align: middle;
+    color: #1C4877;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 11px;
+    min-width: 100px;
+    text-align: center;
+}
+
+#NavMenu li:hover {
+    position: relative;   
+}
+
+    #NavMenu li:hover ul {
+        left: 0px;
+        top: 25px;
+        padding-top: 2px;
+        background: #ffffff;
+        padding-left:0px !important;
+        z-index: 100;
+    }
+
+.cssMenuTdActive {
+    background-image: url(staticresource/DocumentMenuSelectedBackground.jpg?client=ohionational);
+    background-repeat: no-repeat;
+    background-size: 100% 25px;
+    color: #e5f8ff;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cssMenuTdInActive {
+    background-image: url(staticresource/DocumentMenuUnSelectedBackground.jpg?client=ohionational);
+    background-repeat: no-repeat;
+    background-size: 100% 25px;
+}
+
+.cssMenuTdActive a{
+    color:#FFF;
+    text-decoration:none;
+}
+
+.cssMenuTdActive a:hover{
+    color:#FFF;
+    text-decoration:underline;
+}
+
+.cssMenuTdInActive a:hover{
+    color:#FFF;
+    text-decoration:underline;
+}
+/****************************************************End : Menu CSS********************************************************/
+
+/*Document Type Link CSS*/
+
+.cssDocumentTypeLinkImage {
+    background-image: url(staticresource/DocumentLinkImage.gif?client=ohionational);
+    background-repeat: no-repeat;
+    height: 16px !important;
+    width: 16px !important;
+    margin: auto;
+}
+
+.cssDocumentTypeLinkText {
+    display: none;
+}
+
+.cssXBRLLinkImage {
+    background-image: url(staticresource/XBRLLinkImage.gif?client=ohionational);
+    background-repeat: no-repeat;
+    height: 20px !important;
+    width: 16px !important;
+    margin: auto;
+}
+
+.cssXBRLLinkText {
+    display: none;
+}
+
+/*Document Type Link CSS*/
+/****************************************************End : TAD End********************************************************************************************************/
+
+
+
+
+/****************************************************Start : TADF********************************************************************************************************/
+.cssTADFBody {
+    overflow-y: hidden;
+}
+
+.cssTADFMainDiv {
+    background-color: #fff;
+    display: table;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    padding: 18px 0px 0px 0px;
+}
+
+.cssTADFFundName {
+    display: table-cell;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #1C4877;
+    width: 50%;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.TADFDocumentTypeNavPlaceHolderDiv {
+    color: #fff;
+    margin-top: 25px;
+}
+
+.cssTADFPDFPlaceHolderDiv {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    margin-top: 0px;
+}
+
+.cssTADFPDFFrame {
+    border-style: none;
+    width: 100%;
+}
+
+.cssTADFDocumentNotAvailableText{
+    margin-top: 20px;
+}
+
+.cssTADFDocumentNotAvailablePlaceHolderDiv {
+    position: absolute;
+    background: #FFF;
+    height: 100%;
+    width: 100%;
+}
+
+/****************************************************Start : Menu CSS********************************************************/
+#NavMenu {
+    color: #FFF !important;
+    margin: 0; 
+    padding: 0;
+}
+
+#NavMenu ul {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+#NavMenu li.top {
+    display: inline-block;    
+    line-height: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 25px;
+    vertical-align: middle;    
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 11px;
+    min-width: 50px;
+    text-align: center;
+}
+
+#NavMenu li:hover li {
+    display: block;
+    float: left;         
+    line-height: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 25px;
+    vertical-align: middle;    
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 11px;
+    min-width: 50px;
+    text-align: center;
+}
+
+#NavMenu li:hover {
+    position: relative;   
+}
+
+    #NavMenu li:hover ul {
+        left: 0px;
+        top: 25px;
+        padding-top: 2px;
+        background: #ffffff;
+        padding-left:0px !important;
+        z-index: 100;
+    }
+
+.cssMenuTdActive {
+    background-image: url(staticresource/DocumentMenuSelectedBackground.jpg?client=ohionational);
+    background-repeat: no-repeat;
+    background-size: 100% 25px;
+    color: #e5f8ff;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cssMenuTdInActive {
+    background-image: url(staticresource/DocumentMenuUnSelectedBackground.jpg?client=ohionational);
+    background-repeat: no-repeat;
+    background-size: 100% 25px;
+}
+
+.cssMenuTdActive a{
+    color:#FFF;
+    text-decoration:none;
+}
+
+.cssMenuTdInActive a{
+    color: #1C4877;
+    text-decoration:none;
+}
+
+.cssMenuTdActive a:hover{
+    color:#FFF;
+    text-decoration:underline;
+}
+
+.cssMenuTdInActive a:hover{
+    color:#FFF;
+    text-decoration:underline;
+}
+/****************************************************End : Menu CSS********************************************************/
+
+/****************************************************End : TADF********************************************************************************************************/
+
+/*XBRL - Start*/
+
+.cssXBRLMainDiv {
+    background-color: #fff;
+    display: table;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    padding: 18px 0px 0px 0px;
+}
+
+.cssXBRLFundName {
+    display: table-cell;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #1C4877;
+    width: 50%;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.cssXBRLContentDiv {
+}
+
+.cssXBRLContentMainTable {
+    margin-left: 5px;
+    margin-top: 25px;
+}
+
+.cssXBRLPlaceHolder {
+    list-style-image: url(staticresource/XBRLZipFile.jpg?client=ohionational);
+}
+
+.cssXBRLViewerPlaceHolder {
+    list-style-image: none;
+    list-style-type: disc;
+}
+
+.cssXBRLZipFilesHeaderText {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.cssXBRLViewerHeaderText {
+    font-size: 13px;
+    font-weight: bold;
+}
+/*XBRL - END*/
+
+

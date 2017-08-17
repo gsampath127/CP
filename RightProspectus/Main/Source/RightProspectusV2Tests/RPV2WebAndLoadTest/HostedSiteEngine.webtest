@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="HostedSiteEngine" Id="91117496-0d12-4384-a25c-e690ea029e04" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="HostedSiteEngine.1dfa0b0e-84db-4f3a-8952-cd4ee3b16812.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="7b0e971a-5653-44da-926b-99e63809e4b9" Version="1.1" Url="http://connect-stage.rightprospectus.com/transAmericaFunds" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam8.isInternalTAID" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?isInternalTAID=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="b8ec244a-e2d8-4861-afa6-bf70054c021e" Version="1.1" Url="http://connect-stage.rightprospectus.com/transAmericaFunds/TADF/523/18" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://connect-stage.rightprospectus.com/transAmericaFunds" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="requestBatchIdForUser" DisplayName="Extract Text" Description="Extract text from the response and place it into the test context.">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="input type=&quot;hidden&quot; value=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=&quot;hdnRequestBatchId&quot;" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam1.isInternalTAID" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?isInternalTAID=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam9.isInternalTAID" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?isInternalTAID=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.RequestBatchId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam56.isInternalTAID" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?isInternalTAID=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam57.isInternalTAID" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?isInternalTAID=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam58.requestBatchId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;requestBatchId=" />
+            <RuleParameter Name="EndsWith" Value="'" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam79.isInternalTAID" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?isInternalTAID=" />
+            <RuleParameter Name="EndsWith" Value="&amp;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam80.requestBatchId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="&amp;amp;requestBatchId=" />
+            <RuleParameter Name="EndsWith" Value="'" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam3.RequestBatchId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; id=" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="isInternalTAID" Value="True" RecordedValue="True" CorrelationBinding="{{QueryStringParam8.isInternalTAID}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="441f2d87-1ca3-410b-be22-974886556bf4" Version="1.1" Url="http://tools-stage.rightprospectus.com/Viewer/LoadDocument.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://tools-stage.rightprospectus.com/Viewer/LoadDocument.aspx" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://connect-stage.rightprospectus.com/transAmericaFunds/TADF/523/18?isInternalTAID=True" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="pdfURL" Value="http://www.rightprospectus.com/documents/Transamerica/SUM_AssetAllConservative.pdf" RecordedValue="http://www.rightprospectus.com/documents/Transamerica/SUM_AssetAllConservative.pdf" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="1fffc76b-9dff-4d28-b2ea-932ec95a6478" Version="1.1" Url="https://tools-stage.rightprospectus.com/Viewer/Viewer.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="file" Value="%2fViewer%2fHosted%2fGetDocument.ashx%3ffile%3dhttp%3a%2f%2fwww.rightprospectus.com%2fdocuments%2fTransamerica%2fSUM_AssetAllConservative.pdf" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="3c7d7031-83b2-4c31-8940-1fae49076082" Version="1.1" Url="https://tools-stage.rightprospectus.com/Viewer/js/pdfjs/web/locale/locale.properties" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://tools-stage.rightprospectus.com/Viewer/Viewer.aspx?file=%2fViewer%2fHosted%2fGetDocument.ashx%3ffile%3dhttp%3a%2f%2fwww.rightprospectus.com%2fdocuments%2fTransamerica%2fSUM_AssetAllConservative.pdf" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="f653b1d6-0b0e-4636-aa19-ff0525d3e2ae" Version="1.1" Url="https://tools-stage.rightprospectus.com/Viewer/js/pdfjs/web/locale/en-US/viewer.properties" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://tools-stage.rightprospectus.com/Viewer/Viewer.aspx?file=%2fViewer%2fHosted%2fGetDocument.ashx%3ffile%3dhttp%3a%2f%2fwww.rightprospectus.com%2fdocuments%2fTransamerica%2fSUM_AssetAllConservative.pdf" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="b3fbd1fe-200b-462e-a8ae-3329f78d9840" Version="1.1" Url="https://tools-stage.rightprospectus.com/Viewer/Hosted/GetDocument.ashx" ThinkTime="19" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="file" Value="http://www.rightprospectus.com/documents/Transamerica/SUM_AssetAllConservative.pdf" RecordedValue="http://www.rightprospectus.com/documents/Transamerica/SUM_AssetAllConservative.pdf" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Comment CommentText="Tab 1" />
+    <Request Method="GET" Guid="ae352a35-54d6-423b-9d23-55a022874809" Version="1.1" Url="http://connect-stage.rightprospectus.com/transAmericaFunds/TADF/523/18" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://connect-stage.rightprospectus.com/transAmericaFunds/TADF/523/18?isInternalTAID=True#" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="isInternalTAID" Value="True" RecordedValue="True" CorrelationBinding="{{QueryStringParam1.isInternalTAID}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="c8cfab51-0254-40ff-b3ed-922d22edf93e" Version="1.1" Url="http://tools-stage.rightprospectus.com/Viewer/LoadDocument.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://tools-stage.rightprospectus.com/Viewer/LoadDocument.aspx" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://connect-stage.rightprospectus.com/transAmericaFunds/TADF/523/18?isInternalTAID=True" />
+      </Headers>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.ExternalID2" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="dex=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="21" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam4.ExternalID2" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="dex=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot; dat" />
+            <RuleParameter Name="Index" Value="33" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="pdfURL" Value="http://www.rightprospectus.com/documents/Transamerica/transamerica_funds_retail_prospectus.pdf" RecordedValue="http://www.rightprospectus.com/documents/Transamerica/transamerica_funds_retail_prospectus.pdf" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="44d259bd-7d49-4d6c-aa19-d5ff81fc75cf" Version="1.1" Url="https://tools-stage.rightprospectus.com/Viewer/Viewer.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="file" Value="%2fViewer%2fHosted%2fGetDocument.ashx%3ffile%3dhttp%3a%2f%2fwww.rightprospectus.com%2fdocuments%2fTransamerica%2ftransamerica_funds_retail_prospectus.pdf" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="afb19c8d-d80f-49c9-941c-714389f892db" Version="1.1" Url="http://connect-stage.rightprospectus.com/Hosted/TrackSiteActivity" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://connect-stage.rightprospectus.com/transAmericaFunds/TADF/523/18?isInternalTAID=True" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Customer" Value="transAmericaFunds" RecordedValue="transAmericaFunds" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Site" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ExternalID1" Value="523" RecordedValue="523" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ExternalID2" Value="11" RecordedValue="11" CorrelationBinding="{{FormPostParam2.ExternalID2}}" UrlEncode="True" />
+        <FormPostParameter Name="IsInternalTAID" Value="True" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RequestBatchId" Value="{{requestBatchIdForUser}}" RecordedValue="4b27c54c-4a90-47bf-aa1b-7c9eabd12e16" CorrelationBinding="{{FormPostParam1.RequestBatchId}}" UrlEncode="True" />
+        <FormPostParameter Name="IsInternalDTID" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="c82b0cc2-c1f3-4c77-be62-bace60719db8" Version="1.1" Url="https://tools-stage.rightprospectus.com/Viewer/js/pdfjs/web/locale/locale.properties" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://tools-stage.rightprospectus.com/Viewer/Viewer.aspx?file=%2fViewer%2fHosted%2fGetDocument.ashx%3ffile%3dhttp%3a%2f%2fwww.rightprospectus.com%2fdocuments%2fTransamerica%2ftransamerica_funds_retail_prospectus.pdf" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="0be1a5a9-99b9-4e2b-93e2-0856562d4f46" Version="1.1" Url="https://tools-stage.rightprospectus.com/Viewer/js/pdfjs/web/locale/en-US/viewer.properties" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://tools-stage.rightprospectus.com/Viewer/Viewer.aspx?file=%2fViewer%2fHosted%2fGetDocument.ashx%3ffile%3dhttp%3a%2f%2fwww.rightprospectus.com%2fdocuments%2fTransamerica%2ftransamerica_funds_retail_prospectus.pdf" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="48a85d04-b60b-4761-8c8d-79d3add4c091" Version="1.1" Url="https://tools-stage.rightprospectus.com/Viewer/Hosted/GetDocument.ashx" ThinkTime="41" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="file" Value="http://www.rightprospectus.com/documents/Transamerica/transamerica_funds_retail_prospectus.pdf" RecordedValue="http://www.rightprospectus.com/documents/Transamerica/transamerica_funds_retail_prospectus.pdf" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Comment CommentText="Tab 2" />
+    <Request Method="GET" Guid="82865813-6c7d-41cc-874e-f3bdacd57673" Version="1.1" Url="http://connect-stage.rightprospectus.com/transAmericaFunds/TADF/523/18" ThinkTime="8" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://connect-stage.rightprospectus.com/transAmericaFunds/TADF/523/18?isInternalTAID=True#" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="isInternalTAID" Value="True" RecordedValue="True" CorrelationBinding="{{QueryStringParam56.isInternalTAID}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="d01c824d-1a60-4c21-8549-62fb36298a70" Version="1.1" Url="http://connect-stage.rightprospectus.com/transAmericaFunds/XBRL/523" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://connect-stage.rightprospectus.com/transAmericaFunds/TADF/523/18?isInternalTAID=True" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="isInternalTAID" Value="True" RecordedValue="True" CorrelationBinding="{{QueryStringParam57.isInternalTAID}}" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="requestBatchId" Value="{{requestBatchIdForUser}}" RecordedValue="4b27c54c-4a90-47bf-aa1b-7c9eabd12e16" CorrelationBinding="{{QueryStringParam58.requestBatchId}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="c9c143e0-73d7-43ac-9b7b-1a224bb05556" Version="1.1" Url="http://connect-stage.rightprospectus.com/Hosted/TrackSiteActivity" ThinkTime="11" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/javascript, */*; q=0.01" />
+        <Header Name="X-Requested-With" Value="XMLHttpRequest" />
+        <Header Name="Referer" Value="http://connect-stage.rightprospectus.com/transAmericaFunds/TADF/523/18?isInternalTAID=True" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Customer" Value="transAmericaFunds" RecordedValue="transAmericaFunds" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Site" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ExternalID1" Value="523" RecordedValue="523" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ExternalID2" Value="21" RecordedValue="21" CorrelationBinding="{{FormPostParam4.ExternalID2}}" UrlEncode="True" />
+        <FormPostParameter Name="IsInternalTAID" Value="True" RecordedValue="True" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RequestBatchId" Value="{{requestBatchIdForUser}}" RecordedValue="4b27c54c-4a90-47bf-aa1b-7c9eabd12e16" CorrelationBinding="{{FormPostParam3.RequestBatchId}}" UrlEncode="True" />
+        <FormPostParameter Name="IsInternalDTID" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+  </Items>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

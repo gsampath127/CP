@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>RRD.FSG.RP.Web.UI.HostedAdmin</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>320e5594-18dd-4ca3-a1c5-b3a5640e5d2c</ProjectGuid>
+  <FullPath>D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RRD.FSG.RP.Web.UI.HostedAdmin\RRD.FSG.RP.Web.UI.HostedAdmin.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\.sonarqube\out\\RRD.FSG.RP.Web.UI.HostedAdmin_AnyCPU_Debug_5811\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.stylecop.projectFilePath">D:\TFS-RP\RightProspectus\Releases\TIAA\Source\RightProspectusV2\RRD.FSG.RP.Web.UI.HostedAdmin\RRD.FSG.RP.Web.UI.HostedAdmin.csproj</Property>
+  </AnalysisSettings>
+</ProjectInfo>

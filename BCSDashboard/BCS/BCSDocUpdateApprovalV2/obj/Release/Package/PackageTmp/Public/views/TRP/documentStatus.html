@@ -1,0 +1,73 @@
+﻿<form name="documentCUSIPForm" novalidate ng-submit="GenerateReport()">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-9">
+                <p class="pageCaption">
+                    Document(s) Status<span class="glyphicon popOverStyle glyphicon-info-sign pageCaptionHelp BCSPopOver"
+                                       data-toggle="popover"></span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <br />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+
+                    <input type="text" ng-model="CUSIP" name="CUSIP" class="form-control" placeholder="CUSIP" />
+
+                </div>
+
+            </div>
+            
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <input kendo-combo-box k-options='comboPDFStatus' ng-model="SelectedPDFStatus"  />
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <input class="btn btn-primary btn-sm clear-after" type="submit" value="Generate">
+                <button class="btn btn-link btn-sm clear-form" type="reset" ng-click="ClearFilters()"><span><u>Clear Filters</u></span></button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <br />
+            </div>
+        </div>
+
+
+    </div>
+</form>
+<div id="documentStatusCusipGrid" kendo-grid k-options="gridOptions" k-data-source="gridDataSource" ng-show="DisplayGrid"></div>
+
+<div id="dvDocumentCUSIPPopOver" class="dispNone">
+    TODO : Write Info on Document Status
+    <br /><br />
+    Below are the functionalities provided in this page,
+    <ul>
+        <li>write info on cusip reports</li>
+
+    </ul>
+    <br />
+</div>

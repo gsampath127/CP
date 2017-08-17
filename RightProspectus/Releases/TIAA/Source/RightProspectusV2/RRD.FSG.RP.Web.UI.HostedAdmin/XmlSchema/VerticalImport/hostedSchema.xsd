@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="hostedSchema.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <!--Common and abstract entities-->
+  <xs:include schemaLocation="commonTypes.xsd" />
+  
+  <!--Entities with no nested elements-->
+  <xs:include schemaLocation="clientDocumentGroupLink.xsd" />
+  <xs:include schemaLocation="clientDocumentLink.xsd" />
+  <xs:include schemaLocation="documentTypeAssociation.xsd" />
+  <xs:include schemaLocation="externalId.xsd" />
+  <xs:include schemaLocation="feature.xsd" />
+  <xs:include schemaLocation="footnote.xsd" />
+  <xs:include schemaLocation="menuItem.xsd" />
+  <xs:include schemaLocation="metaData.xsd" />
+  <xs:include schemaLocation="taxonomyAssociationLink.xsd" />
+  <xs:include schemaLocation="text.xsd" />
+  <xs:include schemaLocation="urlRewrite.xsd" />
+  
+  <!--Entities with nested elements-->
+  <xs:include schemaLocation="clientDocumentGroup.xsd" />
+  <xs:include schemaLocation="documentTypeExternalId.xsd" />
+  <xs:include schemaLocation="menuRoot.xsd" />
+  <xs:include schemaLocation="pageNavigation.xsd" />
+  <xs:include schemaLocation="siteNavigation.xsd" />
+  <xs:include schemaLocation="taxonomyAssociation.xsd" />
+  <xs:include schemaLocation="taxonomyAssociationGroup.xsd" />
+  <xs:include schemaLocation="taxonomyAssociationHierarchy.xsd" />
+  <xs:include schemaLocation="taxonomyLevelExternalId.xsd" />
+  <xs:include schemaLocation="page.xsd" />
+  <xs:include schemaLocation="site.xsd" />
+  
+  <!--Import and Export Schemas-->
+  <xs:include schemaLocation="import.xsd" />
+  <xs:include schemaLocation="export.xsd" />
+</xs:schema>

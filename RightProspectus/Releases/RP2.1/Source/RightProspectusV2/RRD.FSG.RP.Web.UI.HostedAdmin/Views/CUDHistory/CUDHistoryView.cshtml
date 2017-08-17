@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "CUDHistoryView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    jQuery.noConflict(true);
+</script>
+
+<link href="~/Content/Kendo/kendo.default.min.css" rel="stylesheet"/>
+<link href="~/Content/Kendo/kendo.common.min.css" rel="stylesheet"/>
+<link href="~/Content/bootstrap-datepicker.css" rel="stylesheet" />
+<script src="~/Scripts/Kendo/jquery.min.js"></script>
+<script src="~/Scripts/Kendo/kendo.all.min.js"></script>
+<style type="text/css">
+   .k-grid .k-group-col,.k-grid .k-hierarchy-col {width: 2px !important;}
+   .container,.container-fluid{padding-left:1px !important;}
+   .k-grid-content{height:auto !important;}
+   .k-header{text-align:left !important;}
+</style>
+@Styles.Render("~/Content/Kendo/css")
+@Scripts.Render("~/bundles/Kendo")
+@Scripts.Render("~/bundles/bootstrap")
+
+
+
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <p class="pageCaption">
+                Activity History
+            </p>
+        </div>
+    </div>
+
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br/>
+        </div>
+    </div>
+
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
+            <input id="comboTableName" class="form-control" type="text" />
+
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group">
+            <input id="comboCUDType" type="text" class="form-control" />
+
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="form-group">
+           <input id="comboUserName" type="text" class="form-control" />
+
+        </div>
+    </div>
+    </div>
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+    <div class="col-sm-4">
+        <div class="form-group">
+            <div class="form-group">
+                <input id="txtFromCUDDate" type="text" class="form-control datepicker" placeholder="From Date" />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="form-group">
+            <div class="form-group">
+                <input id="txtToCUDDate" type="text" class="form-control datepicker" placeholder="To Date" />
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-sm-12">
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button id="btnSearchHistory" class="btn btn-primary btn-sm clear-after" type="button">Search</button>
+            <a class="btn btn-link btn-sm clear-form" href="#" id="historyClearFilters"><span><u>Clear Filters</u></span></a>
+        </div>
+    </div>
+    <div>
+        <script id="divCUDHistoryValidations" type="text/x-kendo-template">
+        </script>
+    </div>
+
+    @*-----------------------------------------------------------------------ROW------------------------------------------------------------------------------------*@
+    <div class="row">
+        <div class="col-md-12">
+            <br />
+        </div>
+    </div>
+    <div id="historyGridwithSortingButtons">
+
+        <div id="historycontainerDiv" class="box containerDivInLine">
+        </div>
+        <div id="GridContainer">
+            <div id="historyGrid"></div>
+        </div>
+
+
+    </div>
+
+
+
+    <script type="text/x-kendo-template" id="template">
+
+        <div class="tabstrip">
+            <ul>
+                <li class="k-state-active">
+                    CUD History Data
+                </li>
+            </ul>
+            <div>
+                <div id="historyDataGrid"></div>
+            </div>
+        </div>
+    </script>
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/HostedAdmin/CUDHistorySettings.js"></script>
+    <div id="dvLoadAllDataHistory" data-request-url="@Url.Action("GetAllCUDHistoryDataDetails", "CUDHistory")"></div>
+    <div id="dvLoadAllHistory" data-request-url="@Url.Action("GetAllCUDHistoryDetails", "CUDHistory")"></div>
+    <div id="dvLoadComboTableName" data-request-url="@Url.Action("GetTableNames", "CUDHistory")"></div>
+    <div id="dvLoadComboCUDType" data-request-url="@Url.Action("GetCUDType", "CUDHistory")"></div>
+    <div id="dvLoadComboUserName" data-request-url="@Url.Action("GetUserName", "CUDHistory")"></div>
+

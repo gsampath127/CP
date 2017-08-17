@@ -1,0 +1,956 @@
+body {
+    font-family: arial, tahoma, sans-serif;
+    background-color: #0085cf;
+    font-size: 13px;
+    color: #464646;
+    margin: 0px;
+}
+
+.cssClientLogoPlaceHolder {
+    padding-left: 41px;
+}
+
+.cssClientLogo {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 50px;
+}
+
+/*DocumentNotAvailable Start*/
+.cssDocumentNotAvailableItemDiv {
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.cssDocumentNotAvailableGoBackButtonDiv {
+    margin-top: 20px;
+}
+/*DocumentNotAvailable End*/
+
+
+/*TaxonomyDataNotAvailable Start*/
+
+.cssTaxonomyDataNotAvailableMainDiv {
+    background-color: #fff;
+    width: 1000px;
+    display: table;
+    margin: auto;
+    height: 100%;
+    border-radius: 20px;
+    margin-top: 21px;
+}
+
+.cssTaxonomyDataNotAvailableItemDiv {
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.cssTaxonomyDataNotAvailableGoBackButtonDiv {
+    margin-top: 20px;
+}
+
+/*TaxonomyDataNotAvailable End*/
+
+
+.td {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: table-cell;
+    table-layout: fixed;
+    vertical-align: middle;
+}
+
+.cssLinks {
+    color: #464646;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .cssLinks:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+.cssHeaderTable {
+    display: table;
+    width: 100%;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.cssHeaderTableRow {
+    display: table-row;
+    width: 100%;
+}
+
+.cssHeaderTableCell {
+    display: table-cell;
+}
+
+
+
+/****************************************************Page Specific Navigations ***********************************************************/
+
+
+/*****************************************************TAL Start:*****************************************************/
+/*TAL Start:*/
+.cssTALMainDiv {
+    background-color: #fff;
+    width: 1000px;
+    display: table;
+    table-layout: fixed;
+    margin: auto;
+    height: 550px;
+    border-radius: 20px;
+    margin-top: 21px;
+}
+
+.cssTALProductDetailsMainDiv {
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 300px;
+    margin-top: 10px;
+    border-color: #d3d3d3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.cssTALProductHeaderTextDiv {
+    background-color: #0085cf;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    padding-left: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    height: 25px;
+    padding-top: 5px;
+}
+
+.cssTALProductLinksPlaceHolderDiv {
+    line-height: 2.0;
+}
+/*TAL End*/
+/*****************************************************TAL END*****************************************************/
+
+
+/*****************************************************TAHD START*****************************************************/
+.cssTAHDMainDiv {
+    margin: 21px auto;
+    height: 100%;
+    border-radius: 20px;
+    width: 1000px;
+    background-color: #fff;
+    color: #464646;
+}
+
+.cssTAHDProductDetailsMainDiv {
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    border-color: #d3d3d3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.cssTAHDUnderlyingFundDetailsMainDiv {
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+    border-color: #d3d3d3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.cssTAHDProductHeaderTextDiv {
+    background-color: #0085cf;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    padding-left: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    height: 25px;
+    padding-top: 5px;
+}
+
+.cssTAHDUnderlyingFundHeaderTextDiv {
+    background-color: #0085cf;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    padding-left: 12px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    height: 25px;
+    padding-top: 5px;
+}
+
+.cssTAHDProductDocumentGridDiv {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridDiv {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cssTAHDProductDocumentGridHeader {
+    padding-top: 5px;
+    height: 30px;
+    display: table-row;
+    width: 100%;
+    table-layout: fixed;
+    padding-left: 10px;
+    padding-bottom: 8px;
+    font-weight: 700;
+    color: #036;
+}
+
+.cssTAHDUnderlyingFundDocumentGridHeader {
+    padding-top: 5px;
+    height: 30px;
+    display: table-row;
+    width: 100%;
+    table-layout: fixed;
+    padding-left: 10px;
+    padding-bottom: 8px;
+    font-weight: 700;
+    color: #036;
+}
+
+.cssTAHDProductDocumentGridProductNameColumn {
+    width: 60%;
+}
+
+.cssTAHDProductDocumentGridDocTypeColumn {
+    width: 20%;
+}
+
+.cssTAHDProductDocumentGridItem {
+    padding-top: 5px;
+    height: 25px;
+    display: table-row;
+    table-layout: fixed;
+    width: 100%;
+    background-color: #ECEDEE;
+}
+
+.cssTAHDProductDocumentGridItemProductNameColumn {
+    width: 60%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cssTAHDProductDocumentGridItemDocTypeColumn {
+    width: 20%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridFundNameColumn {
+    width: 40%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridDocTypeColumn {
+    width: 12%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridItem {
+    background-color: #ECEDEE;
+    padding-top: 5px;
+    height: 30px;
+    display: table-row;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.cssTAHDUnderlyingFundDocumentGridItemFundNameColumn {
+    width: 40%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridItemDocTypeColumn {
+    width: 12%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridAlternateItem {
+    background-color: #fff;
+    padding-top: 5px;
+    height: 30px;
+    display: table-row;
+    width: 100%;
+}
+
+.cssTAHDUnderlyingFundDocumentGridAlternateItemFundNameColumn {
+    width: 40%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.cssTAHDUnderlyingFundDocumentGridAlternateItemDocTypeColumn {
+    width: 12%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cssTAHDDocumentNAText {
+}
+
+.cssTAHDGlossary {
+    display: none;
+    margin-left: 40px;
+}
+
+.cssTAHDFooter {
+    margin: 40px;
+}
+
+.cssTAHDFootnotesHeaderText {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cssTAHDFootnotesItems {
+    margin-top: 20px;
+}
+
+.cssTADHFootnotesItemText {
+}
+
+/*Document Type Link CSS*/
+
+.cssDocumentTypeLinkImage {
+}
+
+.cssDocumentTypeLinkText {
+    /*display: none;*/
+}
+
+.cssXBRLLinkImage {
+}
+
+.cssXBRLLinkText {
+}
+
+.cssDocumentTypeLinkNAImage {
+}
+
+.cssDocumentTypeLinkNAText {
+}
+
+/*Document Type Link CSS*/
+/*****************************************************TAHD END*****************************************************/
+
+
+
+
+/*****************************************************TAD Start*****************************************************/
+/*TAD Start:*/
+.cssTADMainDiv {
+    margin: auto;
+    height: 100%;
+    width: 1024px;
+    padding: 18px 0px 0px 0px;
+    background-color: #fff;
+}
+
+.TADHeaderMenuMainDiv {
+    display: none;
+}
+
+.cssTADHeaderText {
+    font-size: 12px;
+    font-family: Verdana,Geneva,sans-serif;
+    display: table;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.cssTADUnderlyingFundDocumentGridDiv {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cssTADUnderlyingFundDocumentGridHeader {
+    height: 47px;
+    display: table-row;
+    width: 100%;
+    table-layout: fixed;
+    background: #336699;
+    color: #fff;
+    font-family: Verdana, Geneva, sans-serif;
+    padding-left: 10px;
+}
+
+.cssTADUnderlyingFundDocumentGridFundNameColumn {
+    width: 40%;
+    vertical-align: middle;
+    font-size: 17px;
+}
+
+.cssTADUnderlyingFundDocumentGridDocTypeColumn {
+    width: 10%;
+    text-align: center;
+    vertical-align: middle;
+    border-left: 2px;
+    border-left-style: solid;
+    border-left-color: #FFF;
+}
+
+.cssTADUnderlyingFundDocumentGridItem {
+    background-color: #ECEDEE;
+    height: 20px;
+    display: table-row;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.cssTADUnderlyingFundDocumentGridItemFundNameColumn {
+    width: 40%;
+}
+
+.cssTADUnderlyingFundDocumentGridItemDocTypeColumn {
+    width: 10%;
+    border-left: 2px;
+    border-left-style: solid;
+    border-left-color: #FFF;
+}
+
+.cssTADUnderlyingFundDocumentGridAlternateItemFundNameColumn {
+    width: 40%;
+}
+
+.cssTADUnderlyingFundDocumentGridAlternateItemDocTypeColumn {
+    width: 10%;
+    border-left: 2px;
+    border-left-style: solid;
+    border-left-color: #FFF;
+}
+
+.cssTADUnderlayingFundGridNAText {
+    text-align: center;
+}
+
+.cssTADUnderlyingFundDocumentGridAlternateItem {
+    background-color: #fff;
+    height: 20px;
+    display: table-row;
+    width: 100%;
+}
+
+.cssTADFooter {
+    margin-top: 20px;
+}
+
+.cssTADFootnotesHeaderText {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cssTADFootnotesItems {
+    margin-top: 20px;
+}
+
+.cssTADFootnotesItemText {
+}
+
+.TADHeaderMenuPlaceHolderDiv {
+    color: #fff;
+    margin-top: 15px;
+}
+
+/****************************************************Start : Menu CSS********************************************************/
+#NavMenu {
+    color: #FFF !important;
+    margin: 0;
+    padding: 0;
+}
+
+    #NavMenu ul {
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+    }
+
+    #NavMenu li.top {
+        display: table-cell;
+        line-height: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 25px;
+        vertical-align: middle;
+        color: #1C4877;
+        font-family: Verdana, Geneva, sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 11px;
+        min-width: 100px;
+        text-align: center;
+    }
+
+    #NavMenu li:hover li {
+        display: block;
+        float: left;
+        line-height: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 25px;
+        vertical-align: middle;
+        color: #1C4877;
+        font-family: Verdana, Geneva, sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 11px;
+        min-width: 100px;
+        text-align: center;
+    }
+
+    #NavMenu li:hover {
+        position: relative;
+    }
+
+        #NavMenu li:hover ul {
+            left: 0px;
+            top: 25px;
+            padding-top: 2px;
+            background: #ffffff;
+            padding-left: 0px !important;
+            z-index: 100;
+        }
+
+.cssMenuTdActive {
+    color: #e5f8ff;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cssMenuTdInActive {
+}
+
+.cssMenuTdActive a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+    .cssMenuTdActive a:hover {
+        color: #FFF;
+        text-decoration: underline;
+    }
+
+.cssMenuTdInActive a:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+/****************************************************End : Menu CSS********************************************************/
+
+/*Document Type Link CSS*/
+
+.cssDocumentTypeLinkImage {
+}
+
+.cssDocumentTypeLinkText {
+}
+
+.cssXBRLLinkImage {
+}
+
+.cssXBRLLinkText {
+}
+
+/*Document Type Link CSS*/
+/*****************************************************TAD END*****************************************************/
+
+
+
+
+
+/****************************************************Start : TADF********************************************************************************************************/
+.cssTADFBody {
+    overflow-y: hidden;
+}
+
+.cssTADFSinglePDFBody {
+    overflow-y: hidden;
+}
+
+.cssTADFMainDiv {
+    background-color: #fff;
+    display: table;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    padding: 18px 0px 0px 0px;
+}
+
+.cssTADFFundName {
+    display: table-cell;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #1C4877;
+    width: 50%;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.TADFDocumentTypeNavPlaceHolderDiv {
+    color: #fff;
+    margin-top: 25px;
+}
+
+.cssTADFPDFPlaceHolderDiv {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    margin-top: 0px;
+}
+
+.cssTADFPDFFrame {
+    border-style: none;
+    width: 100%;
+}
+
+.cssTADFDocumentNotAvailableText {
+    margin-top: 20px;
+}
+
+.cssTADFDocumentNotAvailablePlaceHolderDiv {
+    position: absolute;
+    background: #FFF;
+    height: 100%;
+    width: 100%;
+}
+
+/****************************************************Start : Menu CSS********************************************************/
+#NavMenu {
+    color: #FFF !important;
+    margin: 0;
+    padding: 0;
+}
+
+    #NavMenu ul {
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+    }
+
+    #NavMenu li.top {
+        display: inline-block;
+        line-height: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 25px;
+        vertical-align: middle;
+        font-family: Verdana, Geneva, sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 11px;
+        min-width: 50px;
+        text-align: center;
+        background-color: #5B9BD5;
+    }
+
+    #NavMenu li:hover li {
+        display: block;
+        float: left;
+        line-height: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 25px;
+        vertical-align: middle;
+        font-family: Verdana, Geneva, sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 11px;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    #NavMenu li:hover {
+        position: relative;
+    }
+
+        #NavMenu li:hover ul {
+            left: 0px;
+            top: 25px;
+            padding-top: 2px;
+            background: #ffffff;
+            padding-left: 0px !important;
+            z-index: 100;
+        }
+
+.cssMenuTdActive {
+}
+
+.cssMenuTdInActive {
+}
+
+.cssMenuTdActive a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.cssMenuTdInActive a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.cssMenuTdActive a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.cssMenuTdInActive a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.divMenuTD {
+    display: table-cell;
+    height: 50px;
+    vertical-align: middle;
+    width: 120px;
+}
+/****************************************************End : Menu CSS********************************************************/
+
+/****************************************************End : TADF********************************************************************************************************/
+
+
+/*XBRL - Start*/
+
+.cssXBRLMainDiv {
+    background-color: #fff;
+    display: table;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    padding: 18px 0px 0px 0px;
+}
+
+.cssXBRLFundName {
+    display: table-cell;
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #1C4877;
+    width: 50%;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.cssXBRLContentDiv {
+}
+
+.cssXBRLContentMainTable {
+    margin-left: 5px;
+    margin-top: 25px;
+}
+
+.cssXBRLPlaceHolder {
+}
+
+.cssXBRLViewerPlaceHolder {
+    list-style-image: none;
+    list-style-type: disc;
+}
+
+.cssXBRLZipFilesHeaderText {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.cssXBRLViewerHeaderText {
+    font-size: 13px;
+    font-weight: bold;
+}
+/*XBRL - END*/
+
+
+
+
+/****************************************************End : TACDF********************************************************************************************************/
+
+
+.cssTACDFBody {
+    overflow-y: hidden;
+}
+
+.cssTACDFMainDiv {
+    background-color: #fff;
+    display: table;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    padding: 18px 0 0 0;
+}
+
+.cssTACDFFundNamePlaceHolderDiv{
+    float: right;
+}
+.cssTACDFFundName {    
+    padding-right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1C4877;   
+    vertical-align: middle;
+}
+.cssTACDFDMMDPlaceHolderDiv {
+    padding-right: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1C4877;   
+    vertical-align: middle;
+    margin-top:10px;
+}
+.cssTACDFDMMDPlaceHolderDiv a{
+    display:inline-block;
+}
+
+.cssTACDFNCRPlaceHolderDiv {
+    padding-right: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1C4877;   
+    vertical-align: middle;
+}
+.cssTACDFNCRPlaceHolderDiv a{
+    display:inline-block;
+}
+.TACDFDocumentTypeNavPlaceHolderDiv {
+    color: #fff;
+    margin-top: 25px;
+}
+
+.cssTACDFPDFPlaceHolderDiv {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    margin-top: 0;
+}
+
+.cssTACDFPDFFrame {
+    border-style: none;
+    width: 100%;
+}
+
+.cssTACDFFormNMFPPlaceHolderDiv {
+}
+.cssTACDFormNMFPText {
+    margin-top: 20px;
+}
+
+
+#NavMenu {
+    color: #fff !important;
+    margin: 0;
+    padding: 0;
+}
+
+    #NavMenu ul {
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+    }
+
+    #NavMenu li .top {
+        display: inline-block;
+        line-height: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 25px;
+        vertical-align: middle;
+        font-family: Verdana,Geneva,sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 11px;
+        min-width: 50px;
+        text-align: center;
+        background-color: #5b9bd5;
+    }
+
+    #NavMenu li: hover li {
+        display: block;
+        float: left;
+        line-height: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 25px;
+        vertical-align: middle;
+        font-family: Verdana,Geneva,sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 11px;
+        min-width: 50px;
+        text-align: center;
+    }
+
+    #NavMenu li: hover {
+        position: relative;
+    }
+
+        #NavMenu li: hover ul {
+            left: 0;
+            top: 25px;
+            padding-top: 2px;
+            background: #fff;
+            padding-left: 0 !important;
+            z-index: 100;
+        }
+
+.cssMenuTdActive a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.cssMenuTdInActive a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.cssMenuTdActive a: hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.cssMenuTdInActive a: hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.divMenuTD {
+    display: table-cell;
+    height: 50px;
+    vertical-align: middle;
+    width: 120px;
+}
+
+
+/****************************************************End : TACDF********************************************************************************************************/

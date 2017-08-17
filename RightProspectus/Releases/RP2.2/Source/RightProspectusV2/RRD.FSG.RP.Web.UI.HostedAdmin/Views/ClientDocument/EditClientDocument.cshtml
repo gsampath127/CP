@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "EditClientDocument";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @model RRD.FSG.RP.Web.UI.HostedAdmin.ViewModels.ClientDocumentViewModel
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=100">
+    <title>RightProspectus</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/Kendo/css")
+    @Scripts.Render("~/bundles/Kendo")
+
+    <link href="~/Content/RP/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("EditClientDocument", "ClientDocument", FormMethod.Post, new { id = "frmClientDocumentId", enctype = "multipart/form-data" }))
+        {
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container navigationFullMenu nowrap">
+                    <div class="navbar-header">
+                        @if (Model.ClientDocumentId.Equals(0))
+                        {
+                            <a class="navbar-brand" href="#">Add Client Document </a>
+                        }
+                        else
+                        {
+                            <a class="navbar-brand" href="#">Edit Client Document </a>
+                        }
+
+                        <button id="togglebutton" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div id="navbar-popup" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a class="popup-close" id="closeWindow" href="javascript:window.close();">Close Window</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="main" class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div id="dvValMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowMsg"></div></div>
+                                @Html.LabelFor(model => model.Name)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Name", type = "text", id = "txtName", MaxLength = "200" })
+                                @Html.HiddenFor(model => model.ClientDocumentId, new { id = "ClientDocumentId" })
+
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div id="dvTaxMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowTaxMsg"></div></div>
+                                @Html.LabelFor(model => model.Description)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.TextBoxFor(model => model.Description, new { @class = "form-control", placeholder = "Description", type = "text", id = "txtDescription", MaxLength = "200" })
+                                <input type="hidden" value="@ViewData["Success"].ToString()" id="hdnSuccessOrFailedMessage" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div id="dvTaxMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowTaxMsg"></div></div>
+                                @Html.LabelFor(model => model.DocumentType)
+                                <span class="mandatoryAsterisk">*</span>
+                                @Html.DropDownListFor(model => model.SelectedClientDocumentTypeId, new SelectList(Model.DocumentType, "Value", "Display"), new { @class = "form-control", id = "ComboDocumentType" })
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div id="dvTaxMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowTaxMsg"></div></div>
+                                @Html.LabelFor(model => model.IsPrivate)
+                               
+                                @Html.CheckBoxFor(model => model.IsPrivate, new { @class = "form-control", id = "chkIsPrivate", @style = "width: 15px; height: 15px;" })
+                                @*<input type="hidden" value="@ViewData["Success"].ToString()" id="hdnSuccessOrFailedMessage" />*@
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div id="dvValMsg" style="display:none;" class='validation-popup'><div></div><div class='validation-popup-message' id="dvShowMsg"></div></div>
+                                Document Upload
+                                @if (Model.ClientDocumentId.Equals(0))
+                                {
+                                    <span class="mandatoryAsterisk">*</span>
+                                }
+                                @Html.HiddenFor(model => model.FileName, new { id = "fileName" })
+                                @Html.HiddenFor(model => model.MimeType, new { id = "mimeType" })
+                                <input type="file" name="FileUploadCD" id="fileUpload" />
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                @if (Model.ClientDocumentId != 0)
+                {
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.UTCLastModifiedDate)
+                            @Html.TextBoxFor(model => model.UTCLastModifiedDate, new { @class = "form-control", placeholder = "ModifiedDate", type = "text", id = "txtModifiedDate", @disabled = "disabled" })
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ModifiedBy)
+                            @Html.TextBoxFor(model => model.ModifiedByName, new { @class = "form-control", placeholder = "ModifiedBy", type = "text", id = "txtModifiedBy", @disabled = "disabled" })
+                        </div>
+                    </div>
+                }
+                <div class="form-inline">
+                    <div class="form-group col-sm-2">
+                        <button id="submitClientDocumentId" type="submit" class="AlignButton btn btn-default m-top-15">Save</button>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+    <div>
+        <script id="divSuccessOrFailedMessage" type="text/x-kendo-template">
+            <p class="message">Client Document Details Saved Successfully.</p>
+            <button class="confirm k-button" style="margin:10px">OK</button>
+        </script>
+    </div>
+    <div>
+        <script id="divEditValidations" type="text/x-kendo-template">
+        </script>
+    </div>
+    <div id="dvCheckDataAlreadyExists" data-request-url="@Url.Action("CheckDataAlreadyExists", "ClientDocument")"></div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/Kendo/css")
+    @Scripts.Render("~/bundles/Kendo")
+
+    <script src="~/Scripts/HostedAdmin/EditClientDocumentSettings.js"></script>
+</body>
+</html>

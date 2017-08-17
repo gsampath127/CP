@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="documentTypeAssociation.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:element name="documentTypeAssociation" type="documentTypeAssociation" />
+  <xs:element name="documentTypeAssociations" type="documentTypeAssociations" />
+  <xs:complexType name="documentTypeAssociation">
+    <xs:annotation>
+      <xs:documentation>
+        Defines an association to vertical market document type entity.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="marketEntity">
+        <xs:attribute name="headerText" type="headerText" use="required" />
+        <xs:attribute name="linkText" type="linkText" use="optional" />
+        <xs:attribute name="order" type="order" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="documentTypeAssociations">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of documentTypeAssociation entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="documentTypeAssociation" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

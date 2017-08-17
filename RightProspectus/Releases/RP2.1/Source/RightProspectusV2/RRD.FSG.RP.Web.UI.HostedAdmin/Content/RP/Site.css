@@ -1,0 +1,561 @@
+﻿#main {
+    padding-top: 65px;
+}
+
+.rpNavBarHeight {
+    height: 55px;
+}
+
+.rpNavBarExchange {
+    text-align: right;
+    font-size: 13px;
+}
+
+/**************************** KENDO GRID CUSTOM STYLES***************************BEGIN*/
+.GridEdit {
+    color: #31B0DA;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.GridDelete {
+    color: #D32A0E;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+/*headers*/
+.k-grid th.k-header,
+.k-grid-header {
+    background: #ffffff;
+}
+
+    .k-grid th.k-header,
+    .k-grid th.k-header .k-link {
+        color: #008CBA;
+        font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+/*for wrapping the long text in header columns in grid view*/
+.k-grid .k-grid-header .wrapheader {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+/*for wrapping the long text in data cells in grid view*/
+.wraptext {
+    word-wrap: break-word;
+    white-space: nowrap;
+}
+
+/*rows*/
+/**/
+.k-grid-content > table > tbody > tr {
+    background-color: #ffffff;
+    font-size: 12px;
+}
+
+
+.k-grid-content > table > tbody > .k-alt {
+    background-color: #ffffff;
+    font-size: 12px;
+}
+
+.k-grid > table > tbody > tr:hover,
+.k-grid-content > table > tbody > tr:hover {
+    background: #F5F5F5;
+}
+
+.k-grid tr td {
+    border-bottom: 1px solid #CCCCCC;
+}
+/*selection*/
+/*
+.k-grid table tr.k-state-selected {
+    background: #f99;
+    color: #fff;
+}
+*/
+/**************************** KENDO GRID CUSTOM STYLES***************************END*/
+.grdWidth {
+    width: 700px;
+    height: 450px;
+    display: none;
+}
+
+.txtAddEmailSubjectwidth {
+    width: 210px;
+}
+
+.removeBorderWidth {
+    border-width: 0px;
+}
+
+.fondweight {
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.dispNoneImp {
+    display: none !important;
+}
+
+.dispNone {
+    display: none;
+}
+
+.confirmButtonYesMultiple {
+    margin: 10px 60px 10px 70px !important;
+}
+
+.confirmButtonSingleYesNo {
+    margin: 10px 50px 10px 70px !important;
+}
+
+.cancelYesNoButton {
+    margin: 10px 50px 10px 36px !important;
+}
+
+.popOverStyle {
+    color: green !important;
+    cursor: pointer;
+}
+
+.visibilityHidden {
+    visibility: hidden;
+}
+
+.layoutFooter {
+    width: 200px;
+    height: 50px;
+}
+
+/****************************************** DropDown Submenu Start*********************************************************/
+
+.dropdown-submenu {
+    position: relative;
+}
+
+    .dropdown-submenu > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        margin-left: -1px;
+        -webkit-border-radius: 0 6px 6px 6px;
+        -moz-border-radius: 0 6px 6px 6px;
+        border-radius: 0 6px 6px 6px;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-submenu > a:after {
+        display: block;
+        content: " ";
+        float: right;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-left-color: #cccccc;
+        margin-top: 5px;
+        margin-right: -10px;
+    }
+
+    .dropdown-submenu:hover > a:after {
+        border-left-color: #ffffff;
+    }
+
+    .dropdown-submenu.pull-left {
+        float: none;
+    }
+
+        .dropdown-submenu.pull-left > .dropdown-menu {
+            left: -100%;
+            margin-left: 10px;
+            -webkit-border-radius: 6px 0 6px 6px;
+            -moz-border-radius: 6px 0 6px 6px;
+            border-radius: 6px 0 6px 6px;
+        }
+
+/****************************************** DropDown Submenu End*********************************************************/
+
+.messageBoxStyle {
+    text-align: center;
+}
+
+.headingFontSize {
+    font-size: 15px;
+}
+
+.popover {
+    max-width: 400px !important;
+}
+
+.rpCustomMessage {
+    overflow: hidden !important;
+}
+
+.dropdownWidth {
+    width: 260px !important;
+}
+
+.editIcon {
+    cursor: pointer !important;
+    color: #31b0d5 !important;
+}
+
+.deleteIcon {
+    cursor: pointer !important;
+    color: #f04124 !important;
+}
+
+/*Style overwrite for Kendo Dropdwon and Jquery UI Start*/
+.k-combobox {
+    width: 100% !important;
+}
+
+    .k-combobox input {
+        height: 32px !important;
+    }
+
+.ui-autocomplete {
+    color: rgb(111,111,111) !important;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-size: 15px;
+}
+
+/*.ui-menu .ui-menu-item a.ui-corner-all:hover, .ui-menu .ui-menu-item a.ui-corner-all:focus, .ui-menu .ui-menu-item a.ui-corner-all:active {
+    background:#008CBA!important;
+    color:#000;
+    border-radius:0;
+}*/
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    background: #26A0DA;
+    border: none;
+    color: #ffffff;
+    border-radius: 0;
+    font-weight: normal;
+}
+
+/*Style overwrite for Kendo Dropdwon and Jquery UI End*/
+/*Style overwrite for Kendo Dropdwon End*/
+
+.notesTextbox {
+    height: 120px;
+}
+
+.templateElements {
+    text-align: center !important;
+}
+
+/*making all header center aligned & then template header  left aligned */
+.k-header {
+    text-align: center !important;
+}
+
+.k-grid-header .k-link {
+    text-align: left !important;
+}
+
+/*validation popup css*/
+
+
+.validation-popup {
+    position: absolute;
+    /*top: 0;*/
+    /*display: none;*/
+    z-index: 999999;
+    /*height:4px;
+  width:20px;*/
+}
+
+    .validation-popup > div:first-child {
+        margin-left: 15px;
+        width: 0;
+        height: 0;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid #e99002;
+        z-index: 999999;
+    }
+
+    .validation-popup > .validation-popup-message {
+        color: #fff;
+        background-color: #e99002 !important;
+        padding: 10px;
+        font-size: 14px;
+        z-index: 999999;
+    }
+
+.m-top-20 {
+    margin-top: 20px;
+}
+
+.m-top-15 {
+    margin-top: 15px;
+}
+/* alignment for New Contact button on Contact Landing  page.*/
+/* commenting it bcoz added a class as "newAddButton" */
+/*#newContactDiv
+{
+    padding-top: 18px;
+    text-align:right;
+}*/
+
+.newAddButton {
+    padding-top: 18px;
+    text-align: right;
+}
+
+
+/* Commented this class since the nowrap has been removed from Menu.cshtml.
+.nowrap {
+    white-space: nowrap;
+}*/
+
+/*Alignment for new third party button*/
+#newThirdPartiesDiv {
+    padding-top: 18px;
+    text-align: right;
+}
+
+#newCustomersDiv {
+    padding-top: 18px;
+    text-align: right;
+}
+
+.alertMargin {
+    margin-bottom: 0px !important;
+}
+/*Alignment for new ImportContacts*/
+
+.progress {
+    background-color: #f3f3f3;
+    border: 0;
+    height: 18px;
+    border-radius: 9px;
+}
+
+.lstclose {
+    float: right;
+    padding-right: 20px;
+    padding-top: 10px;
+    list-style: none;
+}
+
+#closeWindow {
+    color: #fff;
+    text-decoration: none;
+}
+
+.btnsubmit {
+    border-radius: 4px;
+}
+
+#dvBDSubPopUpOuter {
+    overflow: hidden;
+}
+/* To display sorting column name div in line*/
+
+.containerDivInLine {
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex;
+}
+
+#newCustomersDiv {
+    padding-top: 18px;
+    text-align: right;
+}
+
+
+.alertMargin {
+    margin-bottom: 0px !important;
+}
+
+.ancorCoursor {
+    cursor: pointer;
+}
+
+.txtHeightoverride21 {
+    height: 21px !important;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.width90 {
+    width: 90%;
+}
+
+.width85 {
+    width: 85%;
+}
+
+/*Import Progress*/
+#divProcessing {
+    text-align: center;
+}
+
+.dvImport {
+    color: #C0C0C0;
+    font-family: Calibri;
+    margin-left: 15px;
+}
+
+/*No Records Found in Grid*/
+.no-data {
+    text-align: center;
+}
+
+.tableFixedWidth {
+    width: 1120px !important;
+}
+
+/* table media event*/
+
+@media (max-width:1200px ) {
+    .ScrollTable {
+        width: 100%;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: auto;
+    }
+}
+
+.UserInfo {
+    margin-top: 10px;
+    width: 3px;
+}
+
+.AlignButton {
+    height: 48px;
+}
+
+.BranchAlign {
+    padding-left: 40px;
+}
+
+.ButtonAlignment {
+    height: 30px;
+}
+
+.LegendAlign {
+    padding-left: 15px;
+}
+
+/**** Alertmessage styles *****************/
+
+.alertsucess {
+    width: 150px;
+    height: 49px;
+    padding-top: 10px;
+}
+
+.alertwarning {
+    width: 330px;
+    height: 49px;
+    padding-top: 10px;
+}
+
+.alertWarningcontact {
+    width: 330px;
+    height: 49px;
+    padding-top: 17px;
+}
+
+.alertWarning {
+    width: 269px;
+    height: 49px;
+    padding-top: 10px;
+}
+
+.validationMessage {
+    color: red;
+}
+
+a.disabled {
+    text-decoration: none !important;
+    cursor: not-allowed !important;
+}
+
+
+/****Start : Added below to tags to remove diable vertical scrolling from selcted grids *****************/
+
+.k-grid .k-grid-header{
+    padding: 0px !important;
+}
+
+.k-grid .k-grid-content{
+    overflow-y: visible;
+}
+
+/****END : Added below to tags to remove diable vertical scrolling from selcted grids *****************/
+
+/*To maintain the Asterisk position just besides the label text*/
+.mandatoryAsterisk {
+    color: red;
+    /*margin-left: -5px !important;*/ /*Commnented as of now ,bcoz it will affect responsiveness*/
+}
+
+.divCssText {
+    height: 400px;
+}
+
+.cssTextAreaCSSText {
+    min-height:300px !important;
+}
+
+.pageCaption {
+    font-size:32px;
+}
+
+.pageCaptionHelp {
+    font-size:16px !important;
+    vertical-align:top
+}
+
+
+.breadcrumb {background: rgba(255, 255, 255, 1); border: 0px solid rgba(245, 245, 245, 1); border-radius: 0px; display: block; -webkit-padding-start:0px !important; padding:0px}
+.breadcrumb li {font-size: 14px;}
+.breadcrumb a {color: rgba(66, 139, 202, 1);}
+.breadcrumb a:hover {color: rgba(42, 100, 150, 1);}
+.breadcrumb>.active {color: rgba(153, 153, 153, 1);}
+.breadcrumb>li+li:before {color: rgba(204, 204, 204, 1); content: "\276F\00a0";}
+
+
+#imgTemplatePage {
+    max-height:500px;
+    width:100%;    
+}
+
+.k-loading-mask{
+    z-index: 100;
+}
+
+.k-loading-color {
+    background-color: gray !important;
+}
+
+.k-grid .k-loading-color {
+    background-color: transparent !important;
+}
+
+.k-overlay {
+    background-color: gray !important;
+}
+
+

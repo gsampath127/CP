@@ -1,0 +1,13 @@
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\bin\Release\BCS.Core.dll
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\bin\Release\BCS.Core.pdb
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\bin\Release\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\bin\Release\Microsoft.Practices.ServiceLocation.dll
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\bin\Release\Microsoft.Practices.Unity.dll
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\bin\Release\Microsoft.Practices.Unity.Interception.Configuration.dll
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\bin\Release\Microsoft.Practices.Unity.Interception.dll
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\obj\Release\BCS.DataAccess.csprojResolveAssemblyReference.cache
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\obj\Release\BCS.Core.dll
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.DataAccess\obj\Release\BCS.Core.pdb

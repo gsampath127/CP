@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="import.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:include schemaLocation="clientDocumentGroup.xsd" />
+  <xs:include schemaLocation="taxonomyAssociation.xsd" />
+  <xs:include schemaLocation="documentTypeExternalId.xsd" />
+  <xs:include schemaLocation="taxonomyLevelExternalId.xsd" />
+  <xs:include schemaLocation="urlRewrite.xsd" />
+  <xs:include schemaLocation="site.xsd" />
+  <xs:complexType name="import">
+    <xs:annotation>
+      <xs:documentation>
+        Defines the import xml schema for a hosted site.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="1">
+      <xs:element name="market" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Defines global and unrooted market entities such as clientDocumentGroups, taxonomyAssociations, documentTypeExternalIds, and taxonomyLevelExternalIds.
+            ClientDocumentGroups and taxonomyAssociations are unrooted entities and are usually associated with one or more rooted entities via link entities, such as a taxonomyAssociationLink.
+            DocumentTypeExternalIds and taxonomyLevelExternalIds are global entities and are used when parsing request paths to locate market entities when internal identifiers are not known.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element ref="clientDocumentGroups" minOccurs="0" maxOccurs="1" />
+            <xs:element ref="taxonomyAssociations" minOccurs="0" maxOccurs="1" />
+            <xs:element ref="documentTypeExternalIds" minOccurs="0" maxOccurs="1" />
+            <xs:element ref="taxonomyLevelExternalIds" minOccurs="0" maxOccurs="1" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="webSite" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>
+            Defines global webSite entities.
+            Currently there is only one global webSite entity type - urlRewrite.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence minOccurs="0" maxOccurs="1">
+            <xs:element ref="urlRewrites" minOccurs="0" maxOccurs="1" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element ref="sites" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="import" type="import" />
+</xs:schema>

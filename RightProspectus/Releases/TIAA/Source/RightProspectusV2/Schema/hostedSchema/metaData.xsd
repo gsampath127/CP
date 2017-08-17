@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+<copyright file="metaData.xsd" company="R. R. Donnelley &amp; Sons Company">
+  Copyright (c) R. R. Donnelley &amp; Sons Company. All rights reserved
+</copyright>
+-->
+<xs:schema targetNamespace="http://rightprospectus.com/hostedSchema"
+           elementFormDefault="qualified"
+           xmlns="http://rightprospectus.com/hostedSchema"
+           xmlns:mstns="http://rightprospectus.com/hostedSchema"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:sql="http://schemas.microsoft.com/sqlserver/2004/sqltypes">
+  <xs:include schemaLocation="commonTypes.xsd" />
+  <xs:import schemaLocation="http://schemas.microsoft.com/sqlserver/2004/sqltypes/sqltypes.xsd"
+             namespace="http://schemas.microsoft.com/sqlserver/2004/sqltypes" />
+  <xs:element name="metaData" type="metaData" />
+  <xs:element name="metaDataCollection" type="metaDataCollection" />
+  <xs:complexType name="metaData">
+    <xs:annotation>
+      <xs:documentation>
+        Defines a metadata key/value pair for an entity.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="stringEntity">
+        <xs:attribute name="key" type="key" use="required" />
+        <xs:attribute name="dataType" type="sql:sqlDbTypeEnum" use="required">
+        <xs:annotation>
+          <xs:documentation>
+            Defines the type of data stored in the metaData entity.
+            Integers, date/time and boolean types will be stored in native type columns.
+            All others will be stored as a string representation.
+            Must be a valid value from SqlDbType enumeration defined here: http://schemas.microsoft.com/sqlserver/2004/sqltypes/sqltypes.xsd.
+          </xs:documentation>
+        </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="order" type="order" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="metaDataCollection">
+    <xs:annotation>
+      <xs:documentation>
+        A collection of metaData entities.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="childCollection">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="metaData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

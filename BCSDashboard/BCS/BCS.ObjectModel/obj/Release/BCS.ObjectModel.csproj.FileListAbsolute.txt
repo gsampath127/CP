@@ -1,0 +1,5 @@
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.ObjectModel\bin\Release\BCS.ObjectModel.dll
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.ObjectModel\bin\Release\BCS.ObjectModel.pdb
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.ObjectModel\obj\Release\BCS.ObjectModel.dll
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.ObjectModel\obj\Release\BCS.ObjectModel.pdb
+D:\TFS-RP\First Dollar\BCSDashboard\BCS\BCS.ObjectModel\obj\Release\BCS.ObjectModel.csprojResolveAssemblyReference.cache
